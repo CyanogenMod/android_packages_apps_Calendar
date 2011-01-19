@@ -32,6 +32,7 @@ import android.graphics.PorterDuff;
 import android.graphics.Rect;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.text.format.DateFormat;
@@ -74,7 +75,7 @@ public class MonthView extends View implements View.OnCreateContextMenuListener 
     private static int EVENT_DOT_W_H = 10;
     private static int EVENT_NUM_DAYS = 31;
     private static int TEXT_TOP_MARGIN = 7;
-    private static int BUSY_BITS_WIDTH = 6;
+    private static int BUSY_BITS_WIDTH = 8;
     private static int BUSY_BITS_MARGIN = 4;
     private static int DAY_NUMBER_OFFSET = 10;
 
@@ -924,9 +925,6 @@ public class MonthView extends View implements View.OnCreateContextMenuListener 
         int top = rect.top + TEXT_TOP_MARGIN + BUSY_BITS_MARGIN;
         int left = rect.right - BUSY_BITS_MARGIN - BUSY_BITS_WIDTH;
 
-        Style oldStyle = p.getStyle();
-        int oldColor = p.getColor();
-
         ArrayList<Event> events = mEvents;
         int numEvents = events.size();
         EventGeometry geometry = mEventGeometry;
@@ -940,7 +938,7 @@ public class MonthView extends View implements View.OnCreateContextMenuListener 
 
             p.setColor(mMonthBgColor);
             p.setStyle(Style.FILL);
-            canvas.drawRect(rf, p);
+            canvas.drawRoundRect(rf, 6, 6, p);
         }
 
         for (int i = 0; i < numEvents; i++) {
@@ -950,13 +948,19 @@ public class MonthView extends View implements View.OnCreateContextMenuListener 
             }
             drawEventRect(rect, event, canvas, p);
         }
+		//Draw BusyBits backgrouind for 3D effect
+		Bitmap bmp=((BitmapDrawable) getResources().getDrawable(R.drawable.dna_empty) ).getBitmap();
+		bmp = bmp.createScaledBitmap(bmp,BUSY_BITS_WIDTH,(rect.bottom - BUSY_BITS_MARGIN - top),false);
+		canvas.drawBitmap( bmp, left, top, p);
 
     }
 
     // Draw busybits for a single event
     private RectF drawEventRect(Rect rect, Event event, Canvas canvas, Paint p) {
 
-        p.setColor(mBusybitsColor);
+        //p.setColor(mBusybitsColor);
+		//Set Calendar Color
+        p.setColor(event.color);
 
         int left = rect.right - BUSY_BITS_MARGIN - BUSY_BITS_WIDTH;
         int bottom = rect.bottom - BUSY_BITS_MARGIN;
@@ -968,7 +972,7 @@ public class MonthView extends View implements View.OnCreateContextMenuListener 
         rf.left = left;
         rf.right = left + BUSY_BITS_WIDTH;
 
-        canvas.drawRect(rf, p);
+        canvas.drawRoundRect(rf, 4, 4, p);
 
         return rf;
     }
