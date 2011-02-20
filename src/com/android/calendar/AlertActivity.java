@@ -41,6 +41,7 @@ import android.view.View.OnClickListener;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Spinner;
 import android.widget.AdapterView.OnItemClickListener;
 
 /**
@@ -223,6 +224,8 @@ public class AlertActivity extends Activity {
         mDismissAllButton = (Button) findViewById(R.id.dismiss_all);
         mDismissAllButton.setOnClickListener(mDismissAllListener);
 
+        ((Spinner) findViewById(R.id.reminder_value)).setSelection(1);
+
         // Disable the buttons, since they need mCursor, which is created asynchronously
         mSnoozeAllButton.setEnabled(false);
         mDismissAllButton.setEnabled(false);
@@ -262,7 +265,10 @@ public class AlertActivity extends Activity {
 
     private OnClickListener mSnoozeAllListener = new OnClickListener() {
         public void onClick(View v) {
-            long alarmTime = System.currentTimeMillis() + SNOOZE_DELAY;
+            String[] valueStrings = getResources().getStringArray(R.array.reminder_minutes_values);
+            int snoozePos = ((Spinner) findViewById(R.id.reminder_value)).getSelectedItemPosition();
+            long snoozeDelay = Long.parseLong(valueStrings[snoozePos]) * 60000L;
+            long alarmTime = System.currentTimeMillis() + snoozeDelay;
 
             NotificationManager nm =
                 (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
