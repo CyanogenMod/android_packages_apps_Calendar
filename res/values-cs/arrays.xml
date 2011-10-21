@@ -137,6 +137,14 @@
     <item msgid="966666856467721784">"2 dny"</item>
     <item msgid="5840973497558794742">"1 týden"</item>
   </string-array>
+  
+  <string-array name="preferences_week_start_day_labels">
+    <item>Výchozí</item>
+    <item>Sobota</item>
+    <item>Neděle</item>
+    <item>Pondělí</item>
+  </string-array>
+
   <string-array name="preferences_alert_type_labels">
     <item msgid="2724242028978664229">"Upozornění"</item>
     <item msgid="8723674378160518790">"Oznámení na stavovém řádku"</item>
@@ -147,7 +155,7 @@
     <item msgid="6228387173725732140">"Dostupný"</item>
   </string-array>
   <string-array name="visibility">
-    <item msgid="3035788428581513163">"Výchozí nastavení"</item>
+    <item msgid="3035788428581513163">"Výchozí"</item>
     <item msgid="5200216103966973369">"Soukromá"</item>
     <item msgid="9182342638433672664">"Veřejná"</item>
   </string-array>
@@ -170,9 +178,9 @@
     <item msgid="1099407454885268744">"Ne"</item>
   </string-array>
   <string-array name="delete_repeating_labels">
-    <item msgid="4208432367651646938">"Pouze tato událost"</item>
-    <item msgid="8626755531271570950">"Tato a budoucí události"</item>
-    <item msgid="7833229563617435430">"Všechny události"</item>
+    <item>Pouze tato událost</item>
+    <item>Tato a budoucí události</item>
+    <item>Všechny události</item>
   </string-array>
   <string-array name="delete_repeating_labels_no_selected">
     <item msgid="1341910309321756150">"Tato a budoucí události"</item>
