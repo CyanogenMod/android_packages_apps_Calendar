@@ -129,6 +129,12 @@
     <string name="preferences_general_title" msgid="2069075513760573117">"Nastavení zobrazení kalendáře"</string>
     <string name="preferences_alerts_title" msgid="6511227171114210908">"Nastavení připomenutí"</string>
     <string name="preferences_hide_declined_title" msgid="1849295943669890034">"Skrýt odmítnuté události"</string>
+
+    <string name="preferences_week_start_day_title">Nastavit první den týdne</string>
+    <string name="preferences_week_start_day_descrip">Nastavení se projeví po opětovném spuštění kalendáře.</string>
+    <string name="preferences_week_start_day_dialog">Začátek týdne</string>
+    <string name="preferences_week_start_day_default">2</string>
+
     <string name="preferences_alerts_type_title" msgid="6934441966757833908">"Nastavit upozornění a oznámení"</string>
     <string name="preferences_alerts_type_dialog" msgid="2195667763429994271">"Upozornění a oznámení"</string>
     <string name="preferences_alerts_vibrateWhen_title" msgid="8731372580674292759">"Vibrace"</string>
