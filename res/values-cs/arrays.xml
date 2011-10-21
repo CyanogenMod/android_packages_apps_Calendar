@@ -5,7 +5,7 @@
      you may not use this file except in compliance with the License.
      You may obtain a copy of the License at
 
-          http://www.apache.org/licenses/LICENSE-2.0
+           http://www.apache.org/licenses/LICENSE-2.0
 
      Unless required by applicable law or agreed to in writing, software
      distributed under the License is distributed on an "AS IS" BASIS,
@@ -137,6 +137,12 @@
     <item msgid="966666856467721784">"2 dny"</item>
     <item msgid="5840973497558794742">"1 týden"</item>
   </string-array>
+  <string-array name="preferences_week_start_day_labels">
+    <item>Výchozí</item>
+    <item>Sobota</item>
+    <item>Neděle</item>
+    <item>Pondělí</item>
+  </string-array>
   <string-array name="preferences_alert_type_labels">
     <item msgid="2724242028978664229">"Upozornění"</item>
     <item msgid="8723674378160518790">"Oznámení na stavovém řádku"</item>
@@ -147,7 +153,7 @@
     <item msgid="6228387173725732140">"Dostupný"</item>
   </string-array>
   <string-array name="visibility">
-    <item msgid="3035788428581513163">"Výchozí nastavení"</item>
+    <item msgid="3035788428581513163">"Výchozí"</item>
     <item msgid="5200216103966973369">"Soukromá"</item>
     <item msgid="9182342638433672664">"Veřejná"</item>
   </string-array>
