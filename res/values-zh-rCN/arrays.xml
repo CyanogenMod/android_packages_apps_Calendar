@@ -137,6 +137,12 @@
     <item msgid="966666856467721784">"2 天"</item>
     <item msgid="5840973497558794742">"1 周"</item>
   </string-array>
+  <string-array name="preferences_week_start_day_labels">
+    <item>默认</item>
+    <item>周六</item>
+    <item>周日</item>
+    <item>周一</item>
+  </string-array>
   <string-array name="preferences_alert_type_labels">
     <item msgid="2724242028978664229">"警报"</item>
     <item msgid="8723674378160518790">"状态栏通知"</item>
