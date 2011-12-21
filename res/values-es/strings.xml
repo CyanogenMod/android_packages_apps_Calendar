@@ -107,8 +107,12 @@
     <string name="save_label" msgid="2133599104834432589">"OK"</string>
     <string name="discard_label" msgid="4510607554910139220">"Revertir"</string>
     <string name="import_label" msgid="6993796574741477222">"Importar"</string>
-    <string name="snooze_all_label" msgid="4994488813124409077">"Posponer recordatorios"</string>
+    <string name="snooze_all_label" msgid="4994488813124409077">"Posponer todo"</string>
+    <string name="snooze_all_by_label">"Posponer todo a\u2026"</string>
     <string name="dismiss_all_label" msgid="1834400025868091301">"Descartar todo"</string>
+    <string name="menu_item_info">Mostrar información</string>
+    <string name="menu_item_snooze">Posponer\u2026</string>
+    <string name="title_snooze_for">Posponer a\u2026</string>
     <string name="does_not_repeat" msgid="1877681921029738999">"Evento único"</string>
     <string name="daily" msgid="560350706808680448">"Cada día"</string>
     <string name="every_weekday" msgid="5896574838353902978">"Cada día laborable (lunes-viernes)"</string>
