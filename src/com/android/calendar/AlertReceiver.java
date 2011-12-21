@@ -159,6 +159,7 @@ public class AlertReceiver extends BroadcastReceiver {
                 helperString,
                 pendingClickIntent
                 );
+        notification.number = numReminders > 1 ? numReminders : 0;
         notification.deleteIntent = PendingIntent.getBroadcast(context, 0,
                 deleteIntent, 0);
         if (highPriority) {
