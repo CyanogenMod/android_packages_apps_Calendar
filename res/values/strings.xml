@@ -291,9 +291,18 @@
     <!-- The button label for making the reminder alarms go away temporarily.
          The reminder alarms will fire off again in 5 minutes. -->
     <string name="snooze_all_label">"Snooze all"</string>
+    <!-- The button label for making the reminder alarms go away temporarily
+         with a custom timeout. -->
+    <string name="snooze_all_by_label">"Snooze all by\u2026"</string>
     <!-- The button label for dismissing all the current reminder alarms. This
          causes them to disappear from the notification screen. -->
     <string name="dismiss_all_label">"Dismiss all"</string>
+    <!-- Context menu item for opening item info -->
+    <string name="menu_item_info">Show information</string>
+    <!-- Context menu item for snoozing the item -->
+    <string name="menu_item_snooze">Snooze\u2026</string>
+    <!-- Snooze dialog title -->
+    <string name="title_snooze_for">Snooze for\u2026</string>
 
     <!-- Repetition dialog options: -->
     <skip />
