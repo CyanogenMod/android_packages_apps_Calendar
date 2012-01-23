@@ -108,7 +108,16 @@
     <string name="discard_label" msgid="4510607554910139220">"Отмена"</string>
     <string name="import_label" msgid="6993796574741477222">"Импорт"</string>
     <string name="snooze_all_label" msgid="4994488813124409077">"Показать позже"</string>
+    <!-- The button label for making the reminder alarms go away temporarily
+         with a custom timeout. -->
+    <string name="snooze_all_by_label">"Показать всё позже\u2026"</string>
     <string name="dismiss_all_label" msgid="1834400025868091301">"Удалить все"</string>
+    <!-- Context menu item for opening item info -->
+    <string name="menu_item_info">Показать информацию</string>
+    <!-- Context menu item for snoozing the item -->
+    <string name="menu_item_snooze">Позже\u2026</string>
+    <!-- Snooze dialog title -->
+    <string name="title_snooze_for">Отложить\u2026</string>
     <string name="does_not_repeat" msgid="1877681921029738999">"Однократное мероприятие"</string>
     <string name="daily" msgid="560350706808680448">"Ежедневно"</string>
     <string name="every_weekday" msgid="5896574838353902978">"Каждый будний день (пн–пт)"</string>
