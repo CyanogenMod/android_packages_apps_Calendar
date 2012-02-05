@@ -29,8 +29,8 @@
     <item quantity="other" msgid="5644461630927544936">"<xliff:g id="COUNT">%d</xliff:g> minutos"</item>
   </plurals>
   <plurals name="Nmins">
-    <item quantity="one" msgid="9191090668359663663">"1 minuto"</item>
-    <item quantity="other" msgid="9175648445939148974">"<xliff:g id="COUNT">%d</xliff:g> minutos"</item>
+    <item quantity="one" msgid="9191090668359663663">"1 min"</item>
+    <item quantity="other" msgid="9175648445939148974">"<xliff:g id="COUNT">%d</xliff:g> mins"</item>
   </plurals>
   <plurals name="Nhours">
     <item quantity="one" msgid="4793697728599296830">"1 hora"</item>
@@ -53,7 +53,7 @@
     <string name="goto_today" msgid="9162136434410891230">"Hoy"</string>
     <string name="menu_select_calendars" msgid="6200145996783123958">"Calendarios"</string>
     <string name="menu_preferences" msgid="9120238479503233925">"Ajustes"</string>
-    <string name="plus_N_more" msgid="2527895721728080055">"(además de <xliff:g id="MORE_COUNT">%d</xliff:g> más...)"</string>
+    <string name="plus_N_more" msgid="2527895721728080055">"(además de <xliff:g id="MORE_COUNT">%d</xliff:g> más\u2026)"</string>
     <string name="calendars_title" msgid="4046980972626276968">"Calendarios"</string>
     <string name="synced_visible" msgid="1406744353749335651">"sincronizado y visible"</string>
     <string name="synced_not_visible" msgid="54032655953110609">"sincronizado, pero no visible"</string>
@@ -66,8 +66,8 @@
     <string name="creating_event" msgid="5252306542761552414">"Se ha creado un evento."</string>
     <string name="saving_event" msgid="7716081507367732169">"Se ha guardado el evento."</string>
     <string name="loading_calendars_title" msgid="3819254313413902272">"Cargando calendarios"</string>
-    <string name="loading_calendars_message" msgid="8266077515011438420">"Cargando calendarios..."</string>
-    <string name="alert_title" msgid="7869592820853066853">"Notificaciones de Calendar"</string>
+    <string name="loading_calendars_message" msgid="8266077515011438420">"Cargando calendarios\u2026"</string>
+    <string name="alert_title" msgid="7869592820853066853">"Notificaciones de Calendario"</string>
     <string name="alert_missed_events_single" msgid="8042891195314876684">"(<xliff:g id="REMINDER_COUNT">%s</xliff:g> recordatorio más)"</string>
     <string name="alert_missed_events_multiple" msgid="8499734506511653919">"(<xliff:g id="REMINDER_COUNT">%s</xliff:g> recordatorios más)"</string>
     <string name="event_info_title" msgid="56024222340421620">"Ver evento"</string>
@@ -97,14 +97,14 @@
     <string name="view_event_timezone_label" msgid="4757495486359041757">"Zona horaria local:"</string>
     <string name="view_event_response_label" msgid="8382281658458798329">"¿Asistirás?"</string>
     <string name="agenda_today" msgid="6489447319363439068">"Hoy, <xliff:g id="DATE">%1$s</xliff:g>"</string>
-    <string name="loading" msgid="3772533493214331230">"Cargando..."</string>
+    <string name="loading" msgid="3772533493214331230">"Cargando\u2026"</string>
     <string name="show_older_events" msgid="4031960000704544741">"Mostrando eventos a partir del <xliff:g id="OLDEST_SEARCH_RANGE">%1$s</xliff:g>. Toca aquí para buscar más."</string>
     <string name="show_newer_events" msgid="2647889653936094369">"Mostrando eventos hasta el <xliff:g id="NEWEST_SEARCH_RANGE">%1$s</xliff:g>. Toca aquí para buscar más."</string>
     <string name="num_events" msgid="3351672964607162257">"Número de eventos"</string>
     <string name="edit_event_label" msgid="2900418236819088363">"Editar evento"</string>
     <string name="delete_label" msgid="874742811918030739">"Eliminar"</string>
     <string name="delete_event_label" msgid="3738436215987360463">"Suprimir evento"</string>
-    <string name="save_label" msgid="2133599104834432589">"OK"</string>
+    <string name="save_label" msgid="2133599104834432589">"Aceptar"</string>
     <string name="discard_label" msgid="4510607554910139220">"Revertir"</string>
     <string name="import_label" msgid="6993796574741477222">"Importar"</string>
     <string name="snooze_all_label" msgid="4994488813124409077">"Posponer todo"</string>
@@ -122,7 +122,7 @@
     <string name="yearly_plain" msgid="3652692085322162449">"Anualmente"</string>
     <string name="monthly_on_day" msgid="5370155265278821156">"Cada mes (el día <xliff:g id="DAY_OF_MONTH">%s</xliff:g>)"</string>
     <string name="yearly" msgid="8576208380302949002">"Cada año (el <xliff:g id="DATES">%s</xliff:g>)"</string>
-    <string name="custom" msgid="3015205670911301856">"Personalizado... (no se puede personalizar por teléfono)"</string>
+    <string name="custom" msgid="3015205670911301856">"Personalizado\u2026 (no se puede personalizar por teléfono)"</string>
     <string name="modify_event" msgid="4501745557655992422">"Cambiar sólo este evento"</string>
     <string name="modify_all" msgid="7506579040966638538">"Cambiar todos los eventos de la serie"</string>
     <string name="modify_all_following" msgid="4333745734894639276">"Cambiar este y todos los eventos futuros"</string>
@@ -134,7 +134,7 @@
     <string name="preferences_alerts_title" msgid="6511227171114210908">"Configuración de los recordatorios"</string>
     <string name="preferences_hide_declined_title" msgid="1849295943669890034">"Ocultar eventos rechaz."</string>
     <string name="preferences_week_start_day_title">Primer día de la semana</string>
-    <string name="preferences_week_start_day_descrip">Reinicie el Calendario para que los cambios surtan efecto.</string>
+    <string name="preferences_week_start_day_descrip">Reinicia Calendario para que los cambios surtan efecto.</string>
     <string name="preferences_week_start_day_dialog">La semana comienza en</string>
     <string name="preferences_week_start_day_default">1</string>
     <string name="preferences_alerts_type_title" msgid="6934441966757833908">"Configurar alertas y notif."</string>
