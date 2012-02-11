@@ -108,7 +108,11 @@
     <string name="discard_label" msgid="4510607554910139220">"Geri Döndür"</string>
     <string name="import_label" msgid="6993796574741477222">"İçe aktar"</string>
     <string name="snooze_all_label" msgid="4994488813124409077">"Tümünü ertele"</string>
+    <string name="snooze_all_by_label">"Tümünü ertele\u2026"</string>
     <string name="dismiss_all_label" msgid="1834400025868091301">"Tümünü kapat"</string>
+    <string name="menu_item_info">Bilgi göster</string>
+    <string name="menu_item_snooze">Ertele\u2026</string>
+    <string name="title_snooze_for">Ertele\u2026</string>
     <string name="does_not_repeat" msgid="1877681921029738999">"Bir seferlik etkinlik"</string>
     <string name="daily" msgid="560350706808680448">"Günlük"</string>
     <string name="every_weekday" msgid="5896574838353902978">"Hafta içi her gün (Pzt-Cu)"</string>
@@ -129,6 +133,12 @@
     <string name="preferences_general_title" msgid="2069075513760573117">"Takvim görünümü ayarı"</string>
     <string name="preferences_alerts_title" msgid="6511227171114210908">"Hatırlatıcı ayarları"</string>
     <string name="preferences_hide_declined_title" msgid="1849295943669890034">"Reddedilmiş etkin. gizle"</string>
+    <string name="preferences_week_start_day_title">Hafta başlangıcı</string>
+    <string name="preferences_week_start_day_descrip">Değişikliklerin etkili olması için Takvim\'i yeniden başlatın.</string>
+    <string name="preferences_week_start_day_dialog">Hafta bununla başlar</string>
+    <!-- Settings option to set week start day. Can be translated to provide different defaults for different countries/cultures.
+        7 = Saturday, 1 = Sunday, 2 = Monday (Turkey=Monday) -->
+    <string name="preferences_week_start_day_default" translatable="false">2</string>
     <string name="preferences_alerts_type_title" msgid="6934441966757833908">"Uyarı ve bildirimleri ayarla"</string>
     <string name="preferences_alerts_type_dialog" msgid="2195667763429994271">"Uyarılar ve bildirimler"</string>
     <string name="preferences_alerts_vibrateWhen_title" msgid="8731372580674292759">"Titreşim"</string>
@@ -140,6 +150,7 @@
     <string name="preferences_use_home_tz_title" msgid="5597546849968598210">"Ev saat dilimini kullan"</string>
     <string name="preferences_use_home_tz_descrip" msgid="4835375381297413746">"Seyahat ederken takvimleri ve etkinlik saatlerini ev saat diliminde görüntüler"</string>
     <string name="preferences_home_tz_title" msgid="6680000444088818578">"Ev saat dilimi"</string>
+    <string name="preferences_home_tz_default" translatable="false">"Europe/Athens"</string>
     <string name="preferences_about_title" msgid="2810624892412097879">"Hakkında"</string>
     <string name="preferences_build_version" msgid="8242471883413502068">"Derleme sürümü"</string>
   <string-array name="prefEntries_alerts_vibrateWhen">
