@@ -137,6 +137,12 @@
     <item msgid="966666856467721784">"2 gün"</item>
     <item msgid="5840973497558794742">"1 hafta"</item>
   </string-array>
+  <string-array name="preferences_week_start_day_labels">
+    <item>Varsayılan</item>
+    <item>Cumartesi</item>
+    <item>Pazar</item>
+    <item>Pazartesi</item>
+    </string-array>
   <string-array name="preferences_alert_type_labels">
     <item msgid="2724242028978664229">"Uyarı"</item>
     <item msgid="8723674378160518790">"Durum çubuğu bildirimi"</item>
