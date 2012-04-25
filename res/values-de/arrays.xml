@@ -33,6 +33,14 @@
     <item msgid="6908283876728494719">"2 Tage"</item>
     <item msgid="3390146235648970198">"1 Woche"</item>
   </string-array>
+  <string-array name="snooze_minutes_labels">
+    <item>5 Minuten</item>
+    <item>15 Minuten</item>
+    <item>30 Minuten</item>
+    <item>1 Stunde</item>
+    <item>6 Stunden</item>
+    <item>Benutzerdefiniert</item>
+  </string-array>
   <string-array name="timezone_labels">
     <item msgid="6833649526258274889">"Marshallinseln"</item>
     <item msgid="7176569939440505575">"Midwayinseln"</item>
