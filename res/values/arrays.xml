@@ -54,6 +54,24 @@
         <item>"10080"</item>
     </string-array>
 
+    <string-array name="snooze_minutes_labels">
+        <item>5 minutes</item>
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>6 hours</item>
+        <item>Custom</item>
+    </string-array>
+
+    <string-array name="snooze_minutes_values" translatable="false">
+        <item>"5"</item>
+        <item>"15"</item>
+        <item>"30"</item>
+        <item>"60"</item>
+        <item>"360"</item>
+        <item>custom</item>
+    </string-array>
+
     <!-- Choices for timezones, must be kept in sync with timezone_values. This
          list was taken from package/apps/Settings/res/xml/timezones.xml -->
     <string-array name="timezone_labels">

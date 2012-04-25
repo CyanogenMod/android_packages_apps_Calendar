@@ -23,6 +23,7 @@ import android.app.Activity;
 import android.app.AlarmManager;
 import android.app.AlertDialog;
 import android.app.NotificationManager;
+import android.app.TimePickerDialog;
 import android.content.AsyncQueryHandler;
 import android.content.ContentResolver;
 import android.content.ContentUris;
@@ -49,6 +50,7 @@ import android.widget.AdapterView.AdapterContextMenuInfo;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TimePicker;
 
 /**
  * The alert panel that pops up when there is a calendar event alarm.
@@ -100,6 +102,7 @@ public class AlertActivity extends Activity implements View.OnCreateContextMenuL
     private static final int MENU_INFO_ID = Menu.FIRST;
     private static final int MENU_SNOOZE_ID = Menu.FIRST + 1;
 
+    private long mSelectedSnoozeTime;
     private ContentResolver mResolver;
     private AlertAdapter mAdapter;
     private QueryHandler mQueryHandler;
@@ -299,21 +302,18 @@ public class AlertActivity extends Activity implements View.OnCreateContextMenuL
 
     private OnClickListener mSnoozeAllByListener = new OnClickListener() {
         public void onClick(View v) {
-            getSnoozeTimeDialog(new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int which) {
-                    long alarmTime = getSnoozeAlarmTime(which);
-
+            showSnoozeTimeDialog(new Runnable() {
+                public void run() {
                     NotificationManager nm =
                         (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
                     nm.cancel(NOTIFICATION_ID);
 
-                    snoozeEvents(0, alarmTime);
+                    snoozeEvents(0, mSelectedSnoozeTime);
                     dismissFiredAlarms();
 
-                    dialog.dismiss();
                     finish();
                 }
-            }).show();
+            });
         }
     };
 
@@ -336,17 +336,38 @@ public class AlertActivity extends Activity implements View.OnCreateContextMenuL
         }
     }
 
-    private long getSnoozeAlarmTime(int listPosition) {
-        final String value = getResources().getStringArray(R.array.reminder_minutes_values)[listPosition];
-        final long delay = Long.parseLong(value) * 60 * 1000;
+    private long getSnoozeAlarmTime(long value) {
+        final long delay = value * 60 * 1000;
         return System.currentTimeMillis() + delay;
     }
 
-    private AlertDialog.Builder getSnoozeTimeDialog(DialogInterface.OnClickListener listener) {
-        return new AlertDialog.Builder(this)
+    private void showSnoozeTimeDialog(final Runnable r) {
+        final AlertDialog dialog = new AlertDialog.Builder(this)
             .setTitle(R.string.title_snooze_for)
-            .setSingleChoiceItems(R.array.reminder_minutes_labels, -1, listener)
-            .setNegativeButton(android.R.string.cancel, null);
+            .setSingleChoiceItems(R.array.snooze_minutes_labels, -1, new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                    final String value = getResources().getStringArray(R.array.snooze_minutes_values)[which];
+                    dialog.dismiss();
+                    if (!value.equals("custom")) {
+                        mSelectedSnoozeTime = getSnoozeAlarmTime(Long.parseLong(value));
+                        r.run();
+                    } else {
+                        TimePickerDialog.OnTimeSetListener timeListener = new TimePickerDialog.OnTimeSetListener() {
+                            public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
+                                long minutes = hourOfDay * 60 + minute;
+                                mSelectedSnoozeTime = getSnoozeAlarmTime(minutes);
+                                r.run();
+                            }
+                        };
+                        TimePickerDialog picker = new TimePickerDialog(AlertActivity.this, timeListener, 0, 5, true);
+                        picker.show();
+                    }
+                }
+            })
+            .setNegativeButton(android.R.string.cancel, null)
+            .create();
+
+        dialog.show();
     }
 
     private void snoozeEvents(long event, long alarmTime) {
@@ -379,17 +400,14 @@ public class AlertActivity extends Activity implements View.OnCreateContextMenuL
         final long id = cursor.getInt(AlertActivity.INDEX_ROW_ID);
         final long eventId = cursor.getInt(AlertActivity.INDEX_EVENT_ID);
 
-        getSnoozeTimeDialog(new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-                long alarmTime = getSnoozeAlarmTime(which);
-
-                snoozeEvents(eventId, alarmTime);
+        showSnoozeTimeDialog(new Runnable() {
+            public void run() {
+                snoozeEvents(eventId, mSelectedSnoozeTime);
                 dismissAlarm(id);
-                dialog.dismiss();
                 AlertService.updateAlertNotification(AlertActivity.this);
                 updateCursor();
             }
-        }).show();
+        });
     }
 
     private void showItemInfo(Cursor cursor) {

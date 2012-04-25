@@ -33,6 +33,14 @@
     <item msgid="6908283876728494719">"2 días"</item>
     <item msgid="3390146235648970198">"1 semana"</item>
   </string-array>
+  <string-array name="snooze_minutes_labels">
+    <item>5 minutos</item>
+    <item>15 minutos</item>
+    <item>30 minutos</item>
+    <item>1 hora</item>
+    <item>6 horas</item>
+    <item>Personalizado</item>
+  </string-array>
   <string-array name="timezone_labels">
     <item msgid="6833649526258274889">"Islas Marshall"</item>
     <item msgid="7176569939440505575">"Islas Midway"</item>

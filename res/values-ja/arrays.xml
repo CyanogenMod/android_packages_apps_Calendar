@@ -33,6 +33,14 @@
     <item msgid="6908283876728494719">"2日間"</item>
     <item msgid="3390146235648970198">"1週間"</item>
   </string-array>
+  <string-array name="snooze_minutes_labels">
+    <item>5分</item>
+    <item>15分</item>
+    <item>30分</item>
+    <item>1時間</item>
+    <item>6時間</item>
+    <item>カスタム</item>
+  </string-array>
   <string-array name="timezone_labels">
     <item msgid="6833649526258274889">"マーシャル諸島"</item>
     <item msgid="7176569939440505575">"ミッドウェー諸島"</item>
