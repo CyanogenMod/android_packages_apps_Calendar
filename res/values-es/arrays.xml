@@ -152,6 +152,10 @@
     <item msgid="454869065893453189">"Ocupado"</item>
     <item msgid="6228387173725732140">"Disponible"</item>
   </string-array>
+  <string-array name="event_status">
+    <item>Tentativo</item>
+    <item>Confirmado</item>
+  </string-array>
   <string-array name="visibility">
     <item msgid="3035788428581513163">"Predeterminado"</item>
     <item msgid="5200216103966973369">"Privado"</item>
