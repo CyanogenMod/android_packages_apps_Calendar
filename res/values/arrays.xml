@@ -300,6 +300,11 @@
         <item>Available</item>
     </string-array>
 
+    <string-array name="event_status">
+        <item>Tentative</item>
+        <item>Confirmed</item>
+    </string-array>
+
     <string-array name="visibility">
         <item>Default</item>
         <item>Private</item>
