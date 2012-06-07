@@ -108,7 +108,11 @@
     <string name="discard_label" msgid="4510607554910139220">"还原"</string>
     <string name="import_label" msgid="6993796574741477222">"导入"</string>
     <string name="snooze_all_label" msgid="4994488813124409077">"全部延迟"</string>
+    <string name="snooze_all_by_label">"通过\u2026全部延迟"</string>
     <string name="dismiss_all_label" msgid="1834400025868091301">"全部关闭"</string>
+    <string name="menu_item_info">"显示信息"</string>
+    <string name="menu_item_snooze">"延迟\u2026"</string>
+    <string name="title_snooze_for">"为\u2026延迟"</string>
     <string name="does_not_repeat" msgid="1877681921029738999">"一次性活动"</string>
     <string name="daily" msgid="560350706808680448">"每天"</string>
     <string name="every_weekday" msgid="5896574838353902978">"每个工作日（周一至周五）"</string>
@@ -129,6 +133,9 @@
     <string name="preferences_general_title" msgid="2069075513760573117">"日历视图设置"</string>
     <string name="preferences_alerts_title" msgid="6511227171114210908">"提醒设置"</string>
     <string name="preferences_hide_declined_title" msgid="1849295943669890034">"隐藏已拒绝的活动"</string>
+    <string name="preferences_week_start_day_title">设置周第一天</string>
+    <string name="preferences_week_start_day_descrip">重启日历生效.</string>
+    <string name="preferences_week_start_day_dialog">周开始于</string>
     <string name="preferences_alerts_type_title" msgid="6934441966757833908">"设置警报和通知"</string>
     <string name="preferences_alerts_type_dialog" msgid="2195667763429994271">"警报和通知"</string>
     <string name="preferences_alerts_vibrateWhen_title" msgid="8731372580674292759">"振动"</string>
