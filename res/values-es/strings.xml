@@ -82,6 +82,7 @@
     <string name="edit_event_show_all" msgid="6107214899021208078">"Mostrar todo &gt;"</string>
     <string name="description_label" msgid="7193475046717505855">"Descripción"</string>
     <string name="presence_label" msgid="6169724148441175862">"Mostrarme como"</string>
+    <string name="status_label">Estado del evento</string>
     <string name="privacy_label" msgid="9215031965259597335">"Privacidad"</string>
     <string name="reminders_label" msgid="8345054160145333166">"Recordatorios"</string>
     <string name="no_syncable_calendars" msgid="7019488867045436129">"No hay calendarios."</string>

@@ -340,6 +340,27 @@
                     android:contentDescription="@string/presence_label"/>
             </LinearLayout>
 
+            <!-- STATUS -->
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/EditEvent_Layout">
+
+                <TextView android:id="@+id/status_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/status_label"
+                    style="@style/TextAppearance.EditEvent_Label"/>
+
+                <Spinner android:id="@+id/event_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:entries="@array/event_status"
+                    android:prompt="@string/status_label"
+                    android:contentDescription="@string/status_label"/>
+            </LinearLayout>
+
             <!-- PRIVACY -->
             <LinearLayout
                 android:orientation="vertical"
