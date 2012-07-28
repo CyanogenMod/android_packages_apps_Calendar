@@ -359,9 +359,11 @@ public class AlertService extends Service {
                 (AudioManager)context.getSystemService(Context.AUDIO_SERVICE);
             boolean nowSilent =
                 audioManager.getRingerMode() == AudioManager.RINGER_MODE_VIBRATE;
+            boolean shouldVibrate =
+                    audioManager.shouldVibrate(AudioManager.VIBRATE_TYPE_RINGER);
 
             // Possibly generate a vibration
-            if (vibrateAlways || (vibrateSilent && nowSilent)) {
+            if (vibrateAlways && shouldVibrate || (vibrateSilent && nowSilent)) {
                 notification.defaults |= Notification.DEFAULT_VIBRATE;
             }
 
