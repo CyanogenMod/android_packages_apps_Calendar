@@ -82,7 +82,8 @@
     <string name="edit_event_show_all" msgid="6107214899021208078">"Zobraziť všetko &gt;"</string>
     <string name="description_label" msgid="7193475046717505855">"Popis"</string>
     <string name="presence_label" msgid="6169724148441175862">"Zobraziť ma ako"</string>
-    <string name="privacy_label" msgid="9215031965259597335">"Ochrana osobných údajov"</string>
+    <string name="status_label">Stav udalosti</string>
+    <string name="privacy_label" msgid="9215031965259597335">"Súkromná/Verejná"</string>
     <string name="reminders_label" msgid="8345054160145333166">"Pripomienky"</string>
     <string name="no_syncable_calendars" msgid="7019488867045436129">"Žiadne kalendáre"</string>
     <string name="no_calendars_found" msgid="755379468136462058">"Nemáte žiadne kalendáre."</string>
@@ -108,7 +109,11 @@
     <string name="discard_label" msgid="4510607554910139220">"Vrátiť"</string>
     <string name="import_label" msgid="6993796574741477222">"Importovať"</string>
     <string name="snooze_all_label" msgid="4994488813124409077">"Odložiť všetky"</string>
+    <string name="snooze_all_by_label">"Odložit všetky na\u2026"</string>
     <string name="dismiss_all_label" msgid="1834400025868091301">"Zrušiť všetko"</string>
+    <string name="menu_item_info">Zobraziť podrobnosti</string>
+    <string name="menu_item_snooze">Odložiť\u2026</string>
+    <string name="title_snooze_for">Odložiť na\u2026</string>
     <string name="does_not_repeat" msgid="1877681921029738999">"Jednorazová udalosť"</string>
     <string name="daily" msgid="560350706808680448">"Denne"</string>
     <string name="every_weekday" msgid="5896574838353902978">"Každý pracovný deň (Po. – Pi.)"</string>
@@ -116,7 +121,7 @@
     <string name="monthly_on_day_count" msgid="6847991854413461795">"Mesačne (vždy <xliff:g id="ORDINAL_NUMBER">%1$s</xliff:g> <xliff:g id="DAY_OF_WEEK">%2$s</xliff:g>)"</string>
     <string name="monthly" msgid="4587116285383048586">"Mesačne"</string>
     <string name="yearly_plain" msgid="3652692085322162449">"Ročne"</string>
-    <string name="monthly_on_day" msgid="5370155265278821156">"Mesačne (dňa <xliff:g id="DAY_OF_MONTH">%s</xliff:g>)"</string>
+    <string name="monthly_on_day" msgid="5370155265278821156">"Mesačne (v <xliff:g id="DAY_OF_MONTH">%s</xliff:g>. deň)"</string>
     <string name="yearly" msgid="8576208380302949002">"Ročne (vždy <xliff:g id="DATES">%s</xliff:g>)"</string>
     <string name="custom" msgid="3015205670911301856">"Vlastné… (nemožno prispôsobiť v telefóne)"</string>
     <string name="modify_event" msgid="4501745557655992422">"Zmeniť iba túto udalosť."</string>
@@ -129,6 +134,9 @@
     <string name="preferences_general_title" msgid="2069075513760573117">"Nastavenie zobrazenia kalendára"</string>
     <string name="preferences_alerts_title" msgid="6511227171114210908">"Nastavenie pripomienok"</string>
     <string name="preferences_hide_declined_title" msgid="1849295943669890034">"Skryť odmietnuté udalosti"</string>
+    <string name="preferences_week_start_day_title">Nastaviť začiatočný deň v týždni</string>
+    <string name="preferences_week_start_day_descrip">Nastavenie sa prejaví po reštartovaní kalendára.</string>
+    <string name="preferences_week_start_day_dialog">Začiatok týždňa</string>
     <string name="preferences_alerts_type_title" msgid="6934441966757833908">"Nastaviť upozornenia a oznámenia"</string>
     <string name="preferences_alerts_type_dialog" msgid="2195667763429994271">"Upozornenia a oznámenia"</string>
     <string name="preferences_alerts_vibrateWhen_title" msgid="8731372580674292759">"Vibrovať"</string>
