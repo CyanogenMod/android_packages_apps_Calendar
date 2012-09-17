@@ -89,7 +89,7 @@
     <string name="delete_label" msgid="874742811918030739">"Verwijderen"</string>
     <string name="delete_event_label" msgid="3738436215987360463">"Afspraak verwijderen"</string>
     <string name="save_label" msgid="2133599104834432589">"Gereed"</string>
-    <string name="discard_label" msgid="4510607554910139220">"Terugzetten"</string>
+    <string name="discard_label" msgid="4510607554910139220">"Herstellen"</string>
     <string name="import_label" msgid="6993796574741477222">"Importeren"</string>
     <string name="snooze_all_label" msgid="4994488813124409077">"5 min. uitstellen"</string>
     <string name="dismiss_all_label" msgid="1834400025868091301">"Allemaal verwijderen"</string>
@@ -110,17 +110,17 @@
     <string name="delete_title" msgid="5143743507524995383">"Verwijderen"</string>
     <string name="change_response_title" msgid="7704714776070974984">"Reactie wijzigen"</string>
     <string name="preferences_title" msgid="8045855493262131773">"Instellingen"</string>
-    <string name="preferences_general_title" msgid="2069075513760573117">"Instelling agendaweergave"</string>
-    <string name="preferences_alerts_title" msgid="6511227171114210908">"Instellingen voor herinneringen"</string>
-    <string name="preferences_hide_declined_title" msgid="1849295943669890034">"Geweigerde afspraken verbergen"</string>
-    <string name="preferences_alerts_type_title" msgid="6934441966757833908">"Meldingen instellen"</string>
-    <string name="preferences_alerts_type_dialog" msgid="2195667763429994271">"Meldingen en berichten"</string>
+    <string name="preferences_general_title" msgid="2069075513760573117">"Weergave"</string>
+    <string name="preferences_alerts_title" msgid="6511227171114210908">"Herinneringen"</string>
+    <string name="preferences_hide_declined_title" msgid="1849295943669890034">"Gew. afspraken verbergen"</string>
+    <string name="preferences_alerts_type_title" msgid="6934441966757833908">"Meldingen"</string>
+    <string name="preferences_alerts_type_dialog" msgid="2195667763429994271">"Meldingen &amp; berichten"</string>
     <string name="preferences_alerts_vibrateWhen_title" msgid="8731372580674292759">"Trillen"</string>
     <string name="preferences_alerts_vibrateWhen_summary" msgid="2809567649955441757">"Ook trillen voor herinneringen"</string>
-    <string name="preferences_alerts_ringtone_title" msgid="7565118268120729644">"Beltoon selecteren"</string>
+    <string name="preferences_alerts_ringtone_title" msgid="7565118268120729644">"Beltoon"</string>
     <string name="preferences_default_reminder_title" msgid="5188861433342733905">"Herinneringstijd"</string>
     <string name="preferences_default_reminder_dialog" msgid="2490348857239323412">"Herinneringstijd"</string>
-    <string name="preferences_use_home_tz_title" msgid="5597546849968598210">"Eigen tijdz. gebr."</string>
+    <string name="preferences_use_home_tz_title" msgid="5597546849968598210">"Eigen tijdzone gebruiken"</string>
     <string name="preferences_use_home_tz_descrip" msgid="4835375381297413746">"Op reis agenda\'s en gebeurtenistijden tonen in eigen tijdzone"</string>
     <string name="preferences_home_tz_title" msgid="6680000444088818578">"Eigen tijdzone"</string>
     <string name="preferences_about_title" msgid="2810624892412097879">"Over"</string>
@@ -129,8 +129,8 @@
 
     <!-- CYANOGENMOD EDITS -->
     <string name="preferences_week_start_day_title">Eerste dag van de week</string>
-    <string name="preferences_week_start_day_descrip">Herstart applicatie vereist voor toepassing wijzigingen.</string>
-    <string name="preferences_week_start_day_dialog">Week start op</string>
+    <string name="preferences_week_start_day_descrip">(herstart vereist)</string>
+    <string name="preferences_week_start_day_dialog">Week begint met\u2026</string>
     <string name="status_label">Afspraakstatus</string>
     <string name="snooze_all_by_label">"Alles uitstellen met\u2026"</string>
     <string name="menu_item_info">Informatie tonen</string>
