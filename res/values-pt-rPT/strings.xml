@@ -67,7 +67,7 @@
     <string name="select_visible_calendars_title" msgid="7944393060991949882">"Calendários para apresentar"</string>
     <string name="synced" msgid="7913940305983383493">"sincronizado"</string>
     <string name="not_synced" msgid="4275114941801829419">"não sincronizado"</string>
-    <string name="acct_not_synced" msgid="6126800985681230627">"Esta conta não está a ser sincronizada e os calendários podem não estar atualizados."</string>
+    <string name="acct_not_synced" msgid="6126800985681230627">"Esta conta não está a ser sincronizada e os calendários podem não estar actualizados."</string>
     <string name="accounts" msgid="849401841083180306">"Contas e sincronização"</string>
     <string name="select_synced_calendars_title" msgid="7916084873075901448">"Calendários para sincronizar"</string>
     <string name="select_synced_calendars_button" msgid="8890542984949996251">"Calendários para sincronizar"</string>
@@ -79,7 +79,7 @@
     <string name="saving_event" msgid="7694181017411177226">"Evento guardado."</string>
     <string name="empty_event" msgid="9018699257414338634">"Evento vazio não criado."</string>
     <string name="creating_event_with_guest" msgid="5758688413124191931">"Serão enviados convites."</string>
-    <string name="saving_event_with_guest" msgid="9184584438475689577">"Serão enviadas atualizações."</string>
+    <string name="saving_event_with_guest" msgid="9184584438475689577">"Serão enviadas actualizações."</string>
     <string name="alert_title" msgid="7869592820853066853">"Notificações do calendário"</string>
     <string name="event_info_title" msgid="56024222340421620">"Visualizar evento"</string>
     <string name="event_info_title_invite" msgid="9160326363769403865">"Convite para reunião"</string>
@@ -162,7 +162,7 @@
     <string name="preferences_week_start_day_title" msgid="4619489296444901622">"A semana começa"</string>
     <string name="preferences_week_start_day_dialog" msgid="5181634128884089113">"A semana começa na"</string>
     <string name="preferences_clear_search_history_title" msgid="6619916370215282982">"Limpar histórico de pesquisas"</string>
-    <string name="preferences_clear_search_history_summary" msgid="7864674093455778158">"Remover todas as pesquisas efetuadas"</string>
+    <string name="preferences_clear_search_history_summary" msgid="7864674093455778158">"Remover todas as pesquisas efectuadas"</string>
     <string name="search_history_cleared" msgid="1536707558435227567">"Histórico de pesquisas limpo."</string>
     <string name="preferences_alerts_title" msgid="6636088008103904020">"Notificações"</string>
     <string name="preferences_alerts_vibrateWhen_title" msgid="8731372580674292759">"Vibrar"</string>
@@ -219,6 +219,6 @@
     <item quantity="one" msgid="431585781647034528">"+1 evento"</item>
     <item quantity="other" msgid="3609243840882275136">"+<xliff:g id="COUNT">%d</xliff:g> eventos"</item>
   </plurals>
-    <string name="acessibility_selected_marker_description" msgid="3010149843148810768">"Evento selecionado"</string>
+    <string name="acessibility_selected_marker_description" msgid="3010149843148810768">"Evento seleccionado"</string>
     <string name="do_not_check" msgid="7815441673853466129">"NÃO marque -&gt;"</string>
 </resources>
