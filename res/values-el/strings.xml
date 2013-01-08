@@ -66,7 +66,7 @@
     <string name="creating_event" msgid="5252306542761552414">"Το συμβάν δημιουργήθηκε"</string>
     <string name="saving_event" msgid="7716081507367732169">"Το συμβάν αποθηκεύτηκε"</string>
     <string name="loading_calendars_title" msgid="3819254313413902272">"Φόρτωση ημερολογίων"</string>
-    <string name="loading_calendars_message" msgid="8266077515011438420">"Φόρτωση ημερολογίων..."</string>
+    <string name="loading_calendars_message" msgid="8266077515011438420">"Φόρτωση ημερολογίων\u2026"</string>
     <string name="alert_title" msgid="7869592820853066853">"Ειδοποιήσεις ημερολογίου"</string>
     <string name="alert_missed_events_single" msgid="8042891195314876684">"(<xliff:g id="REMINDER_COUNT">%s</xliff:g> ακόμα υπενθύμιση)"</string>
     <string name="alert_missed_events_multiple" msgid="8499734506511653919">"(<xliff:g id="REMINDER_COUNT">%s</xliff:g> ακόμα υπενθυμίσεις)"</string>
@@ -97,7 +97,7 @@
     <string name="view_event_timezone_label" msgid="4757495486359041757">"Τοπική ζώνη ώρας:"</string>
     <string name="view_event_response_label" msgid="8382281658458798329">"Θα παραβρεθείτε;"</string>
     <string name="agenda_today" msgid="6489447319363439068">"Σήμερα, <xliff:g id="DATE">%1$s</xliff:g>"</string>
-    <string name="loading" msgid="3772533493214331230">"Φόρτωση..."</string>
+    <string name="loading" msgid="3772533493214331230">"Φόρτωση\u2026"</string>
     <string name="show_older_events" msgid="4031960000704544741">"Προβολή συμβάντων από <xliff:g id="OLDEST_SEARCH_RANGE">%1$s</xliff:g>. Πατήστε για να αναζητήσετε περισσότερα συμβάντα."</string>
     <string name="show_newer_events" msgid="2647889653936094369">"Προβολή συμβάντων έως <xliff:g id="NEWEST_SEARCH_RANGE">%1$s</xliff:g>. Αγγίξτε για να αναζητήσετε περισσότερα."</string>
     <string name="num_events" msgid="3351672964607162257">"Αριθμ. συμβάντων"</string>
@@ -108,7 +108,11 @@
     <string name="discard_label" msgid="4510607554910139220">"Επαναφορά"</string>
     <string name="import_label" msgid="6993796574741477222">"Εισαγωγή"</string>
     <string name="snooze_all_label" msgid="4994488813124409077">"Αναβολή όλων"</string>
+    <string name="snooze_all_by_label">"Αναβολή όλων από\u2026"</string>
     <string name="dismiss_all_label" msgid="1834400025868091301">"Παράβλεψη όλων"</string>
+    <string name="menu_item_info">Εμφάνιση πληροφοριών</string>
+    <string name="menu_item_snooze">Αναβολή\u2026</string>
+    <string name="title_snooze_for">Αναβολή για\u2026</string>
     <string name="does_not_repeat" msgid="1877681921029738999">"Συμβάν που δεν επαναλαμβάνεται"</string>
     <string name="daily" msgid="560350706808680448">"Καθημερινά"</string>
     <string name="every_weekday" msgid="5896574838353902978">"Καθημερινά (Δευ-Παρ)"</string>
@@ -118,7 +122,7 @@
     <string name="yearly_plain" msgid="3652692085322162449">"Ετήσια"</string>
     <string name="monthly_on_day" msgid="5370155265278821156">"Κάθε μήνα (<xliff:g id="DAY_OF_MONTH">%s</xliff:g>)"</string>
     <string name="yearly" msgid="8576208380302949002">"Κάθε χρόνο (<xliff:g id="DATES">%s</xliff:g>)"</string>
-    <string name="custom" msgid="3015205670911301856">"Προσαρμοσμένο… (δεν είναι δυνατή η προσαρμογή στο τηλέφωνο)"</string>
+    <string name="custom" msgid="3015205670911301856">"Προσαρμοσμένο\u2026 (δεν είναι δυνατή η προσαρμογή στο τηλέφωνο)"</string>
     <string name="modify_event" msgid="4501745557655992422">"Αλλαγή μόνο αυτού του συμβάντος."</string>
     <string name="modify_all" msgid="7506579040966638538">"Αλλαγή όλων των συμβάντων στη σειρά."</string>
     <string name="modify_all_following" msgid="4333745734894639276">"Αλλαγή αυτού και όλων των μελλοντικών συμβάντων."</string>
@@ -129,6 +133,13 @@
     <string name="preferences_general_title" msgid="2069075513760573117">"Ρυθμίσεις προβολής ημερολογίου"</string>
     <string name="preferences_alerts_title" msgid="6511227171114210908">"Ρυθμίσεις υπενθύμισης"</string>
     <string name="preferences_hide_declined_title" msgid="1849295943669890034">"Απόκρυψη συμβάντων που έχουν απορριφθεί"</string>
+    <string name="preferences_week_start_day_title">Ημέρα έναρξης εβδομάδας</string>
+    <string name="preferences_week_start_day_descrip">Απαιτεί επανεκκίνηση της εφαρμογής.</string>
+    <string name="preferences_week_start_day_dialog">Η εβδομάδα ξεκινάει</string>
+    <!-- Settings option to set week start day. Can be translated to provide
+        different defaults for different countries/cultures.
+        7 = Saturday, 1 = Sunday, 2 = Monday -->
+    <string name="preferences_week_start_day_default">2</string>
     <string name="preferences_alerts_type_title" msgid="6934441966757833908">"Ορισμός προειδοποιήσεων &amp; ειδοποιήσεων"</string>
     <string name="preferences_alerts_type_dialog" msgid="2195667763429994271">"Προειδοποιήσεις &amp; ειδοποιήσεις"</string>
     <string name="preferences_alerts_vibrateWhen_title" msgid="8731372580674292759">"Δόνηση"</string>
