@@ -386,7 +386,7 @@
     <!-- Settings option to set week start day. Can be translated to provide
         different defaults for different countries/cultures.
         7 = Saturday, 1 = Sunday, 2 = Monday -->
-    <string name="preferences_week_start_day_default" translatable="false">1</string>
+    <string name="preferences_week_start_day_default">1</string>
 
     <!-- Settings option to bring up a dialog that lets the user choose how
          reminder notifications should occur. -->

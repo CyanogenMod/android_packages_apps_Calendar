@@ -150,7 +150,6 @@
     <string name="preferences_use_home_tz_title" msgid="5597546849968598210">"Ev saat dilimini kullan"</string>
     <string name="preferences_use_home_tz_descrip" msgid="4835375381297413746">"Seyahat ederken takvimleri ve etkinlik saatlerini ev saat diliminde görüntüler"</string>
     <string name="preferences_home_tz_title" msgid="6680000444088818578">"Ev saat dilimi"</string>
-    <string name="preferences_home_tz_default" translatable="false">"Europe/Athens"</string>
     <string name="preferences_about_title" msgid="2810624892412097879">"Hakkında"</string>
     <string name="preferences_build_version" msgid="8242471883413502068">"Derleme sürümü"</string>
   <string-array name="prefEntries_alerts_vibrateWhen">
