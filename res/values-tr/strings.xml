@@ -138,7 +138,7 @@
     <string name="preferences_week_start_day_dialog">Hafta bununla başlar</string>
     <!-- Settings option to set week start day. Can be translated to provide different defaults for different countries/cultures.
         7 = Saturday, 1 = Sunday, 2 = Monday (Turkey=Monday) -->
-    <string name="preferences_week_start_day_default" translatable="false">2</string>
+    <string name="preferences_week_start_day_default">2</string>
     <string name="preferences_alerts_type_title" msgid="6934441966757833908">"Uyarı ve bildirimleri ayarla"</string>
     <string name="preferences_alerts_type_dialog" msgid="2195667763429994271">"Uyarılar ve bildirimler"</string>
     <string name="preferences_alerts_vibrateWhen_title" msgid="8731372580674292759">"Titreşim"</string>
@@ -150,7 +150,6 @@
     <string name="preferences_use_home_tz_title" msgid="5597546849968598210">"Ev saat dilimini kullan"</string>
     <string name="preferences_use_home_tz_descrip" msgid="4835375381297413746">"Seyahat ederken takvimleri ve etkinlik saatlerini ev saat diliminde görüntüler"</string>
     <string name="preferences_home_tz_title" msgid="6680000444088818578">"Ev saat dilimi"</string>
-    <string name="preferences_home_tz_default" translatable="false">"Europe/Athens"</string>
     <string name="preferences_about_title" msgid="2810624892412097879">"Hakkında"</string>
     <string name="preferences_build_version" msgid="8242471883413502068">"Derleme sürümü"</string>
   <string-array name="prefEntries_alerts_vibrateWhen">
