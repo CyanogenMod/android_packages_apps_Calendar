@@ -21,6 +21,20 @@
     <!-- No maps found in phone -->
     <string name="no_map">No maps were found.</string>
 
+    <!-- Check box label for using custom snooze delays -->
+    <string name="preferences_alerts_custom_snooze_delay_title">Ask for reminder snooze delay</string>
+    <!-- Summaries for using custom snooze delays -->
+    <string name="preferences_alerts_custom_snooze_delay_summary_on">Ask for snooze delay whenever snoozing reminders</string>
+    <string name="preferences_alerts_custom_snooze_delay_summary_off">Always use default snooze delay</string>
+    <!-- Title of custom snooze delay dialog -->
+    <string name="snooze_delay_dialog_title">Set snooze delay</string>
+    <!-- List item label for setting the default snooze delay -->
+    <string name="preferences_default_snooze_delay_title">Default snooze delay time</string>
+    <!-- Title of dialog for setting the default snooze delay -->
+    <string name="preferences_default_snooze_delay_dialog">Default snooze delay</string>
+    <!-- Default value for the default snooze delay (in minutes) -->
+    <string name="preferences_default_snooze_delay_default" translatable="false">5</string>
+
     <!-- Delete events -->
     <string name="events_delete">Delete events</string>
     <string name="action_select_all">Select all</string>
