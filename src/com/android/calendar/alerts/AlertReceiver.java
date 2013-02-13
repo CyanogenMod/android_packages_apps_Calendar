@@ -245,6 +245,7 @@ public class AlertReceiver extends BroadcastReceiver {
             endMillis, notificationId);
 
         // Create the base notification.
+		notificationBuilder.setDefaults(Notification.DEFAULT_LIGHTS);
         notificationBuilder.setContentTitle(title);
         notificationBuilder.setContentText(summaryText);
         notificationBuilder.setSmallIcon(R.drawable.stat_notify_calendar);
