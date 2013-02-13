@@ -62,6 +62,7 @@ public class GeneralPreferences extends PreferenceFragment implements
     public static final String KEY_ALERTS_VIBRATE_WHEN = "preferences_alerts_vibrateWhen";
     public static final String KEY_ALERTS_RINGTONE = "preferences_alerts_ringtone";
     public static final String KEY_ALERTS_POPUP = "preferences_alerts_popup";
+    public static final String KEY_ALERTS_NOTIFICATION_LIGHT = "preferences_alerts_notification_light";
 
     public static final String KEY_SHOW_CONTROLS = "preferences_show_controls";
 
@@ -110,6 +111,7 @@ public class GeneralPreferences extends PreferenceFragment implements
     ListPreference mHomeTZ;
     ListPreference mWeekStart;
     ListPreference mDefaultReminder;
+    CheckBoxPreference mLights;
 
     private static CharSequence[][] mTimezones;
 
@@ -153,6 +155,7 @@ public class GeneralPreferences extends PreferenceFragment implements
 
         mRingtone = (RingtonePreference) preferenceScreen.findPreference(KEY_ALERTS_RINGTONE);
         mPopup = (CheckBoxPreference) preferenceScreen.findPreference(KEY_ALERTS_POPUP);
+        mLights = (CheckBoxPreference) preferenceScreen.findPreference(KEY_ALERTS_NOTIFICATION_LIGHT);
         mUseHomeTZ = (CheckBoxPreference) preferenceScreen.findPreference(KEY_HOME_TZ_ENABLED);
         mHideDeclined = (CheckBoxPreference) preferenceScreen.findPreference(KEY_HIDE_DECLINED);
         mWeekStart = (ListPreference) preferenceScreen.findPreference(KEY_WEEK_START_DAY);
@@ -322,12 +325,14 @@ public class GeneralPreferences extends PreferenceFragment implements
             mVibrateWhen.setEnabled(true);
             mRingtone.setEnabled(true);
             mPopup.setEnabled(true);
+            mLights.setEnabled(true);
         } else {
             mVibrateWhen.setValue(
                     getActivity().getString(R.string.prefDefault_alerts_vibrate_false));
             mVibrateWhen.setEnabled(false);
             mRingtone.setEnabled(false);
             mPopup.setEnabled(false);
+            mLights.setEnabled(false);
         }
     }
 

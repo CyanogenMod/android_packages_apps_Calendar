@@ -219,16 +219,16 @@ public class AlertReceiver extends BroadcastReceiver {
 
     public static NotificationWrapper makeBasicNotification(Context context, String title,
             String summaryText, long startMillis, long endMillis, long eventId,
-            int notificationId, boolean doPopup, int priority) {
+            int notificationId, boolean doPopup, boolean doLights, int priority) {
         Notification n = buildBasicNotification(new Notification.Builder(context),
                 context, title, summaryText, startMillis, endMillis, eventId, notificationId,
-                doPopup, priority, false);
+                doPopup, doLights, priority, false);
         return new NotificationWrapper(n, notificationId, eventId, startMillis, endMillis, doPopup);
     }
 
     private static Notification buildBasicNotification(Notification.Builder notificationBuilder,
             Context context, String title, String summaryText, long startMillis, long endMillis,
-            long eventId, int notificationId, boolean doPopup, int priority,
+            long eventId, int notificationId, boolean doPopup, boolean doLights, int priority,
             boolean addActionButtons) {
         Resources resources = context.getResources();
         if (title == null || title.length() == 0) {
@@ -252,6 +252,9 @@ public class AlertReceiver extends BroadcastReceiver {
         notificationBuilder.setDeleteIntent(deleteIntent);
         if (doPopup) {
             notificationBuilder.setFullScreenIntent(createAlertActivityIntent(context), true);
+        }
+        if (doLights) {
+            notificationBuilder.setDefaults(Notification.DEFAULT_LIGHTS);
         }
 
         PendingIntent snoozeIntent = null;
@@ -321,10 +324,10 @@ public class AlertReceiver extends BroadcastReceiver {
      */
     public static NotificationWrapper makeExpandingNotification(Context context, String title,
             String summaryText, String description, long startMillis, long endMillis, long eventId,
-            int notificationId, boolean doPopup, int priority) {
+            int notificationId, boolean doPopup, boolean doLights, int priority) {
         Notification.Builder basicBuilder = new Notification.Builder(context);
         Notification notification = buildBasicNotification(basicBuilder, context, title,
-                summaryText, startMillis, endMillis, eventId, notificationId, doPopup,
+                summaryText, startMillis, endMillis, eventId, notificationId, doPopup, doLights,
                 priority, true);
         if (Utils.isJellybeanOrLater()) {
             // Create a new-style expanded notification

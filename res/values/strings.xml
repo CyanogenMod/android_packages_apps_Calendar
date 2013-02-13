@@ -649,4 +649,10 @@
 
     <!-- Tell user not to check a checkbox [CHAR LIMIT=30] -->
     <string name="do_not_check">Do NOT check -></string>
+
+    <!-- CYANOGENMOD EDITS START -->
+
+    <string name="preferences_alerts_notification_light_title">Notification light</string>
+
+    <!-- CYANOGENMOD EDITS END -->
 </resources>
