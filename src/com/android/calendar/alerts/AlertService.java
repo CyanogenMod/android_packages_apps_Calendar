@@ -311,7 +311,7 @@ public class AlertService extends Service {
                         info.allDay, info.location);
                 notification = AlertReceiver.makeBasicNotification(context, info.eventName,
                         summaryText, info.startMillis, info.endMillis, info.eventId,
-                        AlertUtils.EXPIRED_GROUP_NOTIFICATION_ID, false,
+                        AlertUtils.EXPIRED_GROUP_NOTIFICATION_ID, false, false,
                         Notification.PRIORITY_MIN);
             } else {
                 // Multiple expired events are listed in a digest.
@@ -717,7 +717,7 @@ public class AlertService extends Service {
         String tickerText = getTickerText(info.eventName, info.location);
         NotificationWrapper notification = AlertReceiver.makeExpandingNotification(context,
                 info.eventName, summaryText, info.description, info.startMillis,
-                info.endMillis, info.eventId, notificationId, prefs.getDoPopup(), priorityVal);
+                info.endMillis, info.eventId, notificationId, prefs.getDoPopup(), prefs.getDoLights(), priorityVal);
 
         boolean quietUpdate = true;
         String ringtone = NotificationPrefs.EMPTY_RINGTONE;
@@ -812,6 +812,7 @@ public class AlertService extends Service {
         private int doPopup = -1;
         private int defaultVibrate = -1;
         private String ringtone = null;
+        private int doLights = -1;
 
         private static final String EMPTY_RINGTONE = "";
 
@@ -830,6 +831,17 @@ public class AlertService extends Service {
                 }
             }
             return doPopup == 1;
+        }
+
+        private boolean getDoLights() {
+            if (doLights < 0) {
+                if (prefs.getBoolean(GeneralPreferences.KEY_ALERTS_NOTIFICATION_LIGHT, false)) {
+                    doLights = 1;
+                } else {
+                    doLights = 0;
+                }
+            }
+            return doLights == 1;
         }
 
         private boolean getDefaultVibrate() {
