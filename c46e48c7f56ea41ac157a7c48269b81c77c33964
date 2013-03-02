@@ -1,0 +1,11 @@
+Change-Id: I60d8aca2721f8db110f66d9bc2323f9b42402f61
+Code-Review+1: Pavel Volkov <marshmollow@gmail.com>
+Code-Review+2: Marco Brohet <therbom@gmail.com>
+Code-Review+1: Dmitriy Chermenev <chdiman86@gmail.com>
+Verified+1: Cid
+Code-Review+1: Vladislav Koldobskiy <nevergone.ru@gmail.com>
+Submitted-by: Marco Brohet <therbom@gmail.com>
+Submitted-at: Sat, 02 Mar 2013 01:20:32 -0800
+Reviewed-on: http://review.cyanogenmod.org/32559
+Project: CyanogenMod/android_packages_apps_Calendar
+Branch: refs/heads/cm-10.1
