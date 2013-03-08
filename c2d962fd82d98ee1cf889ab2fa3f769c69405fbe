@@ -1,0 +1,11 @@
+Change-Id: I0357567215aebada0cbc6213c52d3d69e016d304
+Code-Review+2: Marco Brohet <therbom@gmail.com>
+Verified+1: Marco Brohet <therbom@gmail.com>
+Code-Review+1: Julien Gainza <gainza.julien@gmail.com>
+Code-Review+1: Delphin PETER <delphinpeter@gmail.com>
+Code-Review+1: Thibault LEMOINE <thibaultblizz@gmail.com>
+Submitted-by: Marco Brohet <therbom@gmail.com>
+Submitted-at: Fri, 08 Mar 2013 12:45:32 -0800
+Reviewed-on: http://review.cyanogenmod.org/33120
+Project: CyanogenMod/android_packages_apps_Calendar
+Branch: refs/heads/gingerbread
