@@ -122,20 +122,6 @@
         <item>"10080"</item>
     </string-array>
 
-    <string-array name="preferences_default_snooze_delay_values" translatable="false">
-        <item>"5"</item>
-        <item>"10"</item>
-        <item>"15"</item>
-        <item>"20"</item>
-        <item>"25"</item>
-        <item>"30"</item>
-        <item>"45"</item>
-        <item>"60"</item>
-        <item>"120"</item>
-        <item>"180"</item>
-        <item>"720"</item>
-    </string-array>
-
     <string-array name="preferences_week_start_day_labels">
         <item>Locale default</item>
         <item>Saturday</item>
@@ -176,7 +162,6 @@
         <item>"Manaus"</item>
         <item>"Santiago"</item>
         <item>"Newfoundland"</item>
-        <item>"Recife"</item>
         <item>"Brasilia"</item>
         <item>"Buenos Aires"</item>
         <item>"Greenland"</item>
@@ -267,7 +252,6 @@
         <item>"America/Manaus"</item>
         <item>"America/Santiago"</item>
         <item>"America/St_Johns"</item>
-        <item>"America/Recife"</item>
         <item>"America/Sao_Paulo"</item>
         <item>"America/Argentina/Buenos_Aires"</item>
         <item>"America/Godthab"</item>
@@ -381,7 +365,7 @@
 
     <!-- DO NOT TRANSLATE These values need to correspond to the indices
          defined in DeleteEventHelper.java-->
-    <integer-array name="delete_repeating_values" translatable="false">
+    <integer-array name="delete_repeating_values">
         <item>0</item>
         <item>1</item>
         <item>2</item>
