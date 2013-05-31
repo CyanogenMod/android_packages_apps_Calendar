@@ -138,6 +138,7 @@
     <string name="preferences_week_start_day_title">Premier jour de la semaine</string>
     <string name="preferences_week_start_day_descrip">Redémarrez l\'application Agenda afin de prendre l\'option en compte</string>
     <string name="preferences_week_start_day_dialog">La semaine démarre le</string>
+    <string name="preferences_week_start_day_default">2</string>
     <string name="preferences_alerts_type_title" msgid="6934441966757833908">"Alertes et notifications"</string>
     <string name="preferences_alerts_type_dialog" msgid="2195667763429994271">"Alertes et notifications"</string>
     <string name="preferences_alerts_vibrateWhen_title" msgid="8731372580674292759">"Vibreur"</string>
