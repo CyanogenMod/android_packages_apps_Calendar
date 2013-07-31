@@ -31,8 +31,8 @@
     <!-- minimum size of hours column in day/week view -->
     <dimen name="min_hours_width">32dip</dimen>
     <!-- margins size of hours column in day/week view -->
-    <dimen name="hours_left_margin">28dip</dimen>
-    <dimen name="hours_right_margin">4dip</dimen>
+    <dimen name="hours_left_margin">4dip</dimen>
+    <dimen name="hours_right_margin">6dip</dimen>
     <!-- size of day header in day and week views  -->
     <dimen name="day_header_height">24sp</dimen>
     <dimen name="widget_day_num_size">42sp</dimen>
