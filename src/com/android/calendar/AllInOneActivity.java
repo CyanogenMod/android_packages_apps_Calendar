@@ -78,6 +78,7 @@ import com.android.calendar.month.MonthByWeekFragment;
 import com.android.calendar.selectcalendars.SelectVisibleCalendarsFragment;
 
 import java.io.IOException;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Locale;
 import java.util.TimeZone;
@@ -771,6 +772,15 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
                 t.minute = 0;
             } else if (t.minute > 0 && t.minute < 30) {
                 t.minute = 30;
+            }
+            // Get the current time to display in month mode.
+            if (mCurrentView == ViewType.MONTH) {
+                Calendar calendar = Calendar.getInstance();
+                t.year = calendar.get(Calendar.YEAR);
+                t.month = calendar.get(Calendar.MONTH);
+                t.monthDay = calendar.get(Calendar.DATE);
+                t.weekDay = calendar.get(Calendar.DAY_OF_WEEK) - 1;
+                t.yearDay = calendar.get(Calendar.DAY_OF_YEAR) - 1;
             }
             mController.sendEventRelatedEvent(
                     this, EventType.CREATE_EVENT, -1, t.toMillis(true), 0, 0, 0, -1);
