@@ -260,6 +260,16 @@ public class SelectSyncedCalendarsMultiAccountAdapter extends CursorTreeAdapter 
         mView.removeCallbacks(mStopRefreshing);
     }
 
+    // provide mCalendarChanges public interface
+    public Map<Long, Boolean> getCalendarChanges() {
+        return mCalendarChanges;
+    }
+
+    // provide mCalendarInitialStates public interface
+    public Map<Long, Boolean> getCalendarInitialStates() {
+        return mCalendarInitialStates;
+    }
+
     /*
      * Write back the changes that have been made. The sync code will pick up any changes and
      * do updates on its own.

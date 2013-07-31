@@ -31,14 +31,20 @@ import android.widget.ExpandableListView;
 import com.android.calendar.R;
 import com.android.calendar.Utils;
 
+import java.util.Iterator;
+import java.util.Map;
+
 public class SelectSyncedCalendarsMultiAccountActivity extends ExpandableListActivity
     implements View.OnClickListener {
 
     private static final String TAG = "Calendar";
     private static final String EXPANDED_KEY = "is_expanded";
     private static final String ACCOUNT_UNIQUE_KEY = "ACCOUNT_KEY";
+    private static final String CHECK_CHANGES_ACCOUNT_ID_ARRAY = "CHECK_CHANGES_ACCOUNT_ID_ARRAY";
+    private static final String CHECK_CHANGEDS_ARRAY = "CHECK_CHANGEDS_ARRAY";
     private MatrixCursor mAccountsCursor = null;
     private ExpandableListView mList;
+    private Bundle mIcicle = null;
     private SelectSyncedCalendarsMultiAccountAdapter mAdapter;
     private static final String[] PROJECTION = new String[] {
         Calendars._ID,
@@ -52,6 +58,7 @@ public class SelectSyncedCalendarsMultiAccountActivity extends ExpandableListAct
     protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         setContentView(R.layout.select_calendars_multi_accounts_fragment);
+        mIcicle = icicle;
         mList = getExpandableListView();
         mList.setEmptyView(findViewById(R.id.loading));
         // Start a background sync to get the list of calendars from the server.
@@ -87,6 +94,20 @@ public class SelectSyncedCalendarsMultiAccountActivity extends ExpandableListAct
                 mAdapter = new SelectSyncedCalendarsMultiAccountAdapter(
                         findViewById(R.id.calendars).getContext(), mAccountsCursor,
                         SelectSyncedCalendarsMultiAccountActivity.this);
+                // Restore checkboxes status from last activity.
+                if (null != mIcicle) {
+                    long[] checkChangesAccountIds = mIcicle
+                            .getLongArray(CHECK_CHANGES_ACCOUNT_ID_ARRAY);
+                    boolean[] checkChanges = mIcicle.getBooleanArray(CHECK_CHANGEDS_ARRAY);
+                    if (null != checkChangesAccountIds && null != checkChanges) {
+                        for (int i = 0; i < checkChangesAccountIds.length; i++) {
+                            mAdapter.getCalendarChanges().put(checkChangesAccountIds[i],
+                                    checkChanges[i]);
+                            mAdapter.getCalendarInitialStates().put(checkChangesAccountIds[i],
+                                    checkChanges[i]);
+                        }
+                    }
+                }
                 mList.setAdapter(mAdapter);
 
                 // TODO initialize from sharepref
@@ -136,6 +157,30 @@ public class SelectSyncedCalendarsMultiAccountActivity extends ExpandableListAct
             isExpanded = null;
         }
         outState.putBooleanArray(EXPANDED_KEY, isExpanded);
+
+        // Get current every checkbox status and save them by bundle.
+        Map<Long, Boolean> calendarChanges = mAdapter.getCalendarChanges();
+        long[] checkChangesAccountIds;
+        boolean[] checkChanges;
+        int calendarChangesSize = calendarChanges.size();
+        if (calendarChangesSize > 0) {
+            checkChangesAccountIds = new long[calendarChangesSize];
+            checkChanges = new boolean[calendarChangesSize];
+            Iterator<Long> changeKeys = calendarChanges.keySet().iterator();
+            int i = 0;
+            while (changeKeys.hasNext()) {
+                long id = changeKeys.next();
+                boolean synced = calendarChanges.get(id);
+                checkChangesAccountIds[i] = id;
+                checkChanges[i] = synced;
+                i++;
+            }
+        } else {
+            checkChangesAccountIds = null;
+            checkChanges = null;
+        }
+        outState.putLongArray(CHECK_CHANGES_ACCOUNT_ID_ARRAY, checkChangesAccountIds);
+        outState.putBooleanArray(CHECK_CHANGEDS_ARRAY, checkChanges);
         //TODO Store this to preferences instead so it remains on restart
     }
 
