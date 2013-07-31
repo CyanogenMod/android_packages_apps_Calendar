@@ -659,6 +659,23 @@ public class EditEventView implements View.OnClickListener, DialogInterface.OnCa
         }
     }
 
+    public String getCurrentOwnerAccount() {
+        if (mModel == null) return "";
+
+        String currentOwnerAccount = null;
+        if (mModel.mUri == null) {// for new event
+            int calendarCursorPosition = mCalendarsSpinner.getSelectedItemPosition();
+            if (mCalendarsCursor.moveToPosition(calendarCursorPosition)) {
+                currentOwnerAccount = mCalendarsCursor
+                        .getString(EditEventHelper.CALENDARS_INDEX_OWNER_ACCOUNT);
+            }
+
+            return currentOwnerAccount;
+        } else {// for existing event
+            return mModel.mOwnerAccount;
+        }
+    }
+
     // Goes through the UI elements and updates the model as necessary
     private boolean fillModelFromUI() {
         if (mModel == null) {

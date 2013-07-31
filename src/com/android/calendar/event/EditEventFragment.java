@@ -654,26 +654,64 @@ public class EditEventFragment extends Fragment implements EventHandler, OnColor
      */
     private boolean onActionBarItemSelected(int itemId) {
         if (itemId == R.id.action_done) {
-            if (EditEventHelper.canModifyEvent(mModel) || EditEventHelper.canRespond(mModel)) {
-                if (mView != null && mView.prepareForSave()) {
-                    if (mModification == Utils.MODIFY_UNINITIALIZED) {
-                        mModification = Utils.MODIFY_ALL;
+            AsyncQueryService service = new AsyncQueryService(mContext) {
+                @Override
+                protected void onQueryComplete(int token, Object cookie, Cursor cursor) {
+                    // If the query didn't return a cursor for some reason return
+                    if (cursor == null) {
+                        return;
                     }
-                    mOnDone.setDoneCode(Utils.DONE_SAVE | Utils.DONE_EXIT);
-                    mOnDone.run();
-                } else {
-                    mOnDone.setDoneCode(Utils.DONE_REVERT);
-                    mOnDone.run();
+
+                    if (cursor.getCount() == 0) {
+                        final Toast toast = Toast.makeText(mContext,
+                                getString(R.string.account_removed), Toast.LENGTH_SHORT);
+                        toast.show();
+
+                        Activity a = EditEventFragment.this.getActivity();
+                        if (a != null) {
+                            a.finish();
+                        }
+                        return;
+                    }
+
+                    if (EditEventHelper.canModifyEvent(mModel)
+                            || EditEventHelper.canRespond(mModel)) {
+                        if (mView != null && mView.prepareForSave()) {
+                            if (mModification == Utils.MODIFY_UNINITIALIZED) {
+                                mModification = Utils.MODIFY_ALL;
+                            }
+                            mOnDone.setDoneCode(Utils.DONE_SAVE | Utils.DONE_EXIT);
+                            mOnDone.run();
+                        } else {
+                            mOnDone.setDoneCode(Utils.DONE_REVERT);
+                            mOnDone.run();
+                        }
+                    } else if (EditEventHelper.canAddReminders(mModel) && mModel.mId != -1
+                            && mOriginalModel != null && mView.prepareForSave()) {
+                        saveReminders();
+                        mOnDone.setDoneCode(Utils.DONE_EXIT);
+                        mOnDone.run();
+                    } else {
+                        mOnDone.setDoneCode(Utils.DONE_REVERT);
+                        mOnDone.run();
+                    }
                 }
-            } else if (EditEventHelper.canAddReminders(mModel) && mModel.mId != -1
-                    && mOriginalModel != null && mView.prepareForSave()) {
-                saveReminders();
-                mOnDone.setDoneCode(Utils.DONE_EXIT);
-                mOnDone.run();
-            } else {
-                mOnDone.setDoneCode(Utils.DONE_REVERT);
-                mOnDone.run();
-            }
+            };
+
+            // Get owner account here.
+            String ownerAccount = mView.getCurrentOwnerAccount();
+
+            // Check whether owner account exists
+            int token = service.getNextToken();
+            Uri uri = Calendars.CONTENT_URI;
+            final String[] projection = EditEventHelper.CALENDARS_PROJECTION;
+            final String selection = Calendars.OWNER_ACCOUNT + "=?";
+            final String[] selectionArgs = new String[] {
+                ownerAccount
+            };
+
+            service.startQuery(token, null, uri, projection,
+                    selection, selectionArgs, null);
         } else if (itemId == R.id.action_cancel) {
             mOnDone.setDoneCode(Utils.DONE_REVERT);
             mOnDone.run();
