@@ -144,6 +144,8 @@
     <string name="snooze_all_label" msgid="4994488813124409077">"全部延遲"</string>
     <string name="dismiss_all_label" msgid="1834400025868091301">"全部關閉"</string>
     <string name="snooze_label" msgid="1515893621063224666">"延遲"</string>
+    <!--The button label for  the reminder dissmiss the activity -->
+    <string name="dismiss_label">"取消活動"</string>
     <string name="does_not_repeat" msgid="1877681921029738999">"單次活動"</string>
     <string name="endByDate" msgid="7654221304929538201">"；直到 <xliff:g id="DATE">%s</xliff:g>"</string>
   <plurals name="endByCount">

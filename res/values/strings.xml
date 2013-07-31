@@ -397,6 +397,8 @@
     <!-- The button label for making the reminder alarms go away temporarily
          and re-fire in 5 minutes. [CHAR LIMIT=12]-->
     <string name="snooze_label">"Snooze"</string>
+    <!-- The button label for  the reminder dissmiss the activity-->
+    <string name="dismiss_label">"Dismiss"</string>
 
     <!-- Repetition dialog options: -->
     <skip/>

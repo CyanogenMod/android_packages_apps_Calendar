@@ -363,6 +363,9 @@ public class AlertReceiver extends BroadcastReceiver {
             if (snoozeIntent != null && numActions < MAX_NOTIF_ACTIONS) {
                 notificationBuilder.addAction(R.drawable.ic_alarm_holo_dark,
                         resources.getString(R.string.snooze_label), snoozeIntent);
+                // Create a dissmiss button.
+                notificationBuilder.addAction(0, resources.getString(R.string.dismiss_label),
+                        deleteIntent);
                 numActions++;
             }
             return notificationBuilder.getNotification();

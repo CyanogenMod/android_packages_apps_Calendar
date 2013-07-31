@@ -34,6 +34,15 @@
         android:layout_height="wrap_content"
         style="?android:attr/buttonBarStyle">
 
+        <!-- add snooze all button-->
+        <Button
+            android:id="@+id/snooze_all"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="?android:attr/buttonBarButtonStyle"
+            android:text="@string/snooze_all_label" />
+
         <Button
             android:id="@+id/dismiss_all"
             android:layout_width="0dip"
