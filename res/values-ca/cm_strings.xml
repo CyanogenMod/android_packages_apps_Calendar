@@ -20,5 +20,4 @@
     <string name="snooze_delay_dialog_title">Fixa el retard de la repetició</string>
     <string name="preferences_default_snooze_delay_title">Temps de retard de la repetició predefinida</string>
     <string name="preferences_default_snooze_delay_dialog">Retard de la repetició predefinida</string>
-    <string name="preferences_default_snooze_delay_default" translatable="false">5</string>
 </resources>
