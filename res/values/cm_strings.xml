@@ -27,4 +27,5 @@
     <string name="preferences_default_snooze_delay_dialog">Default snooze delay</string>
     <!-- Default value for the default snooze delay (in minutes) -->
     <string name="preferences_default_snooze_delay_default" translatable="false">5</string>
+    <string name="dst_note" translatable="false"></string>
 </resources>
