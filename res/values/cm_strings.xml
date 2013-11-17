@@ -52,4 +52,8 @@
     <item quantity="one">%1$d event selected</item>
     <item quantity="other">%1$d events selected</item>
   </plurals>
+
+    <!-- Label values for the default start page preference. -->
+    <string name="default_start_title">Default view</string>
+    <string name="default_start_last">Previously used view</string>
 </resources>
