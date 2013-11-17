@@ -63,6 +63,7 @@ public class GeneralPreferences extends PreferenceFragment implements
     private static final String FRAG_TAG_TIME_ZONE_PICKER = "TimeZonePicker";
 
     // Preference keys
+    public static final String KEY_DEFAULT_START = "preferences_default_start";
     public static final String KEY_HIDE_DECLINED = "preferences_hide_declined";
     public static final String KEY_WEEK_START_DAY = "preferences_week_start_day";
     public static final String KEY_SHOW_WEEK_NUM = "preferences_show_week_num";
@@ -115,6 +116,7 @@ public class GeneralPreferences extends PreferenceFragment implements
     static final String KEY_HOME_TZ = "preferences_home_tz";
 
     // Default preference values
+    public static final String DEFAULT_DEFAULT_START = "-2";
     public static final int DEFAULT_START_VIEW = CalendarController.ViewType.WEEK;
     public static final int DEFAULT_DETAILED_VIEW = CalendarController.ViewType.DAY;
     public static final boolean DEFAULT_SHOW_WEEK_NUM = false;
@@ -131,6 +133,8 @@ public class GeneralPreferences extends PreferenceFragment implements
     TimeZonePickerUtils mTzPickerUtils;
     ListPreference mWeekStart;
     ListPreference mDefaultReminder;
+    ListPreference mSnoozeDelay;
+    ListPreference mDefaultStart;
 
     private String mTimeZoneId;
 
@@ -196,6 +200,8 @@ public class GeneralPreferences extends PreferenceFragment implements
 
         mWeekStart.setSummary(mWeekStart.getEntry());
         mDefaultReminder.setSummary(mDefaultReminder.getEntry());
+        mSnoozeDelay.setSummary(mSnoozeDelay.getEntry());
+        mDefaultStart.setSummary(mDefaultStart.getEntry());
 
         // This triggers an asynchronous call to the provider to refresh the data in shared pref
         mTimeZoneId = Utils.getTimeZone(activity, null);
@@ -349,6 +355,10 @@ public class GeneralPreferences extends PreferenceFragment implements
             return true;
         } else if (preference == mVibrate) {
             mVibrate.setChecked((Boolean) newValue);
+            return true;
+        } else if (preference == mDefaultStart) {
+            int i = mDefaultStart.findIndexOfValue((String) newValue);
+            mDefaultStart.setSummary(mDefaultStart.getEntries()[i]);
             return true;
         } else {
             return true;
