@@ -20,4 +20,6 @@
     <string name="snooze_delay_dialog_title">Intervalo de tiempo</string>
     <string name="preferences_default_snooze_delay_title">Intervalo entre recordatorios</string>
     <string name="preferences_default_snooze_delay_dialog">Intervalo entre recordatorios por defecto</string>
+    <string name="default_start_title">Vista por defecto</string>
+    <string name="default_start_last">Vista usada previamente</string>
 </resources>
