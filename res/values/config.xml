@@ -38,4 +38,6 @@
     <bool name="show_goto_menu">false</bool>
     <!--  A golbal var used to show delete events menu -->
     <bool name="show_delete_events_menu">false</bool>
+    <!--  A golbal var used to add the limit for event's description length. -->
+    <bool name="length_limit_for_event_description">false</bool>
 </resources>
