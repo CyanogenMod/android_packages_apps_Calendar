@@ -36,4 +36,5 @@
   <string name="evt_del_dlg_msg_all">删除所有活动</string>
   <string name="no_events_selected">没有选择活动</string>
   <string name="go_to">"转到"</string>
+  <string name="alert_event_description_length_limit">活动说明须少于<xliff:g id="count">%d</xliff:g>个字符。</string>
 </resources>

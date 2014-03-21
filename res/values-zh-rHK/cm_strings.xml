@@ -35,4 +35,5 @@
   <string name="evt_del_dlg_msg_selected">刪除選擇的活動</string>
   <string name="evt_del_dlg_msg_all">刪除所有活動</string>
   <string name="no_events_selected">沒有選擇活動</string>
+  <string name="alert_event_description_length_limit">活動說明須少於<xliff:g id="count">%d</xliff:g>個字符。</string>
 </resources>
