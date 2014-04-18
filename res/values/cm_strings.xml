@@ -50,6 +50,6 @@
          user to go to the calendars to display [CHAR LIMIT=20] -->
     <string name="go_to">"Go to"</string>
 
-    <!-- The toast for event's description length limit. -->
-    <string name="alert_event_description_length_limit">The length of event\'s description must less than <xliff:g id="count">%d</xliff:g> characters.</string>
+    <!-- The toast for event's length limit. -->
+    <string name="alert_event_length_limit">The length of \"<xliff:g id="item">%s</xliff:g>\" must less than <xliff:g id="count">%d</xliff:g> characters.</string>
 </resources>
