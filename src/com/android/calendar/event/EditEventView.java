@@ -119,8 +119,12 @@ public class EditEventView implements View.OnClickListener, DialogInterface.OnCa
     private static final String FRAG_TAG_TIME_ZONE_PICKER = "timeZonePickerDialogFragment";
     private static final String FRAG_TAG_RECUR_PICKER = "recurrencePickerDialogFragment";
 
+    // The max length for event's title.
+    private static final int MAX_LENGTH_WHAT = 100;
+    // The max length for event's location.
+    private static final int MAX_LENGTH_WHERE = 100;
     // The max length for event's description.
-    private static final int DESCRIPTION_MAX_LENGTH = 200;
+    private static final int MAX_LENGTH_DESCRIPTION = 200;
 
     ArrayList<View> mEditOnlyList = new ArrayList<View>();
     ArrayList<View> mEditViewList = new ArrayList<View>();
@@ -871,11 +875,19 @@ public class EditEventView implements View.OnClickListener, DialogInterface.OnCa
             public void onNothingSelected(AdapterView<?> arg0) { }
         });
 
-        if (activity.getResources().getBoolean(R.bool.length_limit_for_event_description)) {
+        if (activity.getResources().getBoolean(R.bool.length_limit_for_event_content)) {
+            mTitleTextView.setFilters(new InputFilter[] {
+                new MyLengthFilter(MAX_LENGTH_WHAT, activity.getString(R.string.hint_what))
+            });
+            mLocationTextView.setFilters(new InputFilter[] {
+                new MyLengthFilter(MAX_LENGTH_WHERE, activity.getString(R.string.hint_where))
+            });
             mDescriptionTextView.setFilters(new InputFilter[] {
-                new MyLengthFilter(DESCRIPTION_MAX_LENGTH)
+                new MyLengthFilter(MAX_LENGTH_DESCRIPTION,
+                        activity.getString(R.string.hint_description))
             });
         }
+
         mDescriptionTextView.setTag(mDescriptionTextView.getBackground());
         mAttendeesList.setTag(mAttendeesList.getBackground());
         mOriginalPadding[0] = mLocationTextView.getPaddingLeft();
@@ -1864,8 +1876,13 @@ public class EditEventView implements View.OnClickListener, DialogInterface.OnCa
      * It will prompt the toast if the text length greater than the given length.
      */
     private class MyLengthFilter extends LengthFilter {
-        public MyLengthFilter(int max) {
+        private int mMaxLength;
+        private String mItemLabel;
+
+        public MyLengthFilter(int max, String itemLabel) {
             super(max);
+            mMaxLength = max;
+            mItemLabel = itemLabel;
         }
 
         @Override
@@ -1875,8 +1892,8 @@ public class EditEventView implements View.OnClickListener, DialogInterface.OnCa
             if (result != null) {
                 // If the result is not null, it means the text length is greater than
                 // the given length. We will prompt the toast to alert the user.
-                String alert = mActivity.getString(R.string.alert_event_description_length_limit,
-                        DESCRIPTION_MAX_LENGTH);
+                String alert = mActivity.getString(R.string.alert_event_length_limit, mItemLabel,
+                        mMaxLength);
                 Toast.makeText(mActivity, alert, Toast.LENGTH_LONG).show();
             }
             return result;
