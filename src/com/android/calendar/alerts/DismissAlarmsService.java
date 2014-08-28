@@ -108,8 +108,8 @@ public class DismissAlarmsService extends IntentService {
             // EventInfoActivity with AllInOneActivity as the parent activity rooted to home.
             Intent i = AlertUtils.buildEventViewIntent(this, eventId, eventStart, eventEnd);
 
-            TaskStackBuilder.create(this)
-                    .addParentStack(EventInfoActivity.class).addNextIntent(i).startActivities();
+            i.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(i);
         }
     }
 
