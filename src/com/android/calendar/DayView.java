@@ -2619,14 +2619,7 @@ public class DayView extends View implements View.OnCreateContextMenuListener,
                 }
 
                 try {
-                    String[] lunarInfo = service.getLunarInfo(year, month, dateNum, true, false)
-                            .split(service.getSeparationForMultiInfo());
-                    String display = null;
-                    if (lunarInfo.length > 1) {
-                        display = lunarInfo[0] + "*";
-                    } else {
-                        display = lunarInfo[0];
-                    }
+                    String display = service.getLunarDay(year, month, dateNum);
                     if (!TextUtils.isEmpty(display)) {
                         canvas.drawText(display, x, y + DAY_HEADER_FONT_SIZE + 2, p);
                     }
