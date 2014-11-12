@@ -13,8 +13,7 @@ LOCAL_EMMA_COVERAGE_FILTER := +com.android.calendar.*
 
 LOCAL_MODULE_TAGS := optional
 
-LOCAL_SRC_FILES := $(call all-java-files-under,$(src_dirs)) \
-        src/com/android/lunar/ILunarService.aidl
+LOCAL_SRC_FILES := $(call all-java-files-under,$(src_dirs))
 
 # bundled
 #LOCAL_STATIC_JAVA_LIBRARIES += \
