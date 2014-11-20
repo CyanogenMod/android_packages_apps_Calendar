@@ -389,6 +389,7 @@
     <!-- This is a menu button for switching into edit mode when viewing an event.
         [CHAR LIMIT=10] -->
     <string name="edit_label">"Edit"</string>
+    <string name="share_label">"Share"</string>
     <!-- The button label for deleting an event -->
     <string name="delete_label">"Delete"</string>
     <!-- A menu item for deleting an event -->

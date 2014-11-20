@@ -103,12 +103,17 @@ import com.android.calendar.event.EditEventActivity;
 import com.android.calendar.event.EditEventHelper;
 import com.android.calendar.event.EventColorPickerDialog;
 import com.android.calendar.event.EventViewUtils;
+import com.android.calendar.icalendar.IcalendarUtils;
+import com.android.calendar.icalendar.Organizer;
+import com.android.calendar.icalendar.VCalendar;
+import com.android.calendar.icalendar.VEvent;
 import com.android.calendarcommon2.DateException;
 import com.android.calendarcommon2.Duration;
 import com.android.calendarcommon2.EventRecurrence;
 import com.android.colorpicker.ColorPickerSwatch.OnColorSelectedListener;
 import com.android.colorpicker.HsvColorComparator;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -1252,8 +1257,64 @@ public class EventInfoFragment extends DialogFragment implements OnCheckedChange
             mDeleteHelper.delete(mStartMillis, mEndMillis, mEventId, -1, onDeleteRunnable);
         } else if (itemId == R.id.info_action_change_color) {
             showEventColorPickerDialog();
+        } else if (itemId == R.id.info_action_share_event) {
+            shareEvent();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * Generates an .ics formatted file with the event info and launches intent chooser to
+     * share said file
+     */
+    private void shareEvent() {
+        // Create the respective ICalendar objects from the event info
+        VCalendar calendar = new VCalendar();
+        calendar.addProperty(VCalendar.VERSION, "2.0");
+        calendar.addProperty(VCalendar.PRODID, VCalendar.PRODUCT_IDENTIFIER);
+        calendar.addProperty(VCalendar.CALSCALE, "GREGORIAN");
+        calendar.addProperty(VCalendar.METHOD, "REQUEST");
+
+        VEvent event = new VEvent();
+        event.addEventStart(mStartMillis);
+        event.addEventEnd(mEndMillis);
+
+        mEventCursor.moveToFirst();
+        event.addProperty(VEvent.LOCATION, mEventCursor.getString(EVENT_INDEX_EVENT_LOCATION));
+        event.addProperty(VEvent.DESCRIPTION, mEventCursor.getString(EVENT_INDEX_DESCRIPTION));
+        event.addProperty(VEvent.SUMMARY, mEventCursor.getString(EVENT_INDEX_TITLE));
+        event.addOrganizer(new Organizer(mEventOrganizerDisplayName, mEventOrganizerEmail));
+
+        // Add Attendees to event
+        for (Attendee attendee : mAcceptedAttendees) {
+            IcalendarUtils.addAttendeeToEvent(attendee, event);
+        }
+
+        for (Attendee attendee : mDeclinedAttendees) {
+            IcalendarUtils.addAttendeeToEvent(attendee, event);
+        }
+
+        for (Attendee attendee : mTentativeAttendees) {
+            IcalendarUtils.addAttendeeToEvent(attendee, event);
+        }
+
+        for (Attendee attendee : mNoResponseAttendees) {
+            IcalendarUtils.addAttendeeToEvent(attendee, event);
+        }
+
+        // compose all of the ICalendar objects
+        calendar.addEvent(event);
+
+        // create and share ics file
+        File inviteFile = new File(mActivity.getCacheDir() , "invite.ics");
+        if (IcalendarUtils.writeCalendarToFile(calendar, inviteFile)) {
+            Intent shareIntent = new Intent();
+            shareIntent.setAction(Intent.ACTION_SEND);
+            shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(inviteFile));
+            shareIntent.setType("*/*");     // allow any app to receive the intent
+
+            startActivity(shareIntent);
+        }
     }
 
     private void showEventColorPickerDialog() {
