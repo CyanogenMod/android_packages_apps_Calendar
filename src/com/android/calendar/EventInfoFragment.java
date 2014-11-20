@@ -48,6 +48,8 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.os.FileObserver;
 import android.provider.CalendarContract;
 import android.provider.CalendarContract.Attendees;
 import android.provider.CalendarContract.Calendars;
@@ -103,15 +105,22 @@ import com.android.calendar.event.EditEventActivity;
 import com.android.calendar.event.EditEventHelper;
 import com.android.calendar.event.EventColorPickerDialog;
 import com.android.calendar.event.EventViewUtils;
+import com.android.calendar.icalendar.IcalendarUtils;
+import com.android.calendar.icalendar.Organizer;
+import com.android.calendar.icalendar.VCalendar;
+import com.android.calendar.icalendar.VEvent;
 import com.android.calendarcommon2.DateException;
 import com.android.calendarcommon2.Duration;
 import com.android.calendarcommon2.EventRecurrence;
 import com.android.colorpicker.ColorPickerSwatch.OnColorSelectedListener;
 import com.android.colorpicker.HsvColorComparator;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 
 public class EventInfoFragment extends DialogFragment implements OnCheckedChangeListener,
@@ -302,6 +311,31 @@ public class EventInfoFragment extends DialogFragment implements OnCheckedChange
     public static final int COLORS_INDEX_COLOR = 1;
     public static final int COLORS_INDEX_COLOR_KEY = 2;
 
+    /* Holds onto the EventFileObservers so they won't be garbage collected before their event
+        handlers fire */
+    private static final HashMap<String, EventFileObserver> sEventFileObservers =
+            new HashMap<String, EventFileObserver>();
+
+    /**
+     * Activate FileObserver and hold a ref to it
+     * @param filePath
+     * @param observer
+     */
+    private static void registerEventFileObserver(String filePath, EventFileObserver observer) {
+        observer.startWatching();
+        sEventFileObservers.put(filePath, observer);
+    }
+
+    /**
+     * De-activate FileObserver and discard its ref
+     * @param filePath
+     * @param observer
+     */
+    private static void unregisterEventFileObserver(String filePath, EventFileObserver observer) {
+        observer.stopWatching();
+        sEventFileObservers.remove(filePath);
+    }
+
     private View mView;
 
     private Uri mUri;
@@ -411,7 +445,6 @@ public class EventInfoFragment extends DialogFragment implements OnCheckedChange
     private ArrayList<String> mReminderMethodLabels;
 
     private QueryHandler mHandler;
-
 
     private final Runnable mTZUpdater = new Runnable() {
         @Override
@@ -1252,8 +1285,84 @@ public class EventInfoFragment extends DialogFragment implements OnCheckedChange
             mDeleteHelper.delete(mStartMillis, mEndMillis, mEventId, -1, onDeleteRunnable);
         } else if (itemId == R.id.info_action_change_color) {
             showEventColorPickerDialog();
+        } else if (itemId == R.id.info_action_share_event) {
+            shareEvent();
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * Generates an .ics formatted file with the event info and launches intent chooser to
+     * share said file
+     */
+    private void shareEvent() {
+        // Create the respective ICalendar objects from the event info
+        VCalendar calendar = new VCalendar();
+        calendar.addProperty(VCalendar.VERSION, "2.0");
+        calendar.addProperty(VCalendar.PRODID, VCalendar.PRODUCT_IDENTIFIER);
+        calendar.addProperty(VCalendar.CALSCALE, "GREGORIAN");
+        calendar.addProperty(VCalendar.METHOD, "REQUEST");
+
+        VEvent event = new VEvent();
+        event.addEventStart(mStartMillis);
+        event.addEventEnd(mEndMillis);
+
+        mEventCursor.moveToFirst();
+        event.addProperty(VEvent.LOCATION, mEventCursor.getString(EVENT_INDEX_EVENT_LOCATION));
+        event.addProperty(VEvent.DESCRIPTION, mEventCursor.getString(EVENT_INDEX_DESCRIPTION));
+        event.addProperty(VEvent.SUMMARY, mEventCursor.getString(EVENT_INDEX_TITLE));
+        event.addOrganizer(new Organizer(mEventOrganizerDisplayName, mEventOrganizerEmail));
+
+        // Add Attendees to event
+        for (Attendee attendee : mAcceptedAttendees) {
+            IcalendarUtils.addAttendeeToEvent(attendee, event);
+        }
+
+        for (Attendee attendee : mDeclinedAttendees) {
+            IcalendarUtils.addAttendeeToEvent(attendee, event);
+        }
+
+        for (Attendee attendee : mTentativeAttendees) {
+            IcalendarUtils.addAttendeeToEvent(attendee, event);
+        }
+
+        for (Attendee attendee : mNoResponseAttendees) {
+            IcalendarUtils.addAttendeeToEvent(attendee, event);
+        }
+
+        // compose all of the ICalendar objects
+        calendar.addEvent(event);
+
+        // create and share ics file
+        boolean shareSuccessful = false;
+        try {
+            File inviteFile = File.createTempFile("invite", ".ics",
+                    mActivity.getExternalCacheDir());
+            if (IcalendarUtils.writeCalendarToFile(calendar, inviteFile)) {
+                inviteFile.setReadable(true,false);     // set world-readable
+                Intent shareIntent = new Intent();
+                shareIntent.setAction(Intent.ACTION_SEND);
+                shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(inviteFile));
+                // allow any app to receive the intent
+                shareIntent.setType("application/octet-stream");
+                // keep the temp file around just long enough
+                registerEventFileObserver(inviteFile.getAbsolutePath(),
+                        new EventFileObserver(inviteFile.getAbsolutePath(), FileObserver.OPEN));
+                startActivity(shareIntent);
+                shareSuccessful = true;
+
+            } else {
+                // error writing event info to file
+                shareSuccessful = false;
+            }
+        } catch (IOException e) {
+            shareSuccessful = false;
+        }
+
+        if (!shareSuccessful) {
+            Log.e(TAG, "Couldn't generate ics file");
+            Toast.makeText(mActivity, R.string.error_generating_ics, Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void showEventColorPickerDialog() {
@@ -2300,5 +2409,39 @@ public class EventInfoFragment extends DialogFragment implements OnCheckedChange
         mCurrentColor = color;
         mCurrentColorKey = mDisplayColorKeyMap.get(color);
         mHeadlines.setBackgroundColor(color);
+    }
+
+    /**
+     *  This class listens for a file open action on the generated event ics file. It then proceeds
+     *  to delete the event file as soon as the event file has been opened by another entity
+     *  (activity chosen through the intent chooser). This ensures that the generated temp event
+     *  file will be deleted, thereby not accumulating. And the entity that had the file shared with
+     *  it can still access the file.
+     */
+    private static class EventFileObserver extends FileObserver {
+
+        private String mPath;   // path on which the event observer is registered
+
+        public EventFileObserver(String path) {
+            super(path);
+            mPath = path;
+        }
+
+        public EventFileObserver(String path, int mask) {
+            super(path, mask);
+            mPath = path;
+        }
+
+        @Override
+        public void onEvent(int event, String path) {
+            switch(event) {
+                case OPEN:
+                    // delete the file as another entity already has read access
+                    new File(mPath).delete();
+                    // discard this file observer
+                    EventInfoFragment.unregisterEventFileObserver(mPath, this);
+                    break;
+            }
+        }
     }
 }
