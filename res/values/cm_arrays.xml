@@ -46,4 +46,13 @@
         <item>4</item>
         <item>1</item>
     </string-array>
+
+    <!-- Strings for buttons in drop down menu -->
+    <string-array name="buttons_list_cm" translatable="false">
+        <item>@string/buttons_list_0</item>
+        <item>@string/buttons_list_1</item>
+        <item>@string/buttons_list_2</item>
+        <item>@string/buttons_list_3</item>
+        <item>@string/buttons_list_4</item>
+    </string-array>
 </resources>

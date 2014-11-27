@@ -22,4 +22,9 @@
     <color name="event_content_title">#dd000000</color>
     <color name="event_content_text">#89000000</color>
     <color name="event_list_line">#26000000</color>
+
+    <color name="year_view_month_title_color">#FF139BEA</color>
+    <color name="year_view_month_click_color">#3CBDBDBD</color>
+    <color name="year_view_current_month_bg_color">#FFDAEFF8</color>
+    <color name="year_view_current_day_color">#FFFFFFFF</color>
 </resources>
