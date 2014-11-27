@@ -75,6 +75,11 @@
     <color name="month_today_bgcolor">#FFFFFFFF</color>
     <color name="month_bgcolor">#FFE5E5E5</color>
 
+    <color name="year_view_month_title_color">#FF139BEA</color>
+    <color name="year_view_month_click_color">#3CBDBDBD</color>
+    <color name="year_view_current_month_bg_color">#FFDAEFF8</color>
+    <color name="year_view_current_day_color">#FFFFFFFF</color>
+
     <color name="month_dna_conflict_time_color">#FF333333</color>
 
     <color name="event_center">#ff6bd697</color>
