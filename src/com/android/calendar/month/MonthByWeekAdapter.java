@@ -294,6 +294,7 @@ public class MonthByWeekAdapter extends SimpleWeeksAdapter {
                     ViewType.CURRENT, CalendarController.EXTRA_GOTO_DATE, null, null);
         } else {
             // Else , switch to the detailed view
+             Log.i("ROHIT", "switching to detail view ...");
             mController.sendEvent(mContext, EventType.GO_TO, day, day, -1,
                     ViewType.DETAIL,
                             CalendarController.EXTRA_GOTO_DATE
@@ -316,12 +317,12 @@ public class MonthByWeekAdapter extends SimpleWeeksAdapter {
         if (!(v instanceof MonthWeekEventsView)) {
             return super.onTouch(v, event);
         }
-
         int action = event.getAction();
 
         // Event was tapped - switch to the detailed view making sure the click animation
         // is done first.
         if (mGestureDetector.onTouchEvent(event)) {
+            Log.i("ROHIT", "gesture dectector");
             mSingleTapUpView = (MonthWeekEventsView) v;
             long delay = System.currentTimeMillis() - mClickTime;
             // Make sure the animation is visible for at least mOnTapDelay - mOnDownDelay ms
@@ -331,6 +332,7 @@ public class MonthByWeekAdapter extends SimpleWeeksAdapter {
         } else {
             // Animate a click - on down: show the selected day in the "clicked" color.
             // On Up/scroll/move/cancel: hide the "clicked" color.
+            Log.i("ROHIT", "switch stmt : " + action);
             switch (action) {
                 case MotionEvent.ACTION_DOWN:
                     mClickedView = (MonthWeekEventsView)v;
@@ -399,6 +401,7 @@ public class MonthByWeekAdapter extends SimpleWeeksAdapter {
         public void run() {
             if (mClickedView != null) {
                 synchronized(mClickedView) {
+                    Log.i("ROHIT", "setting teh selected day");
                     mClickedView.setClickedDay(mClickedXLocation);
                 }
                 mLongClickedView = mClickedView;

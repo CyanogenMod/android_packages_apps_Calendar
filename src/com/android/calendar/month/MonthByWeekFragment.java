@@ -125,7 +125,7 @@ public class MonthByWeekFragment extends SimpleDayPickerFragment implements
             mFirstVisibleDay.timezone = tz;
             mFirstVisibleDay.normalize(true);
             if (mAdapter != null) {
-                mAdapter.refresh();
+                mAdapter.refremosh();
             }
         }
     };
