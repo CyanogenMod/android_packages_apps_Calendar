@@ -316,7 +316,6 @@ public class MonthByWeekAdapter extends SimpleWeeksAdapter {
         if (!(v instanceof MonthWeekEventsView)) {
             return super.onTouch(v, event);
         }
-
         int action = event.getAction();
 
         // Event was tapped - switch to the detailed view making sure the click animation
