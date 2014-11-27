@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.calendar.month;
+package com.android.calendar.year;
 
 import android.content.Context;
 import android.content.res.Configuration;
@@ -22,25 +22,22 @@ import android.os.Handler;
 import android.os.Message;
 import android.text.format.Time;
 import android.util.Log;
-import android.view.GestureDetector;
-import android.view.HapticFeedbackConstants;
-import android.view.MotionEvent;
-import android.view.View;
-import android.view.ViewConfiguration;
-import android.view.ViewGroup;
+import android.view.*;
 import android.widget.AbsListView.LayoutParams;
-
 import com.android.calendar.CalendarController;
 import com.android.calendar.CalendarController.EventType;
 import com.android.calendar.CalendarController.ViewType;
 import com.android.calendar.Event;
 import com.android.calendar.R;
 import com.android.calendar.Utils;
+import com.android.calendar.month.MonthWeekEventsView;
+import com.android.calendar.month.SimpleWeekView;
+import com.android.calendar.month.SimpleWeeksAdapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class MonthByWeekAdapter extends SimpleWeeksAdapter {
+public class YearByMonthAdapter extends SimpleWeeksAdapter {
     private static final String TAG = "MonthByWeekAdapter";
 
     public static final String WEEK_PARAMS_IS_MINI = "mini_month";
@@ -80,7 +77,7 @@ public class MonthByWeekAdapter extends SimpleWeeksAdapter {
     // Minimal distance to move the finger in order to cancel the click animation
     private static float mMovedPixelToCancel;
 
-    public MonthByWeekAdapter(Context context, HashMap<String, Integer> params, Handler handler) {
+    public YearByMonthAdapter(Context context, HashMap<String, Integer> params, Handler handler) {
         super(context, params);
         mEventDialogHandler = handler;
         if (params.containsKey(WEEK_PARAMS_IS_MINI)) {

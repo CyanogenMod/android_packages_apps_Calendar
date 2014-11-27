@@ -129,7 +129,7 @@ public class SimpleWeekView extends View {
     protected int mLastMonth = -1;
     // The position of this week, equivalent to weeks since the week of Jan 1st,
     // 1970
-    protected int mWeek = -1;
+    public int mWeek = -1;
     // Quick reference to the width of this view, matches parent
     protected int mWidth;
     // The height this view should draw at in pixels, set by height param
@@ -147,7 +147,7 @@ public class SimpleWeekView extends View {
     // Which day of the week to start on [0-6]
     protected int mWeekStart = DEFAULT_WEEK_START;
     // How many days to display
-    protected int mNumDays = DEFAULT_NUM_DAYS;
+    public int mNumDays = DEFAULT_NUM_DAYS;
     // The number of days + a spot for week number if it is displayed
     protected int mNumCells = mNumDays;
     // The left edge of the selected day

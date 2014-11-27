@@ -182,7 +182,7 @@ public class SimpleWeeksAdapter extends BaseAdapter implements OnTouchListener {
     /**
      * updates any config options that may have changed and refreshes the view
      */
-    protected void refresh() {
+    public void refresh() {
         notifyDataSetChanged();
     }
 
@@ -294,7 +294,7 @@ public class SimpleWeeksAdapter extends BaseAdapter implements OnTouchListener {
         }
     }
 
-    ListView mListView;
+    public ListView mListView;
 
     public void setListView(ListView lv) {
         mListView = lv;

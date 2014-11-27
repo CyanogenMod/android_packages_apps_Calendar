@@ -80,6 +80,7 @@ import com.android.calendar.CalendarController.ViewType;
 import com.android.calendar.agenda.AgendaFragment;
 import com.android.calendar.month.MonthByWeekFragment;
 import com.android.calendar.selectcalendars.SelectVisibleCalendarsFragment;
+import com.android.calendar.year.YearByMonthFragment;
 
 import java.io.IOException;
 import java.util.Calendar;
@@ -112,6 +113,7 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
     private static final int BUTTON_WEEK_INDEX = 1;
     private static final int BUTTON_MONTH_INDEX = 2;
     private static final int BUTTON_AGENDA_INDEX = 3;
+    private static final int BUTTON_YEAR_INDEX = 4;
 
     private CalendarController mController;
     private static boolean mIsMultipane;
@@ -155,6 +157,7 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
     private ActionBar.Tab mDayTab;
     private ActionBar.Tab mWeekTab;
     private ActionBar.Tab mMonthTab;
+    private ActionBar.Tab mYearTab;
     private ActionBar.Tab mAgendaTab;
     private SearchView mSearchView;
     private MenuItem mSearchMenu;
@@ -500,6 +503,9 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
                 break;
             case ViewType.MONTH:
                 mActionBar.setSelectedNavigationItem(BUTTON_MONTH_INDEX);
+                break;
+            case ViewType.YEAR:
+                mActionBar.setSelectedNavigationItem(BUTTON_YEAR_INDEX);
                 break;
             default:
                 mActionBar.setSelectedNavigationItem(BUTTON_DAY_INDEX);
@@ -953,6 +959,19 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
                 }
                 ExtensionsFactory.getAnalyticsLogger(getBaseContext()).trackView("month");
                 break;
+            case ViewType.YEAR:
+                if (mActionBar != null && (mActionBar.getSelectedTab() != mYearTab)) {
+                    mActionBar.selectTab(mYearTab);
+                }
+                if (mActionBarMenuSpinnerAdapter != null) {
+                    mActionBar.setSelectedNavigationItem(CalendarViewAdapter.YEAR_BUTTON_INDEX);
+                }
+                frag = new YearByMonthFragment();
+//                if (mShowAgendaWithYear) {
+//                    secFrag = new AgendaFragment(timeMillis, false);
+//                }
+                ExtensionsFactory.getAnalyticsLogger(getBaseContext()).trackView("year");
+                break;
             case ViewType.WEEK:
             default:
                 if (mActionBar != null && (mActionBar.getSelectedTab() != mWeekTab)) {
@@ -1293,13 +1312,15 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
             mController.sendEvent(this, EventType.GO_TO, null, null, -1, ViewType.WEEK);
         } else if (tab == mMonthTab && mCurrentView != ViewType.MONTH) {
             mController.sendEvent(this, EventType.GO_TO, null, null, -1, ViewType.MONTH);
+        } else if (tab == mYearTab && mCurrentView != ViewType.YEAR) {
+            mController.sendEvent(this, EventType.GO_TO, null, null, -1, ViewType.YEAR);
         } else if (tab == mAgendaTab && mCurrentView != ViewType.AGENDA) {
             mController.sendEvent(this, EventType.GO_TO, null, null, -1, ViewType.AGENDA);
         } else {
             Log.w(TAG, "TabSelected event from unknown tab: "
                     + (tab == null ? "null" : tab.getText()));
             Log.w(TAG, "CurrentView:" + mCurrentView + " Tab:" + tab.toString() + " Day:" + mDayTab
-                    + " Week:" + mWeekTab + " Month:" + mMonthTab + " Agenda:" + mAgendaTab);
+                    + " Week:" + mWeekTab + " Month:" + mMonthTab + " Year:" + mYearTab + " Agenda:" + mAgendaTab);
         }
     }
 
@@ -1330,6 +1351,11 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
                     mController.sendEvent(this, EventType.GO_TO, null, null, -1, ViewType.MONTH);
                 }
                 break;
+            case CalendarViewAdapter.YEAR_BUTTON_INDEX:
+                if (mCurrentView != ViewType.YEAR) {
+                    mController.sendEvent(this, EventType.GO_TO, null, null, -1, ViewType.YEAR);
+                }
+                break;
             case CalendarViewAdapter.AGENDA_BUTTON_INDEX:
                 if (mCurrentView != ViewType.AGENDA) {
                     mController.sendEvent(this, EventType.GO_TO, null, null, -1, ViewType.AGENDA);
@@ -1339,7 +1365,7 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
                 Log.w(TAG, "ItemSelected event from unknown button: " + itemPosition);
                 Log.w(TAG, "CurrentView:" + mCurrentView + " Button:" + itemPosition +
                         " Day:" + mDayTab + " Week:" + mWeekTab + " Month:" + mMonthTab +
-                        " Agenda:" + mAgendaTab);
+                        "Year: " + mYearTab + " Agenda:" + mAgendaTab);
                 break;
         }
         return false;

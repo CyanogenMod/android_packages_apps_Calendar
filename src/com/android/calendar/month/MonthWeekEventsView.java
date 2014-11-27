@@ -685,7 +685,7 @@ public class MonthWeekEventsView extends SimpleWeekView {
         if (mShowWeekNum) {
             x = SIDE_PADDING_WEEK_NUMBER + mPadding;
             y = mWeekNumAscentHeight + TOP_PADDING_WEEK_NUMBER;
-            canvas.drawText(mDayNumbers[0], x, y, mWeekNumPaint);
+//            canvas.drawText(mDayNumbers[0], x, y, mWeekNumPaint);
             numCount++;
             i++;
             todayIndex++;
