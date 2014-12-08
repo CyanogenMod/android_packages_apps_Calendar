@@ -23,12 +23,6 @@
         android:icon="@drawable/today_icon"
         android:showAsAction="withText|ifRoom" />
     <item
-        android:id="@+id/action_create_event"
-        android:alphabeticShortcut="n"
-        android:title="@string/event_create"
-        android:icon="@drawable/ic_menu_add_event_holo_light"
-        android:showAsAction="ifRoom" />
-    <item
         android:id="@+id/action_refresh"
         android:alphabeticShortcut="r"
         android:showAsAction="never"

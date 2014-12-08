@@ -27,4 +27,9 @@
     <color name="year_view_month_click_color">#3CBDBDBD</color>
     <color name="year_view_current_month_bg_color">#FFDAEFF8</color>
     <color name="year_view_current_day_color">#FFFFFFFF</color>
+
+    <color name="fab_theme_color">#da4336</color>
+    <color name="fab_theme_color_dark">#ffc33c33</color>
+    <color name="fab_theme_color_accent">#0288d1</color>
+    <color name="floating_action_button_icon_color">#ffffff</color>
 </resources>
