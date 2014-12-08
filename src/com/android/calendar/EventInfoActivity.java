@@ -145,7 +145,7 @@ public class EventInfoActivity extends Activity {
         // Remove the application title
         ActionBar bar = getActionBar();
         if (bar != null) {
-            bar.setDisplayOptions(ActionBar.DISPLAY_HOME_AS_UP | ActionBar.DISPLAY_SHOW_HOME);
+            bar.setDisplayOptions(ActionBar.DISPLAY_HOME_AS_UP);
         }
 
         // Create a new fragment if none exists
