@@ -34,16 +34,17 @@ public class DayOfMonthDrawable extends Drawable {
     private String mDayOfMonth = "1";
     private final Paint mPaint;
     private final Rect mTextBounds = new Rect();
-    private static float mTextSize = 14;
+    private static float mTextSize = 12;
 
     public DayOfMonthDrawable(Context c) {
         mTextSize = c.getResources().getDimension(R.dimen.today_icon_text_size);
         mPaint = new Paint();
         mPaint.setAlpha(255);
-        mPaint.setColor(0xFF777777);
+        mPaint.setColor(0xFF000000);
         mPaint.setTypeface(Typeface.DEFAULT_BOLD);
         mPaint.setTextSize(mTextSize);
         mPaint.setTextAlign(Paint.Align.CENTER);
+        mPaint.setAntiAlias(true);
     }
 
     @Override
