@@ -2146,4 +2146,11 @@ public class Utils {
         return reminders;
     }
 
+    public static int getDarkerColor(int color) {
+        float[] hsv = new float[3];
+        Color.colorToHSV(color, hsv);
+        hsv[2] *= 0.8f;
+        return Color.HSVToColor(hsv);
+    }
+
 }

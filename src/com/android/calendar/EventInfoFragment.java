@@ -45,6 +45,7 @@ import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.Rect;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -1617,7 +1618,7 @@ public class EventInfoFragment extends DialogFragment implements OnCheckedChange
         String rRule = mEventCursor.getString(EVENT_INDEX_RRULE);
         String eventTimezone = mEventCursor.getString(EVENT_INDEX_EVENT_TIMEZONE);
 
-        mHeadlines.setBackgroundColor(mCurrentColor);
+        updateBackgroundColor();
 
         // What
         if (eventName != null) {
@@ -1722,6 +1723,13 @@ public class EventInfoFragment extends DialogFragment implements OnCheckedChange
         if (Utils.isJellybeanOrLater()) {
             updateCustomAppButton();
         }
+    }
+
+    private void updateBackgroundColor() {
+        mHeadlines.setBackgroundColor(mCurrentColor);
+        mActivity.getActionBar().setBackgroundDrawable(new ColorDrawable(mCurrentColor));
+        Window window = mActivity.getWindow();
+        window.setStatusBarColor(Utils.getDarkerColor(mCurrentColor));
     }
 
     private void updateCustomAppButton() {
@@ -2400,6 +2408,6 @@ public class EventInfoFragment extends DialogFragment implements OnCheckedChange
     public void onColorSelected(int color) {
         mCurrentColor = color;
         mCurrentColorKey = mDisplayColorKeyMap.get(color);
-        mHeadlines.setBackgroundColor(color);
+        updateBackgroundColor();
     }
 }

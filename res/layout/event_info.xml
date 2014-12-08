@@ -13,7 +13,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<FrameLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="#fafafa"
     android:layout_width="match_parent"
@@ -43,6 +43,12 @@
             android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
+
+            <!--  Container for the event's headline
+                  Name, Date, Time & Location
+            -->
+            <include layout="@layout/event_info_headline" />
+
     <ScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/event_info_scroll_view"
@@ -50,17 +56,13 @@
         android:layout_width="match_parent"
         android:fadingEdge="none"
         android:animateLayoutChanges="true"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/event_info_headline">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <!--  Container for the event's headline
-                  Name, Date, Time & Location
-            -->
-            <include layout="@layout/event_info_headline" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -226,8 +228,6 @@
                     android:layout_marginBottom="0dip"
                     android:textAllCaps="false"
                     android:textSize="16sp"
-                    android:textColor="#777777"
-                    android:background="?android:attr/selectableItemBackground"
                     android:drawableLeft="@drawable/event_info_mail_button"
                     android:drawablePadding="8dp"
                     style="@style/TextAppearance.EditEvent_LabelSmall" />
@@ -258,8 +258,6 @@
                     android:layout_marginBottom="0dip"
                     android:textAllCaps="false"
                     android:textSize="16sp"
-                    android:textColor="#777777"
-                    android:background="?android:attr/selectableItemBackground"
                     android:drawablePadding="8dp"
                     style="@style/TextAppearance.EditEvent_LabelSmall" />
             </LinearLayout>
@@ -318,4 +316,4 @@
                 style="@style/TextAppearance.EditEvent_LabelSmall" />
         </LinearLayout>
     </ScrollView>
-</FrameLayout>
+</RelativeLayout>
