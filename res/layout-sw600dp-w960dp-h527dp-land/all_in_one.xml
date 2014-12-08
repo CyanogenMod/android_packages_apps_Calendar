@@ -71,11 +71,17 @@
         android:layout_below="@id/date_group"
         android:layout_height="match_parent"
         android:layout_width="match_parent">
-        <FrameLayout
+        <RelativeLayout
             android:id="@+id/main_pane"
             android:layout_weight="6"
             android:layout_height="match_parent"
-            android:layout_width="0dip" />
+            android:layout_width="0dip" >
+
+            <include
+                android:layout_gravity="bottom|right"
+                layout="@layout/floating_action_button" />
+
+        </RelativeLayout>
         <FrameLayout
             android:id="@+id/secondary_pane"
             android:layout_weight="4"
