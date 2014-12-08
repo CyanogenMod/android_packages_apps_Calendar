@@ -45,6 +45,7 @@ import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.Rect;
+import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
@@ -1468,6 +1469,13 @@ public class EventInfoFragment extends DialogFragment implements OnCheckedChange
         mLoadingMsgView.setVisibility(View.GONE);
     }
 
+    private static int getDarkerColor(int color) {
+        float[] hsv = new float[3];
+        Color.colorToHSV(color, hsv);
+        hsv[2] *= 0.8f; // value component
+        return Color.HSVToColor(hsv);
+    }
+
     private void updateEvent(View view) {
         if (mEventCursor == null || view == null) {
             return;
@@ -1517,6 +1525,8 @@ public class EventInfoFragment extends DialogFragment implements OnCheckedChange
         String eventTimezone = mEventCursor.getString(EVENT_INDEX_EVENT_TIMEZONE);
 
         mHeadlines.setBackgroundColor(mCurrentColor);
+        getActivity().getWindow().setStatusBarColor(getDarkerColor(mCurrentColor));
+        getActivity().getActionBar().setBackgroundDrawable(new ColorDrawable(mCurrentColor));
 
         // What
         if (eventName != null) {

@@ -68,4 +68,7 @@
         android:layout_width="0dip"
         android:layout_height="0dip"
         android:visibility="gone"/>
+
+    <include layout="@layout/floating_action_button" />
+
 </RelativeLayout>
