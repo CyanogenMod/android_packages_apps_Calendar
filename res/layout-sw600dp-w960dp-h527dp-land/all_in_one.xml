@@ -64,8 +64,7 @@
         android:visibility="gone"
         android:layout_alignParentRight="true"/>
 
-     <LinearLayout
-        android:orientation="horizontal"
+     <RelativeLayout
         android:layout_toLeftOf="@id/mini_month_container"
         android:layout_alignParentLeft="true"
         android:layout_below="@id/date_group"
@@ -76,13 +75,17 @@
             android:layout_weight="6"
             android:layout_height="match_parent"
             android:layout_width="0dip" />
+        <include
+            layout="@layout/floating_action_button"
+            android:layout_alignBaseline="@id/main_pane" />
         <FrameLayout
+            android:layout_below="@id/main_pane"
             android:id="@+id/secondary_pane"
             android:layout_weight="4"
             android:visibility="gone"
             android:layout_height="match_parent"
             android:layout_width="0dip" />
-    </LinearLayout>
+    </RelativeLayout>
 
     <View
         android:layout_toRightOf="@id/date_group"
