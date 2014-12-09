@@ -9,9 +9,12 @@ import android.util.Log;
 import com.android.calendar.CalendarEventModel;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -179,5 +182,54 @@ public class IcalendarUtils {
 
         // remove the local time zone's UTC offset
         return millis - TimeZone.getTimeZone(localTimeZone).getRawOffset();
+    }
+
+    /**
+     * Copy the contents of a file into another
+     *
+     * @param src input / src file
+     * @param dst file to be copied into
+     */
+    public static boolean copyFile(File src, File dst) {
+        boolean isSuccessful = false;
+        InputStream in = null;
+        OutputStream out = null;
+        try {
+            in = new FileInputStream(src);
+            out = new FileOutputStream(dst);
+
+            byte[] buf = new byte[1024];
+
+            try {
+                for (int len; (len = in.read(buf)) > 0; ) {
+                    out.write(buf, 0, len);
+                }
+                isSuccessful = true;
+            } catch (IOException e) {
+                // ignore
+            }
+
+        } catch (FileNotFoundException fnf) {
+            // ignore
+        } finally {
+
+            if (in != null) {
+                try {
+                    in.close();
+                } catch (IOException e) {
+                    // ignore
+                }
+            }
+
+            if (out != null) {
+                try {
+                    out.close();
+                } catch (IOException e) {
+                    // ignore
+                }
+            }
+        }
+
+        return isSuccessful;
     }
 }
