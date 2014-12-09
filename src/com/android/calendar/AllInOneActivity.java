@@ -448,8 +448,8 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
             getLoaderManager().initLoader(0, null, this);
         }
 
-        // Clean up cached ics files - in case onDestroy() didn't run the last time
-        cleanupCachedIcsFiles();
+        // Clean up cached ics and vcs files - in case onDestroy() didn't run the last time
+        cleanupCachedEventFiles();
     }
 
     private long parseViewAction(final Intent intent) {
@@ -641,22 +641,22 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
 
         CalendarController.removeInstance(this);
 
-        // Clean up cached ics files
-        cleanupCachedIcsFiles();
+        // Clean up cached ics and vcs files
+        cleanupCachedEventFiles();
     }
 
     /**
-     * Cleans up the temporarily generated ics files in the cache directory
-     * The files are of the format *.ics
+     * Cleans up the temporarily generated ics and vcs files in the cache directory
+     * The files are of the format *.ics and *.vcs
      */
-    private void cleanupCachedIcsFiles() {
+    private void cleanupCachedEventFiles() {
         if (!isExternalStorageWritable()) return;
         File cacheDir = getExternalCacheDir();
         File[] files = cacheDir.listFiles();
         if (files == null) return;
         for (File file : files) {
             String filename = file.getName();
-            if (filename.endsWith(".ics")) {
+            if (filename.endsWith(".ics") || filename.endsWith(".vcs")) {
                 file.delete();
             }
         }
