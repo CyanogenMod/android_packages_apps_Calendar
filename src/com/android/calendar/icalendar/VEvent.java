@@ -6,6 +6,7 @@ package com.android.calendar.icalendar;
 
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.ListIterator;
 import java.util.UUID;
 
 /**
@@ -89,6 +90,7 @@ public class VEvent {
         if (sPropertyList.containsKey(property) && sPropertyList.get(property) == 1 &&
                 value != null) {
             mProperties.put(property, IcalendarUtils.cleanseString(value));
+            System.out.println(property + "->" + IcalendarUtils.cleanseString(value));
             return true;
         }
         return false;
@@ -171,6 +173,29 @@ public class VEvent {
         sb.append("END:VEVENT\n");
 
         return sb.toString();
+    }
+
+    public void populateFromEntries(ListIterator<String> iter) {
+        while (iter.hasNext()) {
+            String line = iter.next();
+            System.out.println("VEvent : " + line);
+            if (line.contains("BEGIN:VEVENT") || line.contains("END:VEVENT")) {
+                continue;
+            } else if (line.startsWith("ORGANIZER")) {
+                mOrganizer = Organizer.populateFromICalString(line);
+            } else if (line.startsWith("ATTENDEE")) {
+                iter.previous();
+                Attendee attendee = new Attendee();
+                attendee.populateFromEntries(iter);
+                mAttendees.add(attendee);
+                System.out.println("Adding " + attendee.mEmail);
+            } else if (line.startsWith("END:EVENT")) {
+                break;
+            } else if (line.contains(":")) {
+                int indexOfFirstColon = line.indexOf(":");
+                addProperty(line.substring(0, indexOfFirstColon), line.substring(indexOfFirstColon + 1));
+            }
+        }
     }
 
 }

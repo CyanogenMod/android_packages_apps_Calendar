@@ -4,8 +4,7 @@
 
 package com.android.calendar.icalendar;
 
-import java.util.HashMap;
-import java.util.LinkedList;
+import java.util.*;
 
 /**
  * Models the Calendar/VCalendar component of the iCalendar format
@@ -100,6 +99,32 @@ public class VCalendar {
         output.append("END:VCALENDAR\n");
 
         return output.toString();
+    }
+
+    public void populateFromString(String input) {
+        List<String> lines = Arrays.asList(input.split("\\n"));
+
+        ListIterator<String> iter = lines.listIterator();
+        while (iter.hasNext()) {
+            String line = iter.next();
+            if (line.contains("BEGIN:VEVENT")) {
+                iter.previous();
+                VEvent event = new VEvent();
+                event.populateFromEntries(iter);
+                mEvents.add(event);
+            } else if (line.contains("BEGIN:VCALENDAR") || line.contains("END:VCALENDAR")) {
+                continue;
+            } else if (line.contains(":")) {
+                int indexOfFirstColon = line.indexOf(":");
+                addProperty(line.substring(0, indexOfFirstColon), line.substring(indexOfFirstColon + 1));
+            } else if (line.contains("END:VCALENDAR")) {
+                break;
+            }
+        }
+    }
+
+    public String getProperty(String key) {
+        return mProperties.get(key);
     }
 
     /**

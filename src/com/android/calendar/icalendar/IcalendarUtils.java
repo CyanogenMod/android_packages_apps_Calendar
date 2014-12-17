@@ -16,16 +16,29 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.TimeZone;
+import java.util.*;
 
 /**
  * Helper functions to help adhere to the iCalendar format.
  */
 public class IcalendarUtils {
 
-    private static int sPermittedLineLength = 75; // Line length mandated by iCalendar format
+    public static int sPermittedLineLength = 75; // Line length mandated by iCalendar format
+    private static final Random tempFileRandom = new Random();
+
+    public static String uncleanseString(CharSequence sequence) {
+        if (sequence == null) return null;
+        String input = sequence.toString();
+
+        // replace new lines with the literal '\n'
+        input = input.replaceAll("\\\\n", "\n");
+        // escape semicolons and commas
+        input = input.replaceAll("\\\\;", ";");
+        input = input.replaceAll("\\\\,", ",");
+        input = input.replaceAll("\\\\\\,", ",");
+
+        return input;
+    }
 
     /**
      * ensure the string conforms to the iCalendar encoding requirements
@@ -44,6 +57,65 @@ public class IcalendarUtils {
         input = input.replace(",", "\\,");
 
         return input;
+    }
+
+    /**
+     * Creates an empty temporary file in the given directory using the given
+     * prefix and suffix as part of the file name. If {@code suffix} is null, {@code .tmp} is used.
+     *
+     * <p>Note that this method does <i>not</i> call {@link #deleteOnExit}, but see the
+     * documentation for that method before you call it manually.
+     *
+     * @param prefix
+     *            the prefix to the temp file name.
+     * @param suffix
+     *            the suffix to the temp file name.
+     * @param directory
+     *            the location to which the temp file is to be written, or
+     *            {@code null} for the default location for temporary files,
+     *            which is taken from the "java.io.tmpdir" system property. It
+     *            may be necessary to set this property to an existing, writable
+     *            directory for this method to work properly.
+     * @return the temporary file.
+     * @throws IllegalArgumentException
+     *             if the length of {@code prefix} is less than 3.
+     * @throws IOException
+     *             if an error occurs when writing the file.
+     */
+    public static File createTempFile(String prefix, String suffix, File directory)
+            throws IOException {
+        // Force a prefix null check first
+        if (prefix.length() < 3) {
+            throw new IllegalArgumentException("prefix must be at least 3 characters");
+        }
+        if (suffix == null) {
+            suffix = ".tmp";
+        }
+        File tmpDirFile = directory;
+        if (tmpDirFile == null) {
+            String tmpDir = System.getProperty("java.io.tmpdir", ".");
+            tmpDirFile = new File(tmpDir);
+        }
+        File result;
+        do {
+            result = new File(tmpDirFile, prefix + tempFileRandom.nextInt(Integer.MAX_VALUE) + suffix);
+        } while (!result.createNewFile());
+        return result;
+    }
+
+    public static VCalendar readCalendarFromFile(File file) {
+        StringBuilder builder = new StringBuilder();
+        try {
+            Scanner scanner = new Scanner(file);
+            while (scanner.hasNextLine()) {
+                builder.append(scanner.nextLine()).append("\n");
+            }
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        VCalendar calendar = new VCalendar();
+        calendar.populateFromString(builder.toString());
+        return calendar;
     }
 
     /**
