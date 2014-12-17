@@ -885,6 +885,8 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
             GoToDialogFragment goToFrg = GoToDialogFragment.newInstance(timeZone);
             goToFrg.show(getFragmentManager(), "goto");
             return true;
+        } else if (itemId == R.id.action_import) {
+            ImportActivity.pickImportFile(this);
         } else {
             return mExtensions.handleItemSelected(item, this);
         }
