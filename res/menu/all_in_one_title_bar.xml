@@ -63,4 +63,11 @@
         android:icon="@drawable/ic_menu_settings_holo_light"
         android:showAsAction="never"
         android:orderInCategory="8" />
+    <item
+        android:id="@+id/action_import"
+        android:alphabeticShortcut="i"
+        android:title="@string/cal_import_menu_title"
+        android:icon="@drawable/ic_menu_export"
+        android:showAsAction="never"
+        android:orderInCategory="9" />
 </menu>

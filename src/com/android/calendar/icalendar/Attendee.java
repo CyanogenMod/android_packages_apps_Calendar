@@ -5,6 +5,7 @@
 package com.android.calendar.icalendar;
 
 import java.util.HashMap;
+import java.util.ListIterator;
 
 /**
  * Models the Attendee component of a calendar event
@@ -72,6 +73,15 @@ public class Attendee {
 
         output.append("\n");
         return output.toString();
+    }
+
+    public void populateFromEntries(ListIterator<String> iter) {
+        String line = iter.next();
+        if (line.contains("ATTENDEE")) {
+            String entry = VEvent.parseTillNextAttribute(iter, line);
+            String[] entries = entry.split("X-NUM-GUESTS=0:mailto:");
+            mEmail = entries[1];
+        }
     }
 
 }
