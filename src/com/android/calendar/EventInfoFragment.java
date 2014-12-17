@@ -48,6 +48,7 @@ import android.graphics.Rect;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
 import android.provider.CalendarContract;
 import android.provider.CalendarContract.Attendees;
 import android.provider.CalendarContract.Calendars;
@@ -183,6 +184,14 @@ public class EventInfoFragment extends DialogFragment implements OnCheckedChange
     private static final int TOKEN_QUERY_ALL = TOKEN_QUERY_DUPLICATE_CALENDARS
             | TOKEN_QUERY_ATTENDEES | TOKEN_QUERY_CALENDARS | TOKEN_QUERY_EVENT
             | TOKEN_QUERY_REMINDERS | TOKEN_QUERY_VISIBLE_CALENDARS | TOKEN_QUERY_COLORS;
+
+    public static final File EXPORT_SDCARD_DIRECTORY = new File(
+            Environment.getExternalStorageDirectory(), "CalendarEvents");
+
+    private enum ShareType {
+        SDCARD,
+        INTENT
+    }
 
     private int mCurrentQuery = 0;
 
@@ -1255,7 +1264,9 @@ public class EventInfoFragment extends DialogFragment implements OnCheckedChange
         } else if (itemId == R.id.info_action_change_color) {
             showEventColorPickerDialog();
         } else if (itemId == R.id.info_action_share_event) {
-            shareEvent();
+            shareEvent(ShareType.INTENT);
+        } else if (itemId == R.id.info_action_export) {
+            shareEvent(ShareType.SDCARD);
         }
         return super.onOptionsItemSelected(item);
     }
@@ -1264,7 +1275,7 @@ public class EventInfoFragment extends DialogFragment implements OnCheckedChange
      * Generates an .ics formatted file with the event info and launches intent chooser to
      * share said file
      */
-    private void shareEvent() {
+    private void shareEvent(ShareType type) {
         // Create the respective ICalendar objects from the event info
         VCalendar calendar = new VCalendar();
         calendar.addProperty(VCalendar.VERSION, "2.0");
@@ -1327,37 +1338,62 @@ public class EventInfoFragment extends DialogFragment implements OnCheckedChange
                 // Prefix length constraint is imposed by File#createTempFile
                 filePrefix = "invite";
             }
-            File inviteFile = File.createTempFile(filePrefix, ".ics",
-                    mActivity.getExternalCacheDir());
-            if (IcalendarUtils.writeCalendarToFile(calendar, inviteFile)) {
-                inviteFile.setReadable(true,false);     // set world-readable
-                Intent shareIntent = new Intent();
-                shareIntent.setAction(Intent.ACTION_SEND);
-                shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(inviteFile));
-                // The ics file is sent as an extra, the receiving application decides whether to
-                // parse the file to extract calendar events or treat it as a regular file
-                shareIntent.setType("application/octet-stream");
 
-                Intent chooserIntent = Intent.createChooser(shareIntent,
-                                        getResources().getString(R.string.cal_share_intent_title));
+            filePrefix = filePrefix.replaceAll("\\W+", " ");
 
-                // The MMS app only responds to "text/x-vcalendar" so we create a chooser intent
-                // that includes the targeted mms intent + any that respond to the above general
-                // purpose "application/octet-stream" intent.
-                File vcsInviteFile = File.createTempFile(filePrefix, ".vcs",
-                    mActivity.getExternalCacheDir());
-                // For now, we are duplicating ics file and using that as the vcs file
-                // TODO: revisit above
-                if (IcalendarUtils.copyFile(inviteFile, vcsInviteFile)) {
-                    Intent mmsShareIntent = new Intent();
-                    mmsShareIntent.setAction(Intent.ACTION_SEND);
-                    mmsShareIntent.setPackage("com.android.mms");
-                    mmsShareIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(vcsInviteFile));
-                    mmsShareIntent.setType("text/x-vcalendar");
-                    chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS,
-                                           new Intent[]{mmsShareIntent});
+            if (!filePrefix.endsWith(" ")) {
+                filePrefix += " ";
+            }
+
+            File dir;
+            if (type == ShareType.SDCARD) {
+                dir = EXPORT_SDCARD_DIRECTORY;
+                if (!dir.exists()) {
+                    dir.mkdir();
                 }
-                startActivity(chooserIntent);
+            } else {
+                dir = mActivity.getExternalCacheDir();
+            }
+
+            File inviteFile = IcalendarUtils.createTempFile(filePrefix, ".ics",
+                    dir);
+
+            if (IcalendarUtils.writeCalendarToFile(calendar, inviteFile)) {
+                if (type == ShareType.INTENT) {
+                    inviteFile.setReadable(true, false);     // Set world-readable
+                    Intent shareIntent = new Intent();
+                    shareIntent.setAction(Intent.ACTION_SEND);
+                    shareIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(inviteFile));
+                    // The ics file is sent as an extra, the receiving application decides whether
+                    // to parse the file to extract calendar events or treat it as a regular file
+                    shareIntent.setType("application/octet-stream");
+
+                    Intent chooserIntent = Intent.createChooser(shareIntent,
+                            getResources().getString(R.string.cal_share_intent_title));
+
+                    // The MMS app only responds to "text/x-vcalendar" so we create a chooser intent
+                    // that includes the targeted mms intent + any that respond to the above general
+                    // purpose "application/octet-stream" intent.
+                    File vcsInviteFile = File.createTempFile(filePrefix, ".vcs",
+                            mActivity.getExternalCacheDir());
+
+                    // For now, we are duplicating ics file and using that as the vcs file
+                    // TODO: revisit above
+                    if (IcalendarUtils.copyFile(inviteFile, vcsInviteFile)) {
+                        Intent mmsShareIntent = new Intent();
+                        mmsShareIntent.setAction(Intent.ACTION_SEND);
+                        mmsShareIntent.setPackage("com.android.mms");
+                        mmsShareIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(vcsInviteFile));
+                        mmsShareIntent.setType("text/x-vcalendar");
+                        chooserIntent.putExtra(Intent.EXTRA_INITIAL_INTENTS,
+                                new Intent[]{mmsShareIntent});
+                    }
+                    startActivity(chooserIntent);
+                } else {
+                    String msg = getString(R.string.cal_export_succ_msg);
+                    Toast.makeText(mActivity, String.format(msg, inviteFile),
+                            Toast.LENGTH_SHORT).show();
+                }
                 isShareSuccessful = true;
 
             } else {
@@ -1365,6 +1401,7 @@ public class EventInfoFragment extends DialogFragment implements OnCheckedChange
                 isShareSuccessful = false;
             }
         } catch (IOException e) {
+            e.printStackTrace();
             isShareSuccessful = false;
         }
 

@@ -53,6 +53,12 @@
         android:icon="@drawable/ic_menu_select_visible_calendars_holo_light"
         android:showAsAction="never" />
     <item
+        android:id="@+id/action_import"
+        android:alphabeticShortcut="i"
+        android:title="@string/cal_import_menu_title"
+        android:icon="@drawable/ic_menu_export"
+        android:showAsAction="never" />
+    <item
         android:id="@+id/action_settings"
         android:alphabeticShortcut="s"
         android:showAsAction="never"
