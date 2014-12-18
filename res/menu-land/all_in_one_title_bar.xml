@@ -61,4 +61,10 @@
         android:alphabeticShortcut="h"
         android:showAsAction="never"
         android:title="@string/hide_controls" />
+    <item
+        android:id="@+id/action_import"
+        android:alphabeticShortcut="i"
+        android:title="@string/cal_import_menu_title"
+        android:icon="@drawable/ic_menu_export"
+        android:showAsAction="never" />
 </menu>
