@@ -57,5 +57,7 @@
     <string name="cal_nothing_to_import">Nothing to import</string>
     <string name="cal_import_error_msg">Importing to calendar failed</string>
     <string name="cal_pick_ics">Pick file to import</string>
-
+    <!-- Toast message displayed when ics file to share an event can't be generated -->
+    <string name="error_generating_ics">"Problems encountered while sharing event"</string>
+    <string name="share_label">"Share"</string>
 </resources>
