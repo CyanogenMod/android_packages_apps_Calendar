@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2012-2013 The CyanogenMod Project
+     Copyright (C) 2012-2015 The CyanogenMod Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -46,16 +46,18 @@
 
     <!-- This is a label on a menu item. Pressing this menu item allows the
          user to go to the calendars to display [CHAR LIMIT=20] -->
-    <string name="go_to">"Go to"</string>
+    <string name="go_to">Go to</string>
 
     <!-- Sharing calendar event -->
     <string name="cal_share_intent_title">Send event to:</string>
 
-    <string name="cal_export_event_sdcard_title">Export to sdcard</string>
-    <string name="cal_export_succ_msg">Event exported successfully : %1s</string>
+    <string name="cal_export_event_sdcard_title">Export to SD card</string>
+    <string name="cal_export_succ_msg">Event exported successfully: %1s</string>
     <string name="cal_import_menu_title">Import event</string>
     <string name="cal_nothing_to_import">Nothing to import</string>
     <string name="cal_import_error_msg">Importing to calendar failed</string>
     <string name="cal_pick_ics">Pick file to import</string>
-
+    <!-- Toast message displayed when ics file to share an event can't be generated -->
+    <string name="error_generating_ics">Problems encountered while sharing event</string>
+    <string name="share_label">Share</string>
 </resources>
