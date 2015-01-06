@@ -115,9 +115,11 @@ public class YearViewPagerFragment extends Fragment implements CalendarControlle
      */
     private void updateTitle(int year) {
         Time start = new Time(Time.getCurrentTimezone());
-        start.set(1, 1, year);
-        long formatFlags = DateUtils.FORMAT_SHOW_YEAR;
-        mController.sendEvent(getActivity(), EventType.UPDATE_TITLE, start, start, null, -1,
+        start.set(1, 0, year);                              // set(day, month, year)
+        Time end = new Time(Time.getCurrentTimezone());
+        end.set(31, 11, year);
+        long formatFlags = DateUtils.FORMAT_SHOW_YEAR | DateUtils.FORMAT_NO_MONTH_DAY;
+        mController.sendEvent(getActivity(), EventType.UPDATE_TITLE, start, end, null, -1,
                 CalendarController.ViewType.CURRENT, formatFlags, null, null);
     }
 
