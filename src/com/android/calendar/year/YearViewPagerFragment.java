@@ -20,6 +20,7 @@ package com.android.calendar.year;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.content.Context;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
@@ -30,7 +31,9 @@ import android.text.format.DateUtils;
 import android.text.format.Time;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.view.ViewTreeObserver;
 import android.widget.GridView;
@@ -38,6 +41,7 @@ import com.android.calendar.CalendarController;
 import com.android.calendar.CalendarController.EventType;
 import com.android.calendar.CalendarController.EventInfo;
 import com.android.calendar.R;
+import com.android.calendar.Utils;
 import com.android.datetimepicker.date.MonthView;
 import com.android.datetimepicker.date.SimpleMonthView;
 
@@ -201,9 +205,9 @@ public class YearViewPagerFragment extends Fragment implements CalendarControlle
             super.onAttach(activity);
             int orientation = getActivity().getResources().getConfiguration().orientation;
             if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-                mColumns = 3;   // the year view will be in a 4x3 configuration
+                mColumns = 2;   // the year view will be in a 6x2 configuration
             } else {
-                mColumns = 4;   // the year view will be in a 3x4 configuration
+                mColumns = 3;   // the year view will be in a 4x3 configuration
             }
         }
 
@@ -219,7 +223,7 @@ public class YearViewPagerFragment extends Fragment implements CalendarControlle
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
-            mGridView = new GridView(getActivity());
+            mGridView = new CustomGridView(getActivity());
             // Set layout params
             mGridView.setStretchMode(GridView.STRETCH_COLUMN_WIDTH);
             mGridView.setNumColumns(mColumns);
@@ -250,6 +254,84 @@ public class YearViewPagerFragment extends Fragment implements CalendarControlle
             });
 
             return mGridView;
+        }
+
+        /**
+         * A GridView with a custom scroll listener that is tied to the display status of FAB
+         */
+        public static class CustomGridView extends GridView {
+            private float mClickY;
+            private float mTouchSlop;
+            private CalendarController mController;
+
+            public CustomGridView(Context context) {
+                super(context);
+                mTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
+                mController = CalendarController.getInstance(context);
+            }
+
+            /*
+              Implement a scroll gesture listener which is interested in
+              vertical movements to show or hide FAB
+             */
+            @Override
+            public boolean onInterceptTouchEvent(MotionEvent ev) {
+                int action = ev.getAction();
+
+                switch(action) {
+                    case MotionEvent.ACTION_DOWN:
+                        mClickY = ev.getY();
+                        break;
+                    case MotionEvent.ACTION_MOVE:
+                        processNewMoveEvent(ev);
+                        break;
+                }
+
+                return super.onInterceptTouchEvent(ev);
+            }
+
+            /*
+              Implement a scroll gesture listener which is interested in
+              vertical movements to show or hide FAB
+             */
+            @Override
+            public boolean onTouchEvent(MotionEvent ev) {
+                int action = ev.getAction();
+
+                switch(action) {
+                    case MotionEvent.ACTION_MOVE:
+                        processNewMoveEvent(ev);
+                        break;
+                }
+
+                return super.onTouchEvent(ev);
+            }
+
+            /**
+             * Expects the input MotionEvent to be a move event. This function determines if there
+             * is enough vertical movement beyond the defined threshold. If there is sufficient
+             * movement along the vertical, the FAB is shown or hidden based on the direction of
+             * movement (up or down)
+             *
+             * @param ev event to parse
+             */
+            private void processNewMoveEvent(MotionEvent ev) {
+                float distanceMoved = mClickY - ev.getY();
+                if (Math.abs(distanceMoved) > mTouchSlop ) {
+                    if (distanceMoved < 0) {
+                        // Scrolled down so show FAB
+                        mController.sendEvent(this, EventType.SHOW_FAB, null, null, null,
+                                0, 0, 0, null, null);
+                    } else {
+                        // Scrolled up so hide FAB
+                        mController.sendEvent(this, EventType.HIDE_FAB, null, null, null,
+                                0, 0, 0, null, null);
+
+                    }
+                    // Set Y to the current place in the gesture
+                    mClickY = ev.getY();
+                }
+            }
         }
     }
 }

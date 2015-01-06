@@ -127,6 +127,11 @@ public class CalendarController {
 
         // select which calendars to display
         final long LAUNCH_SELECT_VISIBLE_CALENDARS = 1L << 11;
+
+        // Events for showing and hiding the floating action button (FAB)
+        final long SHOW_FAB = 1L << 12;
+
+        final long HIDE_FAB = 1L << 13;
     }
 
     /**

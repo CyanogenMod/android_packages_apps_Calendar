@@ -42,7 +42,7 @@ public class YearViewAdapter extends BaseAdapter implements View.OnTouchListener
 
     /* Define configuration parameters for a month view */
     // Fraction of the view occupied by the header
-    private static final double MONTH_HEADER_HEIGHT = 0.30;
+    private static final double MONTH_HEADER_HEIGHT = 0.25;
 
     // Fraction of the header to use for the month title text
     private static final double MONTH_LABEL_FONT_SIZE = MONTH_HEADER_HEIGHT * 0.30;
@@ -51,7 +51,7 @@ public class YearViewAdapter extends BaseAdapter implements View.OnTouchListener
     private static final double PADDING = 0.05;
 
     // Fraction of the view to use for text
-    private static final double MONTH_DAY_TEXT_SIZE = (1 - (2 * PADDING)) * (0.7)  / 7;
+    private static final double MONTH_DAY_TEXT_SIZE = (1 - (2 * PADDING)) * (0.5)  / 7;
 
     // The padding b/w the week rows. The container height sans that taken up by the header
     // is equally distributed among six rows
@@ -108,7 +108,7 @@ public class YearViewAdapter extends BaseAdapter implements View.OnTouchListener
         mHeight = height;
         // Calculate the dimensions of each of the months
         mMonthWidth = mWidth / mColumns;
-        mMonthHeight = mHeight / (NUMBER_OF_MONTHS / mColumns);
+        mMonthHeight = mMonthWidth;
     }
 
     @Override
