@@ -65,7 +65,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.accessibility.AccessibilityEvent;
+import android.view.animation.AccelerateInterpolator;
+import android.view.animation.OvershootInterpolator;
 import android.widget.DatePicker;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.RelativeLayout.LayoutParams;
@@ -138,6 +141,11 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
     private View mCalendarsList;
     private View mMiniMonthContainer;
     private View mSecondaryPane;
+    private View mFab;
+    private int mFabHeight;
+    private int mFabYOffset;
+    private boolean mFabShowing = true;
+    private int mFabAnimDuration;
     private String mTimeZone;
     private boolean mShowCalendarControls;
     private boolean mShowEventInfoFullScreenAgenda;
@@ -434,6 +442,12 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
         mCalendarsList = findViewById(R.id.calendar_list);
         mMiniMonthContainer = findViewById(R.id.mini_month_container);
         mSecondaryPane = findViewById(R.id.secondary_pane);
+
+        mFab = (ImageButton) findViewById(R.id.floating_action_button);
+        mFabHeight = res.getDimensionPixelSize(R.dimen.floating_action_button_height);
+        mFabYOffset = res.getDimensionPixelSize(
+                R.dimen.floating_action_button_margin_bottom);
+        mFabAnimDuration = res.getInteger(R.integer.animation_duration_fast);
 
         // Must register as the first activity because this activity can modify
         // the list of event handlers in it's handle method. This affects who
@@ -1088,6 +1102,7 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
                 Log.d(TAG, "setMainPane AllInOne=" + this + " finishing:" + this.isFinishing());
             }
             ft.commit();
+            showFab();      // reset FAB after every transaction ; on every refresh of main_pane
         }
     }
 
@@ -1177,7 +1192,8 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
 
     @Override
     public long getSupportedEventTypes() {
-        return EventType.GO_TO | EventType.VIEW_EVENT | EventType.UPDATE_TITLE;
+        return EventType.GO_TO | EventType.VIEW_EVENT | EventType.UPDATE_TITLE |
+                EventType.HIDE_FAB | EventType.SHOW_FAB;
     }
 
     @Override
@@ -1311,8 +1327,34 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
             if (!mIsTabletConfig) {
                 mActionBarMenuSpinnerAdapter.setTime(mController.getTime());
             }
+        } else if (event.eventType == EventType.SHOW_FAB) {
+            showFab();
+        } else if (event.eventType == EventType.HIDE_FAB) {
+            hideFab();
         }
         updateSecondaryTitleFields(displayTime);
+    }
+
+    private void showFab() {
+        if (!mFabShowing) {
+            mFab.animate()
+                    .translationY(0)    // move FAB to the originally specified location in layout
+                    .setDuration(mFabAnimDuration)
+                    .setInterpolator(new OvershootInterpolator());
+
+            mFabShowing = true;
+        }
+    }
+
+    private void hideFab() {
+        if (mFabShowing) {
+            mFab.animate()
+                    .translationY(mFabHeight + mFabYOffset) // FAB disappears off container bounds
+                    .setDuration(mFabAnimDuration)
+                    .setInterpolator(new AccelerateInterpolator());
+
+            mFabShowing = false;
+        }
     }
 
     // Needs to be in proguard whitelist
