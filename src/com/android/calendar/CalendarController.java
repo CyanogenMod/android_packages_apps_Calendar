@@ -420,8 +420,28 @@ public class CalendarController {
                 componentName);
     }
 
+    /**
+     * sendEvent() variant with extraLong, search query, and search component name, along with the
+     * inclusion of the event's x and y coordinates, if applicable.
+     */
+    public void sendEvent(Object sender, long eventType, Time start, Time end, long eventId,
+            int viewType, long extraLong, int x, int y, String query, ComponentName componentName) {
+        sendEvent(sender, eventType, start, end, start, eventId, viewType, extraLong, x, y, query,
+                componentName);
+    }
+
     public void sendEvent(Object sender, long eventType, Time start, Time end, Time selected,
-            long eventId, int viewType, long extraLong, String query, ComponentName componentName) {
+            long eventId, int viewType, long extraLong, String query,
+            ComponentName componentName) {
+        // attach default coordinates if event location isn't specified
+        sendEvent(sender, eventType, start, end, selected, eventId, viewType, extraLong, -1, -1,
+                query, componentName);
+    }
+
+
+    public void sendEvent(Object sender, long eventType, Time start, Time end, Time selected,
+            long eventId, int viewType, long extraLong, int x, int y, String query,
+            ComponentName componentName) {
         EventInfo info = new EventInfo();
         info.eventType = eventType;
         info.startTime = start;
@@ -429,6 +449,8 @@ public class CalendarController {
         info.endTime = end;
         info.id = eventId;
         info.viewType = viewType;
+        info.x = x;
+        info.y = y;
         info.query = query;
         info.componentName = componentName;
         info.extraLong = extraLong;

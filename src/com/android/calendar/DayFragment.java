@@ -16,6 +16,9 @@
 
 package com.android.calendar;
 
+import android.animation.Animator;
+import android.view.ViewAnimationUtils;
+import android.view.animation.DecelerateInterpolator;
 import com.android.calendar.CalendarController.EventInfo;
 import com.android.calendar.CalendarController.EventType;
 
@@ -46,6 +49,7 @@ public class DayFragment extends Fragment implements CalendarController.EventHan
 
     protected static final String BUNDLE_KEY_RESTORE_TIME = "key_restore_time";
 
+    private Context mContext;
     protected ProgressBar mProgressBar;
     protected ViewSwitcher mViewSwitcher;
     protected Animation mInAnimationForward;
@@ -87,14 +91,14 @@ public class DayFragment extends Fragment implements CalendarController.EventHan
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
-        Context context = getActivity();
+        mContext = getActivity();
 
-        mInAnimationForward = AnimationUtils.loadAnimation(context, R.anim.slide_left_in);
-        mOutAnimationForward = AnimationUtils.loadAnimation(context, R.anim.slide_left_out);
-        mInAnimationBackward = AnimationUtils.loadAnimation(context, R.anim.slide_right_in);
-        mOutAnimationBackward = AnimationUtils.loadAnimation(context, R.anim.slide_right_out);
+        mInAnimationForward = AnimationUtils.loadAnimation(mContext, R.anim.slide_left_in);
+        mOutAnimationForward = AnimationUtils.loadAnimation(mContext, R.anim.slide_left_out);
+        mInAnimationBackward = AnimationUtils.loadAnimation(mContext, R.anim.slide_right_in);
+        mOutAnimationBackward = AnimationUtils.loadAnimation(mContext, R.anim.slide_right_out);
 
-        mEventLoader = new EventLoader(context);
+        mEventLoader = new EventLoader(mContext);
     }
 
     @Override
@@ -106,6 +110,37 @@ public class DayFragment extends Fragment implements CalendarController.EventHan
         mViewSwitcher.setFactory(this);
         mViewSwitcher.getCurrentView().requestFocus();
         ((DayView) mViewSwitcher.getCurrentView()).updateTitle();
+
+        // circular reveal animation
+        v.addOnLayoutChangeListener(new View.OnLayoutChangeListener() {
+            @Override
+            public void onLayoutChange(View v, int left, int top, int right, int bottom,
+                    int oldLeft, int oldTop, int oldRight, int oldBottom) {
+                v.removeOnLayoutChangeListener(this);
+                Bundle initArgs = getArguments();
+                if (initArgs != null) {
+                    int cX = initArgs.getInt("eventX");
+                    int cY = initArgs.getInt("eventY");
+                    // abort circular reveal if a proper center hasn't been specified
+                    if (cX == -1 || cY == -1) return;
+
+                    int[] parentBounds = new int[2];
+                    v.getLocationInWindow(parentBounds);
+                    // calculate the max radius for circular reveal
+                    double diagonal = Math.sqrt(right * right + bottom * bottom);
+                    int radius = (int) Math.ceil(diagonal);
+
+                    // translate the absolute coordinates of the event relative to the main group
+                    // of the fragment
+                    Animator reveal = ViewAnimationUtils.createCircularReveal(
+                            v, cX - parentBounds[0], cY - parentBounds[1], 0, radius);
+                    reveal.setInterpolator(new DecelerateInterpolator());
+                    reveal.setDuration(mContext.getResources().
+                            getInteger(R.integer.animation_duration_circular_reveal));
+                    reveal.start();
+                }
+            }
+        });
 
         return v;
     }

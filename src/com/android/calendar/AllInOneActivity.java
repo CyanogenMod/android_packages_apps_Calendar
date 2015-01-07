@@ -948,6 +948,11 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
 
     private void setMainPane(
             FragmentTransaction ft, int viewId, int viewType, long timeMillis, boolean force) {
+        setMainPane(ft, viewId, viewType, timeMillis, force, null);
+    }
+
+    private void setMainPane(FragmentTransaction ft, int viewId, int viewType, long timeMillis,
+            boolean force, Bundle args) {
         if (mOnSaveInstanceStateCalled) {
             return;
         }
@@ -999,6 +1004,8 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
                     mActionBar.setSelectedNavigationItem(CalendarViewAdapter.DAY_BUTTON_INDEX);
                 }
                 frag = new DayFragment(timeMillis, 1);
+                // day fragment accepts args
+                if (args != null) frag.setArguments(args);
                 ExtensionsFactory.getAnalyticsLogger(getBaseContext()).trackView("day");
                 break;
             case ViewType.MONTH:
@@ -1207,9 +1214,12 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
                 // Clear the flag is change to a different view type
                 mBackToPreviousView = false;
             }
-
-            setMainPane(
-                    null, R.id.main_pane, event.viewType, event.startTime.toMillis(false), false);
+            // event location info for fragments that are interested
+            Bundle args = new Bundle();
+            args.putInt("eventX", event.x);
+            args.putInt("eventY", event.y);
+            setMainPane(null, R.id.main_pane, event.viewType, event.startTime.toMillis(false),
+                    false, args);
             if (mSearchView != null) {
                 mSearchView.clearFocus();
             }
