@@ -29,7 +29,6 @@ import android.support.v13.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.text.format.DateUtils;
 import android.text.format.Time;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -41,12 +40,8 @@ import com.android.calendar.CalendarController;
 import com.android.calendar.CalendarController.EventType;
 import com.android.calendar.CalendarController.EventInfo;
 import com.android.calendar.R;
-import com.android.calendar.Utils;
-import com.android.datetimepicker.date.MonthView;
-import com.android.datetimepicker.date.SimpleMonthView;
 
 import java.util.Calendar;
-import java.util.HashMap;
 
 /**
  * Fragment encompassing a view pager to allow swiping between Years
@@ -185,7 +180,6 @@ public class YearViewPagerFragment extends Fragment implements CalendarControlle
         private GridView mGridView;
         private YearViewAdapter mAdapter;
         private int mYear;
-        private CalendarController mController;
         private int mColumns;
 
         static YearViewFragment newInstance(int yearOffset) {
@@ -214,17 +208,15 @@ public class YearViewPagerFragment extends Fragment implements CalendarControlle
             super.onCreate(savedInstanceState);
             mYear = getArguments() != null ? getArguments().getInt("year") :
                     EPOCH_TIME_YEAR_START;
-
-            mController = CalendarController.getInstance(getActivity());
         }
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
             mGridView = new CustomGridView(getActivity());
-            // set layout params ?
             mGridView.setStretchMode(GridView.STRETCH_COLUMN_WIDTH);
             mGridView.setNumColumns(mColumns);
+            mGridView.setClipChildren(false);   // avoid clipping of MonthView's click feedback
 
             // we need to wait till the gridview is laid out
             // the adapter drawing the year view depends on the dimensions of the grid view to

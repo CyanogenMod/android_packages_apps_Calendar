@@ -1,17 +1,20 @@
 package com.android.calendar.year;
 
+import android.animation.ObjectAnimator;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.text.format.DateUtils;
 import android.text.format.Time;
+import android.util.Pair;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewConfiguration;
 import android.view.ViewGroup;
+import android.view.animation.DecelerateInterpolator;
 import android.widget.AbsListView;
 import android.widget.BaseAdapter;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import com.android.calendar.CalendarController;
 import com.android.calendar.CalendarController.EventType;
 import com.android.calendar.R;
@@ -65,6 +68,8 @@ public class YearViewAdapter extends BaseAdapter implements View.OnTouchListener
     private int mTouchSlop;     // threshold for click to scroll transition
     private float mClickX;      // initial ACTION_DOWN coordinates
     private float mClickY;
+    private int mClickedDay;
+    private Pair<Float, Float> mClickedDayCoordinates;
 
     public YearViewAdapter(Context context, int year, int columns) {
         mContext = context;
@@ -112,18 +117,19 @@ public class YearViewAdapter extends BaseAdapter implements View.OnTouchListener
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         int month = position;
-        // each month view is nested inside a linear layout
-        GreedyLinearLayout linearLayout = new GreedyLinearLayout(mContext);
+        // each month view is nested inside a relative layout
+        GreedyRelativeLayout relativeLayout = new GreedyRelativeLayout(mContext);
         AbsListView.LayoutParams params = new AbsListView.LayoutParams(
                 ViewGroup.LayoutParams.WRAP_CONTENT, mMonthHeight);
-        linearLayout.setLayoutParams(params);
-        linearLayout.setId(month);
-        linearLayout.setOnTouchListener(this);
+        relativeLayout.setLayoutParams(params);
+        relativeLayout.setId(month);
+        relativeLayout.setOnTouchListener(this);
+        relativeLayout.setClipChildren(false);
         Time now = new Time();
         now.setToNow();
         if (now.month == month && now.year == mYear) {
             mCurrentMonth = month;
-            linearLayout.setBackgroundColor(mCurrentMonthBgColor);
+            relativeLayout.setBackgroundColor(mCurrentMonthBgColor);
         }
 
         // the view that actually draws the calendar month
@@ -167,14 +173,27 @@ public class YearViewAdapter extends BaseAdapter implements View.OnTouchListener
         drawingParams.put(MonthView.CONFIG_DAY_SELECTED_CIRCLE_COLOR, mMonthTitleColor);
         drawingParams.put(MonthView.CONFIG_DAY_SELECTED_CIRCLE_ALPHA, 255);
         drawingParams.put(MonthView.CONFIG_CURRENT_DAY_COLOR, mCurrentDayColor);
+        drawingParams.put(MonthView.CONFIG_HEADER_TITLE_OFFSET, -(int)(textSize/3));
 
         monthView.customizeViewParameters(drawingParams);
 
-        ViewGroup.LayoutParams viewParams = new ViewGroup.LayoutParams(
+        ViewGroup.LayoutParams layoutParams = new ViewGroup.LayoutParams(
             ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-        linearLayout.addView(monthView, viewParams);
+        relativeLayout.mMonthView = monthView;
+        relativeLayout.addView(monthView, layoutParams);
 
-        return linearLayout;
+        // Add touch feedback layer
+        ClickFeedback clickFeedback = new ClickFeedback(mContext);
+        HashMap<String, Integer> clickFeedbackParams = new HashMap<String, Integer>();
+        clickFeedbackParams.put(ClickFeedback.CONFIG_RIPPLE_RADIUS,
+                (int)(mMonthHeight * ROW_HEIGHT * 0.75));
+        clickFeedbackParams.put(ClickFeedback.CONFIG_DAY_TEXT_COLOR, Color.WHITE);
+        clickFeedbackParams.put(ClickFeedback.CONFIG_DAY_TEXT_SIZE, (int) textSize);
+        clickFeedback.initialize(clickFeedbackParams);
+        relativeLayout.mClickFeedback = clickFeedback;
+        relativeLayout.addView(clickFeedback, layoutParams);
+
+        return relativeLayout;
     }
 
     @Override
@@ -222,7 +241,7 @@ public class YearViewAdapter extends BaseAdapter implements View.OnTouchListener
     }
 
     /**
-     * Undoes click acknowledgement (view highlight)
+     * Undoes click acknowledgement (day highlight)
      */
     private void clearClickedView(View v) {
         v.removeCallbacks(mHighlightView);
@@ -234,13 +253,29 @@ public class YearViewAdapter extends BaseAdapter implements View.OnTouchListener
                 v.setBackgroundColor(Color.TRANSPARENT);
             }
         }
+        ((GreedyRelativeLayout) v).mClickFeedback.disable();
         mClickedView = null;
     }
 
     private final Runnable mHighlightView = new Runnable() {
         @Override
         public void run() {
-            mClickedView.setBackgroundColor(mMonthClickColor);
+            GreedyRelativeLayout parentView = ((GreedyRelativeLayout) mClickedView);
+            int day = parentView.mMonthView.getDayFromLocation(mClickX, mClickY);
+            if (day == -1) return;
+
+            mClickedDay = day;
+            mClickedDayCoordinates = parentView.mMonthView.mapToNearestDayCoordinates(mClickX,
+                    mClickY);
+            parentView.mClickFeedback.initializeClickFeedback(mClickedDayCoordinates.first,
+                    mClickedDayCoordinates.second, day);
+
+            ObjectAnimator animator = ObjectAnimator.ofFloat(parentView.mClickFeedback,
+                    "ratio", 0, 1);
+            animator.setInterpolator(new DecelerateInterpolator());
+            animator.setDuration(
+                    mContext.getResources().getInteger(R.integer.animation_duration_fast));
+            animator.start();
         }
     };
 
@@ -251,20 +286,33 @@ public class YearViewAdapter extends BaseAdapter implements View.OnTouchListener
     private final Runnable mPerformClick = new Runnable() {
         @Override
         public void run() {
-            Time time = new Time(Time.getCurrentTimezone());
-            time.set(1, mClickedView.getId(), mYear);   // set(day, month, year)
-            mController.sendEvent(mContext, EventType.GO_TO, time, time, -1,
-                    CalendarController.ViewType.MONTH,
-                    CalendarController.EXTRA_GOTO_BACK_TO_PREVIOUS, null, null );
+
+            if (mClickedView != null) {
+                Time eventTime = new Time(Time.getCurrentTimezone());
+                eventTime.set(mClickedDay, mClickedView.getId(), mYear);   // set(day, month, year)
+                int[] viewLocation = new int[2];
+                mClickedView.getLocationInWindow(viewLocation);
+
+                mController.sendEvent(mContext, EventType.GO_TO, eventTime, eventTime, -1,
+                        CalendarController.ViewType.DAY,
+                        CalendarController.EXTRA_GOTO_BACK_TO_PREVIOUS,
+                        // event's X location
+                        viewLocation[0] + mClickedDayCoordinates.first.intValue(),
+                        // event's Y location
+                        viewLocation[1] + mClickedDayCoordinates.second.intValue(),
+                        null, null);
+            }
         }
     };
 
     /**
-     * A greedy LinearLayout that always intercepts the touch events from its children.
+     * A greedy RelativeLayout that always intercepts the touch events from its children.
      */
-    private static class GreedyLinearLayout extends LinearLayout {
+    private static class GreedyRelativeLayout extends RelativeLayout {
+        public MonthViewImpl mMonthView;
+        public ClickFeedback mClickFeedback;
 
-        public GreedyLinearLayout(Context context) {
+        public GreedyRelativeLayout(Context context) {
             super(context);
         }
 

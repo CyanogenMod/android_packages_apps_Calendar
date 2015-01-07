@@ -36,5 +36,6 @@
     <integer name="calendar_controls_animation_time">400</integer>
     <!-- Default duration for fast zippy animations (in ms) -->
     <integer name="animation_duration_fast">200</integer>
+    <integer name="animation_duration_circular_reveal">500</integer>
 
 </resources>
