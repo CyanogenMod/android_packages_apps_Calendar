@@ -60,4 +60,11 @@
     <!-- Toast message displayed when ics file to share an event can't be generated -->
     <string name="error_generating_ics">Problems encountered while sharing event</string>
     <string name="share_label">Share</string>
+
+    <!-- Strings for buttons in drop down menu -->
+    <string name="buttons_list_day">Day</string>
+    <string name="buttons_list_week">Week</string>
+    <string name="buttons_list_month">Month</string>
+    <string name="buttons_list_agenda">Agenda</string>
+    <string name="buttons_list_year">Year</string>
 </resources>
