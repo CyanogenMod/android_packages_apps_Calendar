@@ -111,7 +111,7 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
     private static final int HANDLER_KEY = 0;
 
     // Indices of buttons for the drop down menu (tabs replacement)
-    // Must match the strings in the array buttons_list in arrays.xml and the
+    // Must match the strings in the array buttons_list_cm in cm_arrays.xml and the
     // OnNavigationListener
     private static final int BUTTON_DAY_INDEX = 0;
     private static final int BUTTON_WEEK_INDEX = 1;
