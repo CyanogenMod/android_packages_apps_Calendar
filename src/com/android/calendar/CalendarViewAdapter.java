@@ -110,7 +110,7 @@ public class CalendarViewAdapter extends BaseAdapter {
         mShowDate = showDate;
 
         // Initialize
-        mButtonNames = context.getResources().getStringArray(R.array.buttons_list);
+        mButtonNames = context.getResources().getStringArray(R.array.buttons_list_cm);
         mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         mStringBuilder = new StringBuilder(50);
         mFormatter = new Formatter(mStringBuilder, Locale.getDefault());
