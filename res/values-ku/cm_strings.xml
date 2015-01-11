@@ -24,4 +24,15 @@
   <string name="preferences_default_snooze_delay_dialog">ماوه‌ی سه‌ره‌تایی له‌بیرخستنه‌وه‌ی کاتی نوستن</string>
   <string name="default_start_title">بینینی سه‌ره‌تایی</string>
   <string name="default_start_last">بینینی به‌کارهێنراوی پێشوو</string>
+  <string name="events_delete">سڕینه‌وه‌ی ڕووداوه‌کان</string>
+  <string name="action_select_all">دیاریکردنی هەمووی</string>
+  <string name="action_select_none">دیارینەکردنی هەمووی</string>
+  <string name="action_delete">تەواو</string>
+  <string name="all_events">هه‌مو ڕووداوه‌کان</string>
+  <string name="no_events">هیچ ڕووداوێک نیە</string>
+  <string name="evt_del_dlg_title">سڕینه‌وه‌ی ڕووداوه‌کان؟</string>
+  <string name="evt_del_dlg_msg_selected">ڕووداوە دیاریکراوەکان ئەسرێنەوە</string>
+  <string name="evt_del_dlg_msg_all">هه‌موو ڕووداوه‌کان ده‌سڕدرێنه‌وه‌</string>
+  <string name="no_events_selected">هیچ ڕووداوێک دیاری نه‌کراوه‌</string>
+  <string name="go_to">"چوون بۆ"</string>
 </resources>

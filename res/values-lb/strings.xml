@@ -48,7 +48,7 @@
     <item quantity="one">WOCH <xliff:g id="count">%d</xliff:g></item>
     <item quantity="other">WOCH <xliff:g id="count">%d</xliff:g></item>
   </plurals>
-  <string name="calendar_refresh"> \"Opfrëschen\"</string>
+  <string name="calendar_refresh">"Opfrëschen"</string>
   <string name="show_day_view">"Dag uweisen"</string>
   <string name="agenda_view">"Agenda"</string>
   <string name="day_view">"Dag"</string>
@@ -87,7 +87,7 @@
   <string name="alert_title">Notifikatioune vum Kalenner</string>
   <string name="event_info_title">Rendezvous ukucken</string>
   <string name="event_info_title_invite">Aluedung zu engem Meeting</string>
-  <string name="edit_event_to_label">Fir</string>
+  <string name="edit_event_to_label">Bis</string>
   <string name="edit_event_from_label">Vun</string>
   <string name="edit_event_all_day_label">All Dag</string>
   <string name="edit_event_calendar_label">Kalenner</string>
@@ -211,7 +211,7 @@
   <string name="preferences_reminders_responded_label">Erënnerungen iwwersprangen</string>
   <string name="preferences_reminders_responded_dialog">Erënnerungen iwwersprangen</string>
   <string name="preferences_reminders_quiet_hours_label">Roueg Stonnen</string>
-  <string name="preferences_reminders_quiet_hours_description">Rendezvouserënnerung zu bestëmmten Zäite stommschalten.</string>
+  <string name="preferences_reminders_quiet_hours_description">Rendezvouserënnerung zu bestëmmten Zäite roueg schalten.</string>
   <string name="preferences_reminders_quiet_hours_start">Startzäit vun de rouege Stonnen</string>
   <string name="preferences_reminders_quiet_hours_end">Schlusszäit vun de rouege Stonnen</string>
   <string name="preferences_debug_category">Debugging</string>

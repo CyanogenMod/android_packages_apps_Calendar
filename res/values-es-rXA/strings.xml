@@ -44,7 +44,7 @@
     <item quantity="one">1 día</item>
     <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> díes</item>
   </plurals>
-  <string name="calendar_refresh">Anovar</string>
+  <string name="calendar_refresh">"Anovar"</string>
   <string name="show_day_view">"Amosar día"</string>
   <string name="agenda_view">"Axenda"</string>
   <string name="day_view">"Día"</string>

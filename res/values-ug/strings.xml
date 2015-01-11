@@ -43,7 +43,6 @@
   <plurals name="weekN">
     <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> ھەپتە </item>
   </plurals>
-  <string name="calendar_refresh">يېڭىلا</string>
   <string name="show_day_view">"كۈن كۆرسەت"</string>
   <string name="agenda_view">"كۈنتەرتىپ"</string>
   <string name="day_view">"كۈن"</string>
