@@ -37,5 +37,5 @@
     <!--  A golbal var used to show goto menu -->
     <bool name="show_goto_menu">false</bool>
     <!--  A golbal var used to show delete events menu -->
-    <bool name="show_delete_events_menu">false</bool>
+    <bool name="show_delete_events_menu">true</bool>
 </resources>
