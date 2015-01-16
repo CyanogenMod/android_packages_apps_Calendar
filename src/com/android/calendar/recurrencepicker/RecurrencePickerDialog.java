@@ -349,6 +349,7 @@ public class RecurrencePickerDialog extends DialogFragment implements OnItemSele
     private OnRecurrenceSetListener mRecurrenceSetListener;
 
     public RecurrencePickerDialog() {
+        setStyle(STYLE_NORMAL, R.style.RecurrenceDialogTheme);
     }
 
     static public boolean isSupportedMonthlyByNthDayOfWeek(int num) {
