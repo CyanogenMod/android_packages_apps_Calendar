@@ -32,4 +32,6 @@
     <color name="fab_theme_color_dark">#ffc33c33</color>
     <color name="fab_theme_color_accent">#0288d1</color>
     <color name="floating_action_button_icon_color">#ffffff</color>
+
+    <color name="recurrence_bubble_background">#ff36b5e4</color>
 </resources>
