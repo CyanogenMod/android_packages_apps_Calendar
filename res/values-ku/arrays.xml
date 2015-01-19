@@ -16,10 +16,10 @@
 -->
 <resources>
   <string-array name="reminder_methods_labels">
-    <item>Notification</item>
+    <item>ئاگادارییەکان</item>
     <item>ئیمەیڵ</item>
     <item>کورتەنامە</item>
-    <item>Alarm</item>
+    <item>وریاکەرەوە</item>
   </string-array>
   <string-array name="reminder_minutes_labels">
     <item>0 خولەک</item>
@@ -40,7 +40,7 @@
     <item>1 هەفتە</item>
   </string-array>
   <string-array name="preferences_default_reminder_labels">
-    <item>None</item>
+    <item>هیچیان</item>
     <item>0 خولەک</item>
     <item>1 خوله‌ک</item>
     <item>5 خوله‌ک</item>
@@ -70,7 +70,7 @@
     <item>ديارىنەكراو</item>
   </string-array>
   <string-array name="visibility">
-    <item>Default</item>
+    <item>بنه‌ڕه‌ت</item>
     <item>تایبەتی</item>
     <item>گشتی</item>
   </string-array>
