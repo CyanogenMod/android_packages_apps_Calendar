@@ -255,7 +255,15 @@ public class DeleteEventsActivity extends ListActivity
         @Override
         public void onItemCheckedStateChanged(ActionMode mode, int position,
                                               long id, boolean checked) {
-            View v = mListView.getChildAt(position);
+            int firstVisiblePosition = mListView.getFirstVisiblePosition();
+            int actualPosition = position - firstVisiblePosition;
+
+            if (DEBUG) {
+                Log.i(TAG, "position , firstVisiblePosition, actualPosition : "
+                        + position + " " + firstVisiblePosition + " " + actualPosition);
+            }
+
+            View v = mListView.getChildAt(actualPosition);
             CheckBox checkbox = (CheckBox) v.findViewById(R.id.checkbox);
             checkbox.toggle();
 
@@ -300,7 +308,6 @@ public class DeleteEventsActivity extends ListActivity
         @Override
         public void onDestroyActionMode(ActionMode mode) {
             mListView.clearChoices();
-            deselectAll();
             mSelectedMap.clear();
             mActionMode = null;
         }
@@ -468,16 +475,6 @@ public class DeleteEventsActivity extends ListActivity
         default:
             return false;
         }
-    }
-
-    private void deselectAll() {
-        for (int i = 0; i < mListView.getCount(); i ++) {
-            if (mSelectedMap.containsKey(mListView.getItemIdAtPosition(i))) {
-                mListView.setItemChecked(i, false);
-            }
-        }
-        mAdapter.notifyDataSetChanged();
-        updateTitle();
     }
 
     private void selectAll() {
