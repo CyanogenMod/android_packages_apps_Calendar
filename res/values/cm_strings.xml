@@ -60,4 +60,5 @@
     <!-- Toast message displayed when ics file to share an event can't be generated -->
     <string name="error_generating_ics">Problems encountered while sharing event</string>
     <string name="share_label">Share</string>
+    <string name="events_selection_share_action">"to share"</string>
 </resources>
