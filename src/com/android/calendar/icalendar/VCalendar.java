@@ -64,11 +64,10 @@ public class VCalendar {
      * Add specified property
      * @param property
      * @param value
-     * @return
      */
     public boolean addProperty(String property, String value) {
         // Since all the required mProperties are unary (only one can exist), take a shortcut here
-        // when multiples of a property can exist, enforce that here .. cleverly
+        // TODO: When multiple attributes of a property can exist, enforce that here
         if (sPropertyList.containsKey(property) && value != null) {
             mProperties.put(property, IcalendarUtils.cleanseString(value));
             return true;
@@ -85,16 +84,25 @@ public class VCalendar {
     }
 
     /**
-     *
-     * @return
+     * Returns all the events that are part of this calendar
      */
     public LinkedList<VEvent> getAllEvents() {
         return mEvents;
     }
 
     /**
+     * Returns the first event of the calendar
+     */
+    public VEvent getFirstEvent() {
+        if (mEvents != null && mEvents.size() > 0) {
+            return mEvents.get(0);
+        } else {
+            return null;
+        }
+    }
+
+    /**
      * Returns the iCal representation of the calendar and all of its inherent components
-     * @return
      */
     public String getICalFormattedString() {
         StringBuilder output = new StringBuilder();

@@ -103,7 +103,7 @@ public class CalendarUtils {
                     // Check the values in the db
                     int keyColumn = cursor.getColumnIndexOrThrow(CalendarCache.KEY);
                     int valueColumn = cursor.getColumnIndexOrThrow(CalendarCache.VALUE);
-                    while(cursor.moveToNext()) {
+                    while (cursor.moveToNext()) {
                         String key = cursor.getString(keyColumn);
                         String value = cursor.getString(valueColumn);
                         if (TextUtils.equals(key, CalendarCache.KEY_TIMEZONE_TYPE)) {
@@ -353,4 +353,79 @@ public class CalendarUtils {
         public static SharedPreferences getSharedPreferences(Context context, String prefsName) {
             return context.getSharedPreferences(prefsName, Context.MODE_PRIVATE);
         }
+
+    /**
+     * For those interested in changes to the list of shared calendar events
+     */
+    public static interface ShareEventListener {
+
+        /**
+         * Called whenever a calendar event is added to the list of events about to be shared
+         *
+         * @param eventInfo A Triple containing event related information
+         *                  Triple (event id, startMillis, endMillis)
+         */
+        public void onEventShared(Triple<Long, Long, Long> eventInfo);
+
+
+        /**
+         * called when an event is removed from the share list
+         */
+        public void onEventRemoval(long eventId);
+
+        /**
+         * called to signal that the current share list has been discarded
+         */
+        public void onResetShareList();
+    }
+
+    /**
+     * Implementation of a 3-tuple
+     * Modeled after {@link android.util.Pair} for passing calendar event information
+     *
+     * The first element is perceived to be the unique identifier with the others serving as storage
+     * for ancillary information
+     */
+    public static class Triple<X, Y, Z> {
+        public X first;     // dominating element used in equals() and hashCode() implementations
+        public Y second;
+        public Z third;
+
+        public Triple(X a, Y b, Z c) {
+            first = a;
+            second = b;
+            third = c;
+        }
+
+        @Override
+        public String toString() {
+            StringBuilder builder = new StringBuilder();
+            builder.append("[");
+            builder.append(first.toString());
+            builder.append(" , ");
+            builder.append(second.toString());
+            builder.append(" , ");
+            builder.append(third.toString());
+            builder.append("]");
+            return builder.toString();
+        }
+
+        /**
+         * First element in the triple is used for comparison, as the other are used to store
+         * ancillary information
+         */
+        @Override
+        public boolean equals(Object o) {
+            if (!(o instanceof Triple)) return false;
+            return ((Triple)o).first.equals(first);
+        }
+
+        /**
+         * Only the first element contributes
+         */
+        @Override
+        public int hashCode() {
+            return first.hashCode();
+        }
+    }
 }
