@@ -50,6 +50,7 @@ import com.android.calendar.Utils;
 
 import java.util.Date;
 import java.util.Formatter;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Locale;
@@ -74,7 +75,7 @@ Check for leaks and excessive allocations
  */
 
 public class AgendaWindowAdapter extends BaseAdapter
-    implements StickyHeaderListView.HeaderIndexer, StickyHeaderListView.HeaderHeightListener{
+    implements StickyHeaderListView.HeaderIndexer, StickyHeaderListView.HeaderHeightListener {
 
     static final boolean BASICLOG = false;
     static final boolean DEBUGLOG = false;
@@ -228,6 +229,10 @@ public class AgendaWindowAdapter extends BaseAdapter
     private final int mSelectedItemTextColor;
     private final float mItemRightMargin;
 
+    private boolean mLaunchedInShareMode;
+    private boolean mShouldSelectSingleEvent;
+    private HashSet<Long> mSharedEvents = new HashSet<Long>();
+
     // Types of Query
     private static final int QUERY_TYPE_OLDER = 0; // Query for older events
     private static final int QUERY_TYPE_NEWER = 1; // Query for newer events
@@ -369,6 +374,12 @@ public class AgendaWindowAdapter extends BaseAdapter
         mAgendaListView.addHeaderView(mHeaderView);
     }
 
+    // "share mode" is off by default
+    public void launchInShareMode(boolean inShareMode, boolean selectSingleEvent) {
+        mLaunchedInShareMode = inShareMode;
+        mShouldSelectSingleEvent = selectSingleEvent;
+    }
+
     // Method in Adapter
     @Override
     public int getViewTypeCount() {
@@ -485,6 +496,25 @@ public class AgendaWindowAdapter extends BaseAdapter
                     pastPresentDivider.setVisibility(View.GONE);
                 }
             }
+
+            if (mLaunchedInShareMode) {
+                Object tag = v.getTag();
+                if (tag instanceof AgendaAdapter.ViewHolder) {
+                    AgendaAdapter.ViewHolder vh = (AgendaAdapter.ViewHolder) tag;
+
+                    // toggle visibility of share checkbox
+                    vh.selectedForSharing.setVisibility(View.VISIBLE);
+                    vh.selectedForSharing.setClickable(false);
+
+                    // set 'checked' status
+                    if (mSharedEvents.contains(vh.instanceId)) {
+                        vh.selectedForSharing.setChecked(true);
+                    } else {
+                        vh.selectedForSharing.setChecked(false);
+                    }
+                }
+            }
+
         } else {
             // TODO
             Log.e(TAG, "BUG: getAdapterInfoByPosition returned null!!! " + position);
@@ -1310,10 +1340,32 @@ public class AgendaWindowAdapter extends BaseAdapter
             Object vh = v.getTag();
             if (vh instanceof AgendaAdapter.ViewHolder) {
                 mSelectedVH = (AgendaAdapter.ViewHolder) vh;
+                boolean datasetChanged = false;
+
+                if (mLaunchedInShareMode) {
+
+                    if (mShouldSelectSingleEvent) {
+                        mSharedEvents.clear();
+                        mSharedEvents.add(mSelectedVH.instanceId);
+                    } else {
+
+                        if (mSharedEvents.contains(mSelectedVH.instanceId)) {
+                            mSharedEvents.remove(mSelectedVH.instanceId);
+                        } else {
+                            mSharedEvents.add(mSelectedVH.instanceId);
+                        }
+
+                    }
+
+                    datasetChanged = true;
+                }
+
                 if (mSelectedInstanceId != mSelectedVH.instanceId) {
                     mSelectedInstanceId = mSelectedVH.instanceId;
-                    notifyDataSetChanged();
+                    datasetChanged = true;
                 }
+
+                if (datasetChanged) notifyDataSetChanged();
             }
         }
     }
@@ -1395,6 +1447,10 @@ public class AgendaWindowAdapter extends BaseAdapter
             return info.dayAdapter.getHeaderItemsCount(headerPosition - info.offset);
         }
         return -1;
+    }
+
+    public boolean isEventInShareList(long id) {
+        return mSharedEvents.contains(id);
     }
 
     @Override
