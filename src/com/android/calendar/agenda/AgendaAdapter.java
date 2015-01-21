@@ -26,6 +26,7 @@ import android.text.format.DateUtils;
 import android.text.format.Time;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.ResourceCursorAdapter;
 import android.widget.TextView;
@@ -78,6 +79,7 @@ public class AgendaAdapter extends ResourceCursorAdapter {
         boolean allDay;
         boolean grayed;
         int julianDay;
+        CheckBox selectedForSharing;
     }
 
     public AgendaAdapter(Context context, int resource) {
@@ -125,6 +127,7 @@ public class AgendaAdapter extends ResourceCursorAdapter {
                     view.findViewById(R.id.agenda_item_text_container);
             holder.selectedMarker = view.findViewById(R.id.selected_marker);
             holder.colorChip = (ColorChipView)view.findViewById(R.id.agenda_item_color);
+            holder.selectedForSharing = (CheckBox) view.findViewById(R.id.shareCheckbox);
         }
 
         holder.startTimeMilli = cursor.getLong(AgendaWindowAdapter.INDEX_BEGIN);

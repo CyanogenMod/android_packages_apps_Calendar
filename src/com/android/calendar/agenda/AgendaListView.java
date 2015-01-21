@@ -20,6 +20,8 @@ import com.android.calendar.CalendarController;
 import com.android.calendar.CalendarController.EventType;
 import com.android.calendar.DeleteEventHelper;
 import com.android.calendar.R;
+import com.android.calendar.CalendarUtils.ShareEventListener;
+import com.android.calendar.CalendarUtils.Triple;
 import com.android.calendar.Utils;
 import com.android.calendar.agenda.AgendaAdapter.ViewHolder;
 import com.android.calendar.agenda.AgendaWindowAdapter.DayAdapterInfo;
@@ -51,6 +53,9 @@ public class AgendaListView extends ListView implements OnItemClickListener {
     private Time mTime;
     private boolean mShowEventDetailsWithAgenda;
     private Handler mHandler = null;
+    private boolean mLaunchedInShareMode;
+    private boolean mShouldSelectSingleEvent;
+    private ShareEventListener mShareEventListener;
 
     private final Runnable mTZUpdater = new Runnable() {
         @Override
@@ -86,6 +91,12 @@ public class AgendaListView extends ListView implements OnItemClickListener {
         initView(context);
     }
 
+    // "share mode" is off by default
+    public void launchInShareMode(boolean inShareMode, boolean selectSingleEvent) {
+        mLaunchedInShareMode = true;
+        mShouldSelectSingleEvent = selectSingleEvent;
+    }
+
     private void initView(Context context) {
         mContext = context;
         mTimeZone = Utils.getTimeZone(context, mTZUpdater);
@@ -106,6 +117,10 @@ public class AgendaListView extends ListView implements OnItemClickListener {
         setDividerHeight(0);
 
         mHandler = new Handler();
+    }
+
+    public void setShareEventListener(ShareEventListener listener) {
+        mShareEventListener = listener;
     }
 
     // Sets a thread to run every EVENT_UPDATE_TIME in order to update the list
@@ -197,10 +212,30 @@ public class AgendaListView extends ListView implements OnItemClickListener {
                     endTime = Utils.convertAlldayLocalToUTC(mTime, endTime, mTimeZone);
                 }
                 mTime.set(startTime);
-                CalendarController controller = CalendarController.getInstance(mContext);
-                controller.sendEventRelatedEventWithExtra(this, EventType.VIEW_EVENT, item.id,
-                        startTime, endTime, 0, 0, CalendarController.EventInfo.buildViewExtraLong(
-                                Attendees.ATTENDEE_STATUS_NONE, item.allDay), holderStartTime);
+
+                // divert click action to either a ShareEventListener or the Controller
+                if (mShareEventListener != null  && mLaunchedInShareMode) {
+                    long viewId = ((ViewHolder) holder).instanceId;
+
+                    if (mWindowAdapter.isEventInShareList(viewId)) {
+                        Triple<Long, Long, Long> eventinfo =
+                                new Triple<Long, Long, Long>(item.id, item.begin, item.end);
+                        if (mShouldSelectSingleEvent) mShareEventListener.onResetShareList();
+                        mShareEventListener.onEventShared(eventinfo);
+
+                    } else {
+                        // submit event removal
+                        mShareEventListener.onEventRemoval(item.id);
+                    }
+
+                } else {
+                    CalendarController controller = CalendarController.getInstance(mContext);
+                    controller.sendEventRelatedEventWithExtra(this, EventType.VIEW_EVENT, item.id,
+                            startTime, endTime, 0, 0,
+                            CalendarController.EventInfo.buildViewExtraLong(
+                                    Attendees.ATTENDEE_STATUS_NONE, item.allDay),
+                            holderStartTime);
+                }
             }
         }
     }
