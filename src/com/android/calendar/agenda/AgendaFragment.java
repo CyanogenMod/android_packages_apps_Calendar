@@ -41,6 +41,7 @@ import com.android.calendar.CalendarController.ViewType;
 import com.android.calendar.EventInfoFragment;
 import com.android.calendar.GeneralPreferences;
 import com.android.calendar.R;
+import com.android.calendar.CalendarUtils.ShareEventListener;
 import com.android.calendar.StickyHeaderListView;
 import com.android.calendar.Utils;
 
@@ -71,6 +72,8 @@ public class AgendaFragment extends Fragment implements CalendarController.Event
     private AgendaWindowAdapter mAdapter = null;
     private boolean mForceReplace = true;
     private long mLastShownEventId = -1;
+    private boolean mLaunchedInShareMode;
+    private ShareEventListener mShareEventListener;
 
 
 
@@ -87,13 +90,17 @@ public class AgendaFragment extends Fragment implements CalendarController.Event
     };
 
     public AgendaFragment() {
-        this(0, false);
+        this(0, false, false);
     }
 
+    public AgendaFragment(long timeMillis, boolean usedForSearch) {
+        this(0, usedForSearch, false);
+    }
 
     // timeMillis - time of first event to show
     // usedForSearch - indicates if this fragment is used in the search fragment
-    public AgendaFragment(long timeMillis, boolean usedForSearch) {
+    // inShareMode - indicates whether the fragment was started to share calendar events
+    public AgendaFragment(long timeMillis, boolean usedForSearch, boolean inShareMode) {
         mInitialTimeMillis = timeMillis;
         mTime = new Time();
         mLastHandledEventTime = new Time();
@@ -105,6 +112,7 @@ public class AgendaFragment extends Fragment implements CalendarController.Event
         }
         mLastHandledEventTime.set(mTime);
         mUsedForSearch = usedForSearch;
+        mLaunchedInShareMode = inShareMode;
     }
 
     @Override
@@ -142,7 +150,6 @@ public class AgendaFragment extends Fragment implements CalendarController.Event
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
 
-
         int screenWidth = mActivity.getResources().getDisplayMetrics().widthPixels;
         View v = inflater.inflate(R.layout.agenda_fragment, null);
 
@@ -168,14 +175,25 @@ public class AgendaFragment extends Fragment implements CalendarController.Event
         if (lv != null) {
             Adapter a = mAgendaListView.getAdapter();
             lv.setAdapter(a);
+
             if (a instanceof HeaderViewListAdapter) {
                 mAdapter = (AgendaWindowAdapter) ((HeaderViewListAdapter)a).getWrappedAdapter();
+                if (mLaunchedInShareMode) {
+                    mAdapter.launchInShareMode(true);
+                    mAgendaListView.launchInShareMode(true);
+                    if (mShareEventListener != null) {
+                        mAgendaListView.setShareEventListener(mShareEventListener);
+                    }
+                }
                 lv.setIndexer(mAdapter);
                 lv.setHeaderHeightListener(mAdapter);
+
             } else if (a instanceof AgendaWindowAdapter) {
                 mAdapter = (AgendaWindowAdapter)a;
+                if (mLaunchedInShareMode) mAdapter.launchInShareMode(true);
                 lv.setIndexer(mAdapter);
                 lv.setHeaderHeightListener(mAdapter);
+
             } else {
                 Log.wtf(TAG, "Cannot find HeaderIndexer for StickyHeaderListView");
             }
@@ -206,6 +224,10 @@ public class AgendaFragment extends Fragment implements CalendarController.Event
             eventView.setLayoutParams(detailsParams);
         }
         return v;
+    }
+
+    public void setEventShareListener(ShareEventListener listener) {
+        mShareEventListener = listener;
     }
 
     @Override
