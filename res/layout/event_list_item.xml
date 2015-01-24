@@ -32,8 +32,7 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingTop="2dp"
-    android:paddingBottom="2dp"
-    android:background="?android:attr/activatedBackgroundIndicator">
+    android:paddingBottom="2dp">
 
     <CheckBox
         android:id="@+id/checkbox"
@@ -42,7 +41,9 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         android:layout_alignParentStart="true"
         android:layout_centerVertical="true"
         android:layout_marginStart="4dp"
-        android:layout_marginEnd="4dp" />
+        android:layout_marginEnd="4dp"
+        android:focusable="false"
+        android:clickable="false"/>
 
     <TextView
         android:id="@+id/event_title"
