@@ -35,4 +35,13 @@
   <string name="evt_del_dlg_msg_all">Todos los eventos serán eliminados</string>
   <string name="no_events_selected">No hay eventos seleccionados</string>
   <string name="go_to">Ir a</string>
+  <string name="cal_share_intent_title">Enviar evento a:</string>
+  <string name="cal_export_event_sdcard_title">Exportar a la tarjeta SD</string>
+  <string name="cal_export_succ_msg">Evento exportado con éxito: %1s</string>
+  <string name="cal_import_menu_title">Importar evento</string>
+  <string name="cal_nothing_to_import">Nada para importar</string>
+  <string name="cal_import_error_msg">Error al importar al calendario</string>
+  <string name="cal_pick_ics">Selecciona archivo para importar</string>
+  <string name="error_generating_ics">Ha habido problemas al compartir el evento</string>
+  <string name="share_label">Compartir</string>
 </resources>
