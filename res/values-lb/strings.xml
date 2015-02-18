@@ -60,14 +60,14 @@
   <string name="event_delete">"Rendezvous läschen"</string>
   <string name="goto_today">"Haut"</string>
   <string name="menu_preferences">"Astellungen"</string>
-  <string name="menu_select_visible_calendars">"Kalenner déi ugewise ginn"</string>
+  <string name="menu_select_visible_calendars">"Kalenneren déi ugewise ginn"</string>
   <string name="search">"Sichen"</string>
   <string name="hide_controls">"Kontrollelementer verstoppen"</string>
   <string name="show_controls">"Kontrollelementer uweisen"</string>
-  <string name="select_visible_calendars_title">"Kalenner déi ugewise ginn"</string>
+  <string name="select_visible_calendars_title">"Kalenneren déi ugewise ginn"</string>
   <string name="synced"> synchroniséiert</string>
   <string name="not_synced"> net synchroniséiert</string>
-  <string name="acct_not_synced">Dëse Kont gëtt net synchroniséiert. Deng Kalenner sinn vläicht net aktuell.</string>
+  <string name="acct_not_synced">Dëse Kont gëtt net synchroniséiert. Deng Kalennere si vläicht net aktuell.</string>
   <string name="accounts">Konten &amp; Synchroniséierung</string>
   <string name="select_synced_calendars_title">Ze synchroniséierend Kalenneren</string>
   <string name="select_synced_calendars_button">Ze synchroniséierend Kalenneren</string>

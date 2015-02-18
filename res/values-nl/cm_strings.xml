@@ -35,4 +35,13 @@
   <string name="evt_del_dlg_msg_all">Alle afspraken worden verwijderd</string>
   <string name="no_events_selected">Geen afspraken geselecteerd</string>
   <string name="go_to">Ga naar</string>
+  <string name="cal_share_intent_title">Afspraak verzenden naar:</string>
+  <string name="cal_export_event_sdcard_title">Exporteren naar SD-kaart</string>
+  <string name="cal_export_succ_msg">Afspraak succesvol geëxporteerd: %1s</string>
+  <string name="cal_import_menu_title">Afspraak importeren</string>
+  <string name="cal_nothing_to_import">Niets te importeren</string>
+  <string name="cal_import_error_msg">Importeren naar agenda mislukt</string>
+  <string name="cal_pick_ics">Kies bestand om te importeren</string>
+  <string name="error_generating_ics">Kan afspraak niet delen</string>
+  <string name="share_label">Delen</string>
 </resources>

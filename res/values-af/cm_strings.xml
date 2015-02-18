@@ -35,4 +35,13 @@
   <string name="evt_del_dlg_msg_all">Al die gebeure  sal verwyder word</string>
   <string name="no_events_selected">Geen gebeure gekies</string>
   <string name="go_to">Gaan na</string>
+  <string name="cal_share_intent_title">Stuur gebeurtenis:</string>
+  <string name="cal_export_event_sdcard_title">Uitvoer na SD kaart</string>
+  <string name="cal_export_succ_msg">Gebeurtenis suksesvol uitgevoer: %1s</string>
+  <string name="cal_import_menu_title">Voer \'n gebeurtenis in</string>
+  <string name="cal_nothing_to_import">Niks om in te voer nie</string>
+  <string name="cal_import_error_msg">Invoering na kalender het misluk</string>
+  <string name="cal_pick_ics">Kies lêer om in te voer</string>
+  <string name="error_generating_ics">Die deling van die gebeurtenis het probleme ondervind</string>
+  <string name="share_label">Deel</string>
 </resources>
