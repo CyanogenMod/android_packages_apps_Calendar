@@ -35,4 +35,13 @@
   <string name="evt_del_dlg_msg_all">Van desaniciase tolos eventos</string>
   <string name="no_events_selected">Nun hai eventos seleicionaos</string>
   <string name="go_to">Dir a</string>
+  <string name="cal_share_intent_title">Unviar eventu a:</string>
+  <string name="cal_export_event_sdcard_title">Esportar a la tarxeta SD</string>
+  <string name="cal_export_succ_msg">Eventu esportáu con éxitu: %1s</string>
+  <string name="cal_import_menu_title">Importar eventu</string>
+  <string name="cal_nothing_to_import">Nun hai res pa importar</string>
+  <string name="cal_import_error_msg">Fallu al importar al calendariu</string>
+  <string name="cal_pick_ics">Esbilla ficheru a importar</string>
+  <string name="error_generating_ics">Hebo problemes al compartir l\'eventu</string>
+  <string name="share_label">Compartir</string>
 </resources>
