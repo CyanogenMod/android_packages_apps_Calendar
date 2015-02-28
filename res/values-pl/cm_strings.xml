@@ -35,4 +35,13 @@
   <string name="evt_del_dlg_msg_all">Wszystkie wydarzenia zostaną usunięte</string>
   <string name="no_events_selected">Brak zaznaczonych wydarzeń</string>
   <string name="go_to">Przejdź do</string>
+  <string name="cal_share_intent_title">Wyślij wydarzenie do:</string>
+  <string name="cal_export_event_sdcard_title">Eksportuj na kartę SD</string>
+  <string name="cal_export_succ_msg">Wydarzenie wyeksportowano pomyślnie: %1s</string>
+  <string name="cal_import_menu_title">Importuj wydarzenie</string>
+  <string name="cal_nothing_to_import">Nic do zaimportowania</string>
+  <string name="cal_import_error_msg">Importowanie do kalendarza nie powiodło się</string>
+  <string name="cal_pick_ics">Wybierz plik do zaimportowania</string>
+  <string name="error_generating_ics">Napotkano problemy podczas udostępniania wydarzenia</string>
+  <string name="share_label">Udostępnij</string>
 </resources>

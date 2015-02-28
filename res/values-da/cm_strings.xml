@@ -35,4 +35,13 @@
   <string name="evt_del_dlg_msg_all">Alle begivenheder vil blive slettet</string>
   <string name="no_events_selected">Ingen begivenheder valgt</string>
   <string name="go_to">Gå til</string>
+  <string name="cal_share_intent_title">Send begivenhed til:</string>
+  <string name="cal_export_event_sdcard_title">Eksportér til SD-kort</string>
+  <string name="cal_export_succ_msg">Begivenhed eksporteret med succes: %1s</string>
+  <string name="cal_import_menu_title">Importér begivenhed</string>
+  <string name="cal_nothing_to_import">Intet at importere</string>
+  <string name="cal_import_error_msg">Import til kalenderen mislykkedes</string>
+  <string name="cal_pick_ics">Vælg fil til import</string>
+  <string name="error_generating_ics">Der opstod problemer ved deling af begivenhed</string>
+  <string name="share_label">Del</string>
 </resources>
