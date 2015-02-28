@@ -35,4 +35,13 @@
   <string name="evt_del_dlg_msg_all">Всі події будуть видалені</string>
   <string name="no_events_selected">Немає вибраних подій</string>
   <string name="go_to">Перейти до</string>
+  <string name="cal_share_intent_title">Надіслати подію:</string>
+  <string name="cal_export_event_sdcard_title">Експортувати до SD-карти</string>
+  <string name="cal_export_succ_msg">Подію успішно експортовано: %1s</string>
+  <string name="cal_import_menu_title">Імпортувати подію</string>
+  <string name="cal_nothing_to_import">Немає нічого для імпорту</string>
+  <string name="cal_import_error_msg">Імпортування до календаря не вдалося</string>
+  <string name="cal_pick_ics">Оберіть файл для імпорту</string>
+  <string name="error_generating_ics">Проблема під час відправки подіЇ</string>
+  <string name="share_label">Відправити</string>
 </resources>

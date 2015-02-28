@@ -29,7 +29,7 @@
   <string name="action_select_none">Atžymėti viską</string>
   <string name="action_delete">Atlikta</string>
   <string name="all_events">Visi įvykiai</string>
-  <string name="no_events">Nėra jokių įvykių</string>
+  <string name="no_events">Nėra pasiekiamų įvykių</string>
   <string name="evt_del_dlg_title">Ištrinti įvykius?</string>
   <string name="evt_del_dlg_msg_selected">Pasirinkti įvykiai bus ištrinti</string>
   <string name="evt_del_dlg_msg_all">Visi įvykiai bus ištrinti</string>
