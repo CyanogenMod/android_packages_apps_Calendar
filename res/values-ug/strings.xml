@@ -29,16 +29,16 @@
   <string name="repeats_label">تەكرارلاش</string>
   <string name="no_title_label">(ماۋزۇسىز)</string>
   <plurals name="Nminutes">
-    <item quantity="other">1 مىنۇت</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> مىنۇت</item>
   </plurals>
   <plurals name="Nmins">
-    <item quantity="other">1 مىنۇت</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> مىنۇت</item>
   </plurals>
   <plurals name="Nhours">
-    <item quantity="other">1 سائەت</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> سائەت</item>
   </plurals>
   <plurals name="Ndays">
-    <item quantity="other">«1 كۈن»</item>
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> كۈن</item>
   </plurals>
   <plurals name="weekN">
     <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> ھەپتە </item>
