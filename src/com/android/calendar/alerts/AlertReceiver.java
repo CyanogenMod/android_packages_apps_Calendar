@@ -339,6 +339,7 @@ public class AlertReceiver extends BroadcastReceiver {
             // Should be one of the values in Notification (ie. Notification.PRIORITY_HIGH, etc).
             // A higher priority will encourage notification manager to expand it.
             notificationBuilder.setPriority(priority);
+            notificationBuilder.setCategory(Notification.CATEGORY_ALARM);
 
             // Add action buttons. Show at most three, using the following priority ordering:
             // 1. Map
