@@ -23,7 +23,7 @@
   <string name="preferences_default_snooze_delay_title">預設重響延遲時間</string>
   <string name="preferences_default_snooze_delay_dialog">預設重響延遲</string>
   <string name="default_start_title">預設視圖</string>
-  <string name="default_start_last">以前使用的視圖</string>
+  <string name="default_start_last">曾經使用的視圖</string>
   <string name="events_delete">刪除活動</string>
   <string name="action_select_all">全選</string>
   <string name="action_select_none">取消全選</string>
