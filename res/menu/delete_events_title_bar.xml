@@ -37,5 +37,9 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
         android:title="@string/action_delete"
         android:visible="true">
     </item>
+    <item android:id="@+id/select_all_check"
+          android:title="@string/action_select_all"
+          android:showAsAction="never"
+          android:checkable="true" />
 
 </menu>
