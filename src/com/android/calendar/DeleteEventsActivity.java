@@ -108,6 +108,8 @@ public class DeleteEventsActivity extends ListActivity
     private AsyncQueryService mService;
     private TextView mHeaderTextView;
 
+    private boolean mIgnoreSelections = false;
+
     private Map<Long, Long> mSelectedMap = new HashMap<Long, Long>();
     private Map<Long, String> mCalendarsMap = new HashMap<Long, String>();
     private List<Long> mEventList = new ArrayList<Long>();
@@ -255,6 +257,10 @@ public class DeleteEventsActivity extends ListActivity
         @Override
         public void onItemCheckedStateChanged(ActionMode mode, int position,
                                               long id, boolean checked) {
+            // We're updating selections manually ignore changes
+            if (mIgnoreSelections) {
+                return;
+            }
             int firstVisiblePosition = mListView.getFirstVisiblePosition();
             int actualPosition = position - firstVisiblePosition;
 
@@ -301,6 +307,16 @@ public class DeleteEventsActivity extends ListActivity
                                 : R.string.no_events, Toast.LENGTH_SHORT).show();
                     }
                     return true;
+                case R.id.select_all_check:
+                    mIgnoreSelections = true;
+                    if (item.isChecked()) {
+                        selectNone();
+                    } else {
+                        selectAll();
+                    }
+                    mIgnoreSelections = false;
+                    invalidateOptionsMenu();
+                    return true;
             }
             return false;
         }
@@ -316,7 +332,9 @@ public class DeleteEventsActivity extends ListActivity
         public boolean onPrepareActionMode(ActionMode mode, Menu menu) {
             // Here you can perform updates to the CAB due to
             // an invalidate() request
-            return false;
+            MenuItem selectAllItem = menu.findItem(R.id.select_all_check);
+            selectAllItem.setChecked(mSelectedMap.size() == mEventList.size());
+            return true;
         }
     };
 
