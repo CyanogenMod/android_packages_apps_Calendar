@@ -15,7 +15,6 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-
     <plurals name="events_selected">
         <item quantity="zero">没有选择事件</item>
         <item quantity="other">已选择 %1$d</item>
@@ -25,5 +24,4 @@
         <item quantity="one">选择一个事件分享</item>
         <item quantity="other">选择事件分享</item>
     </plurals>
-
 </resources>
