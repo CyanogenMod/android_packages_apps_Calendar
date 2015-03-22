@@ -35,5 +35,7 @@
   <string name="evt_del_dlg_msg_all">Toate evenimentele vor fi șterse</string>
   <string name="no_events_selected">Nu sunt evenimente selectate</string>
   <string name="go_to">Du-te la</string>
+  <string name="cal_share_intent_title">Trimite eveniment către:</string>
+  <string name="error_generating_ics">Au fost întâmpinate probleme în partajarea evenimentului</string>
   <string name="share_label">Distribuire</string>
 </resources>
