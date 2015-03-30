@@ -16,13 +16,13 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="preferences_alerts_custom_snooze_delay_title">Xatırlatma üçün təxirə salma vaxtını soruş</string>
+  <string name="preferences_alerts_custom_snooze_delay_title">Xatırladıcı üçün təxirə salma vaxtını soruş</string>
   <string name="preferences_alerts_custom_snooze_delay_summary_on">Xatırladıcıları təxirə salarkən vaxtı soruş</string>
-  <string name="preferences_alerts_custom_snooze_delay_summary_off">Həmişə standart təxirə salma vaxtından istifadə et</string>
-  <string name="snooze_delay_dialog_title">Təxirə salma vaxtını nizamla</string>
-  <string name="preferences_default_snooze_delay_title">Standart təxirə salma vaxtı</string>
-  <string name="preferences_default_snooze_delay_dialog">Təxirə salma vaxtı</string>
-  <string name="default_start_title">Standart görünüş</string>
+  <string name="preferences_alerts_custom_snooze_delay_summary_off">Həmişə ilkin təxirə salma vaxtından istifadə et</string>
+  <string name="snooze_delay_dialog_title">Təxirə salma vaxtını tənzimlə</string>
+  <string name="preferences_default_snooze_delay_title">İlkin təxirə salma vaxtı</string>
+  <string name="preferences_default_snooze_delay_dialog">İlkin təxirə salma vaxtı</string>
+  <string name="default_start_title">İlkin görünüş</string>
   <string name="default_start_last">Əvvəlki görünüş</string>
   <string name="events_delete">Tədbirləri sil</string>
   <string name="action_select_all">Hamısını seç</string>
@@ -35,4 +35,13 @@
   <string name="evt_del_dlg_msg_all">Bütün tədbirlər silinəcək</string>
   <string name="no_events_selected">Heç bir tədbir seçilmədi</string>
   <string name="go_to">Get</string>
+  <string name="cal_share_intent_title">Tədbiri göndər:</string>
+  <string name="cal_export_event_sdcard_title">SD karda köçür</string>
+  <string name="cal_export_succ_msg">Tədbir uğurla köçürüldü: %1s</string>
+  <string name="cal_import_menu_title">Tədbir al</string>
+  <string name="cal_nothing_to_import">Alınacaq heçnə yoxdur</string>
+  <string name="cal_import_error_msg">Təqvimə alma uğursuz oldu</string>
+  <string name="cal_pick_ics">Alınacaq faylı seçin</string>
+  <string name="error_generating_ics">Tədbir paylaşılan zaman problem baş verdi</string>
+  <string name="share_label">Paylaş</string>
 </resources>
