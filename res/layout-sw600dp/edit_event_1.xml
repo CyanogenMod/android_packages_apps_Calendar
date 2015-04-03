@@ -70,7 +70,7 @@
         <TextView
             android:text="@string/edit_event_calendar_label"
             style="@style/TextAppearance.EditEvent_Label" />
-        <LinearLayout 
+        <LinearLayout
             android:id="@+id/calendar_textview_with_colorpicker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -116,6 +116,7 @@
             android:hint="@string/hint_what"
             android:capitalize="sentences"
             android:inputType="textAutoCorrect|textCapSentences"
+            android:maxLength="@integer/edit_text_max_length_title"
             android:focusable="true" />
     </TableRow>
 
@@ -130,6 +131,7 @@
             android:singleLine="false"
             style="@style/TextAppearance.EditEvent_Value"
             android:inputType="textAutoCorrect|textCapSentences"
+            android:maxLength="@integer/edit_text_max_length_title"
             android:hint="@string/hint_where" />
     </TableRow>
 
@@ -383,6 +385,7 @@
             android:hint="@string/hint_description"
             android:inputType="textAutoCorrect|textCapSentences|textMultiLine"
             style="@style/TextAppearance.EditEvent_Value"
+            android:maxLength="@integer/edit_text_max_length_description"
             android:capitalize="sentences" />
     </TableRow>
 

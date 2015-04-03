@@ -141,6 +141,7 @@
             android:inputType="textAutoCorrect|textCapSentences|textMultiLine"
             style="@style/TextAppearance.EditEvent_Value"
             android:imeOptions="actionDone"
+            android:maxLength="@integer/edit_text_max_length_description"
             android:capitalize="sentences" />
     </LinearLayout>
 

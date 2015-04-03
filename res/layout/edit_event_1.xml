@@ -112,6 +112,7 @@
         android:hint="@string/hint_what"
         android:capitalize="sentences"
         android:inputType="textAutoCorrect|textCapSentences"
+        android:maxLength="@integer/edit_text_max_length_title"
         android:focusable="true" />
 
     <!-- WHERE -->
@@ -130,6 +131,7 @@
             android:imeOptions="actionDone"
             style="@style/TextAppearance.EditEvent_Value"
             android:inputType="textAutoCorrect|textCapSentences"
+            android:maxLength="@integer/edit_text_max_length_title"
             android:hint="@string/hint_where" />
     <View
         style="@style/EditEventSeparator"/>

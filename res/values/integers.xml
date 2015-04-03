@@ -36,5 +36,8 @@
     <integer name="calendar_controls_animation_time">400</integer>
     <!-- Default duration for fast zippy animations (in ms) -->
     <integer name="animation_duration_fast">200</integer>
-
+    <!-- Edit text max length: title and location -->
+    <integer name="edit_text_max_length_title">100</integer>
+    <!-- Edit text max length: description -->
+    <integer name="edit_text_max_length_description">200</integer>
 </resources>
