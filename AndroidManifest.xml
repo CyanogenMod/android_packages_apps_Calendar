@@ -48,7 +48,8 @@
             android:hardwareAccelerated="true"
             android:backupAgent="com.android.calendar.CalendarBackupAgent"
             android:requiredAccountType="*"
-            android:usesCleartextTraffic="false" >
+            android:usesCleartextTraffic="false"
+            android:supportsRtl="true" >
 
         <meta-data android:name="com.google.android.backup.api_key"
                 android:value="AEdPqrEAAAAIM256oVOGnuSel5QKDpL8je_T65ZI8rFnDinssA" />
