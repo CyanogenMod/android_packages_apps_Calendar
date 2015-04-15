@@ -60,4 +60,7 @@
     <!-- Toast message displayed when ics file to share an event can't be generated -->
     <string name="error_generating_ics">Problems encountered while sharing event</string>
     <string name="share_label">Share</string>
+
+    <!-- Toast message displayed when the maximum characters for an EditText is reached. -->
+    <string name="max_chars_toast_message">Maximum character limit reached.</string>
 </resources>
