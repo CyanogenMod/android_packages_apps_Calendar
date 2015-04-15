@@ -50,6 +50,8 @@ public class EditEventActivity extends AbstractCalendarActivity {
 
     public static final String EXTRA_EVENT_REMINDERS = "reminders";
 
+    public static final String EXTRA_READ_ONLY = "read_only";
+
     private static boolean mIsMultipane;
 
     private EditEventFragment mEditFragment;
@@ -93,12 +95,14 @@ public class EditEventActivity extends AbstractCalendarActivity {
 
         if (mEditFragment == null) {
             Intent intent = null;
+            boolean readOnly = false;
             if (mEventInfo.id == -1) {
                 intent = getIntent();
+                readOnly = intent.getBooleanExtra(EXTRA_READ_ONLY, false);
             }
 
             mEditFragment = new EditEventFragment(mEventInfo, mReminders, mEventColorInitialized,
-                    mEventColor, false, intent);
+                    mEventColor, readOnly, intent);
 
             mEditFragment.mShowModifyDialogOnLaunch = getIntent().getBooleanExtra(
                     CalendarController.EVENT_EDIT_ON_LAUNCH, false);
