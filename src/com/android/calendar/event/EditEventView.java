@@ -36,8 +36,10 @@ import android.provider.CalendarContract.Calendars;
 import android.provider.CalendarContract.Events;
 import android.provider.CalendarContract.Reminders;
 import android.provider.Settings;
+import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.text.format.DateFormat;
 import android.text.format.DateUtils;
 import android.text.format.Time;
@@ -67,6 +69,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.TextView.OnEditorActionListener;
 
+import android.widget.Toast;
 import com.android.calendar.CalendarEventModel;
 import com.android.calendar.CalendarEventModel.Attendee;
 import com.android.calendar.CalendarEventModel.ReminderEntry;
@@ -180,6 +183,9 @@ public class EditEventView implements View.OnClickListener, DialogInterface.OnCa
     private TimePickerDialog mStartTimePickerDialog;
     private TimePickerDialog mEndTimePickerDialog;
     private DatePickerDialog mDatePickerDialog;
+
+    private int mEventTitleMaxLength;
+    private int mEventDescriptionMaxLength;
 
     /**
      * Contents of the "minutes" spinner.  This has default values from the XML file, augmented
@@ -771,6 +777,11 @@ public class EditEventView implements View.OnClickListener, DialogInterface.OnCa
         mView = view;
         mDone = done;
 
+        mEventTitleMaxLength =
+                mActivity.getResources().getInteger(R.integer.edit_text_max_length_title);
+        mEventDescriptionMaxLength =
+                mActivity.getResources().getInteger(R.integer.edit_text_max_length_description);
+
         // cache top level view elements
         mLoadingMessage = (TextView) view.findViewById(R.id.loading_message);
         mScrollView = (ScrollView) view.findViewById(R.id.scroll_view);
@@ -865,6 +876,10 @@ public class EditEventView implements View.OnClickListener, DialogInterface.OnCa
             public void onNothingSelected(AdapterView<?> arg0) { }
         });
 
+        mTitleTextView.addTextChangedListener(
+                new MaxLengthToastTextWatcher(mEventTitleMaxLength, mActivity));
+        mDescriptionTextView.addTextChangedListener(
+                new MaxLengthToastTextWatcher(mEventDescriptionMaxLength, mActivity));
 
         mDescriptionTextView.setTag(mDescriptionTextView.getBackground());
         mAttendeesList.setTag(mAttendeesList.getBackground());
@@ -1848,5 +1863,37 @@ public class EditEventView implements View.OnClickListener, DialogInterface.OnCa
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
+    }
+
+    /**
+     * When the text entered reaches the given length, toast a message that the maximum length
+     * has been reached.
+     */
+    private class MaxLengthToastTextWatcher implements TextWatcher {
+        private Context mContext;
+        private int mMaxLength;
+
+        public MaxLengthToastTextWatcher(int maxLength, Context context) {
+            mMaxLength = maxLength;
+            mContext = context;
+        }
+
+        @Override
+        public void beforeTextChanged(CharSequence charSequence, int start, int count, int after) {
+            // Not used
+        }
+
+        @Override
+        public void onTextChanged(CharSequence charSequence, int start, int before, int count) {
+            // Not used
+        }
+
+        @Override
+        public void afterTextChanged(Editable editable) {
+            if (editable.length() >= mMaxLength) {
+                Toast.makeText(mContext, R.string.max_chars_toast_message, Toast.LENGTH_SHORT)
+                     .show();
+            }
+        }
     }
 }
