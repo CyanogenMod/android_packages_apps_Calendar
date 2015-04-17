@@ -19,7 +19,7 @@
   <plurals name="events_selected">
     <item quantity="one">%1$d įvykis pasirinktas</item>
     <item quantity="few">%1$d įvykiai pasirinkti</item>
-    <item quantity="other">%1$d įvykių pasirinktą</item>
+    <item quantity="other">%1$d įvykių pasirinkta</item>
   </plurals>
   <plurals name="select_events_to_share">
     <item quantity="one">Pasirinkite įvyki, kad bendrintumėte</item>
