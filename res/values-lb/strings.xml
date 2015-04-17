@@ -185,7 +185,7 @@
   <string name="preferences_week_start_day_title">D\'Woch fänkt un</string>
   <string name="preferences_week_start_day_dialog">D\'Woch fänkt un</string>
   <string name="preferences_clear_search_history_title">Sichhistorique läschen</string>
-  <string name="preferences_clear_search_history_summary">D\'Sich déi gemaach goufe läschen</string>
+  <string name="preferences_clear_search_history_summary">All d\'Sich-Ufroen déi gemaach goufe läschen</string>
   <string name="search_history_cleared">De Sichhistorique gouf geläscht.</string>
   <string name="preferences_alerts_title">Notifikatiounen</string>
   <string name="preferences_alerts_vibrateWhen_title">Vibréieren</string>
