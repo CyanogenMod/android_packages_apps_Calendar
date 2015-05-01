@@ -17,13 +17,11 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <plurals name="events_selected">
-    <item quantity="one">%1$d wydarzenie wybrane</item>
-    <item quantity="few">%1$d wydarzenia wybrane</item>
-    <item quantity="other">%1$d wydarzenia wybrane</item>
+    <item quantity="one">%1$d घटना चुनी गई है</item>
+    <item quantity="other">%1$d घटनाएँ चुनी गई हैं</item>
   </plurals>
   <plurals name="select_events_to_share">
-    <item quantity="one">Wybierz wydarzenie do udostępnienia</item>
-    <item quantity="few">Wybierz wydarzenia do udostępnienia</item>
-    <item quantity="other">Wybierz wydarzenia do udostępnienia</item>
+    <item quantity="one">साझा करने के लिए कोई घटना चुनें</item>
+    <item quantity="other">साझा करने के लिए घटनाएँ चुनें</item>
   </plurals>
 </resources>
