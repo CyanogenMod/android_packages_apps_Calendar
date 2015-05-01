@@ -36,6 +36,12 @@
   <string name="no_events_selected">Nu sunt evenimente selectate</string>
   <string name="go_to">Du-te la</string>
   <string name="cal_share_intent_title">Trimite eveniment către:</string>
+  <string name="cal_export_event_sdcard_title">Exportă pe cardul SD</string>
+  <string name="cal_export_succ_msg">Eveniment exportat cu succes: %1s</string>
+  <string name="cal_import_menu_title">Importă eveniment</string>
+  <string name="cal_nothing_to_import">Nimic de importat</string>
+  <string name="cal_import_error_msg">Importul în calendar a eșuat</string>
+  <string name="cal_pick_ics">Alege fișierul de importat</string>
   <string name="error_generating_ics">Au fost întâmpinate probleme în partajarea evenimentului</string>
   <string name="share_label">Distribuire</string>
 </resources>
