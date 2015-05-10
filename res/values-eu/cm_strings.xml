@@ -16,9 +16,23 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="preferences_alerts_custom_snooze_delay_title">Galdetu oroigarrien atzeratze denbora</string>
   <string name="preferences_alerts_custom_snooze_delay_summary_on">Oroigarrien arteko denbora oroigarri bakoitzean galdetu</string>
+  <string name="preferences_alerts_custom_snooze_delay_summary_off">Erabili beti denbora tarte lehenetsia oroigarrien artean</string>
   <string name="snooze_delay_dialog_title">Denbora tartea</string>
   <string name="preferences_default_snooze_delay_title">Oroigarrien arteko denbora tartea</string>
   <string name="preferences_default_snooze_delay_dialog">Oroigarrien arteko denbora tarte lehenetsia</string>
+  <string name="default_start_title">Ikuspegi lehenetsia</string>
   <string name="default_start_last">Aurretik erabilitako ikuspegia</string>
+  <string name="events_delete">Ezabatu gertaerak</string>
+  <string name="action_select_all">Aukeratu guztiak</string>
+  <string name="action_select_none">Desmarkatu guztia</string>
+  <string name="action_delete">Egina</string>
+  <string name="all_events">Gertaera guztiak</string>
+  <string name="no_events">Ez dago gertaerarik eskuragarri</string>
+  <string name="evt_del_dlg_title">Ezabatu gertaerak?</string>
+  <string name="evt_del_dlg_msg_selected">Hautatutako gertaerak ezabatuko dira</string>
+  <string name="evt_del_dlg_msg_all">Gertaera guztiak ezabatuko dira</string>
+  <string name="no_events_selected">Ez da gertaerarik hautatu</string>
+  <string name="go_to">"Joan hona"</string>
 </resources>
