@@ -23,4 +23,5 @@
   <string name="preferences_default_snooze_delay_title">Oroigarrien arteko denbora tartea</string>
   <string name="preferences_default_snooze_delay_dialog">Oroigarrien arteko denbora tarte lehenetsia</string>
   <string name="default_start_last">Aurretik erabilitako ikuspegia</string>
+  <string name="events_delete">Ezabatu gertaerak</string>
 </resources>
