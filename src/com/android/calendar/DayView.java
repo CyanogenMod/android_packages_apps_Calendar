@@ -844,7 +844,9 @@ public class DayView extends View implements View.OnCreateContextMenuListener,
             int index = i - Calendar.SUNDAY;
             // e.g. Tue for Tuesday
             mDayStrs[index] = DateUtils.getDayOfWeekString(i, DateUtils.LENGTH_MEDIUM)
-                    .toUpperCase();
+                    .toUpperCase()
+                    .substring(0, 3);
+
             mDayStrs[index + 7] = mDayStrs[index];
             // e.g. Tu for Tuesday
             mDayStrs2Letter[index] = DateUtils.getDayOfWeekString(i, DateUtils.LENGTH_SHORT)
