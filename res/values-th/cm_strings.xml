@@ -35,4 +35,13 @@
   <string name="evt_del_dlg_msg_all">กิจกรรมทั้งหมดจะถูกลบ</string>
   <string name="no_events_selected">ไม่มีกิจกรรมที่เลือก</string>
   <string name="go_to">ไปยัง</string>
+  <string name="cal_share_intent_title">ส่งเหตุการณ์ไปยัง:</string>
+  <string name="cal_export_event_sdcard_title">ส่งออกไปยัง SD card</string>
+  <string name="cal_export_succ_msg">ส่งออกเหตุการณ์เรียบร้อย: %1s</string>
+  <string name="cal_import_menu_title">นำเข้าเหตุการณ์</string>
+  <string name="cal_nothing_to_import">ไม่มีอะไรที่ถูกนำเข้า</string>
+  <string name="cal_import_error_msg">การนำเข้าปฏิทินล้มเหลว</string>
+  <string name="cal_pick_ics">เลือกไฟล์ที่จะนำเค้า</string>
+  <string name="error_generating_ics">มีปัญหาขณะกำลังแบ่งปันกิจกรรม</string>
+  <string name="share_label">แบ่งบัน</string>
 </resources>
