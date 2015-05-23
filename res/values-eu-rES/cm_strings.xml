@@ -27,10 +27,21 @@
   <string name="events_delete">Ezabatu gertaerak</string>
   <string name="action_select_all">Hautatu guztiak</string>
   <string name="action_select_none">Desautatu guztiak</string>
+  <string name="action_delete">Eginda</string>
+  <string name="all_events">Gertaera guztiak</string>
+  <string name="no_events">Ez dago gertaerarik eskuragarri</string>
+  <string name="evt_del_dlg_title">Ezabatu gertaerak?</string>
+  <string name="evt_del_dlg_msg_selected">Hautatutako gertaerak ezabatuko dira</string>
+  <string name="evt_del_dlg_msg_all">Gertaera guztiak ezabatuko dira</string>
+  <string name="no_events_selected">Ez da gertaerarik hautatu</string>
   <string name="go_to">Joan hona</string>
   <string name="cal_share_intent_title">Bidali gertaera honi:</string>
   <string name="cal_export_event_sdcard_title">Esportatu SD txartelera</string>
   <string name="cal_export_succ_msg">Gertaera ondo esportatu da: %1s</string>
+  <string name="cal_import_menu_title">Inportatu gertaera</string>
+  <string name="cal_nothing_to_import">Ez dago ezer inportatzeko</string>
+  <string name="cal_import_error_msg">Huts egin du egutegira inportatzeak</string>
+  <string name="cal_pick_ics">Hautatu fitxategia inportatzeko</string>
   <string name="error_generating_ics">Arazoak aurkitu dira gertaera partekatzean</string>
   <string name="share_label">Partekatu</string>
 </resources>
