@@ -39,7 +39,16 @@ public class SnoozeDelayActivity extends Activity implements
     @Override
     protected Dialog onCreateDialog(int id) {
         if (id == DIALOG_DELAY) {
-            TimePickerDialog d = new TimePickerDialog(this, this, 0, 0, true);
+            TimePickerDialog d = new TimePickerDialog(this, this, 0, 0, true){
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    if (which == BUTTON_NEGATIVE){
+                        finish();
+                    }else{
+                        super.onClick(dialog, which);
+                    }
+                }
+            };
             d.setTitle(R.string.snooze_delay_dialog_title);
             d.setCancelable(true);
             d.setOnCancelListener(this);
