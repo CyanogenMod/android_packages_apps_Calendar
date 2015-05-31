@@ -39,5 +39,7 @@
   <string name="cal_export_event_sdcard_title">Exportera till SD-kort</string>
   <string name="cal_import_menu_title">Importera händelse</string>
   <string name="cal_nothing_to_import">Inget att importera</string>
+  <string name="cal_import_error_msg">Det gick inte att importera till kalender</string>
+  <string name="cal_pick_ics">Välj fil att importera</string>
   <string name="share_label">Dela</string>
 </resources>
