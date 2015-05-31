@@ -25,9 +25,9 @@
   <string name="default_start_title">Ikuspegi lehenetsia</string>
   <string name="default_start_last">Aurretik erabilitako ikuspegia</string>
   <string name="events_delete">Ezabatu gertaerak</string>
-  <string name="action_select_all">Aukeratu guztiak</string>
-  <string name="action_select_none">Desmarkatu guztia</string>
-  <string name="action_delete">Egina</string>
+  <string name="action_select_all">Hautatu guztiak</string>
+  <string name="action_select_none">Desautatu guztiak</string>
+  <string name="action_delete">Eginda</string>
   <string name="all_events">Gertaera guztiak</string>
   <string name="no_events">Ez dago gertaerarik eskuragarri</string>
   <string name="evt_del_dlg_title">Ezabatu gertaerak?</string>
