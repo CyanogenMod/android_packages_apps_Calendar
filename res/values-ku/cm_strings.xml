@@ -35,4 +35,13 @@
   <string name="evt_del_dlg_msg_all">هه‌موو ڕووداوه‌کان ده‌سڕدرێنه‌وه‌</string>
   <string name="no_events_selected">هیچ ڕووداوێک دیاری نه‌کراوه‌</string>
   <string name="go_to">چوون بۆ</string>
+  <string name="cal_share_intent_title">ناردنی ڕوداو بۆ:</string>
+  <string name="cal_export_event_sdcard_title">ناردن بۆ بیرگەی دەرەکی</string>
+  <string name="cal_export_succ_msg">ڕووداو نێردرا بە سەرەکەوتوی: %1s</string>
+  <string name="cal_import_menu_title">هێنانی ڕوداو</string>
+  <string name="cal_nothing_to_import">هیچ دەرنەهێنرا</string>
+  <string name="cal_import_error_msg">دەرهێنانی ژمێرەرەکە سەرکەوتونەبوو</string>
+  <string name="cal_pick_ics">هەڵگرتنی فایل بۆ دەرهێنان</string>
+  <string name="error_generating_ics">کێشەکان ڕوبەڕوبونەوە لەکاتێکدا ڕوداوەکە بەشداریپێکرا</string>
+  <string name="share_label">په‌رش</string>
 </resources>
