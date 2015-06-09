@@ -8,6 +8,8 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.net.Uri;
 import android.provider.CalendarContract;
+import android.system.ErrnoException;
+import android.system.OsConstants;
 import com.android.calendar.CalendarEventModel;
 
 import java.io.*;
@@ -94,11 +96,18 @@ public class IcalendarUtils {
             String tmpDir = System.getProperty("java.io.tmpdir", ".");
             tmpDirFile = new File(tmpDir);
         }
-        File result;
-        do {
-            result = new File(tmpDirFile,
-                    prefix + tempFileRandom.nextInt(Integer.MAX_VALUE) + suffix);
-        } while (!result.createNewFile());
+        File result = null;
+        try {
+            result = File.createTempFile(prefix, suffix, tmpDirFile);
+        } catch (IOException ioe) {
+            if (ioe.getCause() instanceof ErrnoException) {
+                if (((ErrnoException) ioe.getCause()).errno == OsConstants.ENAMETOOLONG) {
+                    // This is a recoverable error the file name was too long,
+                    // lets go for a smaller file name
+                    result = File.createTempFile("invite", suffix, tmpDirFile);
+                }
+            }
+        }
         return result;
     }
 
