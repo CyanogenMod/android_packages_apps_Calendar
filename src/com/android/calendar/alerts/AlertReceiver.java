@@ -19,6 +19,7 @@ package com.android.calendar.alerts;
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.app.Service;
+import android.content.ActivityNotFoundException;
 import android.content.BroadcastReceiver;
 import android.content.ContentUris;
 import android.content.Context;
@@ -45,6 +46,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.RemoteViews;
 
+import com.android.calendar.AllInOneActivity;
 import com.android.calendar.R;
 import com.android.calendar.Utils;
 import com.android.calendar.alerts.AlertService.NotificationWrapper;
@@ -113,9 +115,20 @@ public class AlertReceiver extends BroadcastReceiver {
                 URLSpan[] urlSpans = getURLSpans(context, eventId);
                 Intent geoIntent = createMapActivityIntent(context, urlSpans);
                 if (geoIntent != null) {
-                    // Location was successfully found, so dismiss the shade and start maps.
-                    context.startActivity(geoIntent);
-                    closeNotificationShade(context);
+                    try {
+                        // Location was successfully found, so dismiss the shade and start maps.
+                        context.startActivity(geoIntent);
+                    } catch (ActivityNotFoundException e) {
+                        Log.e(TAG, "No map activity found.");
+                        // Update the alert notification so the map button is removed
+                        AlertService.updateAlertNotification(context);
+                        // Take the user to the calendar app
+                        Intent newIntent = new Intent(context, AllInOneActivity.class);
+                        newIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        context.startActivity(newIntent);
+                    } finally {
+                        closeNotificationShade(context);
+                    }
                 } else {
                     // No location was found, so update all notifications.
                     // Our alert service does not currently allow us to specify only one
