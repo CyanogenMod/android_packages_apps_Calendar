@@ -151,7 +151,7 @@
   <string name="endByDate">, bis <xliff:g id="DATE">%s</xliff:g></string>
   <plurals name="endByCount">
     <item quantity="one">; eng Kéier</item>
-    <item quantity="other">; <xliff:g id="NUMBER">%d</xliff:g> mol</item>
+    <item quantity="other">; <xliff:g id="NUMBER">%d</xliff:g>-mol</item>
   </plurals>
   <plurals name="daily">
     <item quantity="one">Deeglech</item>
