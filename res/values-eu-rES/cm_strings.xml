@@ -20,7 +20,7 @@
   <string name="preferences_alerts_custom_snooze_delay_summary_on">Oroigarrien arteko denbora oroigarri bakoitzean galdetu</string>
   <string name="preferences_alerts_custom_snooze_delay_summary_off">Erabili beti denbora tarte lehenetsia oroigarrien artean</string>
   <string name="snooze_delay_dialog_title">Denbora tartea</string>
-  <string name="preferences_default_snooze_delay_title">Oroigarrien arteko denbora tartea</string>
+  <string name="preferences_default_snooze_delay_title">Oroigarrien arteko denbora tarte lehenetsia</string>
   <string name="preferences_default_snooze_delay_dialog">Oroigarrien arteko denbora tarte lehenetsia</string>
   <string name="default_start_title">Ikuspegi lehenetsia</string>
   <string name="default_start_last">Aurretik erabilitako ikuspegia</string>
