@@ -27,10 +27,12 @@
   <string name="events_delete">Forigi eventojn</string>
   <string name="action_select_all">Elekti ĉion</string>
   <string name="action_select_none">Malelekti ĉiujn</string>
+  <string name="action_delete">Finite</string>
   <string name="all_events">Ĉiuj eventoj</string>
   <string name="no_events">Neniu evento disponeblas</string>
   <string name="evt_del_dlg_title">Ĉu forigi eventojn?</string>
   <string name="evt_del_dlg_msg_selected">Elektitaj eventoj foriĝos</string>
+  <string name="evt_del_dlg_msg_all">Ĉiuj eventoj estos forigitaj</string>
   <string name="no_events_selected">Neniu evento elektita</string>
   <string name="go_to">Iri al</string>
   <string name="cal_share_intent_title">Sendi eventon al:</string>
