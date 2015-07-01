@@ -26,7 +26,7 @@
   <string name="default_start_last">תצוגה קודמת</string>
   <string name="events_delete">מחק אירועים</string>
   <string name="action_select_all">בחר הכל</string>
-  <string name="action_select_none">בטל את כל הבחירות</string>
+  <string name="action_select_none">בטל הכל</string>
   <string name="action_delete">סיום</string>
   <string name="all_events">כל האירועים</string>
   <string name="no_events">אין אירועים זמינים</string>
@@ -36,7 +36,7 @@
   <string name="no_events_selected">לא נבחרו אירועים</string>
   <string name="go_to">לך אל</string>
   <string name="cal_share_intent_title">שלח אירוע ל:</string>
-  <string name="cal_export_event_sdcard_title">ייצא לכרטיס SD</string>
+  <string name="cal_export_event_sdcard_title">ייצא לכרטיס זיכרון</string>
   <string name="cal_export_succ_msg">אירוע יוצא בהצלחה: %1s</string>
   <string name="cal_import_menu_title">ייבא אירוע</string>
   <string name="cal_nothing_to_import">לא נמצאו פריטים לייבוא</string>
