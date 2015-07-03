@@ -510,7 +510,7 @@ public class AlertReceiver extends BroadcastReceiver {
             // New-style notification...
 
             // Set to min priority to encourage the notification manager to collapse it.
-            notificationBuilder.setPriority(Notification.PRIORITY_MIN);
+            notificationBuilder.setPriority(Notification.PRIORITY_LOW);
 
             if (expandable) {
                 // Multiple reminders.  Combine into an expanded digest notification.
