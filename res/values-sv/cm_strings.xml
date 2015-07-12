@@ -37,6 +37,7 @@
   <string name="go_to">Gå till</string>
   <string name="cal_share_intent_title">Skicka händelse till:</string>
   <string name="cal_export_event_sdcard_title">Exportera till SD-kort</string>
+  <string name="cal_export_succ_msg">Händelsen exporterades: %1s</string>
   <string name="cal_import_menu_title">Importera händelse</string>
   <string name="cal_nothing_to_import">Inget att importera</string>
   <string name="cal_import_error_msg">Det gick inte att importera till kalender</string>
