@@ -129,7 +129,6 @@ public class EditEventFragment extends Fragment implements EventHandler, OnColor
     private Activity mActivity;
     private final Done mOnDone = new Done();
 
-    private boolean mSaveOnDetach = true;
     private boolean mIsReadOnly = false;
     public boolean mShowModifyDialogOnLaunch = false;
     private boolean mShowColorPalette = false;
@@ -179,7 +178,6 @@ public class EditEventFragment extends Fragment implements EventHandler, OnColor
                         // was deleted.
                         cursor.close();
                         mOnDone.setDoneCode(Utils.DONE_EXIT);
-                        mSaveOnDetach = false;
                         mOnDone.run();
                         return;
                     }
@@ -790,7 +788,6 @@ public class EditEventFragment extends Fragment implements EventHandler, OnColor
         public void run() {
             // We only want this to get called once, either because the user
             // pressed back/home or one of the buttons on screen
-            mSaveOnDetach = false;
             if (mModification == Utils.MODIFY_UNINITIALIZED) {
                 // If this is uninitialized the user hit back, the only
                 // changeable item is response to default to all events.
@@ -902,17 +899,6 @@ public class EditEventFragment extends Fragment implements EventHandler, OnColor
     }
 
     @Override
-    public void onPause() {
-        Activity act = getActivity();
-        if (mSaveOnDetach && act != null && !mIsReadOnly && !act.isChangingConfigurations()
-                && mView.prepareForSave()) {
-            mOnDone.setDoneCode(Utils.DONE_SAVE);
-            mOnDone.run();
-        }
-        super.onPause();
-    }
-
-    @Override
     public void onDestroy() {
         if (mView != null) {
             mView.setModel(null);
@@ -931,7 +917,6 @@ public class EditEventFragment extends Fragment implements EventHandler, OnColor
 
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        mView.prepareForSave();
         outState.putSerializable(BUNDLE_KEY_MODEL, mModel);
         outState.putInt(BUNDLE_KEY_EDIT_STATE, mModification);
         if (mEventBundle == null && mEvent != null) {
@@ -963,8 +948,7 @@ public class EditEventFragment extends Fragment implements EventHandler, OnColor
         // It's currently unclear if we want to save the event or not when home
         // is pressed. When creating a new event we shouldn't save since we
         // can't get the id of the new event easily.
-        if ((false && event.eventType == EventType.USER_HOME) || (event.eventType == EventType.GO_TO
-                && mSaveOnDetach)) {
+        if ((event.eventType == EventType.GO_TO)) {
             if (mView != null && mView.prepareForSave()) {
                 mOnDone.setDoneCode(Utils.DONE_SAVE);
                 mOnDone.run();
