@@ -902,17 +902,6 @@ public class EditEventFragment extends Fragment implements EventHandler, OnColor
     }
 
     @Override
-    public void onPause() {
-        Activity act = getActivity();
-        if (mSaveOnDetach && act != null && !mIsReadOnly && !act.isChangingConfigurations()
-                && mView.prepareForSave()) {
-            mOnDone.setDoneCode(Utils.DONE_SAVE);
-            mOnDone.run();
-        }
-        super.onPause();
-    }
-
-    @Override
     public void onDestroy() {
         if (mView != null) {
             mView.setModel(null);
@@ -927,30 +916,6 @@ public class EditEventFragment extends Fragment implements EventHandler, OnColor
     @Override
     public void eventsChanged() {
         // TODO Requery to see if event has changed
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        mView.prepareForSave();
-        outState.putSerializable(BUNDLE_KEY_MODEL, mModel);
-        outState.putInt(BUNDLE_KEY_EDIT_STATE, mModification);
-        if (mEventBundle == null && mEvent != null) {
-            mEventBundle = new EventBundle();
-            mEventBundle.id = mEvent.id;
-            if (mEvent.startTime != null) {
-                mEventBundle.start = mEvent.startTime.toMillis(true);
-            }
-            if (mEvent.endTime != null) {
-                mEventBundle.end = mEvent.startTime.toMillis(true);
-            }
-        }
-        outState.putBoolean(BUNDLE_KEY_EDIT_ON_LAUNCH, mShowModifyDialogOnLaunch);
-        outState.putSerializable(BUNDLE_KEY_EVENT, mEventBundle);
-        outState.putBoolean(BUNDLE_KEY_READ_ONLY, mIsReadOnly);
-        outState.putBoolean(BUNDLE_KEY_SHOW_COLOR_PALETTE, mView.isColorPaletteVisible());
-
-        outState.putBoolean("EditEventView_timebuttonclicked", mView.mTimeSelectedWasStartTime);
-        outState.putBoolean(BUNDLE_KEY_DATE_BUTTON_CLICKED, mView.mDateSelectedWasStartDate);
     }
 
     @Override
