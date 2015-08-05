@@ -36,9 +36,9 @@
   <string name="no_events_selected">לא נבחרו אירועים</string>
   <string name="go_to">לך אל</string>
   <string name="cal_share_intent_title">שלח אירוע ל:</string>
-  <string name="cal_export_event_sdcard_title">ייצא לכרטיס זיכרון</string>
+  <string name="cal_export_event_sdcard_title">ייצוא לכרטיס זיכרון</string>
   <string name="cal_export_succ_msg">אירוע יוצא בהצלחה: %1s</string>
-  <string name="cal_import_menu_title">ייבא אירוע</string>
+  <string name="cal_import_menu_title">ייבוא אירוע</string>
   <string name="cal_nothing_to_import">לא נמצאו פריטים לייבוא</string>
   <string name="cal_import_error_msg">ייבוא ללוח השנה נכשל</string>
   <string name="cal_pick_ics">בחר קובץ לייבוא</string>
