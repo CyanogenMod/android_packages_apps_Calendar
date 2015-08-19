@@ -16,5 +16,32 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="preferences_alerts_custom_snooze_delay_title">درخواست مدت تعویق یادآوری</string>
+  <string name="preferences_alerts_custom_snooze_delay_summary_on">درخواست مدت تعویق هنگام تعویق یادآوری‌ها</string>
+  <string name="preferences_alerts_custom_snooze_delay_summary_off">همیشه استفاده‌ از مدت تعویق پیش‌فرض</string>
+  <string name="snooze_delay_dialog_title">تنظیم مدت تعویق</string>
+  <string name="preferences_default_snooze_delay_title">زمان پیش‌فرض برای مدت تعویق</string>
+  <string name="preferences_default_snooze_delay_dialog">مدت تعویق پیش‌فرض</string>
+  <string name="default_start_title">نمای پیش فرض</string>
+  <string name="default_start_last">نمای قبلا استفاده شده</string>
+  <string name="events_delete">حذف رویدادها</string>
+  <string name="action_select_all">انتخاب همه</string>
+  <string name="action_select_none">انتخاب نکردن همه</string>
   <string name="action_delete">انجام شد</string>
+  <string name="all_events">تمام رویدادها</string>
+  <string name="no_events">هیچ رویدادی موجود نیست</string>
+  <string name="evt_del_dlg_title">حذف رویدادها؟</string>
+  <string name="evt_del_dlg_msg_selected">رویدادهای انتخاب شده حذف خواهند شد</string>
+  <string name="evt_del_dlg_msg_all">تمام رویدادها حذف خواهند شد</string>
+  <string name="no_events_selected">هیچ رویدادی انتخاب نشده است</string>
+  <string name="go_to">برو به</string>
+  <string name="cal_share_intent_title">رویداد را ارسال کنید:</string>
+  <string name="cal_export_event_sdcard_title">صادر به کارت SD</string>
+  <string name="cal_export_succ_msg">رویداد با موفقیت صادر شد: %1s</string>
+  <string name="cal_import_menu_title">وارد کردن رویداد</string>
+  <string name="cal_nothing_to_import">چیزی برای وارد کردن وجود ندارد</string>
+  <string name="cal_import_error_msg">واردات به تقویم ناموفق بود</string>
+  <string name="cal_pick_ics">فایل را برای وارد کردن انتخاب کنید</string>
+  <string name="error_generating_ics">در هنگام اشتراک گذاری رویداد مشکلی پیش آمد</string>
+  <string name="share_label">اشتراک ﮔﺬﺍﺭﯼ</string>
 </resources>
