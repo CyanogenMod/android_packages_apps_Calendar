@@ -35,5 +35,13 @@
   <string name="evt_del_dlg_msg_all">Alla händelser kommer tas bort</string>
   <string name="no_events_selected">Inga händelser valda</string>
   <string name="go_to">Gå till</string>
+  <string name="cal_share_intent_title">Skicka händelse till:</string>
+  <string name="cal_export_event_sdcard_title">Exportera till SD-kort</string>
+  <string name="cal_export_succ_msg">Händelsen exporterades: %1s</string>
+  <string name="cal_import_menu_title">Importera händelse</string>
+  <string name="cal_nothing_to_import">Inget att importera</string>
+  <string name="cal_import_error_msg">Det gick inte att importera till kalender</string>
+  <string name="cal_pick_ics">Välj fil att importera</string>
+  <string name="error_generating_ics">Problem uppstod då händelse skulle delas</string>
   <string name="share_label">Dela</string>
 </resources>

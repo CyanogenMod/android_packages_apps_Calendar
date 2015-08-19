@@ -35,4 +35,13 @@
   <string name="evt_del_dlg_msg_all">سيتم حذف كافة الأحداث</string>
   <string name="no_events_selected">لا يوجد أحداث محددة</string>
   <string name="go_to">اذهب إلى</string>
+  <string name="cal_share_intent_title">إرسال الحدث إلى:</string>
+  <string name="cal_export_event_sdcard_title">التصدير إلى بطاقة الذاكرة SD</string>
+  <string name="cal_export_succ_msg">تم تصدير الحدث بنجاح: %1s</string>
+  <string name="cal_import_menu_title">استيراد الحدث</string>
+  <string name="cal_nothing_to_import">لا شيء لاستيراده</string>
+  <string name="cal_import_error_msg">فشل الاستيراد إلى التقويم</string>
+  <string name="cal_pick_ics">اختر ملفاً للاستيراد</string>
+  <string name="error_generating_ics">حدثت مشكلة أثناء مشاركة الحدث</string>
+  <string name="share_label">مشاركة</string>
 </resources>
