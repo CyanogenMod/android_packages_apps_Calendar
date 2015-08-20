@@ -16,12 +16,12 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="preferences_alerts_custom_snooze_delay_title">درخواست برای یادآوری تاخیر چرت زدن</string>
-  <string name="preferences_alerts_custom_snooze_delay_summary_on">درخواست برای تاخیر چرت زدن هنگام یادآوری چرت زدن</string>
-  <string name="preferences_alerts_custom_snooze_delay_summary_off">همیشه از تأخیر چرت زدن پیش‌فرض استفاده کن</string>
-  <string name="snooze_delay_dialog_title">تنظیم زمان تأخیر چرت زدن</string>
-  <string name="preferences_default_snooze_delay_title">زمان پیش فرض تأخیر چرت زدن</string>
-  <string name="preferences_default_snooze_delay_dialog">تأخیر چرت زدن پیش فرض</string>
+  <string name="preferences_alerts_custom_snooze_delay_title">درخواست مدت تعویق یادآوری</string>
+  <string name="preferences_alerts_custom_snooze_delay_summary_on">درخواست مدت تعویق هنگام تعویق یادآوری‌ها</string>
+  <string name="preferences_alerts_custom_snooze_delay_summary_off">همیشه استفاده‌ از مدت تعویق پیش‌فرض</string>
+  <string name="snooze_delay_dialog_title">تنظیم مدت تعویق</string>
+  <string name="preferences_default_snooze_delay_title">زمان پیش‌فرض برای مدت تعویق</string>
+  <string name="preferences_default_snooze_delay_dialog">مدت تعویق پیش‌فرض</string>
   <string name="default_start_title">نمای پیش فرض</string>
   <string name="default_start_last">نمای قبلا استفاده شده</string>
   <string name="events_delete">حذف رویدادها</string>
