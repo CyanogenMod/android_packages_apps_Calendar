@@ -18,7 +18,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="preferences_alerts_custom_snooze_delay_title">درخواست مدت تعویق یادآوری</string>
   <string name="preferences_alerts_custom_snooze_delay_summary_on">درخواست مدت تعویق هنگام تعویق یادآوری‌ها</string>
-  <string name="preferences_alerts_custom_snooze_delay_summary_off">همیشه استفاده‌ از مدت تعویق پیش‌فرض</string>
+  <string name="preferences_alerts_custom_snooze_delay_summary_off">استفاده‌ همیشگی از مدت تعویق پیش‌فرض</string>
   <string name="snooze_delay_dialog_title">تنظیم مدت تعویق</string>
   <string name="preferences_default_snooze_delay_title">زمان پیش‌فرض برای مدت تعویق</string>
   <string name="preferences_default_snooze_delay_dialog">مدت تعویق پیش‌فرض</string>
@@ -42,6 +42,6 @@
   <string name="cal_nothing_to_import">چیزی برای وارد کردن وجود ندارد</string>
   <string name="cal_import_error_msg">واردسازی به تقویم ناموفق بود</string>
   <string name="cal_pick_ics">فایل را برای وارد کردن انتخاب کنید</string>
-  <string name="error_generating_ics">در هنگام اشتراک گذاری رویداد مشکلی پیش آمد</string>
+  <string name="error_generating_ics">هنگام اشتراک‌گذاری رویداد مشکلی پیش آمد</string>
   <string name="share_label">اشتراک ﮔﺬﺍﺭﯼ</string>
 </resources>
