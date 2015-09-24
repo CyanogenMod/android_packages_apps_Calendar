@@ -175,7 +175,6 @@
   <string name="preferences_hide_declined_title">رەت قىلغان پائالىيەتنى يوشۇر</string>
   <string name="preferences_week_start_day_title">ھەپتە باشلىنىشى</string>
   <string name="preferences_week_start_day_dialog">ھەپتە باشلىنىشى</string>
-  <string name="preferences_week_start_day_default">-1</string>
   <string name="preferences_clear_search_history_title">ئىزدەش تارىخ خاتىرىسىنى تازىلا</string>
   <string name="preferences_clear_search_history_summary">سىز ئىجرا قىلغان ھەممە ئىزدەشنى ئۆچۈرىدۇ</string>
   <string name="search_history_cleared">ئىزدەش تارىخى تازىلاندى.</string>
@@ -189,7 +188,6 @@
   <string name="preferences_use_home_tz_title">يەرلىك ۋاقىت رايونى ئىشلەت</string>
   <string name="preferences_use_home_tz_descrip">ساياھەت قىلغاندا ۋاقىت رايونى بېسىلسا يىلنامە ۋە پائالىيەت ۋاقتىنى كۆرسىتىدۇ</string>
   <string name="preferences_home_tz_title">يەرلىك ۋاقىت رايونى</string>
-  <string name="preferences_home_tz_default">Asia/Almaty</string>
   <string name="preferences_show_week_num_title">ھەپتە نومۇرىنى كۆرسەت</string>
   <string name="preferences_about_title">ھەققىدە</string>
   <string name="preferences_build_version">نەشر نومۇرى</string>
