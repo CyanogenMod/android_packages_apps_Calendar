@@ -184,7 +184,6 @@
   <string name="preferences_hide_declined_title">Anubrir eventos refugaos</string>
   <string name="preferences_week_start_day_title">La selmana entama\'l</string>
   <string name="preferences_week_start_day_dialog">La selmana entama\'l</string>
-  <string name="preferences_week_start_day_default">-1</string>
   <string name="preferences_clear_search_history_title">Llimpiar l\'historial de gueta</string>
   <string name="preferences_clear_search_history_summary">Desaniciar toles busques anteriores</string>
   <string name="search_history_cleared">Desanicióse l\'historial de gueta.</string>
@@ -198,7 +197,6 @@
   <string name="preferences_use_home_tz_title">Usar hora llocal</string>
   <string name="preferences_use_home_tz_descrip">Amosar calendarios y eventos na hora llocal al viaxar</string>
   <string name="preferences_home_tz_title">Estaya horaria llocal</string>
-  <string name="preferences_home_tz_default">América/Los_Ánxeles</string>
   <string name="preferences_show_week_num_title">Amosar númberu de selmana</string>
   <string name="preferences_about_title">Tocante a</string>
   <string name="preferences_build_version">Versión de la compilación</string>
