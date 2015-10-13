@@ -16,5 +16,32 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="preferences_alerts_custom_snooze_delay_title">Hỏi thời gian trễ báo lại nhắc nhở</string>
+  <string name="preferences_alerts_custom_snooze_delay_summary_on">Hỏi thời gian trễ báo lại bất cứ khi nào báo lại nhắc nhở</string>
+  <string name="preferences_alerts_custom_snooze_delay_summary_off">Luôn dùng thời gian trễ báo lại mặc định</string>
+  <string name="snooze_delay_dialog_title">Đặt thời gian trễ báo lại</string>
+  <string name="preferences_default_snooze_delay_title">Thời gian trễ báo lại mặc định</string>
+  <string name="preferences_default_snooze_delay_dialog">Trễ báo lại mặc định</string>
+  <string name="default_start_title">Chế độ xem mặc định</string>
+  <string name="default_start_last">Chế độ xem đã dùng trước đó</string>
+  <string name="events_delete">Xoá sự kiện</string>
+  <string name="action_select_all">Chọn tất cả</string>
+  <string name="action_select_none">Bỏ chọn tất cả</string>
+  <string name="action_delete">Hoàn tất</string>
+  <string name="all_events">Tất cả sự kiện</string>
+  <string name="no_events">Không có sự kiện</string>
+  <string name="evt_del_dlg_title">Xóa sự kiện?</string>
+  <string name="evt_del_dlg_msg_selected">Sự kiện đã chọn sẽ bị xóa</string>
+  <string name="evt_del_dlg_msg_all">Tất cả sự kiện sẽ bị xóa</string>
+  <string name="no_events_selected">Không có sự kiện nào được chọn</string>
+  <string name="go_to">Đi đến</string>
+  <string name="cal_share_intent_title">Gửi sự kiện đến:</string>
   <string name="cal_export_event_sdcard_title">Xuất ra thẻ nhớ</string>
+  <string name="cal_export_succ_msg">Đã xuất sự kiện thành công: %1s</string>
+  <string name="cal_import_menu_title">Nhập sự kiện</string>
+  <string name="cal_nothing_to_import">Không có gì để nhập</string>
+  <string name="cal_import_error_msg">Nhập vào lịch thất bại</string>
+  <string name="cal_pick_ics">Chọn tập tin để nhập</string>
+  <string name="error_generating_ics">Có vấn đề xảy ra khi chia sẻ sự kiện</string>
+  <string name="share_label">Chia sẻ</string>
 </resources>

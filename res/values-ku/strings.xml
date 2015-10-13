@@ -186,7 +186,6 @@
   <string name="preferences_hide_declined_title">شاردنەوەی ڕووداوە نەویستراوەکان</string>
   <string name="preferences_week_start_day_title">حەوتە دەستپێدەکات لە</string>
   <string name="preferences_week_start_day_dialog">حەوتە دەستپێدەکات لە</string>
-  <string name="preferences_week_start_day_default">-1</string>
   <string name="preferences_clear_search_history_title">پاککردنەوەی مێژووی گەڕان</string>
   <string name="preferences_clear_search_history_summary">لابردنی هەموو ئەو شتانەی بۆی گەڕابووی</string>
   <string name="search_history_cleared">مێژووی گەڕان پاککرایەوە.</string>
@@ -200,7 +199,6 @@
   <string name="preferences_use_home_tz_title">بەکار هێنانی کاتی ناوخۆ</string>
   <string name="preferences_use_home_tz_descrip">پیشاندانی رۆژژمێرەکان و ڕووداوەکان بە کاتی ناوخۆ کاتی گەشت کردن</string>
   <string name="preferences_home_tz_title">کاتی ناوخۆیی وڵات</string>
-  <string name="preferences_home_tz_default">ئەمریکا\لۆس ئەنجلێس</string>
   <string name="preferences_show_week_num_title">ژمارەی حەوتە پیشان بدە</string>
   <string name="preferences_about_title">لەبارەی</string>
   <string name="preferences_build_version">وەشانی سازکراو</string>

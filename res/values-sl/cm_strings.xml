@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="preferences_alerts_custom_snooze_delay_title">Vprašaj za zakasnitev dremeža opomnika</string>
+  <string name="preferences_alerts_custom_snooze_delay_title">Vprašaj za zak. dremeža op.</string>
   <string name="preferences_alerts_custom_snooze_delay_summary_on">Vprašaj za zakasnitev dremeža ob dremežu opomnikov</string>
   <string name="preferences_alerts_custom_snooze_delay_summary_off">Vedno uporabi privzeto zakasnitev opomnika</string>
   <string name="snooze_delay_dialog_title">Nastavi zakasnitev dremeža</string>
@@ -26,7 +26,7 @@
   <string name="default_start_last">Prej uporabljeni pogled</string>
   <string name="events_delete">Izbriši dogodke</string>
   <string name="action_select_all">Izberi vse</string>
-  <string name="action_select_none">Prekliči vse izbire</string>
+  <string name="action_select_none">Odstrani vse izbire</string>
   <string name="action_delete">Končano</string>
   <string name="all_events">Vsi dogodki</string>
   <string name="no_events">Noben dogodek ni na voljo</string>
