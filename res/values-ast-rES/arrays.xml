@@ -92,11 +92,6 @@
     <item>Esti y otros eventos postreros</item>
     <item>Tolos eventos</item>
   </string-array>
-  <integer-array name="delete_repeating_values">
-    <item>0</item>
-    <item>1</item>
-    <item>2</item>
-  </integer-array>
   <string-array name="delete_repeating_labels_no_selected">
     <item>Esti y otros eventos postreros</item>
     <item>Tolos eventos</item>
