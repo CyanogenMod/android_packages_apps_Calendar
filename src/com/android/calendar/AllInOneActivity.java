@@ -29,10 +29,13 @@ import android.app.ActionBar.Tab;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.app.LoaderManager;
 import android.content.AsyncQueryHandler;
 import android.content.BroadcastReceiver;
 import android.content.ContentResolver;
 import android.content.ContentUris;
+import android.content.CursorLoader;
+import android.content.Loader;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
@@ -84,6 +87,7 @@ import static android.provider.CalendarContract.EXTRA_EVENT_END_TIME;
 
 public class AllInOneActivity extends AbstractCalendarActivity implements EventHandler,
         OnSharedPreferenceChangeListener, SearchView.OnQueryTextListener, ActionBar.TabListener,
+        LoaderManager.LoaderCallbacks<Cursor>,
         ActionBar.OnNavigationListener, OnSuggestionListener {
     private static final String TAG = "AllInOneActivity";
     private static final boolean DEBUG = false;
@@ -432,6 +436,9 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
         prefs.registerOnSharedPreferenceChangeListener(this);
 
         mContentResolver = getContentResolver();
+        if (getResources().getBoolean(R.bool.show_delete_events_menu)) {
+            getLoaderManager().initLoader(0, null, this);
+        }
     }
 
     private long parseViewAction(final Intent intent) {
@@ -556,6 +563,9 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
         invalidateOptionsMenu();
 
         mCalIntentReceiver = Utils.setTimeChangesReceiver(this, mTimeChangesUpdater);
+        if (getResources().getBoolean(R.bool.show_delete_events_menu)) {
+            getLoaderManager().initLoader(0, null, this);
+        }
     }
 
     @Override
@@ -740,6 +750,13 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
             mControlsMenu.setTitle(mHideControls ? mShowString : mHideString);
         }
 
+        MenuItem deleteEventsMenu = menu.findItem(R.id.action_delete_events);
+        if (!getResources().getBoolean(R.bool.show_delete_events_menu)) {
+            deleteEventsMenu.setVisible(false);
+        } else {
+            getLoaderManager().initLoader(0, null, this);
+        }
+
         MenuItem menuItem = menu.findItem(R.id.action_today);
         if (Utils.isJellybeanOrLater()) {
             // replace the default top layer drawable of the today icon with a
@@ -804,6 +821,9 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
             return true;
         } else if (itemId == R.id.action_search) {
             return false;
+        } else if (itemId == R.id.action_delete_events) {
+            startActivity(new Intent(this, DeleteEventsActivity.class));
+            return true;
         } else {
             return mExtensions.handleItemSelected(item, this);
         }
@@ -1323,5 +1343,41 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
             mSearchMenu.expandActionView();
         }
         return false;
+    }
+
+    @Override
+    public Loader<Cursor> onCreateLoader(int id, Bundle args) {
+        final String[] PROJECTION = new String[] {
+                CalendarContract.Events._ID,
+                CalendarContract.Events.TITLE,
+                CalendarContract.EventsEntity.DELETED
+        };
+        final String where = CalendarContract.EventsEntity.DELETED + "=0 AND "
+                + Calendars.CALENDAR_ACCESS_LEVEL + ">=" + Calendars.CAL_ACCESS_CONTRIBUTOR;
+        return new CursorLoader(this, CalendarContract.EventsEntity.CONTENT_URI,
+                PROJECTION, where, null, null);
+    }
+
+    @Override
+    public void onLoadFinished(Loader<Cursor> arg0, Cursor cursor) {
+        if (mOptionsMenu == null) {
+            Log.w(TAG, "mOptionsMenu is null");
+            return;
+        }
+
+        MenuItem delEventsMenu = mOptionsMenu.findItem(R.id.action_delete_events);
+        if (delEventsMenu != null) {
+            if (cursor == null || cursor.getCount() == 0) {
+                delEventsMenu.setEnabled(false);
+            } else {
+                delEventsMenu.setEnabled(true);
+            }
+        }
+    }
+
+    @Override
+    public void onLoaderReset(Loader<Cursor> arg0) {
+        // Do nothing
+        return;
     }
 }
