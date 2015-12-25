@@ -16,18 +16,11 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="preferences_alerts_custom_snooze_delay_title">Recordatorios</string>
-  <string name="preferences_alerts_custom_snooze_delay_summary_on">Preguntar por el intervalo de tiempo entre recordatorios en cada recordatorio</string>
-  <string name="preferences_alerts_custom_snooze_delay_summary_off">Usar siempre el intervalo de tiempo entre recordatorios por defecto</string>
-  <string name="snooze_delay_dialog_title">Intervalo de tiempo</string>
-  <string name="preferences_default_snooze_delay_title">Intervalo entre recordatorios</string>
-  <string name="preferences_default_snooze_delay_dialog">Intervalo entre recordatorios por defecto</string>
   <string name="default_start_title">Vista por defecto</string>
   <string name="default_start_last">Vista usada previamente</string>
   <string name="events_delete">Eliminar eventos</string>
   <string name="action_select_all">Seleccionar todo</string>
-  <string name="action_select_none">Quitar selección</string>
-  <string name="action_delete">Hecho</string>
+  <string name="action_delete">Listo</string>
   <string name="all_events">Todos los eventos</string>
   <string name="no_events">No hay eventos disponibles</string>
   <string name="evt_del_dlg_title">¿Eliminar eventos?</string>
@@ -39,9 +32,9 @@
   <string name="cal_export_event_sdcard_title">Exportar a la tarjeta SD</string>
   <string name="cal_export_succ_msg">Evento exportado con éxito: %1s</string>
   <string name="cal_import_menu_title">Importar evento</string>
-  <string name="cal_nothing_to_import">Nada para importar</string>
+  <string name="cal_nothing_to_import">Nada que importar</string>
   <string name="cal_import_error_msg">Error al importar al calendario</string>
   <string name="cal_pick_ics">Selecciona archivo para importar</string>
-  <string name="error_generating_ics">Ha habido problemas al compartir el evento</string>
+  <string name="error_generating_ics">Han habido problemas al compartir el evento</string>
   <string name="share_label">Compartir</string>
 </resources>
