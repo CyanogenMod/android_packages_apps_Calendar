@@ -21,9 +21,4 @@
     <item quantity="few">%1$d wydarzenia wybrane</item>
     <item quantity="other">%1$d wydarzenia wybrane</item>
   </plurals>
-  <plurals name="select_events_to_share">
-    <item quantity="one">Wybierz wydarzenie do udostępnienia</item>
-    <item quantity="few">Wybierz wydarzenia do udostępnienia</item>
-    <item quantity="other">Wybierz wydarzenia do udostępnienia</item>
-  </plurals>
 </resources>

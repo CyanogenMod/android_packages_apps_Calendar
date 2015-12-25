@@ -17,9 +17,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <plurals name="events_selected">
-    <item quantity="other">%1$d 个事件已被选择</item>
+    <item quantity="other">已选择 %1$d 个活动</item>
   </plurals>
   <plurals name="select_events_to_share">
-    <item quantity="other">选择要分享的事件</item>
+    <item quantity="other">选择要分享的活动</item>
   </plurals>
 </resources>

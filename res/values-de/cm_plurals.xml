@@ -20,8 +20,4 @@
     <item quantity="one">%1$d Termin ausgewählt</item>
     <item quantity="other">%1$d Termine ausgewählt</item>
   </plurals>
-  <plurals name="select_events_to_share">
-    <item quantity="one">Wählen Sie den zu teilenden Termin aus</item>
-    <item quantity="other">Wählen Sie die zu teilenden Termine aus</item>
-  </plurals>
 </resources>

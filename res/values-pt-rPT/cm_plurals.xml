@@ -21,7 +21,7 @@
     <item quantity="other">%1$d eventos selecionados</item>
   </plurals>
   <plurals name="select_events_to_share">
-    <item quantity="one">Selecione um evento para compartilhar</item>
-    <item quantity="other">Selecione os eventos para compartilhar</item>
+    <item quantity="one">Selecione um evento a partilhar</item>
+    <item quantity="other">Selecione eventos a partilhar</item>
   </plurals>
 </resources>
