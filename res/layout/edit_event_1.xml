@@ -41,7 +41,7 @@
         <ImageButton
             android:id="@+id/change_color_new_event"
             style="?android:attr/buttonBarButtonStyle"
-            android:src="@drawable/ic_menu_colorpicker_holo_dark"
+            android:src="@drawable/ic_menu_colorpicker_white"
             android:contentDescription="@string/choose_event_color_label"
             android:layout_width="48dip"
             android:layout_height="48dip"
@@ -71,7 +71,7 @@
                 android:id="@+id/calendar_textview"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:textColor="#FFFFFFFF"
+                android:textColor="@color/white"
                 android:layout_marginLeft="24dip"
                 android:layout_marginRight="24dip"
                 style="@style/TextAppearance.EditEvent_Value" />
@@ -79,7 +79,7 @@
                 android:id="@+id/calendar_textview_secondary"
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
-                android:textColor="#FFFFFFFF"
+                android:textColor="@color/white"
                 android:layout_marginLeft="24dip"
                 android:layout_marginRight="24dip"
                 android:textSize="14sp"
@@ -88,7 +88,7 @@
         <ImageButton
             android:id="@+id/change_color_existing_event"
             style="?android:attr/buttonBarButtonStyle"
-            android:src="@drawable/ic_menu_colorpicker_holo_dark"
+            android:src="@drawable/ic_menu_colorpicker_white"
             android:contentDescription="@string/choose_event_color_label"
             android:layout_width="48dip"
             android:layout_height="48dip"

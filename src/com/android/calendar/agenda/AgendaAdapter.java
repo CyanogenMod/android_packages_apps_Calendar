@@ -231,7 +231,7 @@ public class AgendaAdapter extends ResourceCursorAdapter {
         String rrule = cursor.getString(AgendaWindowAdapter.INDEX_RRULE);
         if (!TextUtils.isEmpty(rrule)) {
             when.setCompoundDrawablesWithIntrinsicBounds(null, null,
-                    context.getResources().getDrawable(R.drawable.ic_repeat_dark), null);
+                    context.getResources().getDrawable(R.drawable.ic_repeat), null);
             when.setCompoundDrawablePadding(5);
         } else {
             when.setCompoundDrawablesWithIntrinsicBounds(null, null, null, null);
@@ -292,4 +292,3 @@ public class AgendaAdapter extends ResourceCursorAdapter {
     }
     */
 }
-

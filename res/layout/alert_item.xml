@@ -68,7 +68,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="5dip"
-            android:src="@drawable/ic_repeat_dark"
+            android:src="@drawable/ic_repeat"
             android:focusable="false"
             android:clickable="false" />
     </LinearLayout>

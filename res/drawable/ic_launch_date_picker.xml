@@ -18,7 +18,7 @@
 
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_enabled="false"
-          android:drawable="@drawable/ic_menu_today_no_date_holo_light_disabled" />
+          android:drawable="@drawable/ic_menu_today_no_date_disabled" />
     <item
-          android:drawable="@drawable/ic_menu_today_no_date_holo_light"/>
+          android:drawable="@drawable/ic_menu_today_no_date"/>
 </selector>

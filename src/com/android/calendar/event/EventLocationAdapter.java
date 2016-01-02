@@ -465,7 +465,7 @@ public class EventLocationAdapter extends ArrayAdapter<EventLocationAdapter.Resu
         // Copy the sorted results.
         List<Result> results = new ArrayList<Result>();
         for (String location : locations) {
-            results.add(new Result(null, location, R.drawable.ic_history_holo_light, null));
+            results.add(new Result(null, location, R.drawable.ic_history, null));
         }
         return results;
     }

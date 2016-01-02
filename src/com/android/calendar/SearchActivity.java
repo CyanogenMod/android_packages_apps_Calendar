@@ -258,7 +258,7 @@ public class SearchActivity extends Activity implements CalendarController.Event
             Utils.setTodayIcon(
                     icon, this, Utils.getTimeZone(SearchActivity.this, mTimeChangesUpdater));
         } else {
-            menuItem.setIcon(R.drawable.ic_menu_today_no_date_holo_light);
+            menuItem.setIcon(R.drawable.ic_menu_today_no_date);
         }
 
         MenuItem item = menu.findItem(R.id.action_search);

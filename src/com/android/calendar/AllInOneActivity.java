@@ -834,7 +834,7 @@ public class AllInOneActivity extends AbstractCalendarActivity implements EventH
             LayerDrawable icon = (LayerDrawable) menuItem.getIcon();
             Utils.setTodayIcon(icon, this, mTimeZone);
         } else {
-            menuItem.setIcon(R.drawable.ic_menu_today_no_date_holo_light);
+            menuItem.setIcon(R.drawable.ic_menu_today_no_date);
         }
 
         return true;

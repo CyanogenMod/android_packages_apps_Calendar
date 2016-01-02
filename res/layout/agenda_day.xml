@@ -19,12 +19,8 @@
     android:background="@color/agenda_day_bar_background_color"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-    <View
-        android:id="@+id/top_divider_simple"
-        android:layout_height="1px"
-        android:background="@color/agenda_list_separator_color"
-        android:layout_width="match_parent" />
+    android:layout_height="56dp"
+    android:elevation="4dp">
     <View
         android:id="@+id/top_divider_past_present"
         android:background="@color/agenda_past_present_separator_color"

@@ -21,7 +21,7 @@
 
     <style name="MinusButton">
         <item name="android:background">?android:attr/selectableItemBackground</item>
-        <item name="android:src">@drawable/ic_menu_remove_field_holo_light</item>
+        <item name="android:src">@drawable/ic_menu_remove_field</item>
     </style>
 
     <style name="MonthView_DayLabel">
@@ -129,7 +129,7 @@
         <item name="android:paddingRight">16dip</item>
     </style>
 
-    <style name="TextAppearance.EditEvent_Spinner" parent="android:style/Widget.Holo.Light.Spinner">
+    <style name="TextAppearance.EditEvent_Spinner" parent="android:style/Widget.Material.Light.Spinner">
         <item name="android:textSize">18sp</item>
         <item name="android:textColor">#FF333333</item>
         <item name="android:layout_marginRight">12dp</item>
@@ -155,8 +155,7 @@
         <item name="android:paddingLeft">16dip</item>
     </style>
 
-    <style name="EditEvent_Layout" parent="android:Theme.Holo.Light">
-    </style>
+    <style name="EditEvent_Layout" parent="android:Theme.Material.Light"/>
 
     <style name="TextAppearance.Date_Range_Title">
         <item name="android:textSize">18sp</item>
@@ -164,9 +163,12 @@
     </style>
 
     <style name="CalendarTheme.WithActionBar" parent="android:Theme.Material.Light">
-        <item name="android:windowNoTitle">false</item>
-        <item name="android:windowActionBar">true</item>
-        <item name="android:actionBarStyle">@style/CalendarActionBarStyle</item>
+        <item name="android:colorPrimary">@color/primary</item>
+        <item name="android:colorPrimaryDark">@color/primary_dark</item>
+        <item name="android:colorAccent">@color/accent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowContentOverlay">@null</item>
         <item name="android:endYear">2036</item>
         <item name="android:startYear">1970</item>
     </style>
@@ -197,7 +199,7 @@
         <item name="android:visibility">gone</item>
     </style>
 
-    <style name="EditEventCustomActionButton" parent="android:style/Widget.Holo.Light.ActionButton">
+    <style name="EditEventCustomActionButton" parent="android:style/Widget.Material.Light.ActionButton">
         <item name="android:layout_height">match_parent</item>
         <item name="android:layout_width">0dp</item>
         <item name="android:layout_weight">1</item>
@@ -245,7 +247,7 @@
 
     <style name="NotificationPrimaryText" parent="@android:style/TextAppearance.StatusBar.EventContent.Title" />
 
-    <style name="NotificationSecondaryText" parent="@android:style/TextAppearance.Holo">
+    <style name="NotificationSecondaryText" parent="@android:style/TextAppearance.Material">
         <item name="android:textColor">?android:attr/textColorSecondary</item>
     </style>
 
@@ -254,7 +256,7 @@
     </style>
 
     <style name="TextAppearance.Recurrence_SpinnerButton"
-        parent="android:style/Widget.Holo.Light.Spinner" />
+        parent="android:style/Widget.Material.Light.Spinner" />
 
     <style name="RecurrenceDialogTheme" parent="android:Theme.Material.Light.Dialog">
         <item name="android:colorAccent">@color/recurrence_buble_background</item>
@@ -279,4 +281,6 @@
         <item name="android:paddingTop">4dp</item>
         <item name="android:paddingBottom">4dp</item>
         </style>
+
+    <style name="SettingsTheme" parent="android:Theme.Material.Light.DarkActionBar"/>
 </resources>

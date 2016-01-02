@@ -15,7 +15,7 @@
 -->
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:background="#fafafa"
+    android:background="@color/background_color"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <RelativeLayout
@@ -43,7 +43,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/event_info_scroll_view"
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -101,7 +100,7 @@
                         <ImageButton
                             android:id="@+id/change_color"
                             style="?android:attr/buttonBarButtonStyle"
-                            android:src="@drawable/ic_menu_colorpicker_holo_dark"
+                            android:src="@drawable/ic_menu_colorpicker_white"
                             android:contentDescription="@string/choose_event_color_label"
                             android:layout_width="48dip"
                             android:layout_height="48dip"
@@ -113,7 +112,7 @@
                         <ImageButton
                             android:id="@+id/edit"
                             style="?android:attr/buttonBarButtonStyle"
-                            android:src="@drawable/ic_menu_compose_holo_dark"
+                            android:src="@drawable/ic_menu_compose"
                             android:contentDescription="@string/edit_label"
                             android:layout_width="48dip"
                             android:layout_height="48dip"
@@ -125,7 +124,7 @@
                         <ImageButton
                             android:id="@+id/delete"
                             style="?android:attr/buttonBarButtonStyle"
-                            android:src="@drawable/ic_menu_trash_holo_dark"
+                            android:src="@drawable/ic_menu_trash_white"
                             android:contentDescription="@string/delete_label"
                             android:layout_width="48dip"
                             android:layout_height="48dip"
@@ -340,7 +339,7 @@
                     android:layout_marginBottom="0dip"
                     android:textAllCaps="false"
                     android:textSize="16sp"
-                    android:textColor="#777777"
+                    android:textColor="@color/black"
                     android:background="?android:attr/selectableItemBackground"
                     android:drawableLeft="@drawable/event_info_mail_button"
                     android:drawablePadding="8dp"
@@ -373,7 +372,7 @@
                     android:layout_marginBottom="0dip"
                     android:textAllCaps="false"
                     android:textSize="16sp"
-                    android:textColor="#777777"
+                    android:textColor="@color/black"
                     android:background="?android:attr/selectableItemBackground"
                     android:drawablePadding="8dp"
                     style="@style/TextAppearance.EditEvent_LabelSmall" />
@@ -425,7 +424,7 @@
                     android:layout_marginBottom="-6dp"
                     android:gravity="center_vertical|left"
                     android:textSize="18sp"
-                    android:textColor="#FF777777"
+                    android:textColor="@color/black"
                     android:minHeight="38dip"
                     android:background="?android:attr/selectableItemBackground"
                     android:contentDescription="@string/accessibility_add_reminder"

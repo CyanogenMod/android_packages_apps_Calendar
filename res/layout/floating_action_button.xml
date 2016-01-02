@@ -29,4 +29,4 @@
         android:tint="@color/floating_action_button_icon_color"
         android:contentDescription="@string/event_create"
         android:elevation="@dimen/floating_action_button_translation_z"
-        android:src="@drawable/ic_compose_white"/>
+        android:src="@drawable/ic_compose"/>

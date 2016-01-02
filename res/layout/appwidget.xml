@@ -37,7 +37,7 @@
             android:id="@+id/day_of_week"
             android:layout_marginTop="4dip"
             android:textColor="@color/appwidget_week"
-            android:shadowColor="#0dffffff"
+            android:shadowColor="@color/white"
             android:shadowRadius="3"
             style="@style/WidgetDayOfWeekStyle" />
         <TextView

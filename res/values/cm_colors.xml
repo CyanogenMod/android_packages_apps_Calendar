@@ -15,8 +15,23 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <color name="fab_theme_color">#da4336</color>
-    <color name="fab_theme_color_dark">#ffc33c33</color>
-    <color name="fab_theme_color_accent">#0288d1</color>
-    <color name="floating_action_button_icon_color">#ffffff</color>
+    <color name="white">#fafafa</color>
+    <color name="black">#212121</color>
+    <color name="primary">#CFD8DC</color>
+    <color name="primary_dark">#B0BEC5</color>
+    <color name="accent">#1DE9B6</color>
+
+    <color name="fab_theme_color">@color/accent</color>
+    <color name="fab_theme_color_dark">#00BFA5</color>
+    <color name="fab_theme_color_accent">#64FFDA</color>
+    <color name="floating_action_button_icon_color">@color/white</color>
+
+    <!-- 50 shades of grey -->
+    <color name="grey_0">#F5F5F5</color>
+    <color name="grey_1">#EEEEEE</color>
+    <color name="grey_2">#E0E0E0</color>
+    <color name="grey_3">#BDBDBD</color>
+    <color name="grey_4">#9E9E9E</color>
+    <color name="grey_5">#757575</color>
+    <color name="grey_6">#616161</color>
 </resources>

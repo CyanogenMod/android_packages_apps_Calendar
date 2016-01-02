@@ -18,6 +18,7 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="16dip"
+    android:elevation="4dp"
     android:background="@color/month_other_bgcolor">
 
     <TextView android:id="@+id/wk_label"
