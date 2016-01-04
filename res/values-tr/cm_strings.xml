@@ -20,7 +20,7 @@
   <string name="preferences_alerts_custom_snooze_delay_summary_on">Hatırlatıcıları ertelerken erteleme süresini sor</string>
   <string name="preferences_alerts_custom_snooze_delay_summary_off">Her zaman varsayılan erteleme süresini kullan</string>
   <string name="snooze_delay_dialog_title">Erteleme süresini ayarla</string>
-  <string name="preferences_default_snooze_delay_title">Varsayılan erteleme süresi</string>
+  <string name="preferences_default_snooze_delay_title">Varsayılan erteleme gecikme süresi</string>
   <string name="preferences_default_snooze_delay_dialog">Varsayılan erteleme süresi</string>
   <string name="default_start_title">Varsayılan görünüm</string>
   <string name="default_start_last">Önceki görünüm</string>
