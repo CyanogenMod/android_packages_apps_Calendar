@@ -16,10 +16,17 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="preferences_alerts_custom_snooze_delay_title">Pedir un recordatorio de demora de repetición de alarma</string>
+  <string name="preferences_alerts_custom_snooze_delay_summary_on">Pedir una demora de repetición de alarma cuando se demoren los recordatorios</string>
+  <string name="preferences_alerts_custom_snooze_delay_summary_off">Usar siempre la demora de repetición de alarma por defecto</string>
+  <string name="snooze_delay_dialog_title">Establecer demora de repetición de alarma</string>
+  <string name="preferences_default_snooze_delay_title">Tiempo por defecto de demora de repetición de alarma</string>
+  <string name="preferences_default_snooze_delay_dialog">Demora de repetición de alarma por defecto</string>
   <string name="default_start_title">Vista por defecto</string>
   <string name="default_start_last">Vista usada previamente</string>
   <string name="events_delete">Eliminar eventos</string>
   <string name="action_select_all">Seleccionar todo</string>
+  <string name="action_select_none">Cancelar toda la selección</string>
   <string name="action_delete">Listo</string>
   <string name="all_events">Todos los eventos</string>
   <string name="no_events">No hay eventos disponibles</string>
