@@ -24,4 +24,24 @@
   <string name="preferences_default_snooze_delay_dialog">Zadano vrijeme odgode</string>
   <string name="default_start_title">Zadani prikaz</string>
   <string name="default_start_last">Prethodno korišteni prikaz</string>
+  <string name="events_delete">Izbriši događaje</string>
+  <string name="action_select_all">Odaberi sve</string>
+  <string name="action_select_none">Poništi sve odabire</string>
+  <string name="action_delete">Gotovo</string>
+  <string name="all_events">Svi događaji</string>
+  <string name="no_events">Nema događaja</string>
+  <string name="evt_del_dlg_title">Izbriši događaje?</string>
+  <string name="evt_del_dlg_msg_selected">Odabrani događaji će biti izbrisani</string>
+  <string name="evt_del_dlg_msg_all">Svi događaji će biti izbrisani</string>
+  <string name="no_events_selected">Nema odabranih događaja</string>
+  <string name="go_to">Idi na</string>
+  <string name="cal_share_intent_title">Pošalji događaj:</string>
+  <string name="cal_export_event_sdcard_title">Izvoz na SD karticu</string>
+  <string name="cal_export_succ_msg">Uspješno izvezen događaj: %1s</string>
+  <string name="cal_import_menu_title">Uvezi događaj</string>
+  <string name="cal_nothing_to_import">Ništa za uvoz</string>
+  <string name="cal_import_error_msg">Uvoz u kalendar nije uspio</string>
+  <string name="cal_pick_ics">Odaberite datoteku za uvoz</string>
+  <string name="error_generating_ics">Nastali su problemi pri dijeljenju događaja</string>
+  <string name="share_label">Dijeli</string>
 </resources>

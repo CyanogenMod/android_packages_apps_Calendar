@@ -17,11 +17,13 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <plurals name="events_selected">
-    <item quantity="one">%1$d Termin ausgewählt</item>
-    <item quantity="other">%1$d Termine ausgewählt</item>
+    <item quantity="one">%1$d događaj označen</item>
+    <item quantity="few">%1$d događaja označena</item>
+    <item quantity="other">%1$d događaja označena</item>
   </plurals>
   <plurals name="select_events_to_share">
-    <item quantity="one">Wählen Sie den zu teilenden Termin aus</item>
-    <item quantity="other">Wählen Sie die zu teilenden Termine aus</item>
+    <item quantity="one">Označi događaj za podijeliti</item>
+    <item quantity="few">Označi događaje za podijeliti</item>
+    <item quantity="other">Označi događaje za podijeliti</item>
   </plurals>
 </resources>
