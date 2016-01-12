@@ -15,6 +15,8 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="no_map">手机里没有找到地图</string>
+
     <!-- Delete events -->
     <string name="events_delete">删除事件</string>
     <string name="action_select_all">全选</string>
