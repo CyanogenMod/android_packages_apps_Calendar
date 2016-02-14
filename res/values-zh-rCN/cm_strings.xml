@@ -41,7 +41,7 @@
   <string name="cal_import_menu_title">导入事件</string>
   <string name="cal_nothing_to_import">没有可供导入的事件</string>
   <string name="cal_import_error_msg">导入到日历失败</string>
-  <string name="cal_pick_ics">选择文件以导入</string>
+  <string name="cal_pick_ics">选择要导入的文件</string>
   <string name="error_generating_ics">分享事件时出现问题</string>
   <string name="share_label">分享</string>
 </resources>
