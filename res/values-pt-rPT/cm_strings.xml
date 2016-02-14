@@ -20,7 +20,7 @@
   <string name="preferences_alerts_custom_snooze_delay_summary_on">Pedir o tempo de atraso do lembrete sempre que este for adiado</string>
   <string name="preferences_alerts_custom_snooze_delay_summary_off">Utilizar sempre o atraso de repetição padrão</string>
   <string name="snooze_delay_dialog_title">Estabelecer o tempo de atraso</string>
-  <string name="preferences_default_snooze_delay_title">Tempo do atraso de repetição padrão</string>
+  <string name="preferences_default_snooze_delay_title">Tempo padrão do atraso de repetição</string>
   <string name="preferences_default_snooze_delay_dialog">Atraso de repetição</string>
   <string name="default_start_title">Modo de exibição</string>
   <string name="default_start_last">Modo utilizado anteriormente</string>
