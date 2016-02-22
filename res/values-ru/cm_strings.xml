@@ -19,8 +19,8 @@
   <string name="preferences_alerts_custom_snooze_delay_title">Повторное напоминание</string>
   <string name="preferences_alerts_custom_snooze_delay_summary_on">Спрашивать период отсрочки напоминания</string>
   <string name="preferences_alerts_custom_snooze_delay_summary_off">Использовать значение по умолчанию</string>
-  <string name="snooze_delay_dialog_title">Отложить на\u2026</string>
-  <string name="preferences_default_snooze_delay_title">Повтор по умолчанию</string>
+  <string name="snooze_delay_dialog_title">Период отсрочки</string>
+  <string name="preferences_default_snooze_delay_title">Отсрочка по умолчанию</string>
   <string name="preferences_default_snooze_delay_dialog">Повтор по умолчанию</string>
   <string name="default_start_title">Вид по умолчанию</string>
   <string name="default_start_last">Последний использовавшийся</string>
@@ -37,10 +37,10 @@
   <string name="go_to">Перейти к</string>
   <string name="cal_share_intent_title">Отправить событие:</string>
   <string name="cal_export_event_sdcard_title">Экспорт на SD-карту</string>
-  <string name="cal_export_succ_msg">Событие успешно экспортировано: %1s</string>
+  <string name="cal_export_succ_msg">Событие экспортировано: %1s</string>
   <string name="cal_import_menu_title">Импортировать событие</string>
   <string name="cal_nothing_to_import">Нечего импортировать</string>
-  <string name="cal_import_error_msg">Не удалось выполнить импорт в календарь</string>
+  <string name="cal_import_error_msg">Не удалось импортировать в календарь</string>
   <string name="cal_pick_ics">Выбрать файл для импорта</string>
   <string name="error_generating_ics">Не удалось отправить событие</string>
   <string name="share_label">Отправить</string>

@@ -26,14 +26,14 @@
   <string name="default_start_last">Zuletzt genutzte Ansicht</string>
   <string name="events_delete">Termine löschen</string>
   <string name="action_select_all">Alle auswählen</string>
-  <string name="action_select_none">Alle abwählen</string>
+  <string name="action_select_none">Auswahl aufheben</string>
   <string name="action_delete">Fertig</string>
   <string name="all_events">Alle Termine</string>
   <string name="no_events">Keine Termine vorhanden</string>
   <string name="evt_del_dlg_title">Termine löschen?</string>
   <string name="evt_del_dlg_msg_selected">Ausgewählte Termine werden gelöscht</string>
   <string name="evt_del_dlg_msg_all">Alle Termine werden gelöscht</string>
-  <string name="no_events_selected">Kein Termin ausgewählt</string>
+  <string name="no_events_selected">Keine Termine ausgewählt</string>
   <string name="go_to">Wechseln zu</string>
   <string name="cal_share_intent_title">Termin senden an:</string>
   <string name="cal_export_event_sdcard_title">Auf SD-Karte exportieren</string>
