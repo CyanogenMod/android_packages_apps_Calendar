@@ -36,7 +36,7 @@
   <string name="no_events_selected">Няма избрани събития</string>
   <string name="go_to">Отиди на</string>
   <string name="cal_share_intent_title">Изпрати събитие на:</string>
-  <string name="cal_export_event_sdcard_title">Експортиране в SD картата</string>
+  <string name="cal_export_event_sdcard_title">Експортиране в картата памет</string>
   <string name="cal_export_succ_msg">Събитието е експортирано успешно: %1s</string>
   <string name="cal_import_menu_title">Импортиране на събитие</string>
   <string name="cal_nothing_to_import">Няма нищо за импортиране</string>

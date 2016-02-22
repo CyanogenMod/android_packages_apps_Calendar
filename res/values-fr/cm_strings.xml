@@ -21,13 +21,13 @@
   <string name="preferences_alerts_custom_snooze_delay_summary_off">Toujours utiliser le délai de répétition par défaut</string>
   <string name="snooze_delay_dialog_title">Définir le délai de répétition</string>
   <string name="preferences_default_snooze_delay_title">Délai de répétition par défaut</string>
-  <string name="preferences_default_snooze_delay_dialog">Délai par défaut</string>
+  <string name="preferences_default_snooze_delay_dialog">Délai de répétition par défaut</string>
   <string name="default_start_title">Vue par défaut</string>
   <string name="default_start_last">Utiliser la vue précédente</string>
   <string name="events_delete">Supprimer les événements</string>
   <string name="action_select_all">Tout sélectionner</string>
   <string name="action_select_none">Tout désélectionner</string>
-  <string name="action_delete">Supprimé</string>
+  <string name="action_delete">Terminé</string>
   <string name="all_events">Tous les événements</string>
   <string name="no_events">Aucun événement disponible</string>
   <string name="evt_del_dlg_title">Supprimer les événements ?</string>
@@ -42,6 +42,6 @@
   <string name="cal_nothing_to_import">Rien à importer</string>
   <string name="cal_import_error_msg">Échec de l\'importation dans le calendrier</string>
   <string name="cal_pick_ics">Choisir le fichier à importer</string>
-  <string name="error_generating_ics">Problèmes rencontrés pendant le partage de l\'événement</string>
+  <string name="error_generating_ics">Problèmes rencontrés lors du partage de l\'événement</string>
   <string name="share_label">Partager</string>
 </resources>

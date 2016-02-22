@@ -23,8 +23,8 @@
   <string name="preferences_default_snooze_delay_title">Standardsnoozelängd</string>
   <string name="preferences_default_snooze_delay_dialog">Standardsnoozelängd</string>
   <string name="default_start_title">Standardvisning</string>
-  <string name="default_start_last">Tidigare använd visning</string>
-  <string name="events_delete">Ta bort händelser</string>
+  <string name="default_start_last">Tidigare använd vy</string>
+  <string name="events_delete">Radera händelser</string>
   <string name="action_select_all">Välj alla</string>
   <string name="action_select_none">Avmarkera alla</string>
   <string name="action_delete">Färdig</string>
