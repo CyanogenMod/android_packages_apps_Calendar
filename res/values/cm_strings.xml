@@ -15,6 +15,9 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- read_calendar permission -->
+    <string name="on_permission_read_calendar">You have disabled a required permission.</string>
+
     <!-- No maps found in phone -->
     <string name="no_map">No maps were found.</string>
 
