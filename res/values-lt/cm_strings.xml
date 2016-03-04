@@ -17,13 +17,20 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="preferences_alerts_custom_snooze_delay_title">Klausti dėl atidėjimo trukmės</string>
+  <!-- Summaries for using custom snooze delays -->
   <string name="preferences_alerts_custom_snooze_delay_summary_on">Klausti dėl snaudimo atidėjimo trukmės</string>
   <string name="preferences_alerts_custom_snooze_delay_summary_off">Visada naudoti numatytąją trukmę</string>
+  <!-- Title of custom snooze delay dialog -->
   <string name="snooze_delay_dialog_title">Nustatyti snaudimo atidėjimo trukmę</string>
+  <!-- List item label for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_title">Numatytoji atidėjimo trukmė</string>
+  <!-- Title of dialog for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_dialog">Numatytoji atidėjimo trukmė</string>
+  <!-- Default value for the default snooze delay (in minutes) -->
+  <!-- Label values for the default start page preference. -->
   <string name="default_start_title">Numatytasis rodinys</string>
   <string name="default_start_last">Ankstesnis rodinys</string>
+  <!-- Delete Events related -->
   <string name="events_delete">Ištrinti įvykius</string>
   <string name="action_select_all">Pasirinkti viską</string>
   <string name="action_select_none">Atžymėti viską</string>
@@ -34,7 +41,10 @@
   <string name="evt_del_dlg_msg_selected">Pasirinkti įvykiai bus ištrinti</string>
   <string name="evt_del_dlg_msg_all">Visi įvykiai bus ištrinti</string>
   <string name="no_events_selected">Nėra jokių pasirinktų įvykių</string>
+  <!-- This is a label on a menu item. Pressing this menu item allows the
+         user to go to the calendars to display [CHAR LIMIT=20] -->
   <string name="go_to">Eiti į</string>
+  <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Siųsti įvykį į:</string>
   <string name="cal_export_event_sdcard_title">Eksportuoti į SD kortelę</string>
   <string name="cal_export_succ_msg">Įvykis sėkmingai eksportuotas: %1s</string>
@@ -42,6 +52,7 @@
   <string name="cal_nothing_to_import">Nėra nieko importuoti</string>
   <string name="cal_import_error_msg">Importavimas į kalendorių nepavyko</string>
   <string name="cal_pick_ics">Pasirinkite failą importuoti</string>
+  <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Bendrinant įvykį susidurta su problemomis</string>
   <string name="share_label">Bendrinti</string>
 </resources>

@@ -17,13 +17,20 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="preferences_alerts_custom_snooze_delay_title">Καθυστέρηση αναβολής υπενθύμισης</string>
+  <!-- Summaries for using custom snooze delays -->
   <string name="preferences_alerts_custom_snooze_delay_summary_on">Ερώτηση για την καθυστέρηση αναβολής όποτε αναβάλλετε υπενθυμίσεις</string>
   <string name="preferences_alerts_custom_snooze_delay_summary_off">Να χρησιμοποιείται πάντα η προεπιλεγμένη καθυστέρηση αναβολής</string>
+  <!-- Title of custom snooze delay dialog -->
   <string name="snooze_delay_dialog_title">Ορισμός καθυστέρησης αναβολής</string>
+  <!-- List item label for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_title">Προεπιλεγμένος χρόνος καθυστέρησης αναβολής</string>
+  <!-- Title of dialog for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_dialog">Προεπιλεγμένη καθυστέρηση αναβολής</string>
+  <!-- Default value for the default snooze delay (in minutes) -->
+  <!-- Label values for the default start page preference. -->
   <string name="default_start_title">Προεπιλεγμένη προβολή</string>
   <string name="default_start_last">Τελευταία χρησιμοποιημένη προβολή</string>
+  <!-- Delete Events related -->
   <string name="events_delete">Διαγραφή συμβάντων</string>
   <string name="action_select_all">Επιλογή όλων</string>
   <string name="action_select_none">Αποεπιλογή όλων</string>
@@ -34,7 +41,10 @@
   <string name="evt_del_dlg_msg_selected">Τα επιλεγμένα συμβάντα θα διαγραφούν</string>
   <string name="evt_del_dlg_msg_all">Όλα τα συμβάντα θα διαγραφούν</string>
   <string name="no_events_selected">Δεν επιλέχθηκαν συμβάντα</string>
+  <!-- This is a label on a menu item. Pressing this menu item allows the
+         user to go to the calendars to display [CHAR LIMIT=20] -->
   <string name="go_to">Πήγαινε στο</string>
+  <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Αποστολή συμβάντος προς:</string>
   <string name="cal_export_event_sdcard_title">Εξαγωγή στην κάρτα SD</string>
   <string name="cal_export_succ_msg">Επιτυχής εξαγωγή του συμβάντος: %1s</string>
@@ -42,6 +52,7 @@
   <string name="cal_nothing_to_import">Τίποτα για εισαγωγή</string>
   <string name="cal_import_error_msg">Αποτυχία εισαγωγής στο ημερολόγιο</string>
   <string name="cal_pick_ics">Επιλέξτε αρχείο για εισαγωγή</string>
+  <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Αντιμετωπίστηκε πρόβλημα κατά την κοινή χρήση του συμβάντος</string>
   <string name="share_label">Κοινή χρήση</string>
 </resources>
