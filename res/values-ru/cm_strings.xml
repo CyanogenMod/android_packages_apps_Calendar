@@ -17,13 +17,20 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="preferences_alerts_custom_snooze_delay_title">Повторное напоминание</string>
+  <!-- Summaries for using custom snooze delays -->
   <string name="preferences_alerts_custom_snooze_delay_summary_on">Спрашивать период отсрочки напоминания</string>
   <string name="preferences_alerts_custom_snooze_delay_summary_off">Использовать значение по умолчанию</string>
+  <!-- Title of custom snooze delay dialog -->
   <string name="snooze_delay_dialog_title">Период отсрочки</string>
+  <!-- List item label for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_title">Отсрочка по умолчанию</string>
+  <!-- Title of dialog for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_dialog">Повтор по умолчанию</string>
+  <!-- Default value for the default snooze delay (in minutes) -->
+  <!-- Label values for the default start page preference. -->
   <string name="default_start_title">Вид по умолчанию</string>
   <string name="default_start_last">Последний использовавшийся</string>
+  <!-- Delete Events related -->
   <string name="events_delete">Удалить события</string>
   <string name="action_select_all">Выбрать все</string>
   <string name="action_select_none">Отменить все</string>
@@ -34,7 +41,10 @@
   <string name="evt_del_dlg_msg_selected">Выбранные события будут удалены.</string>
   <string name="evt_del_dlg_msg_all">Все события будут удалены.</string>
   <string name="no_events_selected">События не выбраны</string>
+  <!-- This is a label on a menu item. Pressing this menu item allows the
+         user to go to the calendars to display [CHAR LIMIT=20] -->
   <string name="go_to">Перейти к</string>
+  <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Отправить событие:</string>
   <string name="cal_export_event_sdcard_title">Экспорт на SD-карту</string>
   <string name="cal_export_succ_msg">Событие экспортировано: %1s</string>
@@ -42,6 +52,7 @@
   <string name="cal_nothing_to_import">Нечего импортировать</string>
   <string name="cal_import_error_msg">Не удалось импортировать в календарь</string>
   <string name="cal_pick_ics">Выбрать файл для импорта</string>
+  <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Не удалось отправить событие</string>
   <string name="share_label">Отправить</string>
 </resources>

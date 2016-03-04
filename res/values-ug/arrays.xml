@@ -15,12 +15,24 @@
      limitations under the License.
 -->
 <resources>
+  <!-- Choices for the "Reminder method" spinner.
+         These must be kept in sync with the reminder_methods_values array.
+         [CHAR LIMIT=10]
+    -->
   <string-array name="reminder_methods_labels">
     <item>ئۇقتۇرۇش</item>
     <item>تورخەت</item>
     <item>قىسقا ئۇچۇر</item>
     <item>قوڭغۇراق</item>
   </string-array>
+  <!-- This maps reminder_methods_labels to internal constants. -->
+  <!-- Choices for the "Reminder minutes" spinner.
+         These must be kept in sync with the reminder_minutes_values array.
+         For consistency, the format should match what
+         EventViewUtils.constructReminderLabel() generates.  (TODO: eliminate
+         this and just generate the list from reminder_minutes_values?)
+         [CHAR LIMIT=15]
+    -->
   <string-array name="reminder_minutes_labels">
     <item>0 مىنۇت</item>
     <item>1 مىنۇت</item>
@@ -39,6 +51,10 @@
     <item>2 كۈن</item>
     <item>1 ھەپتە</item>
   </string-array>
+  <!-- Choices for the "Reminder minutes" spinner in the settings.
+         These must be kept in sync with the preferences_default_reminder_values array.
+         [CHAR LIMIT=12]
+    -->
   <string-array name="preferences_default_reminder_labels">
     <item>يوق</item>
     <item>0 مىنۇت</item>
@@ -69,6 +85,7 @@
     <item>ئىشلىتىلىشچان</item>
     <item>سىناق</item>
   </string-array>
+  <!-- This maps reminder_methods_labels to internal constants. -->
   <string-array name="visibility">
     <item>كۆڭۈلدىكى</item>
     <item>خۇسۇسىي</item>
@@ -81,25 +98,45 @@
     <item>تۆتىنچى</item>
     <item>ئاخىرقى</item>
   </string-array>
+  <!-- Invitation responses -->
   <string-array name="response_labels1">
     <item>ئىنكاس يوق</item>
     <item>ھەئە</item>
     <item>«بەلكىم»</item>
     <item>ياق</item>
   </string-array>
+  <!-- The corresponding indices are defined in DeleteEventHelper.java -->
+  <!-- This is a list of choices displayed when the user deletes an event.
+         It only is shown when deleting a recurring event.
+    -->
   <string-array name="delete_repeating_labels">
     <item>مۇشۇ پائالىيەتلا</item>
     <item>بۇ ۋە كەلگۈسىدىكى پائالىيەتلەر</item>
     <item>ھەممە پائالىيەت</item>
   </string-array>
+  <!-- DO NOT TRANSLATE These values need to correspond to the indices
+         defined in DeleteEventHelper.java-->
+  <!-- The corresponding indices are defined in DeleteEventHelper.java -->
+  <!-- This is the same array as above (the "delete_repeating_labels" array,
+         except that the first element "Only this event" is removed.  This
+         array exists to work-around a bug in the CalendarProvider and sync
+         code where you can't delete one instance of a repeating event that
+         was created on the phone until that event has been synced to the server.
+     -->
   <string-array name="delete_repeating_labels_no_selected">
     <item>بۇ ۋە كەلگۈسىدىكى پائالىيەت</item>
     <item>ھەممە پائالىيەت</item>
   </string-array>
+  <!-- The corresponding array indices are defined in EventInfoActivity.java -->
+  <!-- The list of choices displayed in a dialog box when the user wants to
+    respond to an invitation that repeats. -->
   <string-array name="change_response_labels">
+    <!-- The choice for responding to only one instance of a repeating event -->
     <item>مۇشۇ پائالىيەتلا</item>
+    <!-- The choice for responding to all instances of a repeating event -->
     <item>ھەممە مۇھىم پائالىيەتلەر</item>
   </string-array>
+  <!-- Strings for buttons in drop down menu -->
   <string-array name="buttons_list">
     <item>كۈن</item>
     <item>ھەپتە</item>
@@ -107,16 +144,26 @@
     <item>كۈنتەرتىپ</item>
     <item>Year</item>
   </string-array>
+  <!-- Experimental options for skipping reminders. [CHAR LIMIT = 37] -->
   <string-array name="preferences_skip_reminders_labels">
+    <!-- Default choice -->
     <item>سىز قاتناشمىغان ئەھۋالدىلا</item>
+    <!-- Second option, for skipping reminders to events not yet responded to. -->
     <item>سىز قاتناشمىغان ياكى جاۋاب قايتۇرمىغان ئەھۋالدا</item>
   </string-array>
+  <!-- Recurrence picker: How events are to be repeated.  [CHAR LIMIT = 20] -->
   <string-array name="recurrence_freq">
     <item>ھەر كۈنى قايتىلا</item>
     <item>ھەر ھەپتە قايتىلا</item>
     <item>ھەر ئايدا قايتىلا</item>
     <item>ھەر يىلى قايتىلا</item>
   </string-array>
+  <!-- The following sets of strings describe a monthly recurring event, which will repeat
+         on the Nth WEEKDAY of every month. For example, the 3rd Monday of every month, or
+         the last Sunday. These are set up like this to resolve any gender-matching issues
+         that were present in some languages.
+     -->
+  <!-- Repeat a monthly event on the same nth day of every Sunday. [CHAR LIMIT=30] -->
   <string-array name="repeat_by_nth_sun">
     <item>ھەر ئاينىڭ بىرىنچى يەكشەنبە كۈنى</item>
     <item>ھەر ئاينىڭ ئىككىنچى يەكشەنبە كۈنى</item>
@@ -124,6 +171,7 @@
     <item>ھەر ئاينىڭ تۆتىنچى يەكشەنبە كۈنى</item>
     <item>ھەر ئاينىڭ ئاخىرقى يەكشەنبە كۈنى</item>
   </string-array>
+  <!-- Repeat a monthly event on the same nth day of every Monday. [CHAR LIMIT=30] -->
   <string-array name="repeat_by_nth_mon">
     <item> \"ھەر ئاينىڭ بىرىنچى دۈشەنبە كۈنى\"</item>
     <item>ھەر ئاينىڭ ئىككىنچى دۈشەنبە كۈنى</item>
@@ -131,6 +179,7 @@
     <item>ھەر ئاينىڭ تۆتىنچى دۈشەنبە كۈنى</item>
     <item>ھەر ئاينىڭ ئاخىرقى دۈشەنبە كۈنى</item>
   </string-array>
+  <!-- Repeat a monthly event on the same nth day of every Tuesday. [CHAR LIMIT=30] -->
   <string-array name="repeat_by_nth_tues">
     <item>ھەر ئاينىڭ بىرىنچى سەيشەنبە كۈنى</item>
     <item>ھەر ئاينىڭ ئىككىنچى سەيشەنبە كۈنى</item>
@@ -138,6 +187,7 @@
     <item>ھەر ئاينىڭ تۆتىنچى سەيشەنبە كۈنى</item>
     <item>ھەر ئاينىڭ ئاخىرقى سەيشەنبە كۈنى</item>
   </string-array>
+  <!-- Repeat a monthly event on the same nth day of every Wednesday. [CHAR LIMIT=30] -->
   <string-array name="repeat_by_nth_wed">
     <item>ھەر ئاينىڭ بىرىنچى چارشەنبە كۈنى</item>
     <item>ھەر ئاينىڭ ئىككىنچى چارشەنبە كۈنى</item>
@@ -145,6 +195,7 @@
     <item>ھەر ئاينىڭ تۆتىنچى چارشەنبە كۈنى</item>
     <item>ھەر ئاينىڭ ئاخىرقى چارشەنبە كۈنى</item>
   </string-array>
+  <!-- Repeat a monthly event on the same nth day of every Thursday. [CHAR LIMIT=30] -->
   <string-array name="repeat_by_nth_thurs">
     <item>ھەر ئاينىڭ بىرىنچى پەيشەنبە كۈنى</item>
     <item>ھەر ئاينىڭ ئىككىنچى پەيشەنبە كۈنى</item>
@@ -152,6 +203,7 @@
     <item>ھەر ئاينىڭ تۆتىنچى پەيشەنبە كۈنى</item>
     <item>ھەر ئاينىڭ ئاخىرقى پەيشەنبە كۈنى</item>
   </string-array>
+  <!-- Repeat a monthly event on the same nth day of every Friday. [CHAR LIMIT=30] -->
   <string-array name="repeat_by_nth_fri">
     <item>ھەر ئاينىڭ بىرىنچى جۈمە كۈنى</item>
     <item>ھەر ئاينىڭ ئىككىنچى جۈمە كۈنى</item>
@@ -159,6 +211,7 @@
     <item>ھەر ئاينىڭ تۆتىنچى جۈمە كۈنى</item>
     <item>ھەر ئاينىڭ ئاخىرقى جۈمە كۈنى</item>
   </string-array>
+  <!-- Repeat a monthly event on the same nth day of every Saturday. [CHAR LIMIT=30] -->
   <string-array name="repeat_by_nth_sat">
     <item>ھەر ئاينىڭ بىرىنچى شەنبە كۈنى</item>
     <item>ھەر ئاينىڭ ئىككىنچى شەنبە كۈنى</item>

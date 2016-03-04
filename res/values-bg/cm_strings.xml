@@ -17,16 +17,23 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="preferences_alerts_custom_snooze_delay_title">Повторно напомняне</string>
+  <!-- Summaries for using custom snooze delays -->
   <string name="preferences_alerts_custom_snooze_delay_summary_on">Попитай за периода между напомнянията</string>
-  <string name="preferences_alerts_custom_snooze_delay_summary_off">Винаги използвай периода между напомнянията по подразбиране</string>
+  <string name="preferences_alerts_custom_snooze_delay_summary_off">Винаги ползвай периода между напомнянията по подразбиране</string>
+  <!-- Title of custom snooze delay dialog -->
   <string name="snooze_delay_dialog_title">Сложи интервал от време</string>
+  <!-- List item label for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_title">Напомняне по подразбиране</string>
+  <!-- Title of dialog for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_dialog">Напомняне</string>
+  <!-- Default value for the default snooze delay (in minutes) -->
+  <!-- Label values for the default start page preference. -->
   <string name="default_start_title">Стандартен изглед</string>
   <string name="default_start_last">Предишен изглед</string>
+  <!-- Delete Events related -->
   <string name="events_delete">Изтриване на събития</string>
-  <string name="action_select_all">Избери всички</string>
-  <string name="action_select_none">Откажи всички</string>
+  <string name="action_select_all">Маркирай всички</string>
+  <string name="action_select_none">Размаркирай всички</string>
   <string name="action_delete">Готово</string>
   <string name="all_events">Всички събития</string>
   <string name="no_events">Няма събития</string>
@@ -34,7 +41,10 @@
   <string name="evt_del_dlg_msg_selected">Избраните събития ще бъдат изтрити</string>
   <string name="evt_del_dlg_msg_all">Всички събития ще бъдат изтрити</string>
   <string name="no_events_selected">Няма избрани събития</string>
+  <!-- This is a label on a menu item. Pressing this menu item allows the
+         user to go to the calendars to display [CHAR LIMIT=20] -->
   <string name="go_to">Отиди на</string>
+  <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Изпрати събитие на:</string>
   <string name="cal_export_event_sdcard_title">Експортиране в картата памет</string>
   <string name="cal_export_succ_msg">Събитието е експортирано успешно: %1s</string>
@@ -42,6 +52,7 @@
   <string name="cal_nothing_to_import">Няма нищо за импортиране</string>
   <string name="cal_import_error_msg">Импортирането на календара е неуспешно</string>
   <string name="cal_pick_ics">Изберете файл за импортиране</string>
+  <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Възникнаха проблеми при споделянето на събитие</string>
   <string name="share_label">Споделяне</string>
 </resources>

@@ -17,13 +17,20 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="preferences_alerts_custom_snooze_delay_title">Perguntar por lembretes tempo da soneca</string>
+  <!-- Summaries for using custom snooze delays -->
   <string name="preferences_alerts_custom_snooze_delay_summary_on">Perguntar pelo tempo da soneca sempre que adiar lembretes</string>
   <string name="preferences_alerts_custom_snooze_delay_summary_off">Sempre usar atraso padrão da soneca</string>
+  <!-- Title of custom snooze delay dialog -->
   <string name="snooze_delay_dialog_title">Definir tempo da soneca</string>
+  <!-- List item label for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_title">Tempo padrão de atraso da soneca</string>
+  <!-- Title of dialog for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_dialog">Tempo padrão da soneca</string>
+  <!-- Default value for the default snooze delay (in minutes) -->
+  <!-- Label values for the default start page preference. -->
   <string name="default_start_title">Visualização padrão</string>
   <string name="default_start_last">Visualização previamente utilizada</string>
+  <!-- Delete Events related -->
   <string name="events_delete">Apagar eventos</string>
   <string name="action_select_all">Selecionar tudo</string>
   <string name="action_select_none">Desselecionar tudo</string>
@@ -34,7 +41,10 @@
   <string name="evt_del_dlg_msg_selected">Os eventos selecionados serão apagados</string>
   <string name="evt_del_dlg_msg_all">Todos os eventos serão apagados</string>
   <string name="no_events_selected">Nenhum evento selecionado</string>
+  <!-- This is a label on a menu item. Pressing this menu item allows the
+         user to go to the calendars to display [CHAR LIMIT=20] -->
   <string name="go_to">Ir para</string>
+  <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Enviar evento para:</string>
   <string name="cal_export_event_sdcard_title">Exportar para o cartão SD</string>
   <string name="cal_export_succ_msg">Evento exportado com êxito: %1s</string>
@@ -42,6 +52,7 @@
   <string name="cal_nothing_to_import">Nada a importar</string>
   <string name="cal_import_error_msg">Importação para o calendário falhou</string>
   <string name="cal_pick_ics">Escolher arquivo para importar</string>
+  <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Problemas encontrados ao compartilhar o evento</string>
   <string name="share_label">Compartilhar</string>
 </resources>

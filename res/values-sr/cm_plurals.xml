@@ -22,8 +22,8 @@
     <item quantity="other">%1$d догађаја изабрана</item>
   </plurals>
   <plurals name="select_events_to_share">
-    <item quantity="one">Изабери догађај да дељење</item>
-    <item quantity="few">Изабери догађаје да дељење</item>
-    <item quantity="other">Изабери догађаје да дељење</item>
+    <item quantity="one">Изабери догађај за дељење</item>
+    <item quantity="few">Изабери догађаје за дељење</item>
+    <item quantity="other">Изабери догађаје за дељење</item>
   </plurals>
 </resources>

@@ -17,13 +17,20 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="preferences_alerts_custom_snooze_delay_title">طلب فاصل تأخير الغفوة الخاص بالتذكير</string>
+  <!-- Summaries for using custom snooze delays -->
   <string name="preferences_alerts_custom_snooze_delay_summary_on">طلب فاصل غفوة كلما ظهرت تذكيرات الغفوة</string>
   <string name="preferences_alerts_custom_snooze_delay_summary_off">استخدم دائماً فاصل الغفوة الافتراضي</string>
+  <!-- Title of custom snooze delay dialog -->
   <string name="snooze_delay_dialog_title">تعيين فاصل الغفوة</string>
+  <!-- List item label for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_title">وقت فاصل التأخير الافتراضي</string>
+  <!-- Title of dialog for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_dialog">فاصل غفوة افتراضي</string>
+  <!-- Default value for the default snooze delay (in minutes) -->
+  <!-- Label values for the default start page preference. -->
   <string name="default_start_title">العرض الافتراضي</string>
   <string name="default_start_last">العرض المستخدم سابقاً</string>
+  <!-- Delete Events related -->
   <string name="events_delete">حذف الأحداث</string>
   <string name="action_select_all">تحديد الكل</string>
   <string name="action_select_none">إلغاء تحديد الكل</string>
@@ -34,7 +41,10 @@
   <string name="evt_del_dlg_msg_selected">سيتم حذف الأحداث المحددة</string>
   <string name="evt_del_dlg_msg_all">سيتم حذف كل الأحداث</string>
   <string name="no_events_selected">عدم تحديد أحداث</string>
+  <!-- This is a label on a menu item. Pressing this menu item allows the
+         user to go to the calendars to display [CHAR LIMIT=20] -->
   <string name="go_to">ذهاب إلى</string>
+  <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">إرسال الحدث إلى:</string>
   <string name="cal_export_event_sdcard_title">التصدير إلى بطاقة الذاكرة SD</string>
   <string name="cal_export_succ_msg">تم تصدير الحدث بنجاح: %1s</string>
@@ -42,6 +52,7 @@
   <string name="cal_nothing_to_import">لا شيء لاستيراده</string>
   <string name="cal_import_error_msg">فشل الاستيراد إلى التقويم</string>
   <string name="cal_pick_ics">اختر ملفاً للاستيراد</string>
+  <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">حدثت مشكلة أثناء مشاركة الحدث</string>
   <string name="share_label">مشاركة</string>
 </resources>

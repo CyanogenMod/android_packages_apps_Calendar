@@ -17,13 +17,20 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="preferences_alerts_custom_snooze_delay_title">Fråga efter snoozelängd</string>
+  <!-- Summaries for using custom snooze delays -->
   <string name="preferences_alerts_custom_snooze_delay_summary_on">Fråga efter snoozelängd vid snooze av påminnelser</string>
   <string name="preferences_alerts_custom_snooze_delay_summary_off">Använd alltid standardsnoozelängd</string>
+  <!-- Title of custom snooze delay dialog -->
   <string name="snooze_delay_dialog_title">Välj snoozelängd</string>
+  <!-- List item label for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_title">Standardsnoozelängd</string>
+  <!-- Title of dialog for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_dialog">Standardsnoozelängd</string>
+  <!-- Default value for the default snooze delay (in minutes) -->
+  <!-- Label values for the default start page preference. -->
   <string name="default_start_title">Standardvisning</string>
   <string name="default_start_last">Tidigare använd vy</string>
+  <!-- Delete Events related -->
   <string name="events_delete">Radera händelser</string>
   <string name="action_select_all">Välj alla</string>
   <string name="action_select_none">Avmarkera alla</string>
@@ -34,7 +41,10 @@
   <string name="evt_del_dlg_msg_selected">Valda händelser kommer tas bort</string>
   <string name="evt_del_dlg_msg_all">Alla händelser kommer tas bort</string>
   <string name="no_events_selected">Inga händelser valda</string>
+  <!-- This is a label on a menu item. Pressing this menu item allows the
+         user to go to the calendars to display [CHAR LIMIT=20] -->
   <string name="go_to">Gå till</string>
+  <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Skicka händelse till:</string>
   <string name="cal_export_event_sdcard_title">Exportera till SD-kort</string>
   <string name="cal_export_succ_msg">Händelsen exporterades: %1s</string>
@@ -42,6 +52,7 @@
   <string name="cal_nothing_to_import">Inget att importera</string>
   <string name="cal_import_error_msg">Det gick inte att importera till kalender</string>
   <string name="cal_pick_ics">Välj fil att importera</string>
+  <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Problem att dela händelse</string>
   <string name="share_label">Dela</string>
 </resources>
