@@ -19,7 +19,7 @@
   <string name="preferences_alerts_custom_snooze_delay_title">שאל לכמה זמן לדחות את התזכורת</string>
   <!-- Summaries for using custom snooze delays -->
   <string name="preferences_alerts_custom_snooze_delay_summary_on">שאל לכמה זמן לדחות את התזכורת בכל פעם שאדחה תזכורת</string>
-  <string name="preferences_alerts_custom_snooze_delay_summary_off">השתמש תמיד בזמן ברירת מחדל לדחיית תזכורת</string>
+  <string name="preferences_alerts_custom_snooze_delay_summary_off">השתמש תמיד בברירת מחדל לדחיית תזכורת</string>
   <!-- Title of custom snooze delay dialog -->
   <string name="snooze_delay_dialog_title">הגדר זמן לדחיית תזכורת</string>
   <!-- List item label for setting the default snooze delay -->
@@ -32,9 +32,9 @@
   <string name="default_start_last">תצוגה קודמת</string>
   <!-- Delete Events related -->
   <string name="events_delete">מחק אירועים</string>
-  <string name="action_select_all">בחר הכל</string>
-  <string name="action_select_none">בטל הכל</string>
-  <string name="action_delete">סיום</string>
+  <string name="action_select_all">בחר הכול</string>
+  <string name="action_select_none">בטל את כל הבחירות</string>
+  <string name="action_delete">בוצע</string>
   <string name="all_events">כל האירועים</string>
   <string name="no_events">אין אירועים זמינים</string>
   <string name="evt_del_dlg_title">למחוק אירועים?</string>
@@ -43,11 +43,11 @@
   <string name="no_events_selected">לא נבחרו אירועים</string>
   <!-- This is a label on a menu item. Pressing this menu item allows the
          user to go to the calendars to display [CHAR LIMIT=20] -->
-  <string name="go_to">לך אל</string>
+  <string name="go_to">עבור אל</string>
   <!-- Sharing calendar event -->
-  <string name="cal_share_intent_title">שלח אירוע ל:</string>
+  <string name="cal_share_intent_title">שלח אירוע אל:</string>
   <string name="cal_export_event_sdcard_title">ייצוא לכרטיס זיכרון</string>
-  <string name="cal_export_succ_msg">אירוע יוצא בהצלחה: %1s</string>
+  <string name="cal_export_succ_msg">אירוע ייוצא בהצלחה: %1s</string>
   <string name="cal_import_menu_title">ייבוא אירוע</string>
   <string name="cal_nothing_to_import">לא נמצאו פריטים לייבוא</string>
   <string name="cal_import_error_msg">ייבוא ללוח השנה נכשל</string>

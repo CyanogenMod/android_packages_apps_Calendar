@@ -16,15 +16,43 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="preferences_alerts_custom_snooze_delay_title">ഓർമ്മപ്പെടുത്തൽ സ്നൂസ് കാലതാമസം ആവശ്യപ്പെടുക</string>
   <!-- Summaries for using custom snooze delays -->
+  <string name="preferences_alerts_custom_snooze_delay_summary_on">ഓർമ്മപ്പെടുത്തലുകൾ സ്നൂസ് ചെയ്യുമ്പോഴൊക്കെ സ്നൂസ് കാലതാമസം ആവശ്യപ്പെടുക</string>
+  <string name="preferences_alerts_custom_snooze_delay_summary_off">എല്ലായ്പ്പോഴും ഡിഫോള്‍ട്ട് സ്നൂസ് കാലതാമസം ഉപയോഗിക്കുക</string>
   <!-- Title of custom snooze delay dialog -->
+  <string name="snooze_delay_dialog_title">സ്നൂസ് കാലതാമസം സജ്ജമാക്കുക</string>
   <!-- List item label for setting the default snooze delay -->
+  <string name="preferences_default_snooze_delay_title">ഡിഫോള്‍ട്ട് സ്നൂസ് കാലതാമസ സമയം</string>
   <!-- Title of dialog for setting the default snooze delay -->
+  <string name="preferences_default_snooze_delay_dialog">ഡിഫോള്‍ട്ട് സ്നൂസ് കാലതാമസം</string>
   <!-- Default value for the default snooze delay (in minutes) -->
   <!-- Label values for the default start page preference. -->
+  <string name="default_start_title">ഡിഫോള്‍ട്ട് കാഴ്ച</string>
+  <string name="default_start_last">മുമ്പ് ഉപയോഗിച്ച കാഴ്ച</string>
   <!-- Delete Events related -->
+  <string name="events_delete">ഇവന്റുകൾ ഇല്ലാതാക്കുക</string>
+  <string name="action_select_all">എല്ലാം തിരഞ്ഞെടുക്കുക</string>
+  <string name="action_select_none">എല്ലാം തിരഞ്ഞെടുത്തത് മാറ്റുക</string>
+  <string name="action_delete">പൂർത്തിയാക്കി</string>
+  <string name="all_events">ഇവന്റുകൾ എല്ലാം</string>
+  <string name="no_events">ഇവന്റുകൾ ലഭ്യമല്ല</string>
+  <string name="evt_del_dlg_title">ഇവന്റുകൾ ഇല്ലാതാക്കുക</string>
+  <string name="evt_del_dlg_msg_selected">തിരഞ്ഞെടുത്ത ഇവന്റുകൾ ഇല്ലാതാക്കുന്നതാണ്</string>
+  <string name="evt_del_dlg_msg_all">എല്ലാ ഇവന്റുകളും ഇല്ലാതാക്കും</string>
+  <string name="no_events_selected">ഇവന്റുകൾ തിരഞ്ഞെടുത്തിട്ടില്ല</string>
   <!-- This is a label on a menu item. Pressing this menu item allows the
          user to go to the calendars to display [CHAR LIMIT=20] -->
+  <string name="go_to">ഇതിലേക്ക് പോകുക</string>
   <!-- Sharing calendar event -->
+  <string name="cal_share_intent_title">ഇവന്റ് അയയ്ക്കുക:</string>
+  <string name="cal_export_event_sdcard_title">SD കാർഡിലേക്ക് എക്സ്പോർട്ടുചെയ്യുക</string>
+  <string name="cal_export_succ_msg">ഇവന്റ് വിജയകരമായി എക്സ്പോർട്ട് ചെയ്തു: %1s</string>
+  <string name="cal_import_menu_title">ഇവന്റ് ഇറക്കുമതിചെയ്യുക</string>
+  <string name="cal_nothing_to_import">ഇറക്കുമതി ചെയ്യാന്‍ ഒന്നുമില്ല</string>
+  <string name="cal_import_error_msg">കലണ്ടറിലേക്ക് ഇറക്കുമതി‌ ചെയ്യുന്നത് പരാജയപ്പെട്ടു</string>
+  <string name="cal_pick_ics">ഇറക്കുമതി ചെയ്യേണ്ട ഫയൽ തിരഞ്ഞെടുക്കുക</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
+  <string name="error_generating_ics">ഇവന്റ് പങ്കിടുമ്പോൾ പ്രശ്നങ്ങൾ നേരിട്ടു</string>
+  <string name="share_label">പങ്കിടുക</string>
 </resources>

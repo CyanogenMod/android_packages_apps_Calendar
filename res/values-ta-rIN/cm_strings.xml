@@ -16,15 +16,43 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="preferences_alerts_custom_snooze_delay_title">நினைவூட்டி ஒத்திவைப்பு தாமதத்திற்கு கேட்கவும்</string>
   <!-- Summaries for using custom snooze delays -->
+  <string name="preferences_alerts_custom_snooze_delay_summary_on">நினைவூட்டல்களை ஒத்திவைக்கும்போதெல்லாம் ஒத்திவைப்பு தாமதத்திற்கு கேட்கவும்</string>
+  <string name="preferences_alerts_custom_snooze_delay_summary_off">எப்போதுமே இயல்புநிலை ஒத்திவைப்பு தாமதத்தை பயன்படுத்தவும்</string>
   <!-- Title of custom snooze delay dialog -->
+  <string name="snooze_delay_dialog_title">ஒத்திவைப்பு தாமதத்தை அமைக்கவும்</string>
   <!-- List item label for setting the default snooze delay -->
+  <string name="preferences_default_snooze_delay_title">இயல்புநிலை ஒத்திவைப்பு தாமத நேரம்</string>
   <!-- Title of dialog for setting the default snooze delay -->
+  <string name="preferences_default_snooze_delay_dialog">இயல்புநிலை ஒத்திவைப்பு தாமதம்</string>
   <!-- Default value for the default snooze delay (in minutes) -->
   <!-- Label values for the default start page preference. -->
+  <string name="default_start_title">இயல்புநிலை காட்சி</string>
+  <string name="default_start_last">முன்னதாக பயன்படுத்தப்பட்ட காட்சி</string>
   <!-- Delete Events related -->
+  <string name="events_delete">நிகழ்வுகளை நீக்குக</string>
+  <string name="action_select_all">எல்லாவற்றையும் தேர்ந்தெடு</string>
+  <string name="action_select_none">அனைத்தையும் தேர்வுநீக்கு</string>
+  <string name="action_delete">முடிந்தது</string>
+  <string name="all_events">அனைத்து நிகழ்வுகளும்</string>
+  <string name="no_events">எந்த நிகழ்வுகளும் கிடைக்கவில்லை</string>
+  <string name="evt_del_dlg_title">நிகழ்வுகளை நீக்கவா?</string>
+  <string name="evt_del_dlg_msg_selected">தேர்ந்தெடுக்கப்பட்ட நிகழ்வுகள் நீக்கப்படும்</string>
+  <string name="evt_del_dlg_msg_all">அனைத்து நிகழ்வுகளும் நீக்கப்படும்</string>
+  <string name="no_events_selected">நிகழ்வுகள் எதுவும் தேர்ந்தெடுக்கப்படவில்லை</string>
   <!-- This is a label on a menu item. Pressing this menu item allows the
          user to go to the calendars to display [CHAR LIMIT=20] -->
+  <string name="go_to">இதற்குச் செல்</string>
   <!-- Sharing calendar event -->
+  <string name="cal_share_intent_title">நிகழ்வை இங்கே அனுப்புக:</string>
+  <string name="cal_export_event_sdcard_title">SD அட்டைக்கு ஏற்றுமதிசெய்</string>
+  <string name="cal_export_succ_msg">நிகழ்வு வெற்றிகரமாக ஏற்றுமதிசெய்யப்பட்டது: %1s</string>
+  <string name="cal_import_menu_title">நிகழ்வை இறக்குமதிசெய்</string>
+  <string name="cal_nothing_to_import">இறக்குமதிசெய்ய ஒன்றுமில்லை</string>
+  <string name="cal_import_error_msg">நாள்காட்டிக்கு இறக்குமதிசெய்தல் தோல்வியுற்றது</string>
+  <string name="cal_pick_ics">இறக்குமதிசெய்ய கோப்பை எடுக்கவும்</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
+  <string name="error_generating_ics">நிகழ்வை பகிரும்போது சிக்கல்களை சந்தித்தது</string>
+  <string name="share_label">பகிர்</string>
 </resources>

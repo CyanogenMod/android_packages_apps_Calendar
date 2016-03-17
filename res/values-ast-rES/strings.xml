@@ -48,17 +48,50 @@
   <!-- Title of event when no explicit title is specified by the user -->
   <string name="no_title_label">(Ensin títulu)</string>
   <!-- Reminder format strings -->
+  <plurals name="Nminutes">
+    <!-- This is the label for a 1-minute reminder. -->
+    <item quantity="one">1 minutu</item>
+    <!-- This is the label for 2 or more minutes. The actual number of
+             minutes is a parameter. -->
+    <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> minutos</item>
+  </plurals>
   <!-- We use the abbreviation "mins" instead of "minutes" to keep the string short.
          This is the number of minutes displayed for a calendar reminder.  For example,
          a reminder of 10 minutes would be displayed as '10 mins'.  The translation
          should use the shortest acceptable abbreviation to save space. -->
+  <plurals name="Nmins">
+    <!-- This is the label for a 1-minute reminder. -->
+    <item quantity="one">1 minutu</item>
+    <!-- This is the label for 2 or more minutes. The actual number of
+             minutes is a parameter. -->
+    <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> minutos</item>
+  </plurals>
   <!-- This is the number of hours displayed for a calendar reminder.  For example,
          a reminder of 1 hour would be displayed as '1 hour'.  The translation
          should use the shortest acceptable abbreviation of 'hour' to save space. -->
+  <plurals name="Nhours">
+    <!-- This is the label for a 1-hour reminder. -->
+    <item quantity="one">1 hora</item>
+    <!-- This is the label for a reminder of 2 or more hours. The actual number of
+             hours is a parameter. -->
+    <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> hores</item>
+  </plurals>
   <!-- This is the number of days displayed for a calendar reminder.  For example,
          a reminder of 2 days would be displayed as '2 days'.  The translation
          should use the shortest acceptable abbreviation of 'day' to save space. -->
+  <plurals name="Ndays">
+    <!-- This is the label for a reminder of 1 day. -->
+    <item quantity="one">1 día</item>
+    <!-- This is the label for a reminder of 2 or more days. The actual number of
+             days is a parameter. -->
+    <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> díes</item>
+  </plurals>
   <!-- This is for displaying the week of the year near the date. Eg. "January, 2011 Week 1" -->
+  <plurals name="weekN">
+    <item quantity="one">SELMANA <xliff:g id="count">%d</xliff:g></item>
+    <!-- Label for displaying week of the year for all week values [CHAR LIMIT=16] -->
+    <item quantity="other">SELMANES <xliff:g id="count">%d</xliff:g></item>
+  </plurals>
   <!-- Menu items: -->
   <!-- This is a label on a context menu item. Pressing this menu item to initiate
         syncing of your Calendar data with the server. [CHAR LIMIT=11] -->
@@ -334,12 +367,24 @@
   <!-- Part of a description of an repeating event. This part how many times the event repeats.
          The part before the semi-colon describes how it repeats.
          e.g. Every 2 weeks; for 15 times [CHAR LIMIT=15] -->
+  <plurals name="endByCount">
+    <item quantity="one">; una vegada</item>
+    <item quantity="other">; <xliff:g id="NUMBER">%d</xliff:g> vegaes</item>
+  </plurals>
   <!-- A description for an event that repeats daily. For example, Every 2 days [CHAR LIMIT=15]-->
+  <plurals name="daily">
+    <item quantity="one">Caldía</item>
+    <item quantity="other">Cada <xliff:g id="NUMBER">%d</xliff:g> díes</item>
+  </plurals>
   <!-- A label in a multiple-choice list for the specifying that an event
          repeats every weekday (Monday through Friday) -->
   <string name="every_weekday">"Cada día llaborable (Llu\u2013Vie)"</string>
   <!-- A description for an event that repeats weekly on some day of the week. For example,
          'Weekly on Tuesday' or Every 2 weeks on Monday, Tuesday.  [CHAR LIMIT=25]-->
+  <plurals name="weekly">
+    <item quantity="one">Selmanalmente el <xliff:g id="DAYS_OF_WEEK">%2$s</xliff:g></item>
+    <item quantity="other">Cada <xliff:g id="NUMBER">%1$d</xliff:g> selmanes el <xliff:g id="DAYS_OF_WEEK">%2$s</xliff:g></item>
+  </plurals>
   <!-- The common portion of a string describing how often an event repeats,
          example: 'Monthly (on day 2)' -->
   <string name="monthly">Mensualmente</string>
@@ -451,6 +496,13 @@
   <string name="gadget_title">Calendariu</string>
   <!-- Shown in month view next to event icon when additional events exist for that day, but no
         room remaining -->
+  <plurals name="month_more_events">
+    <!-- additional events message for 1 event, the quotes force a literal interpretation of the
+            string [CHAR LIMIT = 10] -->
+    <item quantity="one">"+1"</item>
+    <!-- additional events message for multiple events [CHAR LIMIT = 10] -->
+    <item quantity="other">+<xliff:g id="number">%d</xliff:g></item>
+  </plurals>
   <!-- Caption to show on gadget when there are no upcoming calendar events -->
   <string name="gadget_no_events">Nun hai futuros eventos nel calendariu.</string>
   <!-- Text to show on gadget when an event is currently in progress -->
@@ -532,7 +584,19 @@
     -->
   <string name="template_announce_item_index">Eventu <xliff:g id="ITEM_INDEX">%1$s</xliff:g> de <xliff:g id="ITEM_COUNT">%2$s</xliff:g></string>
   <!-- number of events in the notification bar -->
+  <plurals name="Nevents">
+    <!-- This is the label for a 1 event. -->
+    <item quantity="one">1 eventu</item>
+    <!-- This is the label for 2 or more events. -->
+    <item quantity="other"><xliff:g id="COUNT">%d</xliff:g> eventos</item>
+  </plurals>
   <!-- number of remaining events for an alert digest in the notification bar [CHAR LIMIT = 30] -->
+  <plurals name="N_remaining_events">
+    <!-- This is the label for 1 event. -->
+    <item quantity="one">+1 eventu</item>
+    <!-- This is the label for 2 or more events. -->
+    <item quantity="other">+<xliff:g id="COUNT">%d</xliff:g> eventos</item>
+  </plurals>
   <!-- Description of the selected marker for accessibility support [CHAR LIMIT = NONE]-->
   <string name="acessibility_selected_marker_description">Eventu seleicionáu</string>
   <!-- Tell user not to check a checkbox [CHAR LIMIT=30] -->
@@ -542,9 +606,33 @@
   <!-- Dialog title for recurrence picker when one-time event is selected [CHAR LIMIT=20] -->
   <string name="recurrence_dialog_title_never">Nun se repite</string>
   <!-- Strings to describe how frequently to repeat an event (e.g. every 5 days) -->
+  <plurals name="recurrence_interval_daily">
+    <!-- Singular form [CHAR LIMIT=30] -->
+    <item quantity="one">Cada <xliff:g id="COUNT">%d</xliff:g> día</item>
+    <!-- Plural form [CHAR LIMIT=30] -->
+    <item quantity="other">Cada <xliff:g id="COUNT">%d</xliff:g> díes</item>
+  </plurals>
   <!-- Strings to describe how frequently to repeat an event (e.g. every 5 weeks) -->
+  <plurals name="recurrence_interval_weekly">
+    <!-- Singular form [CHAR LIMIT=30] -->
+    <item quantity="one">Cada <xliff:g id="COUNT">%d</xliff:g> selmana</item>
+    <!-- Plural form [CHAR LIMIT=30] -->
+    <item quantity="other">Cada <xliff:g id="COUNT">%d</xliff:g> selmanes</item>
+  </plurals>
   <!-- Strings to describe how frequently to repeat an event (e.g. every 5 months) -->
+  <plurals name="recurrence_interval_monthly">
+    <!-- Singular form [CHAR LIMIT=30] -->
+    <item quantity="one">Cada <xliff:g id="COUNT">%d</xliff:g> mes</item>
+    <!-- Plural form [CHAR LIMIT=30] -->
+    <item quantity="other">Cada <xliff:g id="COUNT">%d</xliff:g> meses</item>
+  </plurals>
   <!-- Strings to describe how frequently to repeat an event (e.g. every 5 years) -->
+  <plurals name="recurrence_interval_yearly">
+    <!-- Singular form [CHAR LIMIT=30] -->
+    <item quantity="one">Cada <xliff:g id="COUNT">%d</xliff:g> añu</item>
+    <!-- Plural form [CHAR LIMIT=30] -->
+    <item quantity="other">Cada <xliff:g id="COUNT">%d</xliff:g> años</item>
+  </plurals>
   <!-- Repeat an monthly event on the same day of every month [CHAR LIMIT=20] -->
   <string name="recurrence_month_pattern_by_day">el mesmu día de cada mes</string>
   <!-- Specifies that a repeating event to repeat forever (based on the defined frequency) instead of ending at a future date[CHAR LIMIT=20] -->
@@ -556,6 +644,10 @@
   <!-- Specifies that a repeating event to repeat for a number of times. A repeating event can repeat forever, repeat in a certain frequency until a certain date, or repeat for a number of times. e.g. repeat 10 times and stop. This string is for the last case [CHAR LIMIT=25] -->
   <string name="recurrence_end_count_label">Pa un númberu d\'eventos</string>
   <!-- Specifies that a repeating event should repeat for a certain number of iterations. [CHAR LIMIT=20]-->
+  <plurals name="recurrence_end_count">
+    <item quantity="one">Pa <xliff:g id="EVENT_COUNT">%d</xliff:g> eventu</item>
+    <item quantity="other">Pa <xliff:g id="EVENT_COUNT">%d</xliff:g> eventos</item>
+  </plurals>
   <!-- Description of the selected marker for accessibility support [CHAR LIMIT = NONE]-->
   <string name="acessibility_recurrence_choose_end_date_description">camudar data de finalización</string>
   <!-- Do Not Translate.  Sender identity for global notification synchronization. -->

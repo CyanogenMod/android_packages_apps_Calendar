@@ -50,6 +50,7 @@
   <string name="cal_export_succ_msg">Événement exporté avec succès : %1s</string>
   <string name="cal_import_menu_title">Importer événement</string>
   <string name="cal_nothing_to_import">Rien à importer</string>
+  <string name="cal_import_error_msg">Échec de l\'importation dans l\'agenda</string>
   <string name="cal_pick_ics">Choisir le fichier à importer</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Problèmes rencontrés lors du partage de l\'événement</string>

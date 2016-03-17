@@ -16,15 +16,43 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="preferences_alerts_custom_snooze_delay_title">ରିମେଣ୍ଡର୍‍ ସ୍ନୁଜ୍‍ ଡିଲେ ପାଇଁ ପଚାରନ୍ତୁ</string>
   <!-- Summaries for using custom snooze delays -->
+  <string name="preferences_alerts_custom_snooze_delay_summary_on">ରିମେଣ୍ଡର୍‍ ସ୍ନୁଜ୍‍ ହେଉଥିବା ସମୟରେ ସ୍ନୁଜ୍‍ ଡିଲେ ପାଇଁ ପଚାରନ୍ତୁ</string>
+  <string name="preferences_alerts_custom_snooze_delay_summary_off">ଡିଫଲ୍ଟ ସ୍ନୁଜ୍‍ ଡିଲେ ସର୍ବଦା ବ୍ୟବହାର କରନ୍ତୁ</string>
   <!-- Title of custom snooze delay dialog -->
+  <string name="snooze_delay_dialog_title">ସ୍ନୁଜ୍‍ ଡିଲେ ସେଟ୍‍ କରନ୍ତୁ</string>
   <!-- List item label for setting the default snooze delay -->
+  <string name="preferences_default_snooze_delay_title">ଡିଫ‍ଲ୍ଟ ସ୍ନୁଜ୍‍ ଡିଲେ ସମୟ</string>
   <!-- Title of dialog for setting the default snooze delay -->
+  <string name="preferences_default_snooze_delay_dialog">ଡିଫ‍ଲ୍ଟ ସ୍ନୁଜ୍‍ ଡିଲେ</string>
   <!-- Default value for the default snooze delay (in minutes) -->
   <!-- Label values for the default start page preference. -->
+  <string name="default_start_title">ଡିଫଲ୍ଟ ଦର୍ଶନ</string>
+  <string name="default_start_last">ପୂର୍ବରୁ ବ୍ୟବହୃତ ଦର୍ଶନ</string>
   <!-- Delete Events related -->
+  <string name="events_delete">ଇଭେଣ୍ଟସମୂହ ବିଲୋପ କରନ୍ତୁ</string>
+  <string name="action_select_all">ସମସ୍ତ ଚୟନ କରନ୍ତୁ</string>
+  <string name="action_select_none">ସମସ୍ତ ଅଣଚୟନ କରନ୍ତୁ</string>
+  <string name="action_delete">ସମାପ୍ତ</string>
+  <string name="all_events">ସମସ୍ତ ଇଭେଣ୍ଟସ୍</string>
+  <string name="no_events">କୌଣସି ଇଭେଣ୍ଟସମୂହ ଉପଲ‍ବ୍ଧ ନାହିଁ</string>
+  <string name="evt_del_dlg_title">ଇଭେଣ୍ଟସମୂହ ବିଲୋପ କରିବେ କି?</string>
+  <string name="evt_del_dlg_msg_selected">ଚୟନ କରାଯାଇଥିବା ଇଭେଣ୍ଟସମୂହ ବିଲୋପିତ ହୋଇଯିବ</string>
+  <string name="evt_del_dlg_msg_all">ସମସ୍ତ ଇଭେଣ୍ଟସମୂହ ବିଲୋପିତ ହୋଇଯିବ</string>
+  <string name="no_events_selected">କୌଣସି ଇଭେଣ୍ଟସମୂହ ଚୟନ କରାଯାଇନାହିଁ</string>
   <!-- This is a label on a menu item. Pressing this menu item allows the
          user to go to the calendars to display [CHAR LIMIT=20] -->
+  <string name="go_to">ଏଥିକୁ ଯାଆନ୍ତୁ</string>
   <!-- Sharing calendar event -->
+  <string name="cal_share_intent_title">ଇଭେଣ୍ଟ ଏଠାକୁ ପଠାନ୍ତୁ:</string>
+  <string name="cal_export_event_sdcard_title">SD କାର୍ଡକୁ ରପ୍ତାନୀ କରନ୍ତୁ</string>
+  <string name="cal_export_succ_msg">କାୟଯ୍ର୍କ୍ରମ ସଫଳତାର ସହିତ ରପ୍ତାନୀ ହୋଇ୍ଛି %1s</string>
+  <string name="cal_import_menu_title">ଇଭେଣ୍ଟ ଆମଦାନି କରନ୍ତୁ</string>
+  <string name="cal_nothing_to_import">ଆମଦାନି କରିବା ପାଇଁ କିଛି ନାହିଁ</string>
+  <string name="cal_import_error_msg">କ୍ୟାଲେଣ୍ଡରରେ ଆମଦାନି ବିଫଳ ହୋଇଛି</string>
+  <string name="cal_pick_ics">ଆମଦାନି କରିବା ପାଇଁ ଫାଇଲ୍‍ ଧରନ୍ତୁ</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
+  <string name="error_generating_ics">ଇଭେଣ୍ଟ ଅଂଶୀଦାର କରିବା ସମୟରେ ସମସ୍ୟା ଦେଖାଦେଉଛି</string>
+  <string name="share_label">ଅଂଶୀଦାର କରନ୍ତୁ</string>
 </resources>

@@ -16,15 +16,43 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="preferences_alerts_custom_snooze_delay_title">स्मरण स्नूझकरीता विलंब मागा</string>
   <!-- Summaries for using custom snooze delays -->
+  <string name="preferences_alerts_custom_snooze_delay_summary_on">स्मरण स्नूझ करताना दरवेळी स्नूझ विलंब मागा</string>
+  <string name="preferences_alerts_custom_snooze_delay_summary_off">नेहमी डिफॉल्ट स्नूझ विलंब वापरा</string>
   <!-- Title of custom snooze delay dialog -->
+  <string name="snooze_delay_dialog_title">स्नूझ विलंब सेट करा</string>
   <!-- List item label for setting the default snooze delay -->
+  <string name="preferences_default_snooze_delay_title">डिफॉल्ट स्नूझ विलंब वेळ</string>
   <!-- Title of dialog for setting the default snooze delay -->
+  <string name="preferences_default_snooze_delay_dialog">डिफॉल्ट स्नूझ विलंब</string>
   <!-- Default value for the default snooze delay (in minutes) -->
   <!-- Label values for the default start page preference. -->
+  <string name="default_start_title">डिफॉल्ट व्ह्यू</string>
+  <string name="default_start_last">आधी वापरलेला व्ह्यू</string>
   <!-- Delete Events related -->
+  <string name="events_delete">इव्हेंट हटवा</string>
+  <string name="action_select_all">सर्व निवडा</string>
+  <string name="action_select_none">सर्व निवड रद्द करा</string>
+  <string name="action_delete">पूर्ण केले</string>
+  <string name="all_events">सर्व इव्हेंट</string>
+  <string name="no_events">इव्हेंट्स उपलब्ध नाहीत</string>
+  <string name="evt_del_dlg_title">इव्हेंट हटवायच्या?</string>
+  <string name="evt_del_dlg_msg_selected">निवडलेल्या इव्हेंट्स हटवल्या जातील</string>
+  <string name="evt_del_dlg_msg_all">सर्व इव्हेंट्स हटवल्या जातील</string>
+  <string name="no_events_selected">कोणत्याही इव्हेंट्स निवडल्या नाहीत</string>
   <!-- This is a label on a menu item. Pressing this menu item allows the
          user to go to the calendars to display [CHAR LIMIT=20] -->
+  <string name="go_to">कडे जा</string>
   <!-- Sharing calendar event -->
+  <string name="cal_share_intent_title">इव्हेंट्स याकडे पाठवा:</string>
+  <string name="cal_export_event_sdcard_title">SD कार्डला निर्यात करा</string>
+  <string name="cal_export_succ_msg">इव्हेंट यशस्वीरित्या निर्यात केली: %1s</string>
+  <string name="cal_import_menu_title">इव्हेंट आयात करा</string>
+  <string name="cal_nothing_to_import">आयात करण्यासाठी काहीही नाही</string>
+  <string name="cal_import_error_msg">दिनदर्शिकेला आयात करणे अपयशी झाले</string>
+  <string name="cal_pick_ics">आयात करण्यासाठी फाइल निवडा</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
+  <string name="error_generating_ics">इव्हेंट शेअर करताना समस्या आल्या</string>
+  <string name="share_label">सामायिक करा</string>
 </resources>

@@ -16,15 +16,43 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="preferences_alerts_custom_snooze_delay_title">স্মাৰক স্নুজ বিলম্বৰ বাবে সোধক</string>
   <!-- Summaries for using custom snooze delays -->
+  <string name="preferences_alerts_custom_snooze_delay_summary_on">স্নুজিং স্মাৰক যেতিয়াই হয় স্মাৰক স্নুজ বিলম্বৰ বাবে সোধক</string>
+  <string name="preferences_alerts_custom_snooze_delay_summary_off">সদায় ডিফ\'ল্ট স্নুজ বিলম্ব ব্যৱহাৰ কৰক</string>
   <!-- Title of custom snooze delay dialog -->
+  <string name="snooze_delay_dialog_title">স্নুজ বিলম্ব ছেট কৰক</string>
   <!-- List item label for setting the default snooze delay -->
+  <string name="preferences_default_snooze_delay_title">ডিফ\'ল্ট স্নুজ বিলম্ব সময়</string>
   <!-- Title of dialog for setting the default snooze delay -->
+  <string name="preferences_default_snooze_delay_dialog">ডিফ\'ল্ট স্নুজ বিলম্ব</string>
   <!-- Default value for the default snooze delay (in minutes) -->
   <!-- Label values for the default start page preference. -->
+  <string name="default_start_title">ডিফ\'ল্ট দৰ্শন</string>
+  <string name="default_start_last">পূৰ্বতে ব্যৱহাৰ কৰা দৰ্শন</string>
   <!-- Delete Events related -->
+  <string name="events_delete">ইভেণ্ট বিলোপ কৰক</string>
+  <string name="action_select_all">আটাইবোৰ বাচনি কৰক</string>
+  <string name="action_select_none">সকলোবোৰ অনা নিৰ্বাচন কৰক</string>
+  <string name="action_delete">কৰা হল</string>
+  <string name="all_events">সকলো ইভেন্টসমূহ</string>
+  <string name="no_events">কোনো ইভেণ্টসমূহ উপলব্ধ নহয়</string>
+  <string name="evt_del_dlg_title">ইভেণ্ট বিলোপ কৰিব?</string>
+  <string name="evt_del_dlg_msg_selected">চয়ন কৰা ইভেণ্টসমূহ বিলোপ কৰা হ\'ব</string>
+  <string name="evt_del_dlg_msg_all">সকলো ইভেণ্টসমূহ বিলোপ কৰা হ\'ব</string>
+  <string name="no_events_selected">কোনো ইভেণ্টসমূহ চয়ন কৰা নাই</string>
   <!-- This is a label on a menu item. Pressing this menu item allows the
          user to go to the calendars to display [CHAR LIMIT=20] -->
+  <string name="go_to">লৈ যোৱা</string>
   <!-- Sharing calendar event -->
+  <string name="cal_share_intent_title">ইভেণ্ট ইয়ালৈ প্ৰেৰণ কৰক:</string>
+  <string name="cal_export_event_sdcard_title">SD কাৰ্ডলৈ ৰপ্তানি কৰা</string>
+  <string name="cal_export_succ_msg">ইভেণ্ট সফলতাৰে ৰপ্তানি কৰা হ\'ল: %1s</string>
+  <string name="cal_import_menu_title">ইভেণ্ট আমদানি কৰক</string>
+  <string name="cal_nothing_to_import">আমদানি কৰিবলৈ একো নাই</string>
+  <string name="cal_import_error_msg">কেলেণ্ডাৰলৈ আমদানি কৰি আছে</string>
+  <string name="cal_pick_ics">আমদানি কৰিবলৈ ফাইলটো চয়ন কৰক</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
+  <string name="error_generating_ics">ইভেণ্ট ভাগ-বতৰা কৰোতে সমস্যাৰ সম্মুখীন হৈছে</string>
+  <string name="share_label">শ্বেয়াৰ</string>
 </resources>
