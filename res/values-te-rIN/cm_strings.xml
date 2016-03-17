@@ -16,15 +16,43 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="preferences_alerts_custom_snooze_delay_title">జ్ఞాపిక స్నూజ్ జాప్యం కొరకు అడుగుము</string>
   <!-- Summaries for using custom snooze delays -->
+  <string name="preferences_alerts_custom_snooze_delay_summary_on">స్నూజింగ్ జ్ఞాపికలు వచ్చినప్పుడల్లా స్నూజ్ జాప్యం కొరకు అడుగుము</string>
+  <string name="preferences_alerts_custom_snooze_delay_summary_off">ఎప్పుడూ కూడా స్వయంసిద్ధ స్నూజ్ జాప్యాన్ని ఉపయోగించుము</string>
   <!-- Title of custom snooze delay dialog -->
+  <string name="snooze_delay_dialog_title">స్నూజ్ జాప్యాన్ని సెట్ చేయుము</string>
   <!-- List item label for setting the default snooze delay -->
+  <string name="preferences_default_snooze_delay_title">స్వయంసిద్ధ స్నూజ్ జాప్యం సమయం</string>
   <!-- Title of dialog for setting the default snooze delay -->
+  <string name="preferences_default_snooze_delay_dialog">స్వయంసిద్ధ స్నూజ్ జాప్యం</string>
   <!-- Default value for the default snooze delay (in minutes) -->
   <!-- Label values for the default start page preference. -->
+  <string name="default_start_title">స్వయంసిద్ధ వీక్షణ</string>
+  <string name="default_start_last">ఇంతకు ముందు ఉపయోగించిన వీక్షణ</string>
   <!-- Delete Events related -->
+  <string name="events_delete">ఈవెంట్లను తొలిగించుము</string>
+  <string name="action_select_all">అన్నీ ఎంచుకోండి</string>
+  <string name="action_select_none">అన్నీ తొలగించు</string>
+  <string name="action_delete">పూర్తయింది</string>
+  <string name="all_events">అన్ని ఈవెంట్లు</string>
+  <string name="no_events">ఎటువంటి ఈవెంట్లు అందుబాటులో లేవు</string>
+  <string name="evt_del_dlg_title">ఈవెంట్లను తొలిగించాలా?</string>
+  <string name="evt_del_dlg_msg_selected">ఎంచుకోబడిన ఈవెంట్లు తొలిగించబడతాయి</string>
+  <string name="evt_del_dlg_msg_all">అన్ని ఈవెంట్లు తొలిగించబడతాయి</string>
+  <string name="no_events_selected">ఎటువంటి ఈవెంట్లు ఎంచుకోబడలేదు</string>
   <!-- This is a label on a menu item. Pressing this menu item allows the
          user to go to the calendars to display [CHAR LIMIT=20] -->
+  <string name="go_to">దీనికి వెళ్లండి</string>
   <!-- Sharing calendar event -->
+  <string name="cal_share_intent_title">వీరికి ఈవెంట్ ను పంపుము:</string>
+  <string name="cal_export_event_sdcard_title">SD కార్డుకు ఎగుమతి చేయండి</string>
+  <string name="cal_export_succ_msg">ఈవెంట్ విజయవంతంగా ఎగుమతి చేయబడింది: %1s</string>
+  <string name="cal_import_menu_title">ఈవెంటును దిగుమతి చేసుకొనుము</string>
+  <string name="cal_nothing_to_import">దిగుమతి చేయడానికి ఏమీ లేదు</string>
+  <string name="cal_import_error_msg">క్యాలెండరుకు దిగుమతి చేసుకోవడం విఫలమయింది</string>
+  <string name="cal_pick_ics">దిగుమతి చేసేందుకు ఫైలును ఎంచుకొనుము</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
+  <string name="error_generating_ics">ఈవెంటును పంచుకునే సమయంలో సమస్య ఉత్పన్నమయ్యింది</string>
+  <string name="share_label">భాగస్వామ్యం చేయి</string>
 </resources>

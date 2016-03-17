@@ -16,24 +16,43 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="preferences_alerts_custom_snooze_delay_title">Preguntar por intervalo de repetición de recordatorio</string>
   <!-- Summaries for using custom snooze delays -->
+  <string name="preferences_alerts_custom_snooze_delay_summary_on">Preguntar por el intervalo de repeteción en cada recordatorio</string>
   <string name="preferences_alerts_custom_snooze_delay_summary_off">Usar siempre el intervalo de recordatorios predeterminado</string>
   <!-- Title of custom snooze delay dialog -->
+  <string name="snooze_delay_dialog_title">Ajustar intervalo de recordatorio</string>
   <!-- List item label for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_title">Intervalo de recordatorio predeterminado</string>
   <!-- Title of dialog for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_dialog">Intervalo de recordatorio predeterminado</string>
   <!-- Default value for the default snooze delay (in minutes) -->
   <!-- Label values for the default start page preference. -->
+  <string name="default_start_title">Vista predeterminada</string>
+  <string name="default_start_last">Vista utlizada previamente</string>
   <!-- Delete Events related -->
+  <string name="events_delete">Eliminar eventos</string>
   <string name="action_select_all">Seleccionar todo</string>
+  <string name="action_select_none">Deseleccionar todo</string>
   <string name="action_delete">OK</string>
+  <string name="all_events">Todos los eventos</string>
+  <string name="no_events">No hay eventos disponibles</string>
+  <string name="evt_del_dlg_title">¿Eliminar eventos?</string>
+  <string name="evt_del_dlg_msg_selected">Los eventos seleccionados serán eliminados</string>
+  <string name="evt_del_dlg_msg_all">Todos los eventos serán eliminados</string>
+  <string name="no_events_selected">No hay eventos seleccionados</string>
   <!-- This is a label on a menu item. Pressing this menu item allows the
          user to go to the calendars to display [CHAR LIMIT=20] -->
+  <string name="go_to">Ir a</string>
   <!-- Sharing calendar event -->
+  <string name="cal_share_intent_title">Enviar evento a:</string>
+  <string name="cal_export_event_sdcard_title">Exportar a tarjeta SD</string>
   <string name="cal_export_succ_msg">Evento exportado correctamente: %1s</string>
+  <string name="cal_import_menu_title">Importar evento</string>
+  <string name="cal_nothing_to_import">Nada para importar</string>
   <string name="cal_import_error_msg">Error al importar al calendario</string>
   <string name="cal_pick_ics">Seleccionar archivo para importar</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Hubo problemas al compartir el evento</string>
+  <string name="share_label">Compartir</string>
 </resources>

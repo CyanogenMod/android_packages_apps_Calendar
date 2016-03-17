@@ -16,16 +16,43 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="preferences_alerts_custom_snooze_delay_title">રીમાઇન્ડરમા સ્નૂઝ વિલંબવા માટે પૂછો</string>
+  <string name="preferences_alerts_custom_snooze_delay_title">રિમાઇન્ડર સ્નૂઝ વિલંબ માટે જણાવો</string>
   <!-- Summaries for using custom snooze delays -->
+  <string name="preferences_alerts_custom_snooze_delay_summary_on">જ્યારે પણ સ્નૂઝિંગ રિમાઇન્ડર હોય ત્યારે સ્નૂઝ વિલંબ માટે જણાવો</string>
+  <string name="preferences_alerts_custom_snooze_delay_summary_off">હંમેશા ડિફૉલ્ટ સ્નૂઝ વિલંબ વાપરો</string>
   <!-- Title of custom snooze delay dialog -->
+  <string name="snooze_delay_dialog_title">સ્નૂઝ વિલંબ સેટ કરો</string>
   <!-- List item label for setting the default snooze delay -->
+  <string name="preferences_default_snooze_delay_title">ડિફૉલ્ટ સ્નૂઝ વિલંબ સમય</string>
   <!-- Title of dialog for setting the default snooze delay -->
+  <string name="preferences_default_snooze_delay_dialog">ડિફૉલ્ટ સ્નૂઝ વિલંબ</string>
   <!-- Default value for the default snooze delay (in minutes) -->
   <!-- Label values for the default start page preference. -->
+  <string name="default_start_title">ડિફૉલ્ટ દ્રશ્ય</string>
+  <string name="default_start_last">અગાઉ વપરાયેલ દ્રશ્ય</string>
   <!-- Delete Events related -->
+  <string name="events_delete">ઇવેન્ટ્સ રદ કરો</string>
+  <string name="action_select_all">બધા પસંદ કરો</string>
+  <string name="action_select_none">તમામને ડિસિલેક્ટ કરો</string>
+  <string name="action_delete">થઈ ગયું</string>
+  <string name="all_events">તમામ પ્રસંગો</string>
+  <string name="no_events">કોઇ ઇવેન્ટ્સ ઉપલબ્ધ નથી</string>
+  <string name="evt_del_dlg_title">ઇવેન્ટ્સ ભૂંસવી છે?</string>
+  <string name="evt_del_dlg_msg_selected">પસંદ કરેલ ઇવેન્ટ્સ રદ કરવામાં આવશે</string>
+  <string name="evt_del_dlg_msg_all">તમામ ઇવેન્ટ્સ રદ કરવામાં આવશે</string>
+  <string name="no_events_selected">કોઇ ઇવેન્ટ્સ પસંદ કરવામાં આવી નથી</string>
   <!-- This is a label on a menu item. Pressing this menu item allows the
          user to go to the calendars to display [CHAR LIMIT=20] -->
+  <string name="go_to">અહીં જાવ</string>
   <!-- Sharing calendar event -->
+  <string name="cal_share_intent_title">ઇવેન્ટ અહીં મોકલો:</string>
+  <string name="cal_export_event_sdcard_title">SD કાર્ડમાં નિકાસ કરો</string>
+  <string name="cal_export_succ_msg">ઇવેન્ટ સફળતાપૂર્વક નિકાસ થઈ: %1s</string>
+  <string name="cal_import_menu_title">ઇવેન્ટ આયાત કરો</string>
+  <string name="cal_nothing_to_import">કંઇ આયાત કરવાનું નથી</string>
+  <string name="cal_import_error_msg">કૅલેન્ડરમાં આયાત કરવું નિષ્ફળ</string>
+  <string name="cal_pick_ics">આયાત કરવા ફાઇલ લો</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
+  <string name="error_generating_ics">ઇવેન્ટ સહિયારું કરતી વખતે સામનો કરેલ સમસ્યાઓ</string>
+  <string name="share_label">શેઅર કરો</string>
 </resources>
