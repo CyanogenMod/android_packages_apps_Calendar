@@ -26,24 +26,23 @@
     <LinearLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:minHeight="48dip"
+        android:layout_height="52dp"
         android:gravity="center_vertical|left"
-        android:paddingLeft="8dip"
-        android:paddingRight="2dip"
-        android:orientation="vertical"
-        android:background="@drawable/appwidget_header_selector">
-        <TextView
-            android:id="@+id/day_of_week"
-            android:layout_marginTop="4dip"
-            android:textColor="@color/appwidget_week"
-            android:shadowColor="#0dffffff"
-            android:shadowRadius="3"
-            style="@style/WidgetDayOfWeekStyle" />
+        android:orientation="horizontal"
+        android:background="@drawable/appwidget_title_bg">
         <TextView
             android:id="@+id/date"
-            android:textColor="@color/appwidget_month"
-            style="@style/WidgetDateStyle" />
+            android:textColor="@color/event_title"
+            android:layout_marginLeft="12dp"
+            style="@style/WidgetDateStyle"/>
+        <TextView
+            android:id="@+id/day_of_week"
+            android:textColor="@color/event_title"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="2dp"
+            android:includeFontPadding="false"
+            style="@style/WidgetDayOfWeekStyle"/>
+
     </LinearLayout>
 
     <!-- Event list -->
@@ -52,11 +51,19 @@
         android:layout_width="match_parent"
         android:layout_height="0dip"
         android:layout_weight="1"
-        android:layout_marginRight="4dip"
-        android:layout_marginLeft="4dip"
         android:divider="@null"
         android:listSelector="@android:color/transparent"
         android:dividerHeight="3dip"
         android:cacheColorHint="@null"
-        android:background="@drawable/cal_widget_bg"/>
+        android:background="@android:color/white"/>
+
+    <include
+        android:id="@+id/event_no"
+        layout="@layout/appwidget_no_events"/>
+
+    <LinearLayout
+        android:id="@+id/list_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@drawable/appwidget_list_bg"/>
 </LinearLayout>

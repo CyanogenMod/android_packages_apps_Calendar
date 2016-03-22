@@ -18,7 +18,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/appwidget_date"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="32dp"
     android:layout_marginLeft="2dip"
     android:layout_marginRight="2dip"
     android:layout_marginTop="2dip"
@@ -28,19 +28,26 @@
     android:focusable="false"
     android:clickable="false">
 
+    <RelativeLayout
+        android:id="@+id/list_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/event_list_line"/>
     <!-- Left edge should align with those of event texts.
          TODO: values marginLeft/marginRight should be same as those in
          appwidget_row.xml. Should be better to have those values in style.xml
       -->
     <TextView
         android:id="@+id/date"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_width="match_parent"
         android:textSize="12sp"
-        android:textAllCaps="true"
+        android:textAllCaps="false"
         android:paddingLeft="4dip"
-        android:shadowColor="@color/text_shadow_color"
         android:shadowRadius="1"
-        android:textColor="@color/appwidget_date"/>
+        android:gravity="center_vertical"
+        android:layout_marginStart="12dp"
+        android:textColor="@color/event_content_text"
+        android:textStyle="bold"/>
 
 </LinearLayout>

@@ -27,11 +27,15 @@ import android.appwidget.AppWidgetProvider;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.net.Uri;
+import android.os.Bundle;
 import android.provider.CalendarContract;
 import android.text.format.DateUtils;
 import android.text.format.Time;
+import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.View;
 import android.widget.RemoteViews;
 
 import com.android.calendar.AllInOneActivity;
@@ -44,10 +48,16 @@ import com.android.calendar.Utils;
  */
 public class CalendarAppWidgetProvider extends AppWidgetProvider {
     static final String TAG = "CalendarAppWidgetProvider";
+    public static final String ACTION_EVENTSCHANGED = "com.android.calendar.event.change";
     static final boolean LOGD = false;
 
     // TODO Move these to Calendar.java
     static final String EXTRA_EVENT_IDS = "com.android.calendar.EXTRA_EVENT_IDS";
+    Intent mIntent;
+    float xdpi;
+    float ydpi;
+    int nWidth;
+    int nHeight;
 
     /**
      * {@inheritDoc}
@@ -57,9 +67,16 @@ public class CalendarAppWidgetProvider extends AppWidgetProvider {
         // Handle calendar-specific updates ourselves because they might be
         // coming in without extras, which AppWidgetProvider then blocks.
         final String action = intent.getAction();
+        mIntent = intent;
+        Resources resources = context.getResources();
+        DisplayMetrics dm = resources.getDisplayMetrics();
+        xdpi = dm.xdpi;
+        ydpi = dm.ydpi;
         if (LOGD)
             Log.d(TAG, "AppWidgetProvider got the intent: " + intent.toString());
-        if (Utils.getWidgetUpdateAction(context).equals(action)) {
+        if (Utils.getWidgetUpdateAction(context).equals(action)
+                || ACTION_EVENTSCHANGED.equals(action)
+                || AppWidgetManager.ACTION_APPWIDGET_OPTIONS_CHANGED.equals(action)) {
             AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(context);
             performUpdate(context, appWidgetManager,
                     appWidgetManager.getAppWidgetIds(getComponentName(context)),
@@ -144,6 +161,48 @@ public class CalendarAppWidgetProvider extends AppWidgetProvider {
             // Attach to list of events
             views.setRemoteAdapter(appWidgetId, R.id.events_list, updateIntent);
             appWidgetManager.notifyAppWidgetViewDataChanged(appWidgetId, R.id.events_list);
+
+            if (mIntent.getAction().equals(ACTION_EVENTSCHANGED)) {
+                int eventTag = mIntent.getIntExtra(CalendarAppWidgetService.EVENT_TAG,
+                        CalendarAppWidgetService.DEFAULT_EVENT);
+                if (eventTag == CalendarAppWidgetService.NO_EVENT) {
+                    views.setViewVisibility(R.id.events_list, View.GONE);
+                    views.setViewVisibility(R.id.event_no, View.VISIBLE);
+                    views.setViewVisibility(R.id.list_bottom,View.GONE);
+                    Intent launchCalendarIntent = CalendarAppWidgetProvider
+                            .getLaunchFillInIntent(context, 0, 0, 0, false);
+                    PendingIntent launchCalendarPendingIntent = PendingIntent.getActivity(
+                            context, 0, launchCalendarIntent, 0);
+                    views.setOnClickPendingIntent(R.id.event_no,launchCalendarPendingIntent);
+                } else if (eventTag == CalendarAppWidgetService.HAVE_EVENT) {
+                    views.setViewVisibility(R.id.events_list, View.VISIBLE);
+                    views.setViewVisibility(R.id.event_no, View.GONE);
+                    views.setViewVisibility(R.id.list_bottom,View.VISIBLE);
+                }
+                appWidgetManager.updateAppWidget(appWidgetId,views);
+            }
+
+            if (mIntent.getAction().equals(AppWidgetManager.ACTION_APPWIDGET_OPTIONS_CHANGED)) {
+                int mSizeChangedAppId = -1;
+                Bundle extras = mIntent.getExtras();
+                if (extras != null && extras.containsKey(AppWidgetManager.EXTRA_APPWIDGET_ID)
+                        && extras.containsKey(AppWidgetManager.EXTRA_APPWIDGET_OPTIONS)) {
+                    mSizeChangedAppId = extras.getInt(AppWidgetManager.EXTRA_APPWIDGET_ID);
+                    Bundle widgetExtras =
+                            extras.getBundle(AppWidgetManager.EXTRA_APPWIDGET_OPTIONS);
+                    if (widgetExtras != null) {
+                        nWidth = widgetExtras.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_WIDTH);
+                        nHeight = widgetExtras.getInt(AppWidgetManager.OPTION_APPWIDGET_MIN_HEIGHT);
+                        if (nWidth <= xdpi && nHeight <= ydpi) {
+                            views.setViewVisibility(R.id.no_events_img, View.GONE);
+                        } else {
+                            views.setViewVisibility(R.id.no_events_img, View.VISIBLE);
+                        }
+                    }
+                }
+                appWidgetManager.updateAppWidget(mSizeChangedAppId, views);
+                return;
+            }
 
 
             // Launch calendar app when the user taps on the header

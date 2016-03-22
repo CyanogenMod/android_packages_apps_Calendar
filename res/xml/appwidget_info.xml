@@ -20,7 +20,7 @@
     android:minResizeWidth="110dip"
     android:minResizeHeight="110dip"
     android:updatePeriodMillis="0"
-    android:previewImage="@drawable/calendar_widget_preview"
+    android:previewImage="@drawable/calendar_event_preview"
     android:initialLayout="@layout/appwidget"
     android:resizeMode="horizontal|vertical"
     android:widgetCategory="keyguard|home_screen">

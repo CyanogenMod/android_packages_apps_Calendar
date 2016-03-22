@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Copyright (c) 2016, The Linux Foundation. All rights reserved.
+
+  Redistribution and use in source and binary forms, with or without
+  modification, are permitted provided that the following conditions are
+  met:
+      * Redistributions of source code must retain the above copyright
+        notice, this list of conditions and the following disclaimer.
+      * Redistributions in binary form must reproduce the above
+        copyright notice, this list of conditions and the following
+        disclaimer in the documentation and/or other materials provided
+        with the distribution.
+      * Neither the name of The Linux Foundation nor the names of its
+        contributors may be used to endorse or promote products derived
+        from this software without specific prior written permission.
+
+  THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+  WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+  ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+  BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+  SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+  BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+  OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+  IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+-->
+
+<vector
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="70dp"
+    android:height="70dp"
+    android:viewportHeight="210.0"
+    android:viewportWidth="210.0">
+    <path
+        android:fillColor="#26000000"
+        android:pathData="M165,8c0,-3.3 -2.7,-6 -6,-6h-14.7c-3.3,0 -6,2.7 -6,6v13.9H165V8zM193,
+        21.9h-28v13.9c0,3.3 -2.7,6 -6,6h-14.7c-3.3,0 -6,-2.7 -6,-6V21.9h-60v13.9c0,3.3 -2.7,
+        6 -6,6H57.7c-3.3,0 -6,-2.7 -6,-6V21.9H17c-6.6,0 -12,5.4 -12,12V196c0,6.6 5.4,12 12,
+        12h176c6.6,0 12,-5.4 12,-12V33.9C205,27.3 199.6,21.9 193,21.9zM78.3,8c0,-3.3 -2.7,
+        -6 -6,-6H57.7c-3.3,0 -6,2.7 -6,6v13.9h26.7V8z"/>
+</vector>

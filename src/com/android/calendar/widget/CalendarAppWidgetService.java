@@ -53,6 +53,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class CalendarAppWidgetService extends RemoteViewsService {
     private static final String TAG = "CalendarWidget";
 
+    public static final int DEFAULT_EVENT = 0;
+    public static final int NO_EVENT = 0;
+    public static final int HAVE_EVENT = 1;
+    public static final String EVENT_TAG = "event";
     static final int EVENT_MIN_COUNT = 20;
     static final int EVENT_MAX_COUNT = 100;
     // Minimum delay between queries on the database for widget updates in ms
@@ -170,8 +174,8 @@ public class CalendarAppWidgetService extends RemoteViewsService {
             mAppWidgetId = intent.getIntExtra(
                     AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
 
-            mDeclinedColor = mResources.getColor(R.color.appwidget_item_declined_color);
-            mStandardColor = mResources.getColor(R.color.appwidget_item_standard_color);
+            mDeclinedColor = mResources.getColor(R.color.event_content_text);
+            mStandardColor = mResources.getColor(R.color.event_content_title);
             mAllDayColor = mResources.getColor(R.color.appwidget_item_allday_color);
         }
 
@@ -220,13 +224,8 @@ public class CalendarAppWidgetService extends RemoteViewsService {
                 return views;
 
             }
-            if (mModel.mEventInfos.isEmpty() || mModel.mRowInfos.isEmpty()) {
-                RemoteViews views = new RemoteViews(mContext.getPackageName(),
-                        R.layout.appwidget_no_events);
-                final Intent intent = CalendarAppWidgetProvider.getLaunchFillInIntent(mContext, 0,
-                        0, 0, false);
-                views.setOnClickFillInIntent(R.id.appwidget_no_events, intent);
-                return views;
+            if (mModel.mRowInfos.size() == 0) {
+                return null;
             }
 
             RowInfo rowInfo = mModel.mRowInfos.get(position);
@@ -234,6 +233,12 @@ public class CalendarAppWidgetService extends RemoteViewsService {
                 RemoteViews views = new RemoteViews(mContext.getPackageName(),
                         R.layout.appwidget_day);
                 DayInfo dayInfo = mModel.mDayInfos.get(rowInfo.mIndex);
+                // Don't display the first list item line
+                if (position == 0) {
+                    views.setViewVisibility(R.id.list_line, View.GONE);
+                } else {
+                    views.setViewVisibility(R.id.list_line, View.VISIBLE);
+                }
                 updateTextView(views, R.id.date, View.VISIBLE, dayInfo.mDayLabel);
                 return views;
             } else {
@@ -295,8 +300,8 @@ public class CalendarAppWidgetService extends RemoteViewsService {
                             Utils.getDeclinedColorFromColor(displayColor));
                 } else {
                     views.setInt(R.id.title, "setTextColor", mStandardColor);
-                    views.setInt(R.id.when, "setTextColor", mStandardColor);
-                    views.setInt(R.id.where, "setTextColor", mStandardColor);
+                    views.setInt(R.id.when, "setTextColor", mDeclinedColor);
+                    views.setInt(R.id.where, "setTextColor", mDeclinedColor);
                     if (selfAttendeeStatus == Attendees.ATTENDEE_STATUS_INVITED) {
                         views.setInt(R.id.agenda_item_color, "setImageResource",
                                 R.drawable.widget_chip_not_responded_bg);
@@ -496,6 +501,13 @@ public class CalendarAppWidgetService extends RemoteViewsService {
                 MatrixCursor matrixCursor = Utils.matrixCursorFromCursor(cursor);
                 try {
                     mModel = buildAppWidgetModel(mContext, matrixCursor, tz);
+                    Intent intent = new Intent(CalendarAppWidgetProvider.ACTION_EVENTSCHANGED);
+                    if (mModel.mEventInfos.isEmpty() || mModel.mRowInfos.isEmpty()) {
+                        intent.putExtra(EVENT_TAG, NO_EVENT);
+                    } else {
+                        intent.putExtra(EVENT_TAG, HAVE_EVENT);
+                    }
+                    mContext.sendBroadcast(intent);
                 } finally {
                     if (matrixCursor != null) {
                         matrixCursor.close();

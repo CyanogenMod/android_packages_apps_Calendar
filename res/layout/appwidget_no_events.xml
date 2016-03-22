@@ -14,25 +14,37 @@
      limitations under the License.
 -->
 
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/appwidget_no_events"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:addStatesFromChildren="true">
+    android:background="@drawable/appwidget_list_bg">
 
     <!-- No events -->
-    <TextView
-        android:id="@+id/no_events"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="10dip"
-        android:padding="7dip"
-        android:gravity="center"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:textColor="@color/appwidget_no_events"
-        android:text="@string/gadget_no_events" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
 
-</LinearLayout>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/calendar2"
+            android:id="@+id/no_events_img"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/no_events"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/appwidget_no_events"
+            android:text="@string/gadget_no_events"
+            android:layout_below="@+id/no_events_img"
+            android:layout_marginTop="10dp"/>
+    </RelativeLayout>
+
+</RelativeLayout>

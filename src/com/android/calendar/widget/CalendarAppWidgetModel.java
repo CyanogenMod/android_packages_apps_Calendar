@@ -331,14 +331,11 @@ class CalendarAppWidgetModel {
         int count = 0;
         for (LinkedList<RowInfo> bucket : mBuckets) {
             if (!bucket.isEmpty()) {
-                // We don't show day header in today
-                if (day != mTodayJulianDay) {
-                    final DayInfo dayInfo = populateDayInfo(day, recycle);
-                    // Add the day header
-                    final int dayIndex = mDayInfos.size();
-                    mDayInfos.add(dayInfo);
-                    mRowInfos.add(new RowInfo(RowInfo.TYPE_DAY, dayIndex));
-                }
+                final DayInfo dayInfo = populateDayInfo(day, recycle);
+                // Add the day header
+                final int dayIndex = mDayInfos.size();
+                mDayInfos.add(dayInfo);
+                mRowInfos.add(new RowInfo(RowInfo.TYPE_DAY, dayIndex));
 
                 // Add the event row infos
                 mRowInfos.addAll(bucket);
@@ -358,7 +355,7 @@ class CalendarAppWidgetModel {
         // Compute a human-readable string for the start time of the event
         StringBuilder whenString = new StringBuilder();
         int visibWhen;
-        int flags = DateUtils.FORMAT_ABBREV_ALL;
+        int flags = DateUtils.FORMAT_SHOW_TIME;
         visibWhen = View.VISIBLE;
         if (allDay) {
             flags |= DateUtils.FORMAT_SHOW_DATE;
@@ -409,7 +406,11 @@ class CalendarAppWidgetModel {
         int flags = DateUtils.FORMAT_ABBREV_ALL | DateUtils.FORMAT_SHOW_DATE;
 
         String label;
-        if (julianDay == mTodayJulianDay + 1) {
+        if (julianDay == mTodayJulianDay){
+            label = mContext.getString(R.string.today,
+            Utils.formatDateRange(mContext, millis, millis, flags).toString());
+        }
+        else if (julianDay == mTodayJulianDay + 1) {
             label = mContext.getString(R.string.agenda_tomorrow,
                     Utils.formatDateRange(mContext, millis, millis, flags).toString());
         } else {
