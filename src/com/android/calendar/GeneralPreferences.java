@@ -19,11 +19,14 @@ package com.android.calendar;
 import android.app.Activity;
 import android.app.FragmentManager;
 import android.app.backup.BackupManager;
+import android.content.ContentResolver;
+import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
+import android.database.Cursor;
 import android.media.Ringtone;
 import android.media.RingtoneManager;
 import android.net.Uri;
@@ -115,6 +118,10 @@ public class GeneralPreferences extends PreferenceFragment implements
     public static final boolean DEFAULT_SHOW_WEEK_NUM = false;
     // This should match the XML file.
     public static final String DEFAULT_RINGTONE = "content://settings/system/notification_sound";
+
+    private static final Uri START_DAY_URI = Uri
+            .parse("content://com.android.calendar/week_start_day");
+    private static final String START_DAY = "start_day";
 
     CheckBoxPreference mAlert;
     CheckBoxPreference mVibrate;
@@ -321,6 +328,7 @@ public class GeneralPreferences extends PreferenceFragment implements
         } else if (preference == mWeekStart) {
             mWeekStart.setValue((String) newValue);
             mWeekStart.setSummary(mWeekStart.getEntry());
+            updateWeekStartDayDb((String) newValue);
         } else if (preference == mDefaultReminder) {
             mDefaultReminder.setValue((String) newValue);
             mDefaultReminder.setSummary(mDefaultReminder.getEntry());
@@ -350,6 +358,18 @@ public class GeneralPreferences extends PreferenceFragment implements
             return ring.getTitle(context);
         }
         return null;
+    }
+
+    public void updateWeekStartDayDb(String value) {
+        ContentResolver contentResolver = getActivity().getContentResolver();
+        Cursor cursor = contentResolver.query(START_DAY_URI, null, null, null, null);
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(START_DAY, value);
+        if (cursor != null && cursor.moveToFirst()) {
+            contentResolver.update(START_DAY_URI, contentValues, null, null);
+        } else {
+            contentResolver.insert(START_DAY_URI, contentValues);
+        }
     }
 
     /**

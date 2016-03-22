@@ -105,6 +105,15 @@ public class LunarUtils {
         return res;
     }
 
+    public static boolean isChineseFestival(int year, int month, int day) {
+        String key = getKey(year, month, day);
+        LunarInfo info = sLunarInfos.get(key);
+        if (info == null) {
+            return false;
+        }
+        return !TextUtils.isEmpty(info._festival1);
+    }
+
     private static String getKey(int year, int month, int day) {
         return year + "-" + month + "-" + day;
     }
