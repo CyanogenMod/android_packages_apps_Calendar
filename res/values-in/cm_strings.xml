@@ -16,43 +16,15 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="preferences_alerts_custom_snooze_delay_title">Minta pengingat jeda penundaan</string>
   <!-- Summaries for using custom snooze delays -->
-  <string name="preferences_alerts_custom_snooze_delay_summary_on">Minta jeda penundaan setiap kali menunda pengingat</string>
-  <string name="preferences_alerts_custom_snooze_delay_summary_off">Selalu gunakan jeda penundaan baku</string>
   <!-- Title of custom snooze delay dialog -->
-  <string name="snooze_delay_dialog_title">Atur jeda penundaan</string>
   <!-- List item label for setting the default snooze delay -->
-  <string name="preferences_default_snooze_delay_title">Waktu jeda tunda default</string>
   <!-- Title of dialog for setting the default snooze delay -->
-  <string name="preferences_default_snooze_delay_dialog">Jeda tunda default</string>
   <!-- Default value for the default snooze delay (in minutes) -->
   <!-- Label values for the default start page preference. -->
-  <string name="default_start_title">Tampilan default</string>
-  <string name="default_start_last">Tampilan yang digunakan sebelumnya</string>
   <!-- Delete Events related -->
-  <string name="events_delete">Hapus acara</string>
-  <string name="action_select_all">Pilih semua</string>
-  <string name="action_select_none">Hapus centang semua</string>
-  <string name="action_delete">Selesai</string>
-  <string name="all_events">Semua acara</string>
-  <string name="no_events">Tidak ada acara yang tersedia</string>
-  <string name="evt_del_dlg_title">Hapus acara?</string>
-  <string name="evt_del_dlg_msg_selected">Acara yang dipilih akan dihapus</string>
-  <string name="evt_del_dlg_msg_all">Semua acara akan dihapus</string>
-  <string name="no_events_selected">Tidak ada acara yang dipilih</string>
   <!-- This is a label on a menu item. Pressing this menu item allows the
          user to go to the calendars to display [CHAR LIMIT=20] -->
-  <string name="go_to">Pergi ke</string>
   <!-- Sharing calendar event -->
-  <string name="cal_share_intent_title">Kirim acara ke:</string>
-  <string name="cal_export_event_sdcard_title">Ekspor ke kartu SD</string>
-  <string name="cal_export_succ_msg">Acara berhasil diekspor: %1s</string>
-  <string name="cal_import_menu_title">Impor acara</string>
-  <string name="cal_nothing_to_import">Tidak ada apapun untuk di impor</string>
-  <string name="cal_import_error_msg">Mengimpor ke kalender gagal</string>
-  <string name="cal_pick_ics">Pilih berkas yang akan diimpor</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
-  <string name="error_generating_ics">Masalah ditemukan saat berbagi acara</string>
-  <string name="share_label">Bagikan</string>
 </resources>
