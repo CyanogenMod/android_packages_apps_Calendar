@@ -16,7 +16,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="preferences_alerts_custom_snooze_delay_title">Perguntar por lembretes tempo da soneca</string>
+  <string name="preferences_alerts_custom_snooze_delay_title">Perguntar tempo da soneca para lembretes</string>
   <!-- Summaries for using custom snooze delays -->
   <string name="preferences_alerts_custom_snooze_delay_summary_on">Perguntar pelo tempo da soneca sempre que adiar lembretes</string>
   <string name="preferences_alerts_custom_snooze_delay_summary_off">Sempre usar atraso padrão da soneca</string>
@@ -47,11 +47,11 @@
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Enviar evento para:</string>
   <string name="cal_export_event_sdcard_title">Exportar para o cartão SD</string>
-  <string name="cal_export_succ_msg">Evento exportado com êxito: %1s</string>
+  <string name="cal_export_succ_msg">Evento exportado: %1s</string>
   <string name="cal_import_menu_title">Importar evento</string>
   <string name="cal_nothing_to_import">Nada a importar</string>
-  <string name="cal_import_error_msg">Importação para o calendário falhou</string>
-  <string name="cal_pick_ics">Escolher arquivo para importar</string>
+  <string name="cal_import_error_msg">Falha ao importar para calendário</string>
+  <string name="cal_pick_ics">Escolha arquivo para importar</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Problemas encontrados ao compartilhar o evento</string>
   <string name="share_label">Compartilhar</string>
