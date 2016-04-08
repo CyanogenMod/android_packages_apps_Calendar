@@ -124,12 +124,6 @@ public class AgendaWindowAdapter extends BaseAdapter
             Instances.EVENT_TIMEZONE, // 16
     };
 
-    static {
-        if (!Utils.isJellybeanOrLater()) {
-            PROJECTION[INDEX_COLOR] = Instances.CALENDAR_COLOR;
-        }
-    }
-
     // Listview may have a bug where the index/position is not consistent when there's a header.
     // position == positionInListView - OFF_BY_ONE_BUG
     // TODO Need to look into this.

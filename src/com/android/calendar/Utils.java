@@ -200,21 +200,6 @@ public class Utils {
     private static final int NANP_MIN_DIGITS = 7;
     private static final int NANP_MAX_DIGITS = 11;
 
-
-    /**
-     * Returns whether the SDK is the Jellybean release or later.
-     */
-    public static boolean isJellybeanOrLater() {
-      return Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN;
-    }
-
-    /**
-     * Returns whether the SDK is the KeyLimePie release or later.
-     */
-    public static boolean isKeyLimePieOrLater() {
-      return Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT;
-    }
-
     public static int getViewTypeFromIntentAndSharedPref(Activity activity) {
         Intent intent = activity.getIntent();
         Bundle extras = intent.getExtras();
@@ -850,10 +835,6 @@ public class Utils {
      * @param color
      */
     public static int getDisplayColorFromColor(int color) {
-        if (!isJellybeanOrLater()) {
-            return color;
-        }
-
         float[] hsv = new float[3];
         Color.colorToHSV(color, hsv);
         hsv[1] = Math.min(hsv[1] * SATURATION_ADJUST, 1.0f);
