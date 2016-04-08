@@ -89,12 +89,6 @@ public class CalendarAppWidgetService extends RemoteViewsService {
     static final int INDEX_END_DAY = 7;
     static final int INDEX_COLOR = 8;
     static final int INDEX_SELF_ATTENDEE_STATUS = 9;
-
-    static {
-        if (!Utils.isJellybeanOrLater()) {
-            EVENT_PROJECTION[INDEX_COLOR] = Instances.CALENDAR_COLOR;
-        }
-    }
     static final int MAX_DAYS = 7;
 
     private static final long SEARCH_DURATION = MAX_DAYS * DateUtils.DAY_IN_MILLIS;

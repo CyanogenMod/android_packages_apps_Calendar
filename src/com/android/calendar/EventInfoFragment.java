@@ -261,16 +261,6 @@ public class EventInfoFragment extends DialogFragment implements OnCheckedChange
     private static final int ATTENDEES_INDEX_IDENTITY = 5;
     private static final int ATTENDEES_INDEX_ID_NAMESPACE = 6;
 
-    static {
-        if (!Utils.isJellybeanOrLater()) {
-            EVENT_PROJECTION[EVENT_INDEX_CUSTOM_APP_PACKAGE] = Events._ID; // dummy value
-            EVENT_PROJECTION[EVENT_INDEX_CUSTOM_APP_URI] = Events._ID; // dummy value
-
-            ATTENDEES_PROJECTION[ATTENDEES_INDEX_IDENTITY] = Attendees._ID; // dummy value
-            ATTENDEES_PROJECTION[ATTENDEES_INDEX_ID_NAMESPACE] = Attendees._ID; // dummy value
-        }
-    }
-
     private static final String ATTENDEES_WHERE = Attendees.EVENT_ID + "=?";
 
     private static final String ATTENDEES_SORT_ORDER = Attendees.ATTENDEE_NAME + " ASC, "
@@ -1170,10 +1160,8 @@ public class EventInfoFragment extends DialogFragment implements OnCheckedChange
                         String identity = null;
                         String idNamespace = null;
 
-                        if (Utils.isJellybeanOrLater()) {
-                            identity = mAttendeesCursor.getString(ATTENDEES_INDEX_IDENTITY);
-                            idNamespace = mAttendeesCursor.getString(ATTENDEES_INDEX_ID_NAMESPACE);
-                        }
+                        identity = mAttendeesCursor.getString(ATTENDEES_INDEX_IDENTITY);
+                        idNamespace = mAttendeesCursor.getString(ATTENDEES_INDEX_ID_NAMESPACE);
 
                         // Don't show your own status in the list because:
                         //  1) it doesn't make sense for event without other guests.
@@ -1829,9 +1817,7 @@ public class EventInfoFragment extends DialogFragment implements OnCheckedChange
         }
 
         // Launch Custom App
-        if (Utils.isJellybeanOrLater()) {
-            updateCustomAppButton();
-        }
+        updateCustomAppButton();
     }
 
     private void updateCustomAppButton() {

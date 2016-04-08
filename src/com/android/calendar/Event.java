@@ -108,12 +108,6 @@ public class Event implements Cloneable {
     private static final int PROJECTION_GUESTS_CAN_INVITE_OTHERS_INDEX = 18;
     private static final int PROJECTION_DISPLAY_AS_ALLDAY = 19;
 
-    static {
-        if (!Utils.isJellybeanOrLater()) {
-            EVENT_PROJECTION[PROJECTION_COLOR_INDEX] = Instances.CALENDAR_COLOR;
-        }
-    }
-
     private static String mNoTitleString;
     private static int mNoColorColor;
 
