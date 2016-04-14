@@ -22,11 +22,11 @@
             android:title="@string/default_start_title"
             android:entries="@array/default_start_entries"
             android:entryValues="@array/default_start_values" />
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="preferences_hide_declined"
             android:defaultValue="false"
             android:title="@string/preferences_hide_declined_title" />
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="preferences_show_week_num"
             android:defaultValue="false"
             android:title="@string/preferences_show_week_num_title" />
@@ -37,7 +37,7 @@
             android:entries="@array/preferences_week_start_day_labels"
             android:entryValues="@array/preferences_week_start_day_values"
             android:dialogTitle="@string/preferences_week_start_day_dialog" />
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="preferences_home_tz_enabled"
             android:defaultValue="false"
             android:title="@string/preferences_use_home_tz_title"
@@ -55,7 +55,7 @@
     <PreferenceCategory
         android:key="preferences_alerts_category"
         android:title="@string/preferences_reminder_title">
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="preferences_alerts"
             android:defaultValue="true"
             android:title="@string/preferences_alerts_title" />
@@ -67,19 +67,19 @@
             android:ringtoneType="notification"
             android:defaultValue="content://settings/system/notification_sound" />
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:layout="?android:attr/preferenceLayoutChild"
             android:key="preferences_alerts_vibrate"
             android:title="@string/preferences_alerts_vibrateWhen_title"
             android:defaultValue="false" />
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:layout="?android:attr/preferenceLayoutChild"
             android:key="preferences_alerts_popup"
             android:defaultValue="false"
             android:title="@string/preferences_alerts_popup_title" />
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="preferences_custom_snooze_delay"
             android:defaultValue="false"
             android:title="@string/preferences_alerts_custom_snooze_delay_title"

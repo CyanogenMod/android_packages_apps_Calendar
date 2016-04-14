@@ -1,5 +1,6 @@
 /*
  * Copyright (C) 2011 The Android Open Source Project
+ * Copyright (C) 2015 The SudaMod Project 
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,13 +18,11 @@
 package com.android.calendar;
 
 import com.android.calendar.CalendarController.ViewType;
-import com.android.calendar.LunarUtils.LunarInfoLoader;
 
 import android.content.Context;
-import android.content.Loader;
-import android.content.Loader.OnLoadCompleteListener;
+import android.suda.lunar.Lunar;
+import android.suda.utils.SudaUtils;
 import android.os.Handler;
-import android.text.TextUtils;
 import android.text.format.DateUtils;
 import android.text.format.Time;
 import android.view.LayoutInflater;
@@ -33,12 +32,15 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Formatter;
+import java.util.List;
 import java.util.Locale;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.TimeZone;
-
 
 /*
  * The MenuSpinnerAdapter defines the look of the ActionBar's pull down menu
@@ -84,20 +86,11 @@ public class CalendarViewAdapter extends BaseAdapter {
     private Handler mMidnightHandler = null; // Used to run a time update every midnight
     private final boolean mShowDate;   // Spinner mode indicator (view name or view name with date)
 
-    private LunarInfoLoader mLunarLoader = null;
-
     // Updates time specific variables (time-zone, today's Julian day).
     private final Runnable mTimeUpdater = new Runnable() {
         @Override
         public void run() {
             refresh(mContext);
-        }
-    };
-
-    private OnLoadCompleteListener<Void> mLunarLoaderListener = new OnLoadCompleteListener<Void>() {
-        @Override
-        public void onLoadComplete(Loader<Void> loader, Void data) {
-            notifyDataSetChanged();
         }
     };
 
@@ -119,19 +112,8 @@ public class CalendarViewAdapter extends BaseAdapter {
         if (showDate) {
             refresh(context);
         }
-
-        mLunarLoader = new LunarInfoLoader(mContext);
-        mLunarLoader.registerListener(0, mLunarLoaderListener);
     }
 
-    @Override
-    protected void finalize() throws Throwable {
-        LunarUtils.clearInfo();
-        if (mLunarLoader != null && mLunarLoaderListener != null) {
-            mLunarLoader.unregisterListener(mLunarLoaderListener);
-        }
-        super.finalize();
-    }
 
     // Sets the time zone and today's Julian day to be used by the adapter.
     // Also, notify listener on the change and resets the midnight update thread.
@@ -206,57 +188,78 @@ public class CalendarViewAdapter extends BaseAdapter {
                 v = convertView;
             }
             TextView weekDay = (TextView) v.findViewById(R.id.top_button_weekday);
-            TextView lunarInfo = (TextView) v.findViewById(R.id.top_button_lunar);
             TextView date = (TextView) v.findViewById(R.id.top_button_date);
 
-            switch (mCurrentMainView) {
+            if (SudaUtils.isSupportLanguage(false)) {
+                switch (mCurrentMainView) {
                 case ViewType.DAY:
                     weekDay.setVisibility(View.VISIBLE);
-                    weekDay.setText(buildDayOfWeek());
-                    if (LunarUtils.showLunar(mContext)) {
-                        lunarInfo.setVisibility(View.VISIBLE);
-                        Time time = new Time(mTimeZone);
-                        time.set(mMilliTime);
-                        int flag = LunarUtils.FORMAT_LUNAR_LONG | LunarUtils.FORMAT_MULTI_FESTIVAL;
-                        String lunar = LunarUtils.get(mContext, time.year, time.month,
-                                time.monthDay, flag, false, null);
-                        if (!TextUtils.isEmpty(lunar)) {
-                            lunarInfo.setText(lunar);
-                        }
-                    } else {
-                        lunarInfo.setVisibility(View.GONE);
-                    }
+                    weekDay.setText(buildDayOfWeek() + buildLunarDate(true));
                     date.setText(buildFullDate());
                     break;
                 case ViewType.WEEK:
-                    lunarInfo.setVisibility(View.GONE);
                     if (Utils.getShowWeekNumber(mContext)) {
                         weekDay.setVisibility(View.VISIBLE);
                         weekDay.setText(buildWeekNum());
                     } else {
-                        weekDay.setVisibility(View.GONE);
+                        weekDay.setVisibility(View.VISIBLE);
+                        weekDay.setText(buildDayOfWeek() + buildLunarDate(false));
                     }
                     date.setText(buildMonthYearDate());
                     break;
                 case ViewType.MONTH:
-                    weekDay.setVisibility(View.GONE);
-                    lunarInfo.setVisibility(View.GONE);
+                    weekDay.setVisibility(View.VISIBLE);
+                    weekDay.setText(buildDayOfWeek() + buildLunarDate(false));
                     date.setText(buildMonthYearDate());
                     break;
                 case ViewType.AGENDA:
                     weekDay.setVisibility(View.VISIBLE);
-                    lunarInfo.setVisibility(View.GONE);
-                    weekDay.setText(buildDayOfWeek());
+                    weekDay.setText(buildDayOfWeek() + buildLunarDate(true));
                     date.setText(buildFullDate());
                     break;
                 case ViewType.YEAR:
                     weekDay.setVisibility(View.GONE);
-                    lunarInfo.setVisibility(View.GONE);
                     date.setText(buildYearDate());
                     break;
                 default:
                     v = null;
                     break;
+                }
+            } else {
+                switch (mCurrentMainView) {
+                    case ViewType.DAY:
+                        weekDay.setVisibility(View.VISIBLE);
+                        weekDay.setText(buildDayOfWeek());
+                        date.setText(buildFullDate());
+                        break;
+                    case ViewType.WEEK:
+                        if (Utils.getShowWeekNumber(mContext)) {
+                            weekDay.setVisibility(View.VISIBLE);
+                            weekDay.setText(buildWeekNum());
+                        } else {
+                            weekDay.setVisibility(View.VISIBLE);
+                            weekDay.setText(buildDayOfWeek());
+                        }
+                        date.setText(buildMonthYearDate());
+                        break;
+                    case ViewType.MONTH:
+                        weekDay.setVisibility(View.VISIBLE);
+                        weekDay.setText(buildDayOfWeek());
+                        date.setText(buildMonthYearDate());
+                        break;
+                    case ViewType.AGENDA:
+                        weekDay.setVisibility(View.VISIBLE);
+                        weekDay.setText(buildDayOfWeek());
+                        date.setText(buildFullDate());
+                        break;
+                    case ViewType.YEAR:
+                        weekDay.setVisibility(View.GONE);
+                        date.setText(buildYearDate());
+                        break;
+                    default:
+                        v = null;
+                        break;
+                }
             }
         } else {
             if (convertView == null || ((Integer) convertView.getTag()).intValue()
@@ -364,9 +367,6 @@ public class CalendarViewAdapter extends BaseAdapter {
     // Used when the user selects a new day/week/month to watch
     public void setTime(long time) {
         mMilliTime = time;
-        if (LunarUtils.showLunar(mContext)) {
-            buildLunarInfo();
-        }
         notifyDataSetChanged();
     }
 
@@ -416,6 +416,21 @@ public class CalendarViewAdapter extends BaseAdapter {
         SimpleDateFormat yearFormat = new SimpleDateFormat("yyyy");
         yearFormat.setTimeZone(TimeZone.getTimeZone(mTimeZone));
         return yearFormat.format(new Date(mMilliTime));
+    }
+
+    private String buildLunarDate(boolean isFull) {
+        List<String> list = new ArrayList<String>();
+        Calendar cal = Calendar.getInstance();
+        String date = DateUtils.formatDateRange(mContext, mFormatter, mMilliTime, mMilliTime,
+                DateUtils.FORMAT_SHOW_DATE | DateUtils.FORMAT_SHOW_YEAR, mTimeZone).toString();
+        Pattern p = Pattern.compile("[\\u4e00-\\u9fa5]+|\\d+");
+        Matcher m = p.matcher(date);
+        while(m.find()) {
+            list.add(m.group());
+         }
+        cal.set(Integer.parseInt(list.get(1)), Integer.parseInt(list.get(3)) - 1,Integer.parseInt(list.get(5)));
+        Lunar lunar = new Lunar(cal);
+        return isFull == true ? "   "+lunar.toString():"   "+lunar.toString().substring(0, 4);
     }
 
     private String buildMonthYearDate() {
@@ -488,31 +503,6 @@ public class CalendarViewAdapter extends BaseAdapter {
     private String buildWeekNum() {
         int week = Utils.getWeekNumberFromTime(mMilliTime, mContext);
         return mContext.getResources().getQuantityString(R.plurals.weekN, week, week);
-    }
-
-    private void buildLunarInfo() {
-        if (mLunarLoader == null || TextUtils.isEmpty(mTimeZone)) return;
-
-        Time time = new Time(mTimeZone);
-        if (time != null) {
-            // The the current month.
-            time.set(mMilliTime);
-
-            // As the first day of previous month;
-            Calendar from = Calendar.getInstance();
-            from.set(time.year, time.month - 1, 1);
-
-            // Get the last day of next month.
-            Calendar to = Calendar.getInstance();
-            to.set(Calendar.YEAR, time.year);
-            to.set(Calendar.MONTH, time.month + 1);
-            to.set(Calendar.DAY_OF_MONTH, to.getMaximum(Calendar.DAY_OF_MONTH));
-
-            // Call LunarUtils to load the info.
-            mLunarLoader.load(from.get(Calendar.YEAR), from.get(Calendar.MONTH),
-                    from.get(Calendar.DAY_OF_MONTH), to.get(Calendar.YEAR), to.get(Calendar.MONTH),
-                    to.get(Calendar.DAY_OF_MONTH));
-        }
     }
 
 }

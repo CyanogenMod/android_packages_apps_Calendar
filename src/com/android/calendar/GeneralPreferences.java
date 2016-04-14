@@ -29,7 +29,7 @@ import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Vibrator;
-import android.preference.CheckBoxPreference;
+import android.preference.SwitchPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -117,18 +117,18 @@ public class GeneralPreferences extends PreferenceFragment implements
 
     // Default preference values
     public static final String DEFAULT_DEFAULT_START = "-2";
-    public static final int DEFAULT_START_VIEW = CalendarController.ViewType.WEEK;
+    public static final int DEFAULT_START_VIEW = CalendarController.ViewType.MONTH;
     public static final int DEFAULT_DETAILED_VIEW = CalendarController.ViewType.DAY;
     public static final boolean DEFAULT_SHOW_WEEK_NUM = false;
     // This should match the XML file.
     public static final String DEFAULT_RINGTONE = "content://settings/system/notification_sound";
 
-    CheckBoxPreference mAlert;
-    CheckBoxPreference mVibrate;
+    SwitchPreference mAlert;
+    SwitchPreference mVibrate;
     RingtonePreference mRingtone;
-    CheckBoxPreference mPopup;
-    CheckBoxPreference mUseHomeTZ;
-    CheckBoxPreference mHideDeclined;
+    SwitchPreference mPopup;
+    SwitchPreference mUseHomeTZ;
+    SwitchPreference mHideDeclined;
     Preference mHomeTZ;
     TimeZonePickerUtils mTzPickerUtils;
     ListPreference mWeekStart;
@@ -165,8 +165,8 @@ public class GeneralPreferences extends PreferenceFragment implements
         addPreferencesFromResource(R.xml.general_preferences);
 
         final PreferenceScreen preferenceScreen = getPreferenceScreen();
-        mAlert = (CheckBoxPreference) preferenceScreen.findPreference(KEY_ALERTS);
-        mVibrate = (CheckBoxPreference) preferenceScreen.findPreference(KEY_ALERTS_VIBRATE);
+        mAlert = (SwitchPreference) preferenceScreen.findPreference(KEY_ALERTS);
+        mVibrate = (SwitchPreference) preferenceScreen.findPreference(KEY_ALERTS_VIBRATE);
         Vibrator vibrator = (Vibrator) activity.getSystemService(Context.VIBRATOR_SERVICE);
         if (vibrator == null || !vibrator.hasVibrator()) {
             PreferenceCategory mAlertGroup = (PreferenceCategory) preferenceScreen
@@ -185,9 +185,9 @@ public class GeneralPreferences extends PreferenceFragment implements
         String ringtoneDisplayString = getRingtoneTitleFromUri(activity, ringToneUri);
         mRingtone.setSummary(ringtoneDisplayString == null ? "" : ringtoneDisplayString);
 
-        mPopup = (CheckBoxPreference) preferenceScreen.findPreference(KEY_ALERTS_POPUP);
-        mUseHomeTZ = (CheckBoxPreference) preferenceScreen.findPreference(KEY_HOME_TZ_ENABLED);
-        mHideDeclined = (CheckBoxPreference) preferenceScreen.findPreference(KEY_HIDE_DECLINED);
+        mPopup = (SwitchPreference) preferenceScreen.findPreference(KEY_ALERTS_POPUP);
+        mUseHomeTZ = (SwitchPreference) preferenceScreen.findPreference(KEY_HOME_TZ_ENABLED);
+        mHideDeclined = (SwitchPreference) preferenceScreen.findPreference(KEY_HIDE_DECLINED);
         mWeekStart = (ListPreference) preferenceScreen.findPreference(KEY_WEEK_START_DAY);
         mDefaultReminder = (ListPreference) preferenceScreen.findPreference(KEY_DEFAULT_REMINDER);
         mHomeTZ = preferenceScreen.findPreference(KEY_HOME_TZ);
