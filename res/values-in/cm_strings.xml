@@ -16,19 +16,19 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="preferences_alerts_custom_snooze_delay_title">Minta pengingat jeda penundaan</string>
+  <string name="preferences_alerts_custom_snooze_delay_title">Minta jeda tunda pengingat</string>
   <!-- Summaries for using custom snooze delays -->
-  <string name="preferences_alerts_custom_snooze_delay_summary_on">Minta jeda penundaan setiap kali menunda pengingat</string>
-  <string name="preferences_alerts_custom_snooze_delay_summary_off">Selalu gunakan jeda penundaan baku</string>
+  <string name="preferences_alerts_custom_snooze_delay_summary_on">Minta jeda tunda setiap kali menunda pengingat</string>
+  <string name="preferences_alerts_custom_snooze_delay_summary_off">Selalu gunakan jeda tunda baku</string>
   <!-- Title of custom snooze delay dialog -->
-  <string name="snooze_delay_dialog_title">Atur jeda penundaan</string>
+  <string name="snooze_delay_dialog_title">Atur jeda tunda</string>
   <!-- List item label for setting the default snooze delay -->
-  <string name="preferences_default_snooze_delay_title">Waktu jeda tunda default</string>
+  <string name="preferences_default_snooze_delay_title">Waktu jeda tunda baku</string>
   <!-- Title of dialog for setting the default snooze delay -->
-  <string name="preferences_default_snooze_delay_dialog">Jeda tunda default</string>
+  <string name="preferences_default_snooze_delay_dialog">Jeda tunda baku</string>
   <!-- Default value for the default snooze delay (in minutes) -->
   <!-- Label values for the default start page preference. -->
-  <string name="default_start_title">Tampilan default</string>
+  <string name="default_start_title">Tampilan baku</string>
   <string name="default_start_last">Tampilan yang digunakan sebelumnya</string>
   <!-- Delete Events related -->
   <string name="events_delete">Hapus acara</string>
