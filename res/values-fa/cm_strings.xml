@@ -17,13 +17,20 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="preferences_alerts_custom_snooze_delay_title">درخواست مدت تعویق یادآوری</string>
+  <!-- Summaries for using custom snooze delays -->
   <string name="preferences_alerts_custom_snooze_delay_summary_on">درخواست مدت تعویق هنگام تعویق یادآوری‌ها</string>
   <string name="preferences_alerts_custom_snooze_delay_summary_off">استفاده‌ همیشگی از مدت تعویق پیش‌فرض</string>
+  <!-- Title of custom snooze delay dialog -->
   <string name="snooze_delay_dialog_title">تنظیم مدت تعویق</string>
+  <!-- List item label for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_title">زمان پیش‌فرض برای مدت تعویق</string>
+  <!-- Title of dialog for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_dialog">مدت تعویق پیش‌فرض</string>
+  <!-- Default value for the default snooze delay (in minutes) -->
+  <!-- Label values for the default start page preference. -->
   <string name="default_start_title">نمای پیش فرض</string>
   <string name="default_start_last">نمای قبلا استفاده شده</string>
+  <!-- Delete Events related -->
   <string name="events_delete">حذف رویدادها</string>
   <string name="action_select_all">انتخاب همه</string>
   <string name="action_select_none">انتخاب نکردن همه</string>
@@ -34,7 +41,10 @@
   <string name="evt_del_dlg_msg_selected">رویدادهای انتخاب شده حذف خواهند شد</string>
   <string name="evt_del_dlg_msg_all">تمام رویدادها حذف خواهند شد</string>
   <string name="no_events_selected">هیچ رویدادی انتخاب نشده است</string>
+  <!-- This is a label on a menu item. Pressing this menu item allows the
+         user to go to the calendars to display [CHAR LIMIT=20] -->
   <string name="go_to">برو به</string>
+  <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">ارسال رویداد به:</string>
   <string name="cal_export_event_sdcard_title">صدور به کارت حافظه</string>
   <string name="cal_export_succ_msg">رویداد با موفقیت صادر شد: %1s</string>
@@ -42,6 +52,7 @@
   <string name="cal_nothing_to_import">چیزی برای وارد کردن وجود ندارد</string>
   <string name="cal_import_error_msg">واردسازی به تقویم ناموفق بود</string>
   <string name="cal_pick_ics">فایل را برای وارد کردن انتخاب کنید</string>
+  <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">هنگام اشتراک‌گذاری رویداد مشکلی پیش آمد</string>
   <string name="share_label">اشتراک ﮔﺬﺍﺭﯼ</string>
 </resources>

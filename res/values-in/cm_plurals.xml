@@ -20,6 +20,6 @@
     <item quantity="other">%1$d acara dipilih</item>
   </plurals>
   <plurals name="select_events_to_share">
-    <item quantity="other">Pilih acara untuk berbagi</item>
+    <item quantity="other">Pilih acara untuk dibagikan</item>
   </plurals>
 </resources>

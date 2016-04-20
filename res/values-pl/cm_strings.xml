@@ -17,13 +17,20 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="preferences_alerts_custom_snooze_delay_title">Pytaj o długość drzemki</string>
+  <!-- Summaries for using custom snooze delays -->
   <string name="preferences_alerts_custom_snooze_delay_summary_on">Pytaj o długość drzemki za każdym razem</string>
   <string name="preferences_alerts_custom_snooze_delay_summary_off">Zawsze używaj domyślnej długości drzemki</string>
+  <!-- Title of custom snooze delay dialog -->
   <string name="snooze_delay_dialog_title">Ustaw długość drzemki</string>
+  <!-- List item label for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_title">Domyślny czas trwania drzemki</string>
+  <!-- Title of dialog for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_dialog">Domyślna długość drzemki</string>
+  <!-- Default value for the default snooze delay (in minutes) -->
+  <!-- Label values for the default start page preference. -->
   <string name="default_start_title">Domyślny widok</string>
   <string name="default_start_last">Poprzednio używany widok</string>
+  <!-- Delete Events related -->
   <string name="events_delete">Usuń wydarzenia</string>
   <string name="action_select_all">Zaznacz wszystkie</string>
   <string name="action_select_none">Odznacz wszystkie</string>
@@ -34,7 +41,10 @@
   <string name="evt_del_dlg_msg_selected">Zaznaczone wydarzenia zostaną usunięte</string>
   <string name="evt_del_dlg_msg_all">Wszystkie wydarzenia zostaną usunięte</string>
   <string name="no_events_selected">Brak zaznaczonych wydarzeń</string>
+  <!-- This is a label on a menu item. Pressing this menu item allows the
+         user to go to the calendars to display [CHAR LIMIT=20] -->
   <string name="go_to">Przejdź do</string>
+  <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Wyślij wydarzenie do:</string>
   <string name="cal_export_event_sdcard_title">Eksportuj na kartę SD</string>
   <string name="cal_export_succ_msg">Wydarzenie wyeksportowano pomyślnie: %1s</string>
@@ -42,6 +52,7 @@
   <string name="cal_nothing_to_import">Nic do zaimportowania</string>
   <string name="cal_import_error_msg">Importowanie do kalendarza nie powiodło się</string>
   <string name="cal_pick_ics">Wybierz plik do zaimportowania</string>
+  <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Napotkano problemy podczas udostępniania wydarzenia</string>
   <string name="share_label">Udostępnij</string>
 </resources>

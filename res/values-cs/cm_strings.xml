@@ -17,13 +17,20 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="preferences_alerts_custom_snooze_delay_title">Zeptat se na odložení upomínky</string>
+  <!-- Summaries for using custom snooze delays -->
   <string name="preferences_alerts_custom_snooze_delay_summary_on">Ptát se na délku trvání při odložení upomínky</string>
   <string name="preferences_alerts_custom_snooze_delay_summary_off">Vždy použít výchozí délku odložení</string>
+  <!-- Title of custom snooze delay dialog -->
   <string name="snooze_delay_dialog_title">Nastavit délku odložení</string>
+  <!-- List item label for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_title">Výchozí délka odložení</string>
+  <!-- Title of dialog for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_dialog">Výchozí délka odložení</string>
+  <!-- Default value for the default snooze delay (in minutes) -->
+  <!-- Label values for the default start page preference. -->
   <string name="default_start_title">Výchozí zobrazení</string>
   <string name="default_start_last">Předchozí použité zobrazení</string>
+  <!-- Delete Events related -->
   <string name="events_delete">Odstranit události</string>
   <string name="action_select_all">Vybrat vše</string>
   <string name="action_select_none">Zrušit vyběr všech</string>
@@ -34,7 +41,10 @@
   <string name="evt_del_dlg_msg_selected">Vybrané události budou odstraněny</string>
   <string name="evt_del_dlg_msg_all">Všechny události budou odstraněny</string>
   <string name="no_events_selected">Nejsou vybrané žádné události</string>
+  <!-- This is a label on a menu item. Pressing this menu item allows the
+         user to go to the calendars to display [CHAR LIMIT=20] -->
   <string name="go_to">Přejít</string>
+  <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Odeslat událost:</string>
   <string name="cal_export_event_sdcard_title">Exportovat na SD kartu</string>
   <string name="cal_export_succ_msg">Událost byla úspěšně exportována: %1s</string>
@@ -42,6 +52,7 @@
   <string name="cal_nothing_to_import">Není co importovat</string>
   <string name="cal_import_error_msg">Importování do kalendáře se nezdařilo</string>
   <string name="cal_pick_ics">Vybrat soubor k importu</string>
+  <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Došlo k problémům při sdílení události</string>
   <string name="share_label">Sdílet</string>
 </resources>

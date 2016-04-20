@@ -17,13 +17,20 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="preferences_alerts_custom_snooze_delay_title">Chiedi ritardo rinvio allarme</string>
+  <!-- Summaries for using custom snooze delays -->
   <string name="preferences_alerts_custom_snooze_delay_summary_on">Chiedi il tempo per il ritardo del rinvio dell\'allarme ogni volta che si pospone</string>
   <string name="preferences_alerts_custom_snooze_delay_summary_off">Usa sempre il tempo di ritardo predefinito per il rinvio dell\'allarme</string>
+  <!-- Title of custom snooze delay dialog -->
   <string name="snooze_delay_dialog_title">Imposta tempo ritardo</string>
+  <!-- List item label for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_title">Tempo ritardo rinvio</string>
+  <!-- Title of dialog for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_dialog">Tempo ritardo rinvio predefinito</string>
+  <!-- Default value for the default snooze delay (in minutes) -->
+  <!-- Label values for the default start page preference. -->
   <string name="default_start_title">Vista predefinita</string>
   <string name="default_start_last">Vista utilizzata precedentemente</string>
+  <!-- Delete Events related -->
   <string name="events_delete">Elimina eventi</string>
   <string name="action_select_all">Seleziona tutti</string>
   <string name="action_select_none">Deseleziona tutti</string>
@@ -34,7 +41,10 @@
   <string name="evt_del_dlg_msg_selected">Gli eventi selezionati verranno eliminati</string>
   <string name="evt_del_dlg_msg_all">Tutti gli eventi verranno eliminati</string>
   <string name="no_events_selected">Nessun evento selezionato</string>
+  <!-- This is a label on a menu item. Pressing this menu item allows the
+         user to go to the calendars to display [CHAR LIMIT=20] -->
   <string name="go_to">Vai a</string>
+  <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Invia evento a:</string>
   <string name="cal_export_event_sdcard_title">Esporta su scheda SD</string>
   <string name="cal_export_succ_msg">Evento esportato con successo: %1s</string>
@@ -42,6 +52,7 @@
   <string name="cal_nothing_to_import">Nulla da importare</string>
   <string name="cal_import_error_msg">Importazione nel calendario non riuscita</string>
   <string name="cal_pick_ics">Scegliere il file da importare</string>
+  <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Impossibile condividere l\'evento</string>
   <string name="share_label">Condividi</string>
 </resources>

@@ -17,13 +17,20 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="preferences_alerts_custom_snooze_delay_title">Kysy muistutuksen torkkuajasta</string>
+  <!-- Summaries for using custom snooze delays -->
   <string name="preferences_alerts_custom_snooze_delay_summary_on">Kysy torkun ajasta kun muistutusta siirretään myöhemmäksi</string>
   <string name="preferences_alerts_custom_snooze_delay_summary_off">Käytä aina oletusaikaa</string>
+  <!-- Title of custom snooze delay dialog -->
   <string name="snooze_delay_dialog_title">Aseta torkkuaika</string>
+  <!-- List item label for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_title">Oletustorkkuaika</string>
+  <!-- Title of dialog for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_dialog">Torkun oletusaika</string>
+  <!-- Default value for the default snooze delay (in minutes) -->
+  <!-- Label values for the default start page preference. -->
   <string name="default_start_title">Oletusnäkymä</string>
   <string name="default_start_last">Aiemmin käytetty näkymä</string>
+  <!-- Delete Events related -->
   <string name="events_delete">Poista tapahtumat</string>
   <string name="action_select_all">Valitse kaikki</string>
   <string name="action_select_none">Poista valinnat</string>
@@ -34,7 +41,10 @@
   <string name="evt_del_dlg_msg_selected">Valitut tapahtumat poistetaan</string>
   <string name="evt_del_dlg_msg_all">Kaikki tapahtumat poistetaan</string>
   <string name="no_events_selected">Tapahtumia ei valittu</string>
+  <!-- This is a label on a menu item. Pressing this menu item allows the
+         user to go to the calendars to display [CHAR LIMIT=20] -->
   <string name="go_to">Mene</string>
+  <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Lähetä tapahtuma kohteeseen:</string>
   <string name="cal_export_event_sdcard_title">Vie SD-kortille</string>
   <string name="cal_export_succ_msg">Tapahtuma viety onnistuneesti: %1s</string>
@@ -42,6 +52,7 @@
   <string name="cal_nothing_to_import">Ei mitään tuotavaa</string>
   <string name="cal_import_error_msg">Kalenterin tuonti epäonnistui</string>
   <string name="cal_pick_ics">Valitse tuotava tiedosto</string>
+  <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Virhe jaettaessa tapahtumaa</string>
   <string name="share_label">Jaa</string>
 </resources>
