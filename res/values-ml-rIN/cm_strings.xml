@@ -55,4 +55,9 @@
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">ഇവന്റ് പങ്കിടുമ്പോൾ പ്രശ്നങ്ങൾ നേരിട്ടു</string>
   <string name="share_label">പങ്കിടുക</string>
+  <!-- Strings for buttons in drop down menu -->
+  <string name="buttons_list_0">ദിവസം</string>
+  <string name="buttons_list_1">ആഴ്‌ച</string>
+  <string name="buttons_list_2">മാസം</string>
+  <string name="buttons_list_3">അജൻഡ</string>
 </resources>

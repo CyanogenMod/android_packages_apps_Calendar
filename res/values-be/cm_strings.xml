@@ -55,4 +55,5 @@
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Не атрымалася адправіць падзея</string>
   <string name="share_label">Падзяліцца</string>
+  <!-- Strings for buttons in drop down menu -->
 </resources>

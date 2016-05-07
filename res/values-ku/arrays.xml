@@ -142,7 +142,6 @@
     <item>هەفتە</item>
     <item>مانگ</item>
     <item>بەرنامەی کار</item>
-    <item>Year</item>
   </string-array>
   <!-- Experimental options for skipping reminders. [CHAR LIMIT = 37] -->
   <string-array name="preferences_skip_reminders_labels">

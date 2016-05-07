@@ -55,4 +55,10 @@
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Masalah ditemukan saat berbagi acara</string>
   <string name="share_label">Bagikan</string>
+  <!-- Strings for buttons in drop down menu -->
+  <string name="buttons_list_0">Hari</string>
+  <string name="buttons_list_1">Minggu</string>
+  <string name="buttons_list_2">Bulan</string>
+  <string name="buttons_list_3">Agenda</string>
+  <string name="buttons_list_4">Tahun</string>
 </resources>

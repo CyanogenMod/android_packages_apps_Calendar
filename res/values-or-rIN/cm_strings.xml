@@ -55,4 +55,5 @@
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">ଇଭେଣ୍ଟ ଅଂଶୀଦାର କରିବା ସମୟରେ ସମସ୍ୟା ଦେଖାଦେଉଛି</string>
   <string name="share_label">ଅଂଶୀଦାର କରନ୍ତୁ</string>
+  <!-- Strings for buttons in drop down menu -->
 </resources>
