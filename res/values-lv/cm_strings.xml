@@ -55,4 +55,9 @@
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Kopīgojot notikumu radās kļūda</string>
   <string name="share_label">Kopīgot</string>
+  <!-- Strings for buttons in drop down menu -->
+  <string name="buttons_list_0">Diena</string>
+  <string name="buttons_list_1">Nedēļa</string>
+  <string name="buttons_list_2">Mēnesis</string>
+  <string name="buttons_list_3">Darba kārtība</string>
 </resources>

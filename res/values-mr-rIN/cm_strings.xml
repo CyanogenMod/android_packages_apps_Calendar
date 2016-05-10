@@ -55,4 +55,9 @@
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">इव्हेंट शेअर करताना समस्या आल्या</string>
   <string name="share_label">सामायिक करा</string>
+  <!-- Strings for buttons in drop down menu -->
+  <string name="buttons_list_0">दिवस</string>
+  <string name="buttons_list_1">आठवडा</string>
+  <string name="buttons_list_2">महिना</string>
+  <string name="buttons_list_3">अजेंडा</string>
 </resources>

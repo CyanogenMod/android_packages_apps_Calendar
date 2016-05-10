@@ -55,4 +55,9 @@
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Problémák merültek fel az esemény megosztása közben</string>
   <string name="share_label">Megosztás</string>
+  <!-- Strings for buttons in drop down menu -->
+  <string name="buttons_list_0">Nap</string>
+  <string name="buttons_list_1">Hét</string>
+  <string name="buttons_list_2">Hónap</string>
+  <string name="buttons_list_3">Napló</string>
 </resources>

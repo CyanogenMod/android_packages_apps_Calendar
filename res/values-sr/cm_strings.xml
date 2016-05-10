@@ -55,4 +55,9 @@
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Проблем настао при дељењу догађаја</string>
   <string name="share_label">Дели</string>
+  <!-- Strings for buttons in drop down menu -->
+  <string name="buttons_list_0">Дан</string>
+  <string name="buttons_list_1">Недеља</string>
+  <string name="buttons_list_2">Месец</string>
+  <string name="buttons_list_3">Распоред</string>
 </resources>

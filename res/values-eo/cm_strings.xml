@@ -55,4 +55,5 @@
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Problemo okazis dum komunigado</string>
   <string name="share_label">Komunigi</string>
+  <!-- Strings for buttons in drop down menu -->
 </resources>

@@ -55,4 +55,9 @@
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">일정을 공유하는 도중에 문제가 발생했습니다</string>
   <string name="share_label">공유</string>
+  <!-- Strings for buttons in drop down menu -->
+  <string name="buttons_list_0">일</string>
+  <string name="buttons_list_1">주</string>
+  <string name="buttons_list_2">월</string>
+  <string name="buttons_list_3">일정목록</string>
 </resources>

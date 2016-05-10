@@ -27,4 +27,9 @@
          user to go to the calendars to display [CHAR LIMIT=20] -->
   <!-- Sharing calendar event -->
   <!-- Toast message displayed when ics file to share an event can't be generated -->
+  <!-- Strings for buttons in drop down menu -->
+  <string name="buttons_list_0">Day</string>
+  <string name="buttons_list_1">Week</string>
+  <string name="buttons_list_2">Month</string>
+  <string name="buttons_list_3">Agenda</string>
 </resources>

@@ -55,4 +55,5 @@
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">ইভেণ্ট ভাগ-বতৰা কৰোতে সমস্যাৰ সম্মুখীন হৈছে</string>
   <string name="share_label">শ্বেয়াৰ</string>
+  <!-- Strings for buttons in drop down menu -->
 </resources>

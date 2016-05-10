@@ -46,4 +46,10 @@
   <string name="go_to">چوون بۆ</string>
   <!-- Sharing calendar event -->
   <!-- Toast message displayed when ics file to share an event can't be generated -->
+  <!-- Strings for buttons in drop down menu -->
+  <string name="buttons_list_0">ڕۆژ</string>
+  <string name="buttons_list_1">هەفتە</string>
+  <string name="buttons_list_2">مانگ</string>
+  <string name="buttons_list_3">بەرنامەی کار</string>
+  <string name="buttons_list_4">Year</string>
 </resources>

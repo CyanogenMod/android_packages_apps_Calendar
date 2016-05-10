@@ -55,4 +55,9 @@
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Проблема під час відправки подіЇ</string>
   <string name="share_label">Відправити</string>
+  <!-- Strings for buttons in drop down menu -->
+  <string name="buttons_list_0">День</string>
+  <string name="buttons_list_1">Тиждень</string>
+  <string name="buttons_list_2">Місяць</string>
+  <string name="buttons_list_3">Порядок денний</string>
 </resources>
