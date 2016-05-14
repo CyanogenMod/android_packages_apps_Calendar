@@ -20,6 +20,6 @@
     <item quantity="other">%1$d กิจกรรมถูกเลือก</item>
   </plurals>
   <plurals name="select_events_to_share">
-    <item quantity="other">เลือกกิจกรรมที่จะแบ่งปัน</item>
+    <item quantity="other">เลือกเหตุการณ์ที่จะแบ่งบัน</item>
   </plurals>
 </resources>

@@ -17,8 +17,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <plurals name="events_selected">
-    <item quantity="one">%1$d ഇവന്‍റ് തിരഞ്ഞെടുത്തു</item>
-    <item quantity="other">%1$d ഇവന്‍റുകള്‍ തിരഞ്ഞെടുത്തു</item>
+    <item quantity="one">തിരഞ്ഞെടുത്ത %1$d ഇവന്റ്</item>
+    <item quantity="other">തിരഞ്ഞെടുത്ത %1$d ഇവന്റുകൾ</item>
   </plurals>
   <plurals name="select_events_to_share">
     <item quantity="one">പങ്കിടാൻ ഒരു ഇവന്റ് തിരഞ്ഞെടുക്കുക</item>

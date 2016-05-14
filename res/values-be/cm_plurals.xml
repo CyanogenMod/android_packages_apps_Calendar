@@ -18,12 +18,12 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <plurals name="events_selected">
     <item quantity="one">Абрана %1$d падзея</item>
-    <item quantity="few">Абрана %1$d падзеі</item>
+    <item quantity="few">Абраны %1$d падзеі</item>
     <item quantity="other">Абрана %1$d падзей</item>
   </plurals>
   <plurals name="select_events_to_share">
-    <item quantity="one">Выберы падзею каб даслаць</item>
-    <item quantity="few">Выберы падзеі якія трэба даслаць</item>
+    <item quantity="one">Выберыце падзею каб даслаць</item>
+    <item quantity="few">Выберыце падзеі якія трэба даслаць</item>
     <item quantity="other">Выберыце падзеі якія трэба даслаць</item>
   </plurals>
 </resources>
