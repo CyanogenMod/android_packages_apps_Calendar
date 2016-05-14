@@ -60,4 +60,5 @@
   <string name="buttons_list_1">Недеља</string>
   <string name="buttons_list_2">Месец</string>
   <string name="buttons_list_3">Распоред</string>
+  <string name="buttons_list_4">Година</string>
 </resources>
