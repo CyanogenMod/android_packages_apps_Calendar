@@ -50,6 +50,13 @@
   <!-- The list of choices displayed in a dialog box when the user wants to
     respond to an invitation that repeats. -->
   <!-- Strings for buttons in drop down menu -->
+  <string-array name="buttons_list">
+    <item>Day</item>
+    <item>Week</item>
+    <item>Month</item>
+    <item>Agenda</item>
+    <item>Год</item>
+  </string-array>
   <!-- Experimental options for skipping reminders. [CHAR LIMIT = 37] -->
   <!-- Recurrence picker: How events are to be repeated.  [CHAR LIMIT = 20] -->
   <!-- The following sets of strings describe a monthly recurring event, which will repeat
