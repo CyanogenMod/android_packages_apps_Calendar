@@ -60,4 +60,5 @@
   <string name="buttons_list_1">Week</string>
   <string name="buttons_list_2">Maand</string>
   <string name="buttons_list_3">Agenda</string>
+  <string name="buttons_list_4">Jaar</string>
 </resources>

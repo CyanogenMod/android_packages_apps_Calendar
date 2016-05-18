@@ -49,6 +49,7 @@
   <!-- Menu items: -->
   <!-- This is a label on a context menu item. Pressing this menu item to initiate
         syncing of your Calendar data with the server. [CHAR LIMIT=11] -->
+  <string name="calendar_refresh">"Абнавіць"</string>
   <!-- This is a label on a context menu item. Pressing this menu item displays the
          Agenda view. -->
   <!-- This is a label on a context menu item. Pressing this menu item displays the
