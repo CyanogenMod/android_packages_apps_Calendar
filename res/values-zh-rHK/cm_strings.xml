@@ -17,13 +17,20 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="preferences_alerts_custom_snooze_delay_title">要求提醒重響延遲</string>
+  <!-- Summaries for using custom snooze delays -->
   <string name="preferences_alerts_custom_snooze_delay_summary_on">每當重響提醒時要求重響延遲</string>
   <string name="preferences_alerts_custom_snooze_delay_summary_off">總是使用預設重響延遲</string>
+  <!-- Title of custom snooze delay dialog -->
   <string name="snooze_delay_dialog_title">設定重響延遲</string>
+  <!-- List item label for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_title">預設重響延遲時間</string>
+  <!-- Title of dialog for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_dialog">預設重響延遲</string>
+  <!-- Default value for the default snooze delay (in minutes) -->
+  <!-- Label values for the default start page preference. -->
   <string name="default_start_title">預設視圖</string>
   <string name="default_start_last">以前使用的視圖</string>
+  <!-- Delete Events related -->
   <string name="events_delete">刪除活動</string>
   <string name="action_select_all">全選</string>
   <string name="action_select_none">取消全選</string>
@@ -34,7 +41,10 @@
   <string name="evt_del_dlg_msg_selected">將刪除所選活動</string>
   <string name="evt_del_dlg_msg_all">將刪除所有活動</string>
   <string name="no_events_selected">沒有選定活動</string>
+  <!-- This is a label on a menu item. Pressing this menu item allows the
+         user to go to the calendars to display [CHAR LIMIT=20] -->
   <string name="go_to">前往</string>
+  <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">傳送活動至：</string>
   <string name="cal_export_event_sdcard_title">匯出至 SD 卡</string>
   <string name="cal_export_succ_msg">成功匯出活動：%1s 個</string>
@@ -42,6 +52,7 @@
   <string name="cal_nothing_to_import">沒有可匯入的活動</string>
   <string name="cal_import_error_msg">匯入至日曆失敗</string>
   <string name="cal_pick_ics">選擇要匯入的檔案</string>
+  <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">分享活動時遇到問題</string>
   <string name="share_label">分享</string>
 </resources>

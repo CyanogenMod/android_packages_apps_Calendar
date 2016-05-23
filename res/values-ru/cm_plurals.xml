@@ -19,7 +19,7 @@
   <plurals name="events_selected">
     <item quantity="one">Выбрано %1$d событие</item>
     <item quantity="few">Выбраны %1$d события</item>
-    <item quantity="other">Выбрано %1$d событий</item>
+    <item quantity="other">Выбраны %1$d событий</item>
   </plurals>
   <plurals name="select_events_to_share">
     <item quantity="one">Выберите событие для отправки</item>

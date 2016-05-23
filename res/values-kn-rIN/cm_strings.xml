@@ -17,13 +17,20 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="preferences_alerts_custom_snooze_delay_title">ಜ್ಞಾಪನೆ ಸ್ನೂಜ್ ವಿಳಂಬಕ್ಕಾಗಿ ಕೇಳು</string>
+  <!-- Summaries for using custom snooze delays -->
   <string name="preferences_alerts_custom_snooze_delay_summary_on">ಜ್ಞಾಪನೆಗಳನ್ನು ಸ್ನೂಜ್ ಮಾಡಿದಾಗ ಎಂದಿಗೂ ಸ್ನೂಜ್ ವಿಳಂಬಕ್ಕಾಗಿ ಕೇಳು</string>
   <string name="preferences_alerts_custom_snooze_delay_summary_off">ಯಾವಾಗಲೂ ಡೀಫಾಲ್ಟ್ ಸ್ನೂಜ್ ವಿಳಂಬವನ್ನು ಉಪಯೋಗಿಸು</string>
+  <!-- Title of custom snooze delay dialog -->
   <string name="snooze_delay_dialog_title">ಸ್ನೂಜ್ ವಿಳಂಬವನ್ನು ಹೊಂದಿಸಿ</string>
+  <!-- List item label for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_title">ಡೀಫಾಲ್ಟ್ ಸ್ನೂಜ್ ವಿಳಂಬ ಅವಧಿ</string>
+  <!-- Title of dialog for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_dialog">ಡೀಫಾಲ್ಟ್ ಸ್ನೂಜ್ ವಿಳಂಬ</string>
+  <!-- Default value for the default snooze delay (in minutes) -->
+  <!-- Label values for the default start page preference. -->
   <string name="default_start_title">ಡೀಫಾಲ್ಟ್ ವೀಕ್ಷಣೆ</string>
   <string name="default_start_last">ಪೂರ್ವದಲ್ಲಿ ಬಳಸಿದ ವೀಕ್ಷಣೆ</string>
+  <!-- Delete Events related -->
   <string name="events_delete">ಘಟನೆಗಳನ್ನು ಅಳಿಸು</string>
   <string name="action_select_all">ಎಲ್ಲಾ ಆಯ್ಕೆಮಾಡು</string>
   <string name="action_select_none">ಎಲ್ಲಾ ಆಯ್ಕೆ ರದ್ದುಮಾಡು</string>
@@ -34,7 +41,10 @@
   <string name="evt_del_dlg_msg_selected">ಆಯ್ಕೆಮಾಡಿದ ಘಟನೆಗಳನ್ನು ಅಳಿಸಲಾಗುತ್ತದೆ</string>
   <string name="evt_del_dlg_msg_all">ಎಲ್ಲಾ ಘಟನೆಗಳನ್ನು ಅಳಿಸಲಾಗುತ್ತದೆ</string>
   <string name="no_events_selected">ಯಾವುದೇ ಘಟನೆಗಳನ್ನು ಆಯ್ಕೆಮಾಡಿಲ್ಲ</string>
+  <!-- This is a label on a menu item. Pressing this menu item allows the
+         user to go to the calendars to display [CHAR LIMIT=20] -->
   <string name="go_to">ಇಲ್ಲಿ ಹೋಗಿ</string>
+  <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">ಘಟನೆಯನ್ನು ಇಲ್ಲಿಗೆ ಕಳುಹಿಸು:</string>
   <string name="cal_export_event_sdcard_title">SD ಕಾರ್ಡ್‍ಗೆ ರಫ್ತುಮಾಡಿ</string>
   <string name="cal_export_succ_msg">ಘಟನೆಯನ್ನು ಯಶಸ್ವಿಯಾಗಿ ರಫ್ತುಮಾಡಲಾಗಿದೆ: %1s</string>
@@ -42,6 +52,7 @@
   <string name="cal_nothing_to_import">ಆಮದುಮಾಡಲು ಏನೂ ಇಲ್ಲ</string>
   <string name="cal_import_error_msg">ಕ್ಯಾಲೆಂಡರ್‍ಗೆ ಆಮದುಮಾಡಲು ವಿಫಲವಾಗಿದೆ</string>
   <string name="cal_pick_ics">ಆಮದುಮಾಡಲು ಕಡತವನ್ನು ಆರಿಸಿ</string>
+  <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">ಘಟನೆ ಹಂಚುವಾಗ ತೊಂದರೆಗಳು ಎದುರಾಗಿದೆ</string>
   <string name="share_label">ಹಂಚಿ</string>
 </resources>

@@ -17,13 +17,20 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="preferences_alerts_custom_snooze_delay_title">তন্দ্রা বিলম্বের জন্য জিজ্ঞাস করুন</string>
+  <!-- Summaries for using custom snooze delays -->
   <string name="preferences_alerts_custom_snooze_delay_summary_on">তন্দ্রা বিলম্বের জন্য জিজ্ঞাসা করুন যখনই স্মারকসমূহ তন্দ্রা অবস্থায় যাচ্ছে</string>
   <string name="preferences_alerts_custom_snooze_delay_summary_off">সর্বদা পূর্ব-নির্ধারিত তন্দ্রা বিলম্ব ব্যবহার করুন</string>
+  <!-- Title of custom snooze delay dialog -->
   <string name="snooze_delay_dialog_title">তন্দ্রা বিলম্ব নির্ধারন করুন</string>
+  <!-- List item label for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_title">পূর্ব-নির্ধারিত তন্দ্রা বিলম্বের সময়</string>
+  <!-- Title of dialog for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_dialog">পূর্ব-নির্ধারিত তন্দ্রা বিলম্ব</string>
+  <!-- Default value for the default snooze delay (in minutes) -->
+  <!-- Label values for the default start page preference. -->
   <string name="default_start_title">পূর্ব-নির্ধারিত প্রদর্শন</string>
   <string name="default_start_last">পূর্ববর্তী ব্যাবহৃত প্রদর্শন</string>
+  <!-- Delete Events related -->
   <string name="events_delete">ঘটনাবলী মুছে দিন</string>
   <string name="action_select_all">সব নির্বাচন করুন</string>
   <string name="action_select_none">সব নির্বাচন প্রত্যাহার করুন</string>
@@ -34,5 +41,9 @@
   <string name="evt_del_dlg_msg_selected">নির্বাচিত ঘটনাবলী মুছে ফেলা হবে</string>
   <string name="evt_del_dlg_msg_all">সব ঘটনাবলী মুছে ফেলা হবে</string>
   <string name="no_events_selected">কোন ঘটনাবলী নির্বাচিত হয়নি</string>
+  <!-- This is a label on a menu item. Pressing this menu item allows the
+         user to go to the calendars to display [CHAR LIMIT=20] -->
   <string name="go_to">যান</string>
+  <!-- Sharing calendar event -->
+  <!-- Toast message displayed when ics file to share an event can't be generated -->
 </resources>

@@ -17,13 +17,20 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="preferences_alerts_custom_snooze_delay_title">සිහිකැඳවීම මදකට නිදන ප්‍රමාදය විමසන්න</string>
+  <!-- Summaries for using custom snooze delays -->
   <string name="preferences_alerts_custom_snooze_delay_summary_on">සිහිකැඳවීම් මදකට නිදිකරන ඕනෑම් විටක ප්‍රමාදය සඳහා විමසන්න</string>
   <string name="preferences_alerts_custom_snooze_delay_summary_off">සැමවිට පෙරනිමි මදකට නිදන ප්‍රමාදය භාවිතා කරන්න</string>
+  <!-- Title of custom snooze delay dialog -->
   <string name="snooze_delay_dialog_title">මදකට නිදන ප්‍රමාදය සකසන්න</string>
+  <!-- List item label for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_title">පෙරනිමි මදකට නිදන ප්‍රමාදය</string>
+  <!-- Title of dialog for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_dialog">පෙරනිමි මදකට නිදන ප්‍රමාදය</string>
+  <!-- Default value for the default snooze delay (in minutes) -->
+  <!-- Label values for the default start page preference. -->
   <string name="default_start_title">පෙරනිමි දසුන</string>
   <string name="default_start_last">පෙර භාවිතා වූ දසුන</string>
+  <!-- Delete Events related -->
   <string name="events_delete">සිදුවීම් මකන්න</string>
   <string name="action_select_all">සියල්ල තෝරන්න</string>
   <string name="action_select_none">සියල්ල නොතෝරන්න</string>
@@ -34,5 +41,9 @@
   <string name="evt_del_dlg_msg_selected">තෝරා ඇති සිදුවීම් මකාදැමෙනු ඇත</string>
   <string name="evt_del_dlg_msg_all">සියලු සිදුවීම් මකාදැමෙනු ඇත</string>
   <string name="no_events_selected">සිදුවීමක් තෝරා නොමැත</string>
+  <!-- This is a label on a menu item. Pressing this menu item allows the
+         user to go to the calendars to display [CHAR LIMIT=20] -->
   <string name="go_to">වෙත යන්න</string>
+  <!-- Sharing calendar event -->
+  <!-- Toast message displayed when ics file to share an event can't be generated -->
 </resources>
