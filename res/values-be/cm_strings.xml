@@ -56,4 +56,6 @@
   <string name="error_generating_ics">Не атрымалася адправіць падзея</string>
   <string name="share_label">Падзяліцца</string>
   <!-- Strings for buttons in drop down menu -->
+  <string name="buttons_list_2">Месяц</string>
+  <string name="buttons_list_4">Год</string>
 </resources>
