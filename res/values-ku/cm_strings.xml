@@ -17,13 +17,20 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="preferences_alerts_custom_snooze_delay_title">داواکردنی ماوه‌ی بیرخه‌ره‌وه‌</string>
+  <!-- Summaries for using custom snooze delays -->
   <string name="preferences_alerts_custom_snooze_delay_summary_on">داواکردنی ماوه‌ی بیرخه‌ره‌وه‌ کاتێک نوستنی له‌گه‌ڵه‌</string>
   <string name="preferences_alerts_custom_snooze_delay_summary_off">هه‌میشه‌ له‌بیرخستنه‌وه‌ی کاتی نوستن به‌شێوه‌ی سه‌ره‌تایی بێت</string>
+  <!-- Title of custom snooze delay dialog -->
   <string name="snooze_delay_dialog_title">دانانی ماوه‌ی له‌بیرخستنه‌وه‌ی نوستن</string>
+  <!-- List item label for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_title">ماوه‌ی له‌بیرخستنه‌وه‌ی نوستنی سه‌ره‌تایی</string>
+  <!-- Title of dialog for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_dialog">ماوه‌ی سه‌ره‌تایی له‌بیرخستنه‌وه‌ی کاتی نوستن</string>
+  <!-- Default value for the default snooze delay (in minutes) -->
+  <!-- Label values for the default start page preference. -->
   <string name="default_start_title">بینینی سه‌ره‌تایی</string>
   <string name="default_start_last">بینینی به‌کارهێنراوی پێشوو</string>
+  <!-- Delete Events related -->
   <string name="events_delete">سڕینه‌وه‌ی ڕووداوه‌کان</string>
   <string name="action_select_all">دیاریکردنی هەمووی</string>
   <string name="action_select_none">دیارینەکردنی هەمووی</string>
@@ -34,5 +41,9 @@
   <string name="evt_del_dlg_msg_selected">ڕووداوە دیاریکراوەکان ئەسرێنەوە</string>
   <string name="evt_del_dlg_msg_all">هه‌موو ڕووداوه‌کان ده‌سڕدرێنه‌وه‌</string>
   <string name="no_events_selected">هیچ ڕووداوێک دیاری نه‌کراوه‌</string>
+  <!-- This is a label on a menu item. Pressing this menu item allows the
+         user to go to the calendars to display [CHAR LIMIT=20] -->
   <string name="go_to">چوون بۆ</string>
+  <!-- Sharing calendar event -->
+  <!-- Toast message displayed when ics file to share an event can't be generated -->
 </resources>

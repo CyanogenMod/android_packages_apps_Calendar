@@ -17,13 +17,20 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <string name="preferences_alerts_custom_snooze_delay_title">Питај за подсећање одлагања</string>
+  <!-- Summaries for using custom snooze delays -->
   <string name="preferences_alerts_custom_snooze_delay_summary_on">Питај за привремено прекидање одлагања кад дрема</string>
   <string name="preferences_alerts_custom_snooze_delay_summary_off">Увек користи подразумевано одлагање</string>
+  <!-- Title of custom snooze delay dialog -->
   <string name="snooze_delay_dialog_title">Подеси кашњење одлагања</string>
+  <!-- List item label for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_title">Подразумевано време кашњења одлагања</string>
+  <!-- Title of dialog for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_dialog">Подразумевано кашњење одлагања</string>
+  <!-- Default value for the default snooze delay (in minutes) -->
+  <!-- Label values for the default start page preference. -->
   <string name="default_start_title">Подразумевани преглед</string>
   <string name="default_start_last">Претходно коришћен преглед</string>
+  <!-- Delete Events related -->
   <string name="events_delete">Избриши догађаје</string>
   <string name="action_select_all">Изабери све</string>
   <string name="action_select_none">Поништи избор свега</string>
@@ -34,7 +41,10 @@
   <string name="evt_del_dlg_msg_selected">Изабрани догађаји ће бити избрисани</string>
   <string name="evt_del_dlg_msg_all">Сви догађаји ће бити избрисани</string>
   <string name="no_events_selected">Нема изабраних догађаја</string>
+  <!-- This is a label on a menu item. Pressing this menu item allows the
+         user to go to the calendars to display [CHAR LIMIT=20] -->
   <string name="go_to">Иди на</string>
+  <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Пошаљи догађај на:</string>
   <string name="cal_export_event_sdcard_title">Извоз на SD картицу</string>
   <string name="cal_export_succ_msg">Догађај послат успешно: %1s</string>
@@ -42,6 +52,7 @@
   <string name="cal_nothing_to_import">Ништа за увоз</string>
   <string name="cal_import_error_msg">Увоз у календар неуспешан</string>
   <string name="cal_pick_ics">Изабери фајл за увоз</string>
+  <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Проблем настао при дељењу догађаја</string>
   <string name="share_label">Дели</string>
 </resources>

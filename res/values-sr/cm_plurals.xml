@@ -19,13 +19,11 @@
   <plurals name="events_selected">
     <item quantity="one">%1$d догађај изабран</item>
     <item quantity="few">%1$d догађаја изабрана</item>
-    <item quantity="many">%1$d догађаја изабрана</item>
     <item quantity="other">%1$d догађаја изабрана</item>
   </plurals>
   <plurals name="select_events_to_share">
     <item quantity="one">Изабери догађај да дељење</item>
     <item quantity="few">Изабери догађаје да дељење</item>
-    <item quantity="many">Изабери догађаје да дељење</item>
     <item quantity="other">Изабери догађаје да дељење</item>
   </plurals>
 </resources>

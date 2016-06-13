@@ -17,7 +17,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <plurals name="events_selected">
-    <item quantity="other">%1$d เหตุการณ์ถูกเลือก</item>
+    <item quantity="other">%1$d กิจกรรมถูกเลือก</item>
   </plurals>
   <plurals name="select_events_to_share">
     <item quantity="other">เลือกเหตุการณ์ที่จะแบ่งบัน</item>
