@@ -142,7 +142,6 @@
     <item>Woch</item>
     <item>Mount</item>
     <item>Agenda</item>
-    <item>Joer</item>
   </string-array>
   <!-- Experimental options for skipping reminders. [CHAR LIMIT = 37] -->
   <string-array name="preferences_skip_reminders_labels">

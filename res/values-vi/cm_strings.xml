@@ -55,4 +55,10 @@
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Có vấn đề xảy ra khi chia sẻ sự kiện</string>
   <string name="share_label">Chia sẻ</string>
+  <!-- Strings for buttons in drop down menu -->
+  <string name="buttons_list_0">Ngày</string>
+  <string name="buttons_list_1">Tuần</string>
+  <string name="buttons_list_2">Tháng</string>
+  <string name="buttons_list_3">Lịch biểu</string>
+  <string name="buttons_list_4">Năm</string>
 </resources>

@@ -55,4 +55,10 @@
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Impossibile condividere l\'evento</string>
   <string name="share_label">Condividi</string>
+  <!-- Strings for buttons in drop down menu -->
+  <string name="buttons_list_0">Giorno</string>
+  <string name="buttons_list_1">Settimana</string>
+  <string name="buttons_list_2">Mese</string>
+  <string name="buttons_list_3">Ordine del giorno</string>
+  <string name="buttons_list_4">Anno</string>
 </resources>

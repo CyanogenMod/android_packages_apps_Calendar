@@ -142,7 +142,6 @@
     <item>Selmana</item>
     <item>Mes</item>
     <item>Axenda</item>
-    <item>Añu</item>
   </string-array>
   <!-- Experimental options for skipping reminders. [CHAR LIMIT = 37] -->
   <string-array name="preferences_skip_reminders_labels">
