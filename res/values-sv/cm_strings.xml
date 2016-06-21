@@ -60,4 +60,5 @@
   <string name="buttons_list_1">Vecka</string>
   <string name="buttons_list_2">Månad</string>
   <string name="buttons_list_3">Program</string>
+  <string name="buttons_list_4">År</string>
 </resources>

@@ -60,4 +60,5 @@
   <string name="buttons_list_1">Hét</string>
   <string name="buttons_list_2">Hónap</string>
   <string name="buttons_list_3">Napló</string>
+  <string name="buttons_list_4">Év</string>
 </resources>
