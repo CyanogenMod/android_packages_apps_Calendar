@@ -17,13 +17,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <plurals name="events_selected">
-    <item quantity="one">%1$d događaj je odabran.</item>
-    <item quantity="few">%1$d događaja su odabrana.</item>
-    <item quantity="other">%1$d događaja je odabrano.</item>
+    <item quantity="other">%1$d sự kiện đã được chọn</item>
   </plurals>
   <plurals name="select_events_to_share">
-    <item quantity="one">Odaberite događaj za dijeljenje</item>
-    <item quantity="few">Odaberite događaje za dijeljenje</item>
-    <item quantity="other">Odaberite događaje za dijeljenje</item>
+    <item quantity="other">Chọn sự kiện để chia sẻ</item>
   </plurals>
 </resources>
