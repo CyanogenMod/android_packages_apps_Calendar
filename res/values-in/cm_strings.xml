@@ -16,27 +16,27 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-  <string name="preferences_alerts_custom_snooze_delay_title">Minta jeda tunda pengingat</string>
+  <string name="preferences_alerts_custom_snooze_delay_title">Minta pengingat jeda penundaan</string>
   <!-- Summaries for using custom snooze delays -->
-  <string name="preferences_alerts_custom_snooze_delay_summary_on">Minta jeda tunda setiap kali menunda pengingat</string>
-  <string name="preferences_alerts_custom_snooze_delay_summary_off">Selalu gunakan jeda tunda baku</string>
+  <string name="preferences_alerts_custom_snooze_delay_summary_on">Minta jeda penundaan setiap kali menunda pengingat</string>
+  <string name="preferences_alerts_custom_snooze_delay_summary_off">Selalu gunakan jeda penundaan standar</string>
   <!-- Title of custom snooze delay dialog -->
-  <string name="snooze_delay_dialog_title">Atur jeda tunda</string>
+  <string name="snooze_delay_dialog_title">Atur jeda penundaan</string>
   <!-- List item label for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_title">Waktu jeda tunda baku</string>
   <!-- Title of dialog for setting the default snooze delay -->
-  <string name="preferences_default_snooze_delay_dialog">Jeda tunda baku</string>
+  <string name="preferences_default_snooze_delay_dialog">Jeda tunda standar</string>
   <!-- Default value for the default snooze delay (in minutes) -->
   <!-- Label values for the default start page preference. -->
-  <string name="default_start_title">Tampilan baku</string>
+  <string name="default_start_title">Tampilan standar</string>
   <string name="default_start_last">Tampilan yang digunakan sebelumnya</string>
   <!-- Delete Events related -->
   <string name="events_delete">Hapus acara</string>
   <string name="action_select_all">Pilih semua</string>
-  <string name="action_select_none">Hapus centang semua</string>
+  <string name="action_select_none">Tidak pilih semua</string>
   <string name="action_delete">Selesai</string>
   <string name="all_events">Semua acara</string>
-  <string name="no_events">Tidak ada acara yang tersedia</string>
+  <string name="no_events">Tidak ada acara tersedia</string>
   <string name="evt_del_dlg_title">Hapus acara?</string>
   <string name="evt_del_dlg_msg_selected">Acara yang dipilih akan dihapus</string>
   <string name="evt_del_dlg_msg_all">Semua acara akan dihapus</string>
@@ -50,7 +50,7 @@
   <string name="cal_export_succ_msg">Acara berhasil diekspor: %1s</string>
   <string name="cal_import_menu_title">Impor acara</string>
   <string name="cal_nothing_to_import">Tidak ada apapun untuk di impor</string>
-  <string name="cal_import_error_msg">Mengimpor ke kalender gagal</string>
+  <string name="cal_import_error_msg">Gagal mengimpor ke kalendar</string>
   <string name="cal_pick_ics">Pilih berkas yang akan diimpor</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Masalah ditemukan saat berbagi acara</string>
