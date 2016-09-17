@@ -27,12 +27,62 @@
          this and just generate the list from reminder_minutes_values?)
          [CHAR LIMIT=15]
     -->
+  <string-array name="reminder_minutes_labels">
+    <item>0 minutoj</item>
+    <item>1 minuto</item>
+    <item>5 minutoj</item>
+    <item>10 minutoj</item>
+    <item>15 minutoj</item>
+    <item>20 minutoj</item>
+    <item>25 minutoj</item>
+    <item>30 minutoj</item>
+    <item>45 minutoj</item>
+    <item>1 horo</item>
+    <item>2 horoj</item>
+    <item>3 horoj</item>
+    <item>12 horoj</item>
+    <item>24 horoj</item>
+    <item>2 tagoj</item>
+    <item>1 semajno</item>
+  </string-array>
   <!-- Choices for the "Reminder minutes" spinner in the settings.
          These must be kept in sync with the preferences_default_reminder_values array.
          [CHAR LIMIT=12]
     -->
+  <string-array name="preferences_default_reminder_labels">
+    <item>None</item>
+    <item>0 minutoj</item>
+    <item>1 minuto</item>
+    <item>5 minutoj</item>
+    <item>10 minutoj</item>
+    <item>15 minutoj</item>
+    <item>20 minutoj</item>
+    <item>25 minutoj</item>
+    <item>30 minutoj</item>
+    <item>45 minutoj</item>
+    <item>1 horo</item>
+    <item>2 horoj</item>
+    <item>3 horoj</item>
+    <item>12 horoj</item>
+    <item>24 horoj</item>
+    <item>2 tagoj</item>
+    <item>1 semajno</item>
+  </string-array>
   <!-- This maps reminder_methods_labels to internal constants. -->
+  <string-array name="ordinal_labels">
+    <item>unua</item>
+    <item>dua</item>
+    <item>tria</item>
+    <item>kvara</item>
+    <item>lasta</item>
+  </string-array>
   <!-- Invitation responses -->
+  <string-array name="response_labels1">
+    <item>No response</item>
+    <item>Jes</item>
+    <item>Maybe</item>
+    <item>Ne</item>
+  </string-array>
   <!-- The corresponding indices are defined in DeleteEventHelper.java -->
   <!-- This is a list of choices displayed when the user deletes an event.
          It only is shown when deleting a recurring event.
@@ -50,6 +100,13 @@
   <!-- The list of choices displayed in a dialog box when the user wants to
     respond to an invitation that repeats. -->
   <!-- Strings for buttons in drop down menu -->
+  <string-array name="buttons_list">
+    <item>Tago</item>
+    <item>Semajno</item>
+    <item>Monato</item>
+    <item>Agenda</item>
+    <item>Year</item>
+  </string-array>
   <!-- Experimental options for skipping reminders. [CHAR LIMIT = 37] -->
   <!-- Recurrence picker: How events are to be repeated.  [CHAR LIMIT = 20] -->
   <!-- The following sets of strings describe a monthly recurring event, which will repeat
