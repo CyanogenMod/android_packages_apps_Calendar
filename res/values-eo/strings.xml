@@ -16,14 +16,21 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- This is the label underneath the icon for Calendar -->
+  <string name="app_label">Kalendaro</string>
   <!-- Shared Labels. These labels are shared among the activities. -->
   <!-- This is the label for the title or name of an event -->
   <!-- This is the label for the location of an event -->
+  <string name="where_label">Kie</string>
   <!-- This is the label for the time of an event [CHAR LIMIT=30] -->
+  <string name="when_label">Kiam</string>
   <!-- This is the label for the timezone of an event [CHAR LIMIT=30] -->
+  <string name="timezone_label">Horzono</string>
   <!-- This is the label for the Guests/Attendees of an event -->
+  <string name="attendees_label">Gastoj</string>
   <!-- Text to show when an event starts on the current day -->
+  <string name="today">Hodiaŭ</string>
   <!-- Text to show when an event starts on the next day -->
+  <string name="tomorrow">Morgaŭ</string>
   <!-- Text for an event starting on the current day with a start and end time.
          For ex, "Today at 5:00pm-6:00pm" [CHAR LIMIT=NONE] -->
   <!-- Text for an event starting on the next day with a start and end time.
@@ -35,6 +42,13 @@
          of not repeating). -->
   <!-- Title of event when no explicit title is specified by the user -->
   <!-- Reminder format strings -->
+  <plurals name="Nminutes">
+    <!-- This is the label for a 1-minute reminder. -->
+    <item quantity="one">1 minuto</item>
+    <!-- This is the label for 2 or more minutes. The actual number of
+             minutes is a parameter. -->
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> minutoj</item>
+  </plurals>
   <!-- We use the abbreviation "mins" instead of "minutes" to keep the string short.
          This is the number of minutes displayed for a calendar reminder.  For example,
          a reminder of 10 minutes would be displayed as '10 mins'.  The translation
@@ -42,10 +56,29 @@
   <!-- This is the number of hours displayed for a calendar reminder.  For example,
          a reminder of 1 hour would be displayed as '1 hour'.  The translation
          should use the shortest acceptable abbreviation of 'hour' to save space. -->
+  <plurals name="Nhours">
+    <!-- This is the label for a 1-hour reminder. -->
+    <item quantity="one">1 horo</item>
+    <!-- This is the label for a reminder of 2 or more hours. The actual number of
+             hours is a parameter. -->
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> horoj</item>
+  </plurals>
   <!-- This is the number of days displayed for a calendar reminder.  For example,
          a reminder of 2 days would be displayed as '2 days'.  The translation
          should use the shortest acceptable abbreviation of 'day' to save space. -->
+  <plurals name="Ndays">
+    <!-- This is the label for a reminder of 1 day. -->
+    <item quantity="one">1 tago</item>
+    <!-- This is the label for a reminder of 2 or more days. The actual number of
+             days is a parameter. -->
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> tagoj</item>
+  </plurals>
   <!-- This is for displaying the week of the year near the date. Eg. "January, 2011 Week 1" -->
+  <plurals name="weekN">
+    <item quantity="one">SEMAJNO <xliff:g id="count">%d</xliff:g></item>
+    <!-- Label for displaying week of the year for all week values [CHAR LIMIT=16] -->
+    <item quantity="other">SEMAJNO <xliff:g id="count">%d</xliff:g></item>
+  </plurals>
   <!-- Menu items: -->
   <!-- This is a label on a context menu item. Pressing this menu item to initiate
         syncing of your Calendar data with the server. [CHAR LIMIT=11] -->
@@ -57,30 +90,39 @@
          Agenda view. -->
   <!-- This is a label on a menu item. Pressing this menu item displays the
          Day view. -->
+  <string name="day_view">"Tago"</string>
   <!-- This is a label on a menu item. Pressing this menu item displays the
          Week view. -->
+  <string name="week_view">"Semajno"</string>
   <!-- This is a label on a menu item. Pressing this menu item displays the
          Month view. -->
+  <string name="month_view">"Monato"</string>
   <!-- This is a label on a menu item. Pressing this menu item displays the
          details of an event. -->
   <!-- This is a label on a menu item. Pressing this menu item allows the
          user to create a new event. -->
+  <string name="event_create">"Nova evento"</string>
   <!-- This is a label on a menu item in a popup window. Pressing this menu
          item allows the user to edit or change an existing event. -->
+  <string name="event_edit">"Redakti eventon"</string>
   <!-- This is a label on a menu item in a popup window. Pressing this menu
          item allows the user to delete an existing event. -->
+  <string name="event_delete">"Forigi eventon"</string>
   <!-- This is a label on a menu item. Pressing this menu
          item takes the user to the current day (today) in whatever view
          (Day view, Week view, Agenda view, Month view) they are currently in. -->
+  <string name="goto_today">"Hodiaŭ"</string>
   <!-- This is a label on a menu item. Pressing this menu item allows the
          user to see the list of calendars that he is viewing and to then add
          or remove selected calendars. -->
   <!-- This is a label on a menu item. Pressing this menu item allows the
          user to view and edit his Settings (or Preferences) -->
+  <string name="menu_preferences">"Agordoj"</string>
   <!-- This is a label on a menu item. Pressing this menu item allows the
          user to select the calendars to display [CHAR LIMIT=20] -->
   <!-- This is a label on a menu item. Pressing this menu item allows the
          user to select the calendars to display [CHAR LIMIT=20] -->
+  <string name="search">"Serĉi"</string>
   <!-- This is a label on a menu item. Pressing this menu item hides
          the navigation controls on the right side. [CHAR LIMIT=20] -->
   <!-- This is a label on a menu item. Pressing this menu item shows the
@@ -105,8 +147,11 @@
   <!-- The title of the screen where the user edits an event [CHAR LIMIT=17] -->
   <!-- Default value of What field (as a hint to the user) [CHAR LIMIT=15] -->
   <!-- Default value of Where field (as a hint to the user)[CHAR LIMIT=15] -->
+  <string name="hint_where">"Loko"</string>
   <!-- Default value of Description field (as a hint to the user) [CHAR LIMIT=15]-->
+  <string name="hint_description">"Priskribo"</string>
   <!-- Default value of Attendees/Guests field (as a hint to the user) [CHAR LIMIT=10] -->
+  <string name="hint_attendees">"Gastoj"</string>
   <!-- Toast message displayed when a new event is created -->
   <!-- Toast message displayed when an existing event is saved after being modified -->
   <!-- Toast message displayed when a new event was not saved because it was empty [CHAR LIMIT=30] -->
@@ -124,6 +169,7 @@
          a new event -->
   <!-- Create event dialog -->
   <!-- Create event dialog save button [CHAR LIMIT=10] -->
+  <string name="create_event_dialog_save">Konservi</string>
   <!-- The alert toast is not actually being displayed for some reason. -->
   <!-- the title of the alert/notification activity -->
   <!-- Notification window messages: -->
@@ -140,12 +186,15 @@
          label before the 'start date'. -->
   <!-- Check box label that specifies if this is an all-day event -->
   <!-- Label for choosing one of the calendars -->
+  <string name="edit_event_calendar_label">Kalendaro</string>
   <!-- Menu item to show all choices [CHAR LIMIT=22]-->
   <!-- Label for the event description -->
+  <string name="description_label">Priskribo</string>
   <!-- Label for the 'Presence' of an event, which can be either 'busy' (the default)
          or 'available'  [CHAR LIMIT=15] -->
   <!-- Label for the 'Privacy' of an event, which can be either 'private'
          or 'public' [CHAR LIMIT=15] -->
+  <string name="privacy_label">Privateco</string>
   <!-- Label for the list of reminders for an event [CHAR LIMIT=20] -->
   <!-- Title of alert shown if the user tries to create an event and has no calendars -->
   <!-- Body of alert shown if the user tries to create an event and has no calendars. Users can start adding an account here. [CHAR LIMIT=NONE] -->
@@ -153,6 +202,7 @@
   <!-- Title of a button shown when there is no account available and the system prompt a user to add one. [CHAR LIMIT=none] -->
   <!-- View Event -->
   <!-- Label for which calendar an event is part of -->
+  <string name="view_event_calendar_label">Kalendaro:</string>
   <!-- Label for the event organizer -->
   <!-- Label for the local timezone -->
   <!-- Label for showing event color picker -->
@@ -164,8 +214,10 @@
          a user is invited to a meeting or event.  The possible answers are
          'yes', 'no', and 'maybe' (and, initially, 'no response'). -->
   <!-- Response for whether attending an event - accepted [CHAR LIMIT=10]-->
+  <string name="response_yes">Jes</string>
   <!-- Response for whether attending an event - tentative [CHAR LIMIT=10]-->
   <!-- Response for whether attending an event - declined [CHAR LIMIT=10]-->
+  <string name="response_no">Ne</string>
   <!-- Label for emailing attendees -->
   <!-- Label for emailing the organizer (when there are no attendees) -->
   <!-- This is shown in the popup picker when emailing attendees -->
@@ -188,8 +240,11 @@
   <!-- Reminders label [CHAR LIMIT=15]-->
   <!-- Agenda View strings -->
   <!-- This is shown as part of the heading at the top of a list of today's events. -->
+  <string name="agenda_today">HODIAŬ, <xliff:g id="date">%1$s</xliff:g></string>
   <!-- This is shown as part of the heading at the top of a list of today's events. -->
+  <string name="agenda_yesterday">HIERAŬ, <xliff:g id="date">%1$s</xliff:g></string>
   <!-- This is shown as part of the heading at the top of a list of today's events. -->
+  <string name="agenda_tomorrow">MORGAŬ, <xliff:g id="date">%1$s</xliff:g></string>
   <!-- This is shown while the calendar events are being loading to the screen. -->
   <!-- This is shown at the top of the agenda view showing the beginning of the searched range. If the user taps on this string and Calendar will find events older than what is visible and display them to the user -->
   <!-- This is shown at the bottom of the agenda view showing the end of the searched range. If the user taps on this string and Calendar will find events later/newer than what is visible and display them to the user -->
@@ -200,10 +255,13 @@
          edits a repeating event. [CHAR LIMIT=20]-->
   <!-- This is a menu button for switching into edit mode when viewing an event.
         [CHAR LIMIT=10] -->
+  <string name="edit_label">"Redakti"</string>
   <!-- The button label for deleting an event -->
+  <string name="delete_label">"Forigi"</string>
   <!-- A menu item for deleting an event -->
   <!-- The button label for saving an event -->
   <!-- The button label for discarding changes to an event -->
+  <string name="discard_label">Nuligi</string>
   <!-- Button labels on expanded notification reminders: -->
   <!-- The button label for making the reminder alarms go away temporarily.
          The reminder alarms will fire off again in 5 minutes. -->
@@ -249,7 +307,9 @@
          future occurrences of this repeating event. -->
   <!-- Dialogs -->
   <!-- This is a label on the dialog for creating a new event. [CHAR LIMIT=30] -->
+  <string name="new_event_dialog_label">"Nova evento"</string>
   <!-- This is the button to create a new event in a dialog window. [CHAR LIMIT=30] -->
+  <string name="new_event_dialog_option">"Nova evento"</string>
   <!-- Confirmation dialog message -->
   <!-- This is a confirmation message in a popup dialog that appears when the
          user has asked to delete an event. The user still has a chance to cancel
@@ -266,6 +326,7 @@
          Pressing the menu item lets user to view the current settings
          [CHAR LIMIT=30] -->
   <!-- This is the title of the screen for setting user preferences. -->
+  <string name="preferences_title">"Agordoj"</string>
   <!-- This is the title of a section in the Settings screen for settings
          related to viewing calendar events -->
   <!-- This is the title of a section in the Settings screen for settings
@@ -274,10 +335,12 @@
   <!-- Settings week start label to start week on specific day-->
   <!-- Title of popup for week start day setting-->
   <!-- DO NOT TRANSLATE -->
+  <string name="preferences_week_start_day_default">-1</string>
   <!-- Title of the settings item to clear the recent search history [CHAR LIMIT=40] -->
   <!-- Summary of the settings item to clear the recent search history [CHAR LIMIT=70]-->
   <!-- Message to show in a toast when the history is cleared [CHAR LIMIT=40] -->
   <!-- Settings check box label to enable or disable notifications -->
+  <string name="preferences_alerts_title">Sciigoj</string>
   <!-- Settings dialog label that specifies when the phone should vibrate -->
   <!-- The old value for enabling vibration. used only for migrating -->
   <!-- Title of ringtone selector dialog -->
@@ -285,6 +348,7 @@
   <!-- List item label for setting the default number of reminder minutes -->
   <!-- Title of dialog for setting the default number of reminder minutes -->
   <!-- Default value for the number of reminder minutes -->
+  <string name="preferences_default_reminder_default">10</string>
   <!-- Settings check box label to keep Calendar in a fixed 'home' time zone [CHAR LIMIT = 18] -->
   <!-- Settings description of what setting Calendar to use a fixed 'home' time
         zone does [CHAR LIMIT = 60]-->
@@ -292,6 +356,7 @@
   <!-- DO NOT TRANSLATE -->
   <!-- Title of the settings item to show week number in week view [CHAR LIMIT=40] -->
   <!-- This is the title of a section in the Settings screen for "About" this application -->
+  <string name="preferences_about_title">Pri</string>
   <!-- Build version of the application -->
   <!-- Widget -->
   <!-- Title for calendar gadget when displayed in list of all other gadgets -->
@@ -322,6 +387,7 @@
   <!-- Pick the ending date for a new event [CHAR LIMIT = NONE]-->
   <!-- Pick the ending time for a new event[CHAR LIMIT = NONE]-->
   <!-- Select a time zone for a new event [CHAR LIMIT = NONE]-->
+  <string name="accessibility_pick_time_zone">Horzono</string>
   <!-- Select a time zone for a new event [CHAR LIMIT = NONE]-->
   <!-- Add a reminder to an event [CHAR LIMIT = NONE]-->
   <!-- Remove a reminder from an event [CHAR LIMIT = NONE]-->
@@ -334,6 +400,7 @@
   <!-- Set the type of the reminder (popup/email/sms)[CHAR LIMIT = NONE]-->
   <!-- Select the way you are visible for the event (busy/free) [CHAR LIMIT = NONE]-->
   <!-- Set the event as private/public/default [CHAR LIMIT = NONE]-->
+  <string name="accessibility_reminder_privacy">Privateco</string>
   <!-- Calendar notification [CHAR LIMIT = NONE]-->
   <!-- Calendar notification snooze button [CHAR LIMIT = NONE]-->
   <!-- Calendar notification email button [CHAR LIMIT = NONE]-->
@@ -343,7 +410,19 @@
       Description: This is spoken to the user. [CHAR LIMIT="NONE"]
     -->
   <!-- number of events in the notification bar -->
+  <plurals name="Nevents">
+    <!-- This is the label for a 1 event. -->
+    <item quantity="one">1 evento</item>
+    <!-- This is the label for 2 or more events. -->
+    <item quantity="other"><xliff:g id="count">%d</xliff:g> eventoj</item>
+  </plurals>
   <!-- number of remaining events for an alert digest in the notification bar [CHAR LIMIT = 30] -->
+  <plurals name="N_remaining_events">
+    <!-- This is the label for 1 event. -->
+    <item quantity="one">+1 evento</item>
+    <!-- This is the label for 2 or more events. -->
+    <item quantity="other">+<xliff:g id="count">%d</xliff:g> eventoj</item>
+  </plurals>
   <!-- Description of the selected marker for accessibility support [CHAR LIMIT = NONE]-->
   <!-- Tell user not to check a checkbox [CHAR LIMIT=30] -->
   <!-- Dialog title for recurrence picker for configuring a repeating event[CHAR LIMIT=20] -->
@@ -358,6 +437,10 @@
   <!-- Specifies that a repeating event to repeat until a certain date[CHAR LIMIT=20] -->
   <!-- Specifies that a repeating event to repeat for a number of times. A repeating event can repeat forever, repeat in a certain frequency until a certain date, or repeat for a number of times. e.g. repeat 10 times and stop. This string is for the last case [CHAR LIMIT=25] -->
   <!-- Specifies that a repeating event should repeat for a certain number of iterations. [CHAR LIMIT=20]-->
+  <plurals name="recurrence_end_count">
+    <item quantity="one">Por <xliff:g id="event_count">%d</xliff:g> evento</item>
+    <item quantity="other">Por <xliff:g id="event_count">%d</xliff:g> eventoj</item>
+  </plurals>
   <!-- Description of the selected marker for accessibility support [CHAR LIMIT = NONE]-->
   <!-- Do Not Translate.  Sender identity for global notification synchronization. -->
 </resources>
