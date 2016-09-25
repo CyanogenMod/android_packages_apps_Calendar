@@ -60,4 +60,5 @@
   <string name="buttons_list_1">Semana</string>
   <string name="buttons_list_2">Mes</string>
   <string name="buttons_list_3">Axenda</string>
+  <string name="buttons_list_4">Ano</string>
 </resources>
