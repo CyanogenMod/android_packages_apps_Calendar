@@ -23,7 +23,7 @@
   <!-- Title of custom snooze delay dialog -->
   <string name="snooze_delay_dialog_title">Atur jeda penundaan</string>
   <!-- List item label for setting the default snooze delay -->
-  <string name="preferences_default_snooze_delay_title">Waktu jeda tunda baku</string>
+  <string name="preferences_default_snooze_delay_title">Waktu jeda tunda standar</string>
   <!-- Title of dialog for setting the default snooze delay -->
   <string name="preferences_default_snooze_delay_dialog">Jeda tunda standar</string>
   <!-- Default value for the default snooze delay (in minutes) -->
