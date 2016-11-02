@@ -60,4 +60,5 @@
   <string name="buttons_list_1">Nädal</string>
   <string name="buttons_list_2">Kuu</string>
   <string name="buttons_list_3">Ajakava</string>
+  <string name="buttons_list_4">Aasta</string>
 </resources>
