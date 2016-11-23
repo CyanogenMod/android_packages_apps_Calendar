@@ -17,7 +17,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- read_calendar permission -->
+  <string name="on_permission_read_calendar">必要な権限が無効になっています。</string>
   <!-- No maps found in phone -->
+  <string name="no_map">マップが見つかりませんでした。</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">予定の共有中に問題が発生しました</string>
   <string name="share_label">共有</string>
@@ -44,6 +46,9 @@
   <string name="evt_del_dlg_msg_selected">選択した予定が削除されます。</string>
   <string name="evt_del_dlg_msg_all">すべての予定が削除されます。</string>
   <string name="no_events_selected">予定が選択されていません</string>
+  <plurals name="events_selected">
+    <item quantity="other">%1$d件の予定を選択しています</item>
+  </plurals>
   <!-- Label values for the default start page preference. -->
   <string name="default_start_title">デフォルトのビュー</string>
   <string name="default_start_last">前回終了時のビュー</string>
@@ -55,6 +60,8 @@
   <string name="buttons_list_4">年</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">予定の送信先:</string>
+  <string name="cal_export_event_sdcard_title">SDカードにエクスポート</string>
+  <string name="cal_export_succ_msg">予定のエクスポートが完了しました: %1s</string>
   <string name="cal_import_menu_title">予定のインポート</string>
   <string name="cal_nothing_to_import">インポートする予定がありません</string>
   <string name="cal_import_error_msg">カレンダーにインポートできませんでした</string>
