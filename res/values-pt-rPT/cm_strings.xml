@@ -17,7 +17,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- read_calendar permission -->
+  <string name="on_permission_read_calendar">Desativou uma permissão necessária.</string>
   <!-- No maps found in phone -->
+  <string name="no_map">Não foram encontrados mapas.</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Problemas encontrados ao partilhar o evento</string>
   <string name="share_label">Partilhar</string>
@@ -44,6 +46,10 @@
   <string name="evt_del_dlg_msg_selected">Os eventos selecionados serão apagados</string>
   <string name="evt_del_dlg_msg_all">Todos os eventos serão apagados</string>
   <string name="no_events_selected">Não há eventos selecionados</string>
+  <plurals name="events_selected">
+    <item quantity="one">%1$d evento selecionado</item>
+    <item quantity="other">%1$d eventos selecionados</item>
+  </plurals>
   <!-- Label values for the default start page preference. -->
   <string name="default_start_title">Modo de exibição</string>
   <string name="default_start_last">Modo utilizado anteriormente</string>
@@ -55,6 +61,8 @@
   <string name="buttons_list_4">Ano</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Enviar evento para:</string>
+  <string name="cal_export_event_sdcard_title">Exportar para o cartão SD</string>
+  <string name="cal_export_succ_msg">Evento exportado com sucesso: %1s</string>
   <string name="cal_import_menu_title">Importar evento</string>
   <string name="cal_nothing_to_import">Nada a importar</string>
   <string name="cal_import_error_msg">Importação para o calendário falhou</string>
