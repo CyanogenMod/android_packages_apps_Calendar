@@ -46,6 +46,10 @@
   <string name="evt_del_dlg_msg_selected">Избраните събития ще бъдат изтрити</string>
   <string name="evt_del_dlg_msg_all">Всички събития ще бъдат изтрити</string>
   <string name="no_events_selected">Няма избрани събития</string>
+  <plurals name="events_selected">
+    <item quantity="one">%1$d избрано събитие</item>
+    <item quantity="other">%1$d избрани събития</item>
+  </plurals>
   <!-- Label values for the default start page preference. -->
   <string name="default_start_title">Стандартен изглед</string>
   <string name="default_start_last">Предишен изглед</string>
