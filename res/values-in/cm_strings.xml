@@ -17,7 +17,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- read_calendar permission -->
+  <string name="on_permission_read_calendar">Anda telah menonaktifkan izin yang diperlukan.</string>
   <!-- No maps found in phone -->
+  <string name="no_map">Tidak ada peta ditemukan.</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Masalah ditemukan saat berbagi acara</string>
   <string name="share_label">Bagikan</string>
@@ -44,6 +46,9 @@
   <string name="evt_del_dlg_msg_selected">Acara yang dipilih akan dihapus</string>
   <string name="evt_del_dlg_msg_all">Semua acara akan dihapus</string>
   <string name="no_events_selected">Tidak ada acara yang dipilih</string>
+  <plurals name="events_selected">
+    <item quantity="other">%1$d acara dipilih</item>
+  </plurals>
   <!-- Label values for the default start page preference. -->
   <string name="default_start_title">Tampilan standar</string>
   <string name="default_start_last">Tampilan yang digunakan sebelumnya</string>
@@ -55,6 +60,8 @@
   <string name="buttons_list_4">Tahun</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Kirim acara ke:</string>
+  <string name="cal_export_event_sdcard_title">Ekspor ke kartu SD</string>
+  <string name="cal_export_succ_msg">Acara berhasil diekspor: %1s</string>
   <string name="cal_import_menu_title">Impor acara</string>
   <string name="cal_nothing_to_import">Tidak ada apapun untuk di impor</string>
   <string name="cal_import_error_msg">Gagal mengimpor ke kalendar</string>

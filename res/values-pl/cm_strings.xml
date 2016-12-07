@@ -46,6 +46,11 @@
   <string name="evt_del_dlg_msg_selected">Zaznaczone wydarzenia zostaną usunięte</string>
   <string name="evt_del_dlg_msg_all">Wszystkie wydarzenia zostaną usunięte</string>
   <string name="no_events_selected">Brak zaznaczonych wydarzeń</string>
+  <plurals name="events_selected">
+    <item quantity="one">Zaznaczono %1$d wydarzenie</item>
+    <item quantity="few">Zaznaczono %1$d wydarzenia</item>
+    <item quantity="other">Zaznaczono %1$d wydarzeń</item>
+  </plurals>
   <!-- Label values for the default start page preference. -->
   <string name="default_start_title">Domyślny widok</string>
   <string name="default_start_last">Poprzednio używany widok</string>
