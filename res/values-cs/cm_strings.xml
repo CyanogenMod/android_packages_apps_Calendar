@@ -17,7 +17,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- read_calendar permission -->
+  <string name="on_permission_read_calendar">Zakázali jste požadovaná oprávnění.</string>
   <!-- No maps found in phone -->
+  <string name="no_map">Žádné mapy nenalezeny.</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Došlo k problémům při sdílení události</string>
   <string name="share_label">Sdílet</string>
@@ -44,6 +46,11 @@
   <string name="evt_del_dlg_msg_selected">Vybrané události budou odstraněny</string>
   <string name="evt_del_dlg_msg_all">Všechny události budou odstraněny</string>
   <string name="no_events_selected">Nejsou vybrané žádné události</string>
+  <plurals name="events_selected">
+    <item quantity="one">Vybrána %1$d událost</item>
+    <item quantity="few">Vybrány %1$d události</item>
+    <item quantity="other">Vybráno %1$d událostí</item>
+  </plurals>
   <!-- Label values for the default start page preference. -->
   <string name="default_start_title">Výchozí zobrazení</string>
   <string name="default_start_last">Předchozí použité zobrazení</string>
@@ -55,6 +62,8 @@
   <string name="buttons_list_4">Rok</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Odeslat událost:</string>
+  <string name="cal_export_event_sdcard_title">Exportovat na SD kartu</string>
+  <string name="cal_export_succ_msg">Událost úspěšně exportována: %1s</string>
   <string name="cal_import_menu_title">Importovat událost</string>
   <string name="cal_nothing_to_import">Není co importovat</string>
   <string name="cal_import_error_msg">Importování do kalendáře se nezdařilo</string>

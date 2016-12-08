@@ -18,6 +18,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- read_calendar permission -->
   <!-- No maps found in phone -->
+  <string name="no_map">Geen kaarten gevonden.</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
   <string name="error_generating_ics">Kan afspraak niet delen</string>
   <string name="share_label">Delen</string>
@@ -44,6 +45,10 @@
   <string name="evt_del_dlg_msg_selected">Geselecteerde afspraken zullen worden verwijderd</string>
   <string name="evt_del_dlg_msg_all">Alle afspraken worden verwijderd</string>
   <string name="no_events_selected">Geen afspraken geselecteerd</string>
+  <plurals name="events_selected">
+    <item quantity="one">%1$d afspraak geselecteerd</item>
+    <item quantity="other">%1$d afspraken geselecteerd</item>
+  </plurals>
   <!-- Label values for the default start page preference. -->
   <string name="default_start_title">Standaardweergave</string>
   <string name="default_start_last">Laatst gebruikte weergave</string>
@@ -55,6 +60,8 @@
   <string name="buttons_list_4">Jaar</string>
   <!-- Sharing calendar event -->
   <string name="cal_share_intent_title">Afspraak verzenden naar:</string>
+  <string name="cal_export_event_sdcard_title">Exporteren naar SD-kaart</string>
+  <string name="cal_export_succ_msg">Afspraak succesvol geëxporteerd: %1s</string>
   <string name="cal_import_menu_title">Afspraak importeren</string>
   <string name="cal_nothing_to_import">Niets te importeren</string>
   <string name="cal_import_error_msg">Importeren naar agenda mislukt</string>
