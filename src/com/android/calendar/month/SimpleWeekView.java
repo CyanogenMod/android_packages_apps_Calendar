@@ -113,8 +113,11 @@ public class SimpleWeekView extends View {
     protected Rect r = new Rect();
     protected Paint p = new Paint();
     protected Paint mMonthNumPaint;
+    protected Paint mLunarPaint;
     protected Drawable mSelectedDayLine;
 
+    protected String[] mYearNumbers;
+    protected String[] mMonthNumbers;
     // Cache the number strings so we don't have to recompute them each time
     protected String[] mDayNumbers;
     // Quick lookup for checking which days are in the focus month
@@ -240,6 +243,8 @@ public class SimpleWeekView extends View {
 
         // Allocate space for caching the day numbers and focus values
         mDayNumbers = new String[mNumCells];
+        mYearNumbers = new String[mNumCells];
+        mMonthNumbers = new String[mNumCells];
         mFocusDay = new boolean[mNumCells];
         mOddMonth = new boolean[mNumCells];
         mWeek = params.get(VIEW_PARAMS_WEEK);
@@ -297,6 +302,8 @@ public class SimpleWeekView extends View {
                 mHasToday = true;
                 mToday = i;
             }
+            mYearNumbers[i] = Integer.toString(time.year);
+            mMonthNumbers[i] = Integer.toString(time.month);
             mDayNumbers[i] = Integer.toString(time.monthDay++);
             time.normalize(true);
         }

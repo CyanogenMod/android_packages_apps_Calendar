@@ -31,7 +31,7 @@
             android:entries="@array/preferences_skip_reminders_labels"
             android:entryValues="@array/preferences_skip_reminders_values"
             android:dialogTitle="@string/preferences_reminders_responded_dialog" />
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="preferences_reminders_quiet_hours"
             android:title="@string/preferences_reminders_quiet_hours_label"
             android:summary="@string/preferences_reminders_quiet_hours_description"/>
@@ -49,7 +49,7 @@
     <PreferenceCategory
         android:key="preferences_tardis_category"
         android:title="@string/tardis">
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="preferences_tardis_1"
             android:title="@string/do_not_check" />
     </PreferenceCategory>

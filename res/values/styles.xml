@@ -169,6 +169,7 @@
         <item name="android:actionBarStyle">@style/CalendarActionBarStyle</item>
         <item name="android:endYear">2036</item>
         <item name="android:startYear">1970</item>
+        <item name="android:navigationBarColor">@*android:color/primary_dark_material_light</item>
     </style>
 
     <style name="CalendarActionBarStyle" parent="android:style/Widget.Material.Light.ActionBar">

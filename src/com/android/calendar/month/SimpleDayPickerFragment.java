@@ -443,7 +443,14 @@ public class SimpleDayPickerFragment extends ListFragment implements OnScrollLis
             mFirstDayOfMonth.set(mTempTime);
             mFirstDayOfMonth.monthDay = 1;
             millis = mFirstDayOfMonth.normalize(true);
-            setMonthDisplayed(mFirstDayOfMonth, true);
+            Time now = new Time();
+            now.set(System.currentTimeMillis());
+            if (mFirstDayOfMonth.month == mSelectedDay.month
+                    && now.month == mSelectedDay.month) {
+                setMonthDisplayed(mSelectedDay, true);
+            } else {
+                setMonthDisplayed(mFirstDayOfMonth, true);
+            }
             position = Utils.getWeeksSinceEpochFromJulianDay(
                     Time.getJulianDay(millis, mFirstDayOfMonth.gmtoff), mFirstDayOfWeek);
 
