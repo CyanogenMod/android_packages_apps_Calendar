@@ -106,7 +106,7 @@ public class AlertService extends Service {
     private static final int MINUTE_MS = 60 * 1000;
 
     // The grace period before changing a notification's priority bucket.
-    private static final int MIN_DEPRIORITIZE_GRACE_PERIOD_MS = 15 * MINUTE_MS;
+    private static final int MIN_DEPRIORITIZE_GRACE_PERIOD_MS = 120 * MINUTE_MS;
 
     // Hard limit to the number of notifications displayed.
     public static final int MAX_NOTIFICATIONS = 20;
@@ -380,7 +380,7 @@ public class AlertService extends Service {
                 notification = AlertReceiver.makeBasicNotification(context, info.eventName,
                         summaryText, info.startMillis, info.endMillis, info.eventId,
                         AlertUtils.EXPIRED_GROUP_NOTIFICATION_ID, false,
-                        Notification.PRIORITY_MIN);
+                        Notification.PRIORITY_LOW);
             } else {
                 // Multiple expired events are listed in a digest.
                 notification = AlertReceiver.makeDigestNotification(context,
