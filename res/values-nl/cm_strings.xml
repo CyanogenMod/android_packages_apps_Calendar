@@ -17,6 +17,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
   <!-- read_calendar permission -->
+  <string name="on_permission_read_calendar">U hebt een vereiste machtiging uitgeschakeld.</string>
   <!-- No maps found in phone -->
   <string name="no_map">Geen kaarten gevonden.</string>
   <!-- Toast message displayed when ics file to share an event can't be generated -->
