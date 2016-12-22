@@ -20,6 +20,6 @@
     <item quantity="other">已選取 %1$d 個活動</item>
   </plurals>
   <plurals name="select_events_to_share">
-    <item quantity="other">選取要分享的活動</item>
+    <item quantity="other">選擇要分享的事件</item>
   </plurals>
 </resources>
