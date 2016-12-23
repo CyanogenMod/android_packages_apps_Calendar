@@ -93,6 +93,7 @@
   <!-- This is a list of choices displayed when the user deletes an event.
          It only is shown when deleting a recurring event.
     -->
+  <skip></skip>
   <string-array name="delete_repeating_labels">
     <item>Only this event</item>
     <item>This and future events</item>
@@ -107,11 +108,13 @@
          code where you can't delete one instance of a repeating event that
          was created on the phone until that event has been synced to the server.
      -->
+  <skip></skip>
   <string-array name="delete_repeating_labels_no_selected">
     <item>This &amp; future events</item>
     <item>Ĉiuj eventoj</item>
   </string-array>
   <!-- The corresponding array indices are defined in EventInfoActivity.java -->
+  <skip></skip>
   <!-- The list of choices displayed in a dialog box when the user wants to
     respond to an invitation that repeats. -->
   <!-- Strings for buttons in drop down menu -->
