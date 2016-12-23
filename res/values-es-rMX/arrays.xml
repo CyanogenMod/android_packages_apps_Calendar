@@ -37,6 +37,7 @@
   <!-- This is a list of choices displayed when the user deletes an event.
          It only is shown when deleting a recurring event.
     -->
+  <skip></skip>
   <!-- DO NOT TRANSLATE These values need to correspond to the indices
          defined in DeleteEventHelper.java-->
   <!-- The corresponding indices are defined in DeleteEventHelper.java -->
@@ -46,7 +47,9 @@
          code where you can't delete one instance of a repeating event that
          was created on the phone until that event has been synced to the server.
      -->
+  <skip></skip>
   <!-- The corresponding array indices are defined in EventInfoActivity.java -->
+  <skip></skip>
   <!-- The list of choices displayed in a dialog box when the user wants to
     respond to an invitation that repeats. -->
   <!-- Strings for buttons in drop down menu -->
