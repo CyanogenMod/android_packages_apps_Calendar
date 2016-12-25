@@ -27,7 +27,7 @@
   <string name="preferences_alerts_custom_snooze_delay_title">請求提醒貪睡延遲</string>
   <!-- Summaries for using custom snooze delays -->
   <string name="preferences_alerts_custom_snooze_delay_summary_on">每當暫停提醒時請求延後延遲</string>
-  <string name="preferences_alerts_custom_snooze_delay_summary_off">總是使用預設重響延遲</string>
+  <string name="preferences_alerts_custom_snooze_delay_summary_off">一律使用預設重響延遲</string>
   <!-- Title of custom snooze delay dialog -->
   <string name="snooze_delay_dialog_title">設定重響延遲</string>
   <!-- List item label for setting the default snooze delay -->
@@ -42,7 +42,7 @@
   <string name="action_delete">完成</string>
   <string name="all_events">所有事件</string>
   <string name="no_events">沒有可用的事件</string>
-  <string name="evt_del_dlg_title">刪除事件？</string>
+  <string name="evt_del_dlg_title">是否刪除事件？</string>
   <string name="evt_del_dlg_msg_selected">將刪除已選取的事件</string>
   <string name="evt_del_dlg_msg_all">將刪除所有事件</string>
   <string name="no_events_selected">沒有已選取的事件</string>
